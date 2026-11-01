@@ -5,6 +5,8 @@ slides: 102
 printed_numbers: "1–104; 32 and 49 absent"
 source_pdf: https://cs231n.stanford.edu/slides/2025/lecture_2.pdf
 date: April 3, 2025
+speaker: Ehsan Adeli
+figure_audit: Fourteen figure-, chart- and table-heavy slides (8, 23, 30, 33, 45, 57, 60, 62, 63, 64, 65, 74, 94, 101) were checked against the PDF at 600 dpi by an independent reader. Errors on slides 8, 33 and 64 and loose detail on 30, 45 and 63 were corrected; the other eight agreed.
 note: Numbering read from the footer text layer ("Lecture 2 - N"). Printed numbers are not equal to PDF page numbers from page 32 on.
 ---
 
@@ -15,6 +17,16 @@ Text and figures of all 102 pages of [`lecture_2.pdf`](https://cs231n.stanford.e
 ## Slide numbers vs PDF pages
 
 Not 1:1. PDF pages 1–31 print slides 1–31; PDF page 32 = slide 33 … page 47 = slide 48 (offset +1); PDF page 48 = slide 50 … page 102 = slide 104 (offset +2). Printed numbers 32 and 49 do not exist in the PDF (hidden slides in the source deck).
+
+**Images.** 41 slides are rendered as images, each placed under its heading: 7–16, 18, 19, 22,
+23, 29–31, 33–35, 41, 42, 44, 45, 47, 48, 55–57, 60, 62–65, 77, 80, 84, 89, 94, 99 and 101. The
+others have none, because they are the title (1), administrative, syllabus and agenda text (2–6),
+code (17, 21, 24–28, 100), section titles (20, 51, 70), text (36, 50, 85), build steps whose last
+step is rendered (37–40 → 41, 43 → 44, 46 → 47, 52–54 → 55, 59 → 60, 61 → 62, 71–76 → 77,
+78–79 → 80, 86–88 → 89, 90–93 → 94, 95–98 → 99), the CIFAR10 grid repeated from slide 44 (58),
+the score-table slides whose table is transcribed in full (66–69), or loss formulas and
+questions that are transcribed exactly (81–83, 102–104). Never construct an image path for a
+slide not listed here.
 
 Companion pages: [wiki page for this lecture](../../wiki/02-image-classification.md) · [transcript](../transcripts/02-image-classification.md)
 
@@ -97,11 +109,15 @@ Today:
 
 ## Slide 7 — Image Classification: A core task in Computer Vision
 
+![Slide 7 — Image Classification: A core task in Computer Vision](../images/02-image-classification/slide-7.jpg)
+
 Figure: on the left, a photograph of a grey tabby cat sitting, seen in three-quarter view against a blurred background. Caption under it: "This image by Nikita is licensed under CC-BY 2.0". On the right, the text "(assume given a set of possible labels)" and "{dog, cat, truck, plane, ...}". Below, a black arrow points from the cat image to the word "cat".
 
 ## Slide 8 — The Problem: Semantic Gap
 
-Figure: the same tabby cat photo as slide 7 on the left (caption "This image by Nikita is licensed under CC-BY 2.0"), with a small black square drawn on the cat's neck/chest area. Two black lines connect that square to a large box at upper right that shows a grid of small integers (a matrix of pixel values, about 20 rows by 15 columns, values such as 105, 112, 108, 111, 104 ... in the first row); the individual numbers are tiny and are not transcribed here. Label under the box: "What the computer sees".
+![Slide 8 — The Problem: Semantic Gap](../images/02-image-classification/slide-8.jpg)
+
+Figure: the same tabby cat photo as slide 7 on the left (caption "This image by Nikita is licensed under CC-BY 2.0"), with a small black square drawn on the cat's neck/chest area. Two black lines connect that square to a large box at upper right that shows a 24 × 16 array of integers printed in NumPy bracket style `[[ … ]]` (pixel values, roughly 41 to 170; first row 105 112 108 111 104 99 106 99 96 103 112 119 104 97 93 87). The array is itself a low-resolution raster, so a few digits are uncertain at any zoom; the full grid is not reproduced here. Label under the box: "What the computer sees".
 
 Blue text: "An image is a tensor of integers between [0, 255]:"
 
@@ -110,35 +126,51 @@ Blue text: "An image is a tensor of integers between [0, 255]:"
 
 ## Slide 9 — Challenges: Viewpoint variation
 
+![Slide 9 — Challenges: Viewpoint variation](../images/02-image-classification/slide-9.jpg)
+
 Figure: the same cat photo in the centre with the same black square and enlarged pixel-number matrix at upper right as in slide 8. Three black line-drawn movie-camera icons are placed around the cat (upper left, lower left, lower right), each pointing toward the cat from a different angle. Blue text at right: "All pixels change when the camera moves!" Credit at lower left: "This image by Nikita is licensed under CC-BY 2.0".
 
 ## Slide 10 — Challenges: Illumination
+
+![Slide 10 — Challenges: Illumination](../images/02-image-classification/slide-10.jpg)
 
 Figure: a row of four cat photographs. (1) A tabby cat with green eyes against a black background, lit from the front/side. (2) A black fluffy cat with orange eyes crouching in dim light on a grey surface. (3) An orange/ginger cat lit warmly from behind, glowing golden. (4) A dark silhouette of a cat on a tree branch against bright sunlight filtering through green leaves. Under each image the credit reads "This image is CC0 1.0 public domain".
 
 ## Slide 11 — Challenges: Background Clutter
 
+![Slide 11 — Challenges: Background Clutter](../images/02-image-classification/slide-11.jpg)
+
 Figure: two photographs side by side. Left: an orange/brown tabby cat sitting among autumn leaves, dirt and green plants, camouflaged against the ground (a second brown furry object lies at lower right). Right: a grey-and-white long-haired cat in a snowy scene with branches, its fur close in colour to the snow. Under each image: "This image is CC0 1.0 public domain".
 
 ## Slide 12 — Challenges: Occlusion
+
+![Slide 12 — Challenges: Occlusion](../images/02-image-classification/slide-12.jpg)
 
 Figure: three photographs side by side. (1) A cat peeking out from under a patterned blanket, only face visible. (2) A white cat mostly hidden in tall dry grass. (3) A beige leather sofa with only a striped cat tail visible between cushions. Credits: first and second "This image is CC0 1.0 public domain"; third "This image by jonsson is licensed under CC-BY 2.0".
 
 ## Slide 13 — Challenges: Deformation
 
+![Slide 13 — Challenges: Deformation](../images/02-image-classification/slide-13.jpg)
+
 Figure: a row of four photographs of cats in unusual poses. (1) A grey tabby sitting upright and slouched against a wall with legs splayed. (2) A grey cat lying on its back on pavement, stretched out. (3) A fluffy grey cat standing on its hind legs on a patterned green rug. (4) A grey-and-white cat sitting on a sofa with legs spread forward. Credits in order: "This image by Umberto Salvagnin is licensed under CC-BY 2.0"; "This image by Umberto Salvagnin is licensed under CC-BY 2.0"; "This image by sare bear is licensed under CC-BY 2.0"; "This image by Tom Thai is licensed under CC-BY 2.0".
 
 ## Slide 14 — Challenges: Intraclass variation
 
+![Slide 14 — Challenges: Intraclass variation](../images/02-image-classification/slide-14.jpg)
+
 Figure: one photograph of five kittens sitting together on grass: one orange, two grey-and-white tabbies, one brown tabby and one more brown tabby partly behind. Credit: "This image is CC0 1.0 public domain".
 
 ## Slide 15 — Challenges: Context
+
+![Slide 15 — Challenges: Context](../images/02-image-classification/slide-15.jpg)
 
 Figure: two photographs. Left: a street scene with a pavement and metal fence/gate bars; an animal lying on the pavement behind a horizontal bar has orange-and-black stripes. A green rectangle labelled "Tiger" surrounds it, and a white arrow labelled "Context" points to the fence area to the right. Right: a close-up of the same animal lying behind a horizontal pole; its head and legs have plain orange-and-white fur, and its body appears striped orange and black where the fence bars cast shadow.
 
 Image source: https://www.linkedin.com/posts/ralph-aboujaoude-diaz-40838313_technology-artificialintelligence-computervision-activity-6912446088364875776-h-Iq?utm_source=linkedin_share&utm_medium=member_desktop_web
 
 ## Slide 16 — Modern computer vision algorithms
+
+![Slide 16 — Modern computer vision algorithms](../images/02-image-classification/slide-16.jpg)
 
 Figure: a wide mosaic of many small thumbnail photographs forming the ImageNet logo in large capitals. It reads "IM", then two coloured dots (green above, red below) in place of the letter "A", then "GE", "N", "E", "T". The letters "IM" and "GE" are dark grey; "N" is orange, "E" is green and "T" is red. Credit: "This image is CC0 1.0 public domain".
 
@@ -158,11 +190,15 @@ no obvious way to hard-code the algorithm for recognizing a cat, or other classe
 
 ## Slide 18 — Attempts have been made
 
+![Slide 18 — Attempts have been made](../images/02-image-classification/slide-18.jpg)
+
 Figure: a three-stage pipeline drawn left to right. Left: the tabby cat photo (same as slide 7). A grey arrow labelled "Find edges" points to a black image showing a white line-drawing of the cat's edges (an edge map). A second grey arrow labelled "Find corners" points to a row of four grey arrowhead/chevron symbols: a down-pointing one, a left-pointing one, an up-pointing one and a right-pointing one. A grey arrow points down from beneath the second symbol (the left-pointing one) to a "?".
 
 Credit (small grey text, lower left): "John Canny, "A Computational Approach to Edge Detection", IEEE TPAMI 1986"
 
 ## Slide 19 — Machine Learning: Data-Driven Approach
+
+![Slide 19 — Machine Learning: Data-Driven Approach](../images/02-image-classification/slide-19.jpg)
 
 1. Collect a dataset of images and labels
 2. Use Machine Learning algorithms to train a classifier
@@ -208,11 +244,15 @@ A grey arrow from the first snippet points to the text "Memorize all data and la
 
 ## Slide 22 — First classifier: Nearest Neighbor
 
+![Slide 22 — First classifier: Nearest Neighbor](../images/02-image-classification/slide-22.jpg)
+
 Figure: at upper left, a row of five small training images with labels above them: "deer" (a deer on grass), "bird" (a brown bird), "plane" (a white-and-blue jet), "cat" (a cat sitting on a green patterned rug), "car" (a light blue car). Caption beneath: "Training data with labels". At upper right, a larger photo of the tabby cat (same as slide 7) with "?" above it and caption "query data" beneath.
 
 At the bottom, the text "Distance Metric" followed by a vertical bar, the tabby cat photo, a comma, the small cat-on-rug photo, a vertical bar, an arrow, and the symbol $\mathbb{R}$. That is, a function from a pair of images to a real number: (image 1, image 2) $\rightarrow \mathbb{R}$.
 
 ## Slide 23 — Distance Metric to compare images
+
+![Slide 23 — Distance Metric to compare images](../images/02-image-classification/slide-23.jpg)
 
 "L1 distance:"
 
@@ -316,15 +356,21 @@ Credit (small text, lower right): "Johnson et al, "Billion-scale similarity sear
 
 ## Slide 29 — What does this look like?
 
-Figure: a 2-D scatter plot with no axes or axis labels, whose background is divided into five coloured regions. Caption below: "1-nearest neighbor". Regions and their points: blue (light blue-violet) region across the top-left with about 11 blue points; purple/mauve region at the top-right with about 8 purple points; red/salmon region at the left with about 11 red points; green region in the centre with about 12 green points; orange/yellow region along the bottom with about 8 orange points. The boundaries are jagged and follow the individual points. A small orange region sits inside the green area around a single orange point near the centre, and a narrow green spike pokes into the blue region near the top centre.
+![Slide 29 — What does this look like?](../images/02-image-classification/slide-29.jpg)
+
+Figure: a 2-D scatter plot with no axes or axis labels, whose background is divided into five coloured regions. Caption below: "1-nearest neighbor". Regions and their points: blue (light blue-violet) region across the top-left with about 11 blue points; purple/mauve region at the top-right with about 8 purple points; red/salmon region at the left with about 11 red points; green region in the centre with about 12 green points; orange/yellow region along the bottom with about 8 orange points. The boundaries are jagged and follow the individual points. A small orange region sits inside the green area around a single orange point near the centre. The green region reaches the top edge in a broad wedge between the blue and purple regions and pushes a lobe left into the blue; red fingers reach up into the blue region at the left.
 
 ## Slide 30 — K-Nearest Neighbors
 
+![Slide 30 — K-Nearest Neighbors](../images/02-image-classification/slide-30.jpg)
+
 "Instead of copying label from nearest neighbor, take majority vote from K closest points"
 
-Figure: three side-by-side panels, each the same coloured-region scatter plot as slide 29 on the same data (blue top-left, purple top-right, red left, green centre, orange bottom). Captions under them: "K = 1", "K = 3", "K = 5". The K = 1 panel is the jagged map from slide 29 including the small orange island in the green. In the K = 3 panel the boundaries are smoother, the orange island is gone, and thin white gaps appear along some borders (between blue/green, green/purple and red/green). In the K = 5 panel the boundaries are smoother still, with wider white gaps (notably a white strip between the red and green regions and at the green/purple border).
+Figure: three side-by-side panels, each the same coloured-region scatter plot as slide 29 on the same data (blue top-left, purple top-right, red left, green centre, orange bottom). Captions under them: "K = 1", "K = 3", "K = 5". The K = 1 panel is the jagged map from slide 29 including the small orange island in the green. In the K = 3 panel the boundaries are smoother, the orange island is gone (its single orange training point now sits inside the green region), and white gaps appear: a narrow notch at the top between the blue and purple regions running down to the green apex, a small patch at the blue/red/green junction, a thin strip down the red/green border (mostly near the bottom), and a wide wedge at the lower right between green and purple/orange. In the K = 5 panel the boundaries are smoother still and the white areas are larger: a strip between the red and green regions, the green/purple border, a larger white area at the top between blue, purple and green, and a patch at the blue/red/green junction.
 
 ## Slide 31 — K-Nearest Neighbors: Distance Metric
+
+![Slide 31 — K-Nearest Neighbors: Distance Metric](../images/02-image-classification/slide-31.jpg)
 
 Two columns.
 
@@ -342,11 +388,13 @@ Diagram: thin black horizontal and vertical axes crossing at the centre, with a 
 
 ## Slide 33 — K-Nearest Neighbors: Distance Metric - Example
 
+![Slide 33 — K-Nearest Neighbors: Distance Metric - Example](../images/02-image-classification/slide-33.jpg)
+
 Left column, text: "L1 Distance: Measures distance by moving along grid lines (like walking in a city with square blocks)."
 
 $$d_1(I_1, I_2) = \sum_p \vert I_1^p - I_2^p \vert$$
 
-Diagram: axes with a diamond. Three dots: O(0,0) at the centre, A(1, 0) on the right corner of the diamond, B(0.5, 0.5) on the upper-right edge of the diamond. Orange line segments: one from O horizontally to A; one from O horizontally to the point beneath B and then vertically up to B (an L-shaped path).
+Diagram: axes with a diamond. Three dots: O(0,0) at the centre, A(1, 0) on the right corner of the diamond, B(0.5, 0.5) on the upper-right edge of the diamond. Orange line segments: one from O horizontally to A; an L-shaped path from O straight up the vertical axis to the height of B, then horizontally right to B.
 
 Under it:
 
@@ -372,6 +420,8 @@ $d_2(O,A) = d_2(O,A) = 1$
 
 ## Slide 34 — K-Nearest Neighbors: Distance Metric
 
+![Slide 34 — K-Nearest Neighbors: Distance Metric](../images/02-image-classification/slide-34.jpg)
+
 Two columns, same headings and formulas as slide 31.
 
 Left: "L1 (Manhattan) distance", $$d_1(I_1, I_2) = \sum_p \vert I_1^p - I_2^p \vert$$, then a coloured-region scatter plot (same data and colour scheme as slide 29, with a small orange island inside the green region). Caption: "K = 1".
@@ -379,6 +429,8 @@ Left: "L1 (Manhattan) distance", $$d_1(I_1, I_2) = \sum_p \vert I_1^p - I_2^p \v
 Right: "L2 (Euclidean) distance", $$d_2(I_1, I_2) = \sqrt{\sum_p \left(I_1^p - I_2^p\right)^2}$$, then a coloured-region scatter plot of the same data. Caption: "K = 1". The two maps look similar overall, with small differences in some boundary shapes.
 
 ## Slide 35 — K-Nearest Neighbors: try it yourself!
+
+![Slide 35 — K-Nearest Neighbors: try it yourself!](../images/02-image-classification/slide-35.jpg)
 
 Figure: a coloured-region scatter plot with no axes: a blue region at the upper left with 9 blue points, a purple region at the upper right with 4 purple points, a green region in the centre with about 11 green points, and a red/pink region along the bottom and right with about 10 red points. The boundaries are smoother and more straight than in slide 29.
 
@@ -425,6 +477,8 @@ Below the train/test bar, in red: "Never do this!"
 
 ## Slide 41 — Setting Hyperparameters
 
+![Slide 41 — Setting Hyperparameters](../images/02-image-classification/slide-41.png)
+
 Same as slide 40, plus a third idea below it.
 
 Idea #3: Split data into train, val; choose hyperparameters on val and evaluate on test
@@ -434,6 +488,8 @@ Green text at right: "Better!"
 Diagram: a wide bar split into three sections: light-green "train" (long), light-yellow "validation", and light-red "test" at the right.
 
 ## Slide 42 — Setting Hyperparameters
+
+![Slide 42 — Setting Hyperparameters](../images/02-image-classification/slide-42.png)
 
 At top: a wide light-green bar labelled "train" (the test bar is shown separately at the right, below).
 
@@ -455,6 +511,8 @@ Small citation line at bottom left: Alex Krizhevsky, "Learning Multiple Layers o
 
 ## Slide 44 — Example Dataset: CIFAR10
 
+![Slide 44 — Example Dataset: CIFAR10](../images/02-image-classification/slide-44.jpg)
+
 Same as slide 43 (same text, same CIFAR10 class grid at left, same citation), plus a vertical divider line and a second figure on the right.
 
 Right-hand heading: "Test images and nearest neighbors"
@@ -463,11 +521,28 @@ Figure: a grid of 10 rows. Each row starts with one test image at far left, foll
 
 ## Slide 45 — Setting Hyperparameters
 
+![Slide 45 — Setting Hyperparameters](../images/02-image-classification/slide-45.jpg)
+
 Left: a scatter plot with a line, titled "Cross-validation on k". X-axis label "k", ranging from about -20 to 120 (ticks at -20, 0, 20, 40, 60, 80, 100, 120). Y-axis label "Cross-validation accuracy", ranging from 0.24 to 0.32 (ticks 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.30, 0.31, 0.32).
 
 Two kinds of marks (dark blue dots and a light-blue line with error bars):
 - Dark blue dots: several dots at each tested k value (about 5 per k, one per fold). Tested k values are approximately 1, 3, 5, 8, 10, 12, 15, 20, 50 and 100. At k about 1 the dots span roughly 0.257 to 0.278; the lowest dot anywhere is about 0.252 at k about 3; the highest dot is about 0.310 at k about 8; at k = 50 the dots lie roughly 0.264 to 0.289; at k = 100 the dots lie roughly 0.259 to 0.274.
-- Light-blue line connecting the mean at each k, with vertical error bars (standard deviation): the mean is about 0.265 at k = 1, rises to about 0.28 to 0.29 for k between about 5 and 15 (highest around k = 8 to 15, near 0.288), is about 0.282 at k = 20, about 0.275 at k = 50 and about 0.265 at k = 100.
+- Light-blue line connecting the mean at each k, with vertical error bars (standard deviation): the mean climbs steeply from about 0.266 at k = 1 through about 0.274 at k = 3 to about 0.286 at k = 5, peaks at about 0.289 at k = 8 and k = 10, dips to about 0.284 at k = 12, is about 0.287 at k = 15 and 0.282 at k = 20, then falls to about 0.275 at k = 50 and 0.266 at k = 100. Some dots overlap, so fewer than five are visible at several k.
+
+Estimated values read from a 600-dpi render (by eye, ±0.002):
+
+| k | dots | mean | error bar |
+| --- | --- | --- | --- |
+| 1 | .257, .263, .264, .266, .278 | 0.266 | 0.259–0.272 |
+| 3 | .252, .266, .281 (two), .290 | 0.274 | 0.261–0.288 |
+| 5 | .266, .284, .285, .290, .303 | 0.286 | 0.274–0.297 |
+| 8 | .270, .281, .290, .291, .310 | 0.289 | 0.275–0.302 |
+| 10 | .276, .288, .289, .296, .298 | 0.289 | 0.282–0.297 |
+| 12 | .268, .280, .282, .287, .302 | 0.284 | 0.272–0.295 |
+| 15 | .269, .283, .291, .294, .299 | 0.287 | 0.277–0.298 |
+| 20 | .265, .282 (two), .290, .291 | 0.282 | 0.273–0.291 |
+| 50 | .264, .273, .274, .276, .289 | 0.275 | 0.267–0.283 |
+| 100 | .259, .265 (two), .274 | 0.266 | 0.261–0.270 |
 
 Right-hand text:
 Example of
@@ -486,9 +561,13 @@ Figure: the same nearest-neighbor grid as slide 44, shown larger and centred. 10
 
 ## Slide 47 — What does this look like?
 
+![Slide 47 — What does this look like?](../images/02-image-classification/slide-47.jpg)
+
 Same as slide 46, plus a coloured outline drawn around the first neighbor (the one immediately right of the arrow) in each row. Rows 1, 3, 4, 5, 6 and 10 are outlined in red; rows 2, 7, 8 and 9 are outlined in green. (No text labels explain the colours.)
 
 ## Slide 48 — k-Nearest Neighbor with pixel distance never used.
+
+![Slide 48 — k-Nearest Neighbor with pixel distance never used.](../images/02-image-classification/slide-48.jpg)
 
 - Distance metrics on pixels are not informative
 
@@ -534,9 +613,13 @@ Same as slide 53, plus coloured boxes and dimension labels on the equation $f(x,
 
 ## Slide 55 — Parametric Approach: Linear Classifier
 
+![Slide 55 — Parametric Approach: Linear Classifier](../images/02-image-classification/slide-55.jpg)
+
 Same as slide 54, with a bias term added to the equation: $f(x,W) = Wx + b$. A purple box surrounds "b" with the purple label "10x1" to its right. The other labels are as on slide 54: "3072x1" (blue, above x), "10x1" (green, below f(x,W)), "10x3072" (red, below W).
 
 ## Slide 56 — Neural Network / Linear classifiers
+
+![Slide 56 — Neural Network / Linear classifiers](../images/02-image-classification/slide-56.jpg)
 
 (Untitled apart from the label "Neural Network" at top.)
 
@@ -545,6 +628,8 @@ Figure: a photograph of a child's hand stacking toy building blocks (blue, green
 Small credit line below the photo: "This image is CC0 1.0 public domain" (the words "This image" and "CC0 1.0" are hyperlinks).
 
 ## Slide 57 — Linear layers
+
+![Slide 57 — Linear layers](../images/02-image-classification/slide-57.jpg)
 
 (Untitled.) Two network-architecture diagrams, each with the final fully connected layers outlined in a blue rounded box and labelled in blue "Linear layers" with blue arrows.
 
@@ -570,6 +655,8 @@ Figure: at left, a small 2x2-pixel image (a faded cat photo with a 2x2 grid over
 
 ## Slide 60 — Example with an image with 4 pixels, and 3 classes (cat/dog/ship)
 
+![Slide 60 — Example with an image with 4 pixels, and 3 classes (cat/dog/ship)](../images/02-image-classification/slide-60.jpg)
+
 Second line of title, underlined: "Algebraic Viewpoint"
 
 Same as slide 59 (the input image labelled "Input image", the "Flatten tensors into a vector" arrow, the vector 56, 231, 24, 2), plus the weight matrix, bias and score computation. The layout is $W$ times the vector, plus $b$, equals the scores.
@@ -591,18 +678,22 @@ Below each, an arrow down to a bias box labelled at left "b": 1.1 (peach), 3.2 (
 
 ## Slide 62 — Interpreting a Linear Classifier: Visual Viewpoint
 
+![Slide 62 — Interpreting a Linear Classifier: Visual Viewpoint](../images/02-image-classification/slide-62.jpg)
+
 (The words "Visual Viewpoint" are underlined.)
 
 Same as slide 61 (CIFAR10 grid at left and the W/b/Score diagram at right), plus a row of ten blurry, low-detail images along the bottom, each captioned above with a class name: plane, car, bird, cat, deer, dog, frog, horse, ship, truck. These are the learned weight templates for each class visualised as images: the plane image is mostly blue with a lighter centre; car shows a dark blue/purple blob in the centre with a reddish lower part; bird is greenish with a dark centre; cat is pinkish-brown; deer is green with a dark brown centre; dog is greyish-pink; frog is yellow-green with dark areas; horse is brownish with a reddish-pink central shape on a green background; ship is blue with a lighter centre; truck is dark with purple/red tones.
 
 ## Slide 63 — Interpreting a Linear Classifier: Geometric Viewpoint
 
+![Slide 63 — Interpreting a Linear Classifier: Geometric Viewpoint](../images/02-image-classification/slide-63.jpg)
+
 Right, large: $f(x,W) = Wx + b$
 
 Below it: a photo of a grey tabby cat, with text beneath: "Array of 32x32x3 numbers (3072 numbers total)".
 
 Left: a 2D diagram with a black horizontal axis and vertical axis crossing at a point labelled "0". Three straight lines, each with a short arrow perpendicular to it pointing to the side the classifier scores higher, and each labelled in the line's colour:
-- A blue near-vertical line labelled "airplane classifier" at the left, with a blue arrow pointing left; small airplane/ship-like images lie to its left side (near the top-left); a blurry blue image (the airplane template) sits at the top left.
+- A blue near-vertical line labelled "airplane classifier" at the left, with a blue arrow pointing left; small airplane/ship-like images cluster near it at the top (about three clearly to its left, some just to its right); a blurry blue image (the airplane template) sits at the top left.
 - A red diagonal line labelled "car classifier", running from the top left-centre down to the right, with a red arrow pointing toward the upper right; car images (a white car, a red car, a fire-truck-like vehicle, others) sit on that side; a blurry blue/purple car template image sits at the top.
 - A green nearly horizontal line labelled "deer classifier" at the bottom, with a green arrow pointing downward; deer images lie just below it; a blurry green image (the deer template) sits at the bottom.
 Other small images (cats, dogs, a rooster/birds, deer) are scattered around the axes between the lines.
@@ -611,15 +702,19 @@ At bottom left, a 3D plot of intersecting planes (yellow/orange, blue and green 
 
 ## Slide 64 — Hard cases for a linear classifier
 
+![Slide 64 — Hard cases for a linear classifier](../images/02-image-classification/slide-64.png)
+
 Three panels side by side, each with a class description above a square 2D plot with black horizontal and vertical axes through the centre. Blue regions are Class 1 and pink (light red) regions are Class 2. "Class 1:" is printed in blue and "Class 2:" in red.
 
 Left panel: Class 1: First and third quadrants. Class 2: Second and fourth quadrants. As drawn, the top-left quadrant is light blue, top-right pink, bottom-left pink, and bottom-right light blue.
 
 Middle panel: Class 1: 1 <= L2 norm <= 2. Class 2: Everything else. The plot is pink with a blue ring (annulus) centred on the origin; the inner disc is pink.
 
-Right panel: Class 1: Three modes. Class 2: Everything else. The plot is pink with three small blue circles: one in the upper left quadrant, one in the upper right quadrant, and one in the lower middle (just right of the vertical axis, in the lower half).
+Right panel: Class 1: Three modes. Class 2: Everything else. The plot is pink with three small blue circles: one in the upper left quadrant, one in the upper right quadrant, and one in the lower-left quadrant, just left of the vertical axis.
 
 ## Slide 65 — Linear Classifier – Choose a good W
+
+![Slide 65 — Linear Classifier – Choose a good W](../images/02-image-classification/slide-65.jpg)
 
 Left: three photos in a row (a grey tabby cat, a red car seen from the front, a green frog with red eyes on a leaf) above a table of class scores with ten class rows labelled at left: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck. One score column per image.
 
@@ -746,6 +841,8 @@ The first probability in the green column, 0.13 (cat), is highlighted in purple.
 
 ## Slide 77 — Softmax Classifier (Multinomial Logistic Regression)
 
+![Slide 77 — Softmax Classifier (Multinomial Logistic Regression)](../images/02-image-classification/slide-77.jpg)
+
 Same as slide 76, plus a note at the lower right in small black text:
 
 "Maximum Likelihood Estimation
@@ -777,6 +874,8 @@ $$D_{KL}(P \Vert Q) = \sum_y P(y) \log \frac{P(y)}{Q(y)}$$
 In the printed formula, the $P$ is underlined with a short purple bar (matching the purple "Correct probs" column) and the $Q$ is underlined with a short green bar (matching the green "probabilities" column).
 
 ## Slide 80 — Softmax Classifier (Multinomial Logistic Regression)
+
+![Slide 80 — Softmax Classifier (Multinomial Logistic Regression)](../images/02-image-classification/slide-80.jpg)
 
 Same as slide 78, plus a cross-entropy formula placed between the green and purple columns under the "compare" arrows.
 
@@ -827,6 +926,8 @@ If C = 10, then L_i = log(10) ≈ 2.3"
 (The Q1 question from slide 82 is no longer shown.)
 
 ## Slide 84 — Coming up:
+
+![Slide 84 — Coming up:](../images/02-image-classification/slide-84.jpg)
 
 Coming up:
 
@@ -890,6 +991,8 @@ Same as slide 87, plus marks on the plot: a curly brace under the horizontal axi
 
 ## Slide 89 — Interpreting Multiclass SVM loss (untitled)
 
+![Slide 89 — Interpreting Multiclass SVM loss (untitled)](../images/02-image-classification/slide-89.jpg)
+
 Same as slide 88, plus a thick blue line sloping down from the upper left (at the "Loss" label) in a straight line to the point at "1" on the horizontal axis, where it joins the flat blue segment. The plotted shape is a hinge: a straight descending line that reaches zero loss at difference 1, then stays flat at zero to the right.
 
 ## Slide 90 — Multiclass SVM loss (untitled)
@@ -936,6 +1039,8 @@ Same as slide 92, but the blue box moves to the third (frog image) score column 
 = 12.9
 
 ## Slide 94 — Multiclass SVM loss (untitled)
+
+![Slide 94 — Multiclass SVM loss (untitled)](../images/02-image-classification/slide-94.jpg)
 
 Same as slide 90 (setup, boxed max-form loss) with the "Losses:" row filled in all three columns in blue: 2.9, 0, 12.9. No column box. Under the boxed formula:
 
@@ -990,6 +1095,8 @@ $$L_i = \sum_{j \neq y_i} \max(0, s_j - s_{y_i} + 1)^2$$
 
 ## Slide 99 — Multiclass SVM loss (untitled)
 
+![Slide 99 — Multiclass SVM loss (untitled)](../images/02-image-classification/slide-99.jpg)
+
 Same left side and Q6 text/formula as slide 98 (three photographs, score table with blue Losses row 2.9, 0, 12.9). The right-side text block and boxed loss are replaced at the top right by the heading "Multiclass SVM loss:" and the plot from slide 87-89 (framed box, vertical axis "Loss", horizontal axis $s_{y_i} - s_j$ with caption "difference in scores between correct and incorrect class", curly brace labelled "1" under the axis from the vertical axis to the point at 1).
 
 The thick blue curve is now smooth: it starts at the top left near the "Loss" label, falls steeply, then bends and flattens gradually as it approaches the horizontal axis, reaching zero at the point marked "1", and continues as a flat blue line at zero to the right. (Compare the straight-line hinge on slide 89: here the descending part is curved, convex, instead of straight.)
@@ -1023,6 +1130,8 @@ Green comments to the right of the code, overlapping the box edge:
 (Printed as subscripts: s_j and s_yi in the second comment, y_i in the third.)
 
 ## Slide 101 — Softmax vs. SVM
+
+![Slide 101 — Softmax vs. SVM](../images/02-image-classification/slide-101.jpg)
 
 Softmax vs. SVM
 

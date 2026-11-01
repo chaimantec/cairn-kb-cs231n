@@ -24,15 +24,15 @@ Scope: lecture 2 only, video pdqofxJeBN8 (67 min). One deck, `lecture_2.pdf`: 10
 - [x] Deck fetched by hand into raw/pdfs/slides/lecture_2.pdf (title slide: "Lecture 2: Image Classification with Linear Classifiers", April 3, 2025)
 
 #### Slides (Step 1b)
-- [ ] raw/slides/02-image-classification.md — number map, Sonnet transcription, --verify
-- [ ] Figure audit (Sonnet, 600 dpi crops) on chart/table/figure pages
+- [x] raw/slides/02-image-classification.md — number map, Sonnet transcription (three agents, pages 1–34 / 35–68 / 69–102), --verify (102 headings; exit 0). slide_number_map.py patched: page 32's "33" overlaps the "Lecture 2 -" box, so the split-footer test missed it and the corner fallback read a "1" subscript from the page's equations; all 541 decks on disk otherwise map identically.
+- [x] Figure audit (Sonnet, 600 dpi crops) on 14 slides: 8, 23, 30, 33, 45, 57, 60, 62, 63, 64, 65, 74, 94, 101 → 8 clean; errors on 8 (pixel array "not transcribed, tiny" was legible: 24×16, not ~20×15), 33 (L1 path drawn up-then-right, not right-then-up), 64 (third circle left of the axis, not right); loose detail on 30, 45 (means per k now tabulated), 63. Fixes applied.
 
 #### Transcript edit (Step 1a)
 - [ ] raw/transcripts/02-image-classification.md — Sonnet copy-edit; timestamp, number, ratio checks; proper-noun grep
 
 #### Images (Step 1c)
-- [ ] raw/images/02-image-classification/ — select, render, embed in slide file and wiki
-- [ ] Look at two rendered images against the slide-file claims
+- [ ] raw/images/02-image-classification/ — select, render, embed in slide file and wiki (41 rendered, 5.0 MB, embedded in slide file; wiki pending)
+- [x] Look at two rendered images against the slide-file claims (slide 99 squared-hinge curve agrees; slide 29's "narrow green spike into blue" was a broad wedge to the top edge, corrected)
 - [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
 
 #### Wiki
