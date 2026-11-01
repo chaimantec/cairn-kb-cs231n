@@ -7,10 +7,10 @@ self-supervised learning, generative models, 3D vision, vision and language, rob
 and human-centred AI. The Spring 2025 offering is taught by Fei-Fei Li and Ehsan Adeli, with Zane
 Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/2025/>.
 
-> **Coverage: 2 of 18 lectures.** This knowledge base currently covers **Lecture 1
-> (Introduction) and Lecture 2 (Image Classification with Linear Classifiers) only**. It has
-> nothing on lectures 3–18 — regularization and optimization, backpropagation, CNNs and everything
-> after. For a question about a later topic, say that this KB does not cover it yet rather than
+> **Coverage: 3 of 18 lectures.** This knowledge base currently covers **Lecture 1
+> (Introduction), Lecture 2 (Image Classification with Linear Classifiers) and Lecture 3
+> (Regularization and Optimization) only**. It has nothing on lectures 4–18 — neural networks and
+> backpropagation, CNNs and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
 > answering as if from the course; the
 > [course roadmap](wiki/course-logistics.md#course-roadmap) shows which lecture a topic belongs
 > to, and [SEE_ALSO.md](SEE_ALSO.md) lists sibling knowledge bases that cover some of that
@@ -26,7 +26,9 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   slide N" (Fei-Fei Li's history) or "part 2, slide N" (Ehsan Adeli's course overview); part 2
   is missing printed numbers 4, 5 and 45, so part 2, slide 53 is PDF page 50. Lecture 2 has one
   deck, cited "slide N" on its own page and "lecture 2, slide N" on topic pages; it is missing
-  printed numbers 32 and 49, so slide 104 is PDF page 102.
+  printed numbers 32 and 49, so slide 104 is PDF page 102. Lecture 3 has one deck, cited the same
+  way ("lecture 3, slide N" on topic pages); it is missing printed numbers 10, 11, 12 and 29, so
+  slide 123 is PDF page 119.
 - **Transcripts are edited.** `raw/transcripts/` holds copy-edited transcripts — punctuated,
   filler removed, mis-heard names and terms restored, every change listed in the file's header —
   with every `[M:SS]` marker in its original place. Read these, not the raw captions, which are
@@ -38,7 +40,13 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   (2–4) and ends at 1:06:37, before the multiclass SVM loss (a reading assignment, slides 85–100)
   and the softmax-vs-SVM comparison (slides 101–104). Those are sourced to the slides alone, and
   the deck's questions there have no printed answers: say so rather than presenting an answer as
-  the course's.
+  the course's. Lecture 3's recording skips its administrative slides (2–4) and ends at 1:08:25 in
+  the look ahead to neural networks; slides 100–101 and the deck's appendix of "Slides from
+  Previous Years" (slides 102–123: Nesterov momentum, AdaGrad, L-BFGS, softmax vs. SVM, whether a
+  zero-loss W is unique) are sourced to the slides alone.
+- **Lecture 3's optimizer-comparison animations are not in the PDF.** Its slides comparing
+  optimizers' paths on a loss surface show only the surface and a legend. What the paths did is
+  known only from the lecturer's spoken description; do not describe them from the slides.
 - **Logistics come from slides only.** Lecture 1's logistics slides were not presented in the
   recording. Grading, late days, assignments and policies are in
   [course logistics](wiki/course-logistics.md), sourced to the part 2 slides as posted on
@@ -46,8 +54,8 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
 
 ## Images
 
-**Lectures 1 and 2 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
-part 2 deck) and lecture 2 has 41. No other lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
+**Lectures 1–3 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
+part 2 deck), lecture 2 has 41 and lecture 3 has 24. No other lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
 in the wiki passage that cites that slide.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern,
@@ -78,6 +86,16 @@ in the wiki passage that cites that slide.
   loss functions; the softmax classifier, cross-entropy and KL divergence; and, from the slides
   only, the multiclass SVM loss and softmax vs. SVM. 41 embedded slide images.
 
+- [Lecture 3 — Regularization and Optimization](wiki/03-regularization-optimization.md) — Zane
+  Durante on the regularized loss $L(W)$ plus $\lambda R(W)$; prefer simpler models and Occam's
+  razor; L2, L1 and elastic net and which weights each prefers; why regularize; the loss
+  landscape; random search; numerical vs. analytic gradients and the gradient check; gradient
+  descent and minibatch SGD; poor conditioning, local minima, saddle points and noisy gradients;
+  SGD with momentum, RMSProp, Adam with bias correction, AdamW and weight decay; learning rates,
+  step, cosine, linear and inverse-sqrt decay, warm-up and the batch-size rule of thumb;
+  second-order methods and the Newton step; defaults in practice; a preview of two-layer networks;
+  and, from the slides only, Nesterov momentum, AdaGrad and L-BFGS. 24 embedded slide images.
+
 ### Topics
 
 - [ImageNet and the ImageNet challenge](wiki/imagenet.md) — why data was the missing ingredient;
@@ -96,7 +114,8 @@ in the wiki passage that cites that slide.
   prediction; why k-NN on pixels is never used.
 - [Hyperparameters and validation](wiki/hyperparameters-and-validation.md) — what a hyperparameter
   is; why not to tune on the training or test set; validation sets; cross-validation and when deep
-  learning skips it; "run on the test set once at the very end".
+  learning skips it; "run on the test set once at the very end"; lecture 3's regularization
+  strength and learning rate.
 - [Linear classifiers](wiki/linear-classifiers.md) — $f(x, W) = Wx + b$ and its dimensions for
   CIFAR-10; the bias; algebraic, visual (templates) and geometric (hyperplanes) viewpoints; the
   cases it cannot separate; linear layers inside AlexNet and ResNet.
@@ -104,6 +123,18 @@ in the wiki passage that cites that slide.
   worked numbers, logits, maximum likelihood, KL divergence and cross-entropy, its value at
   initialisation ($\log C$); the multiclass SVM (hinge) loss and its worked example; softmax vs.
   SVM.
+- [Regularization](wiki/regularization.md) — the regularized loss and the strength $\lambda$;
+  prefer simpler models; L2, L1 and elastic net, with the worked example of which weights each
+  prefers; why regularize; L2 inside Adam vs. weight decay in AdamW.
+- [Gradient descent and SGD](wiki/gradient-descent.md) — the loss landscape; the gradient,
+  numerical vs. analytic, and the gradient check; gradient descent, stopping, minibatch SGD and
+  epochs; poor conditioning (condition number), local minima, saddle points, noisy gradients;
+  first- vs. second-order methods, the Newton update and why deep learning avoids it.
+- [Optimizers](wiki/optimizers.md) — SGD with momentum (both formulations), Nesterov momentum,
+  AdaGrad, RMSProp, Adam and its bias correction and default settings, AdamW; which to use.
+- [Learning rates and schedules](wiki/learning-rate-schedules.md) — what too high and too low look
+  like; step, cosine, linear and inverse-square-root decay with their formulas; linear warm-up;
+  scaling the learning rate with the batch size.
 - [Course logistics](wiki/course-logistics.md) — the lecture-by-lecture roadmap and the course's
   four parts; lectures, sections, Ed, office hours; Assignment 1; grading weights (assignments
   45%, midterm 20%, project 35%); late days; the collaboration policy (including "do not submit
@@ -113,11 +144,13 @@ in the wiki passage that cites that slide.
 
 - [`raw/transcripts/`](raw/transcripts/) — edited lecture transcripts with `[M:SS]` paragraph
   marks. Lecture 1: [01-introduction.md](raw/transcripts/01-introduction.md); lecture 2:
-  [02-image-classification.md](raw/transcripts/02-image-classification.md).
+  [02-image-classification.md](raw/transcripts/02-image-classification.md); lecture 3:
+  [03-regularization-optimization.md](raw/transcripts/03-regularization-optimization.md).
 - [`raw/slides/`](raw/slides/) — slide-by-slide transcriptions with section tables:
   [part 1](raw/slides/01-introduction-part-1.md) (69 slides) and
   [part 2](raw/slides/01-introduction-part-2.md) (50 pages, printed numbers 1–53) for lecture 1;
-  [lecture 2](raw/slides/02-image-classification.md) (102 pages, printed numbers 1–104).
+  [lecture 2](raw/slides/02-image-classification.md) (102 pages, printed numbers 1–104);
+  [lecture 3](raw/slides/03-regularization-optimization.md) (119 pages, printed numbers 1–123).
 - [`sources.md`](sources.md) — every document the course website links, with its canonical URL.
   Slide PDFs are **not** committed here; link to them at those URLs.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every rendered image.

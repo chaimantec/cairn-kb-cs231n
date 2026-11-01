@@ -19,6 +19,7 @@ every build follows, and each lesson in general form, are in
 | --- | --- |
 | 1 Introduction | [Run 1](#run-1--lecture-1-introduction-2026-11-01) |
 | 2 Image Classification with Linear Classifiers | [Run 2](#run-2--lecture-2-image-classification-with-linear-classifiers-2026-11-02) |
+| 3 Regularization and Optimization | [Run 3](#run-3--lecture-3-regularization-and-optimization-2026-11-02) |
 
 ## Runs
 
@@ -244,3 +245,92 @@ Scope: lecture 2 only, video pdqofxJeBN8 (67 min). One deck, `lecture_2.pdf`: 10
 - [x] verify_kb.py clean, and its review section read (exit 0; chat KaTeX and github.com MathJax both clean after fixing one inline H(p) formula that GitHub left as raw text and two display-math blocks set mid-sentence; numeric claims in INDEX/AGENTS match the image table)
 - [x] Commit and push — af4c210 on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, lecture page, topic pages and images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 3 — Lecture 3 (Regularization and Optimization), 2026-11-02
+
+Built lecture 3 end to end: transcript, the deck, a figure audit, the transcript edit, the wiki
+page, four topic pages (regularization, gradient descent and SGD, optimizers, learning-rate
+schedules), 24 slide images, and updates to INDEX, AGENTS, LICENSE, kb.json, the course-logistics
+roadmap, linear classifiers, loss functions, hyperparameters and validation, and the lecture 2
+page. Images were opted in again; PDFs stay link-only.
+
+### Lecture 3 record
+
+**Deck.** One: `lecture_3.pdf`, 119 pages, Zane Durante (per the course schedule; the recording
+does not name him), April 8, 2025. Printed numbers 1–123 with 10, 11, 12 and 29 absent: page 10 =
+slide 13, page 26 = slide 30. Footer "Lecture 3 - N" as a separate span. Every page read a printed
+number from the same footer position and the sequence only increases; the raw spans on pages 9–10
+(9 → 13) and 25–26 (28 → 30) confirm both gaps are hidden slides, not misreads. Slides 102–123
+are an appendix titled "Slides from Previous Years". No deck-wide licence statement; per-image
+credit lines on slides 6, 7 (CC-BY 2.0 Nikita, Umberto Salvagnin, jonsson; CC0), 31, 32 (CC0), 46
+(public domain), 59 (Wikipedia "Saddle_point") and 80 (a fast.ai post). The schedule lists the
+course notes "Optimization" (cs231n.github.io/optimization-1/) as the reading.
+
+**Transcription.** Three Sonnet agents in parallel (pages 1–40, 41–80, 81–119), about 83k tokens
+each. The first stopped at slide 40, having written 36 of its 40 headings, and gave slides 41–44
+only as summaries in its report; it was resumed by message to append them in full. The parent
+assembled the file, wrote the front matter and section table, and fixed 15 GitHub italics
+warnings (`}_` and `)_` in math) and four inline formulas set straight after a quotation mark.
+`--verify` clean (119 headings).
+
+**Figure audit** (Sonnet, 600 dpi crops, 19 slides: 13, 18, 27, 34, 41, 55, 57, 61, 70, 75, 80,
+83, 84, 86, 89, 99, 109, 119, 122). Slide 80: wd and L2 values wrong at epochs 6 and 15 (L2's dip
+to 0.813 at epoch 15 was missed; L2 is above wd at epochs 2 and 6); replaced with the audit's
+per-epoch readings. Slide 84: the plateaus are about 1.4 (not 1.3) and 1.1 (not 1.0). Slide 99:
+the red points sit just right of the θ axis, not left, and there are 15 blue points, not 17.
+Small omissions: bold correct-class scores on slides 13 and 122; slide 86 reaches zero loss at
+about epoch 250–260, not 260–270. Slides 61 (gradient-noise panel), 70, 75 and 109 confirmed to
+carry no optimizer paths, only the heat-map and a vector legend: animation frames. Every number on
+slides 34, 41, 119 and 122 checked cell by cell and exact. The parent's own check of two renders
+outside the sample: slide 88's inverse-sqrt curve and slide 104's momentum and Nesterov diagram
+both agree with the file.
+
+**Printed slips, transcribed as printed.** Slide 119 repeats lecture 2's slide 101 and its
+base-10 −log(0.353) = 0.452 (natural log about 1.04); `[Ed:]` line and wiki note. Slide 34's code
+returns 0.1555 and the slide says "15.5%", a truncation; `[Ed:]` line. Slide 33's code is Python 2
+(`xrange`, `print` statement) and says "tructated"; slides 71 and 73–80 print an extra closing
+parenthesis at the end of the Adam update; slide 85 "Child at al"; slide 116 "BGFS" (BFGS on the
+next line); slide 121 "2W is also has L = 0"; slide 91 "Use gradient form linear approximation";
+slide 13 "is a average". Recomputed and exact: the numeric gradients −2.5, 0.6 and 0 (slides 39,
+41, 43); slide 119's scores, exponentials, probabilities and hinge loss 1.58; slide 122's 2.9 and 0
+and both of its hinge columns; slide 108's rearranged Nesterov update; the L2 penalties 1 and 0.25
+of slides 24–25.
+
+**Transcript edit** (Sonnet, ~100k tokens). 90 paragraphs; marker sequence identical; word ratios
+0.80–0.97; 19 restoration rows in the header. Number diff: the only additions were "beta one, beta
+two" → beta1, beta2 at [53:48] and [54:35], listed; nothing lost. Restored terms all appear in the
+deck or the captions ("llama" is in the captions at [57:41]); Nesterov, AdaGrad and L-BFGS appear
+only in the header's coverage note. Three inline flags: [28:35], [41:34], [1:06:09] ("best by
+test"). 26 student-turn markers at [8:34] (two), [12:29] (two), [17:06], [20:10], [20:57],
+[21:43], [22:29], [31:37], [33:09] (five), [35:27], [38:31], [40:48], [46:12], [46:58], [47:43],
+[48:30], [52:17] (two), [55:22], [58:27]; the body matches the header's list. [20:57]'s question
+may be the lecturer's own. **Coverage:** the recording starts at the recap (slide 5) and ends at
+1:08:25 in slides 96–99; slides 2–4, 100–101 and 102–123 are slide-only. The L1/L2 distance
+diagram discussed at ≈3:57–4:42 is not in the posted deck.
+
+**Images.** 24 rendered (17 JPEG, 7 PNG; 2.8 MB): 18, 28, 35, 46, 50, 51, 55, 57, 59, 61, 80,
+83–89, 91, 92, 99, 104, 119, 122. Not rendered: 1 (title); 2–4 (administrative); 5, 30, 102
+(dividers); 6–9 (recaps of lecture 2 figures); 13–15, 19–26, 33, 34, 36–45, 47, 49, 52, 62–69,
+71–74, 76–79, 81, 93, 94, 96, 97, 100, 105–108, 110, 115–117, 120, 121, 123 (tables, formulas,
+vectors and code transcribed exactly); 48, 95, 101, 118 (text); build steps whose last step is
+rendered (16–17 → 18, 27 → 28, 31–32 → 35, 53–54 → 55, 56 and 58 → 57, 82 → 83, 90 → 91 and 92,
+98 → 99, 103 → 104); 60, 70, 75, 109 (animation frames with no paths); 111–114 (AdaGrad slides
+repeating slide 53's contour plot). The raster test flagged 81 of 119 pages, with no recurring
+template image; most of the gap to 24 is code listings and equations pasted as images. All 24 are
+in the lecture page with 20 hand-written captions; the topic pages carry 2 (regularization), 7
+(gradient-descent), 3 (optimizers) and 7 (learning-rate-schedules), embedded with
+`--deck-label "Lecture 3"` and the same captions. Three embed problems, all fixed by hand: the
+script expands a range under 12 slides to every member, so the intro's "slides 96–99" would have
+pulled slide 99's image into it (reworded); paragraphs ending "(slide N):" got the image between
+the sentence and its formula (slides 35 and 85 on the lecture page, 85 and 104 on the topic
+pages); and the parent's first drafts placed images by hand, which were stripped and re-embedded
+with the script.
+
+**Wiki.** Lecture page with recording coverage, the missing animations, administrative notes
+(slides only), the recap, regularization, optimisation, SGD's problems, momentum, RMSProp, Adam,
+AdamW, learning-rate schedules, second-order methods, practice, the look ahead, and the
+slide-only appendix. Four topic pages. Existing pages updated: linear-classifiers and
+loss-functions no longer say lecture 3 is uncovered; hyperparameters-and-validation gains λ, the
+learning rate and Adam's betas; the lecture 2 page links forward; the course-logistics roadmap
+links lectures 2 and 3 (lecture 2's row had never been linked).
+

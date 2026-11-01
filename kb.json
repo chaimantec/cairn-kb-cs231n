@@ -9,36 +9,37 @@
     "courseUrl": "https://cs231n.stanford.edu/2025/"
   },
   "coverage": {
-    "lecturesCovered": 2,
+    "lecturesCovered": 3,
     "lecturesTotal": 18,
-    "transcripts": 2,
-    "wikiLecturePages": 2,
-    "wikiTopicPages": 8
+    "transcripts": 3,
+    "wikiLecturePages": 3,
+    "wikiTopicPages": 12
   },
   "materials": {
     "primary": "slides",
     "slideDecks": {
-      "available": 3,
-      "transcribed": 3
+      "available": 4,
+      "transcribed": 4
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 3,
-      "decksTotal": 3,
+      "decksAudited": 4,
+      "decksTotal": 4,
       "unaudited": [],
-      "note": "Counts are for the decks of the covered lectures (lecture 1 has two, lecture 2 one). Lecture 1: eight figure-, chart- and table-heavy slides per deck checked at 600 dpi by an independent reader; part 2 clean, part 1 errors on slides 62 and 64, corrected. Lecture 2: fourteen slides checked; errors on slides 8, 33 and 64 and loose detail on 30, 45 and 63, corrected; eight clean."
+      "note": "Counts are for the decks of the covered lectures (lecture 1 has two, lectures 2 and 3 one each). Lecture 1: eight figure-, chart- and table-heavy slides per deck checked at 600 dpi by an independent reader; part 2 clean, part 1 errors on slides 62 and 64, corrected. Lecture 2: fourteen slides checked; errors on slides 8, 33 and 64 and loose detail on 30, 45 and 63, corrected; eight clean. Lecture 3: nineteen slides checked; errors on slides 80, 84 and 99 and small omissions on 13, 86 and 122, corrected; the absence of optimizer paths on slides 61, 70, 75 and 109 confirmed."
     },
     "images": {
-      "lecturesWithImages": 2,
-      "files": 105,
+      "lecturesWithImages": 3,
+      "files": 129,
       "byLecture": {
         "1": 64,
-        "2": 41
+        "2": 41,
+        "3": 24
       },
-      "format": "1400px whole-slide renders (98 JPEG, 7 PNG)",
+      "format": "1400px whole-slide renders (115 JPEG, 14 PNG)",
       "discovery": "inline in wiki/ and raw/slides/; each slide file's header lists its rendered slides; no index file",
-      "note": "Lectures 1 and 2 only. Lecture 1: 47 of part 1's 69 pages and 17 of part 2's 50. Lecture 2: 41 of 102 pages. Not rendered: title, agenda, administrative and divider slides, text-only and code slides, build steps whose final step is rendered, tables and formulas the slide file reproduces exactly, and photographs of course staff and award winners."
+      "note": "Lectures 1-3 only. Lecture 1: 47 of part 1's 69 pages and 17 of part 2's 50. Lecture 2: 41 of 102 pages. Lecture 3: 24 of 119 pages. Not rendered: recaps of earlier lectures' figures, animation frames whose content is not in the PDF, title, agenda, administrative and divider slides, text-only and code slides, build steps whose final step is rendered, tables and formulas the slide file reproduces exactly, and photographs of course staff and award winners."
     }
   },
   "provenance": {
@@ -47,12 +48,14 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1 and 2 of 18 only; nothing on lectures 3-18.",
-      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, and lecture 2's skip 32 and 49, so printed numbers run ahead of PDF page numbers.",
+      "Covers lectures 1-3 of 18 only; nothing on lectures 4-18.",
+      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, lecture 2's skip 32 and 49, and lecture 3's skip 10, 11, 12 and 29, so printed numbers run ahead of PDF page numbers.",
       "Lecture 1's logistics slides (part 2, slides 33-48 and 50) were not presented in the recording; wiki/course-logistics.md is sourced to the slides as posted on April 1, 2025.",
       "Lecture 2's recording skips its administrative slides (2-4) and ends mid-sentence at 1:06:37, before the multiclass SVM loss (a reading assignment, slides 85-100) and softmax vs. SVM (slides 101-104); those are sourced to the slides alone, and their quiz questions have no printed answers.",
-      "Lecture 2's deck prints two arithmetic slips in worked examples (slide 60's ship score omits the bias; slide 101's 0.452 is a base-10 log); both are kept as printed and noted.",
-      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers, seven passages marked unclear in lecture 1 and five in lecture 2."
+      "Lecture 3's recording skips its administrative slides (2-4) and ends at 1:08:25 in the look ahead to neural networks; slides 100-101 and the appendix of 'Slides from Previous Years' (slides 102-123: Nesterov momentum, AdaGrad, L-BFGS, softmax vs. SVM) are sourced to the slides alone.",
+      "Lecture 3's optimizer-comparison slides (60, 61's gradient-noise panel, 70, 75, 109) were animations: the PDF shows only the loss surface and legend, so the optimizers' paths are known only from the lecturer's spoken description.",
+      "Lecture 2's deck prints two arithmetic slips in worked examples (slide 60's ship score omits the bias; slide 101's 0.452 is a base-10 log); both are kept as printed and noted. Lecture 3 repeats the slide 101 example as its slide 119, with the same base-10 value, and its slide 34 prints 0.1555 as '15.5%'.",
+      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers, seven passages marked unclear in lecture 1, five in lecture 2 and three in lecture 3."
     ]
   },
   "entryPoint": "INDEX.md",

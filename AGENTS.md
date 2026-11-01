@@ -96,22 +96,30 @@ printed slips, which slides were rendered and why) goes in
 
 ## Images
 
-**Lectures 1 and 2 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–3 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
   (1400px, `--format auto`, so a few vector slides come out `.png`). Skip title, agenda and
   divider slides; text-only slides; tables the slide file reproduces exactly; build steps and
-  recaps that repeat a rendered figure; and photographs of course staff, guest lecturers and
-  award winners.
+  recaps that repeat a rendered figure; animation frames (below); and photographs of course
+  staff, guest lecturers and award winners.
 - The raster test over-reports on these decks (part 1 carries a full-page template image on
-  every page; exclude images that recur on most pages) and under-reports vector charts and
-  diagrams (Venn builds, GFLOP charts). Use the slide file's prose as the deciding signal.
+  every page; exclude images that recur on most pages; code listings and equations are often
+  pasted in as images) and under-reports vector charts and diagrams (Venn builds, GFLOP charts).
+  Use the slide file's prose as the deciding signal.
+- **Decks hold animation frames.** A slide whose animation drew paths or builds exports to the PDF
+  as its background frame only (lecture 3's optimizer comparisons: a loss surface and a legend,
+  no paths). Confirm the absence at 600 dpi in the figure audit, say so in the slide file's
+  header and on the wiki page, source what the animation showed to the transcript alone, and do
+  not render the frame.
 - Place images with `embed_slide_images.py` (with `--deck-label` for multi-deck lectures), once per
   wiki page that cites the slides, then hand-write captions for the figures where the caption
-  should say what to look at. The script anchors each image on the **first** citation of that
-  slide, ranges included ("slides 101–104" counts for 101), so keep slide ranges out of overview
-  paragraphs or the image lands in the introduction. On topic pages, cite "lecture N, slide M" and
+  should say what to look at. The script anchors each image after the block holding the
+  **first** citation of that slide, and a range spanning up to 12 slides counts for every slide in
+  it ("slides 96–99" counts for 99), so keep such ranges out of overview paragraphs or the image
+  lands in the introduction. A block ending "(slide N):" before a display formula gets the image
+  between the sentence and its formula; move it below the formula. On topic pages, cite "lecture N, slide M" and
   embed with `--deck-label "Lecture N"` so captions name the lecture.
 - Each slide file's header lists which of its slides have images and why the others do not.
   `grep -o 'raw/images/[^)]*' wiki/NN-*.md` enumerates a lecture's wiki images. There is no
@@ -123,6 +131,7 @@ they are the only part of this KB that redistributes course material rather than
 | --- | --- | --- |
 | 1 Introduction (parts 1 and 2) | 64 of 119 pages | 47 from `lecture_1_part_1.pdf` (69 pages), 17 from `lecture_1_part_2.pdf` (50 pages) |
 | 2 Image Classification with Linear Classifiers | 41 of 102 pages | `lecture_2.pdf` (102 pages, printed 1–104) |
+| 3 Regularization and Optimization | 24 of 119 pages | `lecture_3.pdf` (119 pages, printed 1–123) |
 
 ## Rebuilding
 

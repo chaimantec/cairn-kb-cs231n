@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1 or Lecture 2 decks (lecture 2 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2 or 3 decks (lectures 2 and 3 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -206,3 +206,28 @@ slides (17, 21, 24–28, 100), section titles (20, 51, 70), text-only slides (36
 whose final step is rendered (37–40, 43, 46, 52–54, 59, 61, 71–76, 78–79, 86–88, 90–93, 95–98), the
 repeated CIFAR-10 grid (58), the score-table slides whose table is transcribed in full (66–69), and
 formula and question slides transcribed exactly (81–83, 102–104).
+
+### Lecture 3 — Regularization and Optimization
+
+Deck: [lecture_3.pdf](https://cs231n.stanford.edu/slides/2025/lecture_3.pdf).
+Rendered: 24 slides, in `raw/images/03-regularization-optimization/`.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 35 | The alpine-valley photograph and the walking-man figure; slide 35 prints no credit, but the same images are credited on slide 31 ("This image is CC0 1.0 public domain") and slide 32 ("Walking man image is CC0 1.0 public domain"). |
+| 46 | Two painted portraits, each credited "This image is in the public domain"; the slide does not name the sitters. |
+| 59 | 3D saddle-surface plot; "Image source: https://en.wikipedia.org/wiki/Saddle_point". |
+| 80 | Chart of ImageNet accuracy for weight decay vs. L2; "Source: https://www.fast.ai/posts/2018-07-02-adam-weight-decay.html". |
+| 50, 51, 61 | Loss heat-maps (and, on 61, the deck's own curves and contour plot). Source not printed. |
+| 83, 84, 86 | Loss-curve charts. Source not printed. |
+| 85, 87, 88, 89 | Learning-rate plots. The slides cite papers for the schedules (Loshchilov and Hutter 2017, Radford et al. 2018, Feichtenhofer et al. 2018, Child et al. 2019; Devlin et al. 2018; Vaswani et al. 2017; Goyal et al. 2017), not as sources of the plots. |
+| 122 | Cat, car and frog photographs; not credited in this deck (lecture 2's deck credits them on its slide 65). |
+| 18, 28, 55, 57, 91, 92, 99, 104, 119 | No third-party content identifiable: the deck's own plots, diagrams and worked examples (slide 57's figure accompanies slide 58's citation of Dauphin et al. 2014; slide 104's, citations of Nesterov 1983 and 2004 and Sutskever et al. 2013). |
+
+Not rendered from this deck: the title (1), administrative slides (2–4), section dividers (5, 30,
+102), recaps of lecture 2 figures (6–9; slide 6 credits the cat "by Nikita" under CC-BY 2.0 and
+slide 7 carries CC0 and CC-BY 2.0 credits for its photographs), tables, formulas, vectors and code
+transcribed exactly, text slides, build steps whose last step is rendered (16–17, 27, 31–32,
+53–54, 56, 58, 82, 90, 98, 103), heat-map frames whose animated paths are not in the PDF (60, 70,
+75, 109), and the AdaGrad slides repeating slide 53's contour plot (111–114). The slide file's
+header lists every slide and the reason.
