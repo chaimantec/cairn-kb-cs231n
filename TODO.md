@@ -19,8 +19,8 @@ Images opted in: every figure-bearing slide. PDFs link-only.
 - [x] Write sources.md
 
 ### Slides (Step 1b)
-- [ ] raw/slides/01-introduction-part-1.md — number map, Sonnet transcription, --verify
-- [ ] raw/slides/01-introduction-part-2.md — number map, Sonnet transcription, --verify
+- [x] raw/slides/01-introduction-part-1.md — number map, Sonnet transcription, --verify (69 headings, 1:1; exit 0)
+- [x] raw/slides/01-introduction-part-2.md — number map, Sonnet transcription, --verify (50 headings; printed 1–53, 4/5/45 absent; exit 0). Both decks print the number mid-footer after "Lecture 1 -"; slide_number_map.py missed it (corner/centre only) and was extended with a split-footer reading — 179 sibling decks unchanged by the patch.
 - [ ] Figure audit (Sonnet, 600 dpi crops) on chart/table/figure pages of both decks
 
 ### Transcript edit (Step 1a)
