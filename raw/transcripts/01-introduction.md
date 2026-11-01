@@ -11,6 +11,13 @@ material: ../slides/01-introduction-part-1.md and ../slides/01-introduction-part
 
 This is the edited transcript. The captions have been repunctuated, stripped of filler and false starts, had mis-heard terms and names restored, and had the few student turns marked `*[Student answer, inaudible]*` because only the lecturer is audible; no content was added, removed or reordered, and every `[M:SS]` marker is in its original position and matches the video. The verbatim captions are not committed to this repo. They can be regenerated from the video id above with the `cairn-kb` skill's `fetch_transcript.py` piped through `transcript_to_md.py`. Terminology was cross-checked against the lecture's slides ([part 1](../slides/01-introduction-part-1.md), [part 2](../slides/01-introduction-part-2.md)). Part 1 (history of computer vision and deep learning) is Fei-Fei Li. Part 2, the course overview, is Ehsan Adeli: the hand-over happens inside the paragraph marked [44:25], and the overview proper starts at [45:14]. Passages the captions garbled beyond a safe reading are flagged inline as `[unclear: ...]` or `[Ed: ...]` and listed in the table below.
 
+**What the recording does not cover.** Ehsan Adeli's overview skips the deck's award-ceremony,
+CVPR-statistics and logistics slides (part 2, slides 33–48 and 50). He goes from the Nobel Prize
+slide (part 2, slide 32) at ≈1:01:02 to the learning objectives (part 2, slide 49). Grading, late
+days, assignments, sections, office hours and the collaboration policy are therefore known only
+from [the part 2 slides](../slides/01-introduction-part-2.md); see
+[course logistics](../../wiki/course-logistics.md).
+
 ## Restorations
 
 | Caption | Restored | Confirmed by |

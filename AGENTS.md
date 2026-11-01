@@ -1,8 +1,8 @@
 # How this knowledge base is organized
 
-This repo is the knowledge base for **CS231N — Deep Learning for Computer Vision I 2025**. It is read
-by Cairn's in-extension AI chat, which starts at `INDEX.md`, fetches files over
-raw.githubusercontent.com and follows relative markdown links.
+This repo is the knowledge base for **CS231N — Deep Learning for Computer Vision, Stanford,
+Spring 2025** (Fei-Fei Li, Ehsan Adeli). It is read by Cairn's in-extension AI chat, which starts
+at `INDEX.md`, fetches files over raw.githubusercontent.com and follows relative markdown links.
 
 The chat never reads this file. It is for whoever builds the KB, and Claude Code
 loads it into every step of every build agent, so keep it to the rules every
@@ -14,13 +14,17 @@ printed slips, which slides were rendered and why) goes in
 
 | Path                | Contents                                                      |
 | ------------------- | ------------------------------------------------------------- |
-| `INDEX.md`          | Entry point. Course summary + annotated table of contents.    |
-| `wiki/`             | Durable pages: one per lecture, plus cross-lecture topics.    |
-| `raw/slides/`       | Full text of every slide, numbered. Slide N = PDF page N.     |
-| `raw/transcripts/`  | Lecture transcripts with `[MM:SS]` paragraph marks.           |
-| `raw/pdfs/`         | Slides and handouts downloaded from the course website.       |
-| `raw/images/`       | Rendered figure slides, if any. Linked from the pages using them. |
-| `sources.md`        | Crawl inventory: source URL → local file, fetch date.         |
+| `INDEX.md`          | Entry point. Course summary, coverage, citation and image rules, annotated table of contents. |
+| `wiki/`             | Durable pages: one per lecture (`NN-<slug>.md`), plus cross-lecture topics. |
+| `raw/slides/`       | Full text of every slide. One file per deck: `NN-<slug>.md`, or `NN-<slug>-part-K.md` when a lecture has several decks. Headings use the **printed** slide number. |
+| `raw/transcripts/`  | Copy-edited transcripts with `[M:SS]` paragraph marks. The chat reads these. |
+| `raw/transcripts/original/` | Verbatim auto-captions. **Gitignored**, local reference only (no licence; a full caption copy is the weakest thing to publish). Regenerable from the video id. |
+| `raw/images/`       | Rendered figure slides, one directory per deck, named like the slide file. |
+| `raw/pdfs/`         | Downloaded decks. **Gitignored**; linked at their canonical URLs instead. |
+| `sources.md`        | Crawl inventory: canonical URL of every course document.     |
+| `LICENSE.md`        | Licence layers, and the attribution of every rendered image. |
+| `SEE_ALSO.md`       | Sibling KBs the chat may consult (`kb` argument).           |
+| `kb.json`           | Machine-readable coverage and provenance. Update with every run. |
 | `TODO.md`           | Open work only. Finished runs move to `BUILD_LOG.md`.       |
 | `BUILD_LOG.md`      | Finished runs, one section each. Not needed to answer questions. |
 
@@ -28,24 +32,83 @@ printed slips, which slides were rendered and why) goes in
 
 - **INDEX.md is the front door.** The chat reads it first on every conversation.
   Every wiki page must appear there with a one-line description of what it holds.
-  An unindexed page is effectively invisible.
-- **Relative links only** (`[gradient descent](gradient-descent.md)`,
-  `[slides](../raw/pdfs/lecture03.pdf)`). Absolute GitHub URLs break when the
-  repo is renamed or forked.
-- **Cite everything.** Claims trace back to a transcript timestamp or a slide.
+  An unindexed page is effectively invisible. Keep its coverage line ("N of 18 lectures")
+  and its list of lectures with images true after every run.
+- **Relative links only**, including to images. Slide PDFs are not committed, so link decks at
+  their canonical `https://cs231n.stanford.edu/slides/2025/…` URL, never `../raw/pdfs/…`.
+- **Cite everything.** Claims trace back to a transcript timestamp `(≈M:SS)` or a slide.
+- **Several decks per lecture.** Lecture 1 has two decks, both numbered from 1. Cite them
+  "part 1, slide N" / "part 2, slide N" everywhere in the wiki — never a bare "slide N" — and
+  embed their images with `embed_slide_images.py --deck-label "Part K"`, which anchors only on
+  citations carrying that label. Without the label a part-1 image lands beside a part-2
+  citation of the same number.
 - **Never invent course content.** If the transcript is unclear at some point,
   say so on the page. Do not fill the gap from outside knowledge — the chat
-  presents these pages as authoritative material from this course.
+  presents these pages as authoritative material from this course. That includes plausible
+  glosses a transcriber adds, such as calling an untitled chart axis "top-5 error": check
+  slide-file inferences before they reach the wiki.
 - **Prose over fragments.** The chat quotes these pages to learners; bullet
-  fragments quote badly.
-- **Math in LaTeX**: `$...$` inline, `$$...$$` displayed. Renders both in
-  Cairn's chat and on github.com. Never inside a code fence — that shows the
-  source instead of the formula. Define each symbol on first use, and follow the
-  course's own notation rather than a tidier one, since the learner is comparing
-  the page against the lecturer's board.
-- **Transcripts stay verbatim.** Captions spell notation out as speech ("theta
-  sub j"); reconstructing it as $\theta_j$ belongs in `wiki/`, not in
-  `raw/transcripts/`.
+  fragments quote badly. Lists that cite rendered slides also stack every image after the
+  list (the embed script never inserts inside a list), so write those passages as short
+  paragraphs, one per cited slide.
+- **Recordings can skip slides.** Lecture 1's recording skips the logistics slides. When that
+  happens, say so in the slide file's header, the transcript header and the wiki page, so the
+  slide file is known to be the only source.
+- **Math in LaTeX**: `$...$` inline, `$$...$$` displayed, never inside a code fence. Define each
+  symbol on first use and follow the slides' notation. Run `check_math.mjs` (via
+  `verify_kb.py`) before publishing.
+- **Transcripts keep the spoken form.** No LaTeX in `raw/transcripts/`; notation is reconstructed
+  in `wiki/`.
+
+## Sources and numbering
+
+- **Fetch decks by hand.** The course site's pages live under `/2025/` but its decks under
+  `/slides/2025/`, outside the crawler's path prefix, so `crawl_course_site.py` records them as
+  off-site links and downloads none. `curl` each lecture's deck into `raw/pdfs/slides/`, then
+  mark `cs231n.stanford.edu` documents on-site in the inventory before rendering `sources.md`.
+  A schedule row can link a deck from the 2024 archive; check its title slide.
+- **Slide numbers are printed mid-footer**, as a separate text span after "CS231n: Lecture N -"
+  (or "Lecture N -"), neither in a corner nor centred. `slide_number_map.py` reads this as its
+  split-footer case. A few pages that drop the footer print the number bare in the bottom-right
+  corner instead. Decks hide slides: lecture 1 part 2 is missing printed numbers 4, 5 and 45.
+- Each deck prints per-image credit lines (CC licences, public domain, "Figures copyright …
+  Reproduced with permission"). Grep the text layer for them to write `LICENSE.md`; permission
+  granted to the course does not pass to this repo, and `LICENSE.md` says so.
+
+## Transcripts
+
+- Copy-edit with a Sonnet agent against the finished slide files, then check in the parent:
+  identical `[M:SS]` sequence, number inventory of the bodies, per-paragraph word ratio
+  (0.72–1.10), and a grep of every restored proper noun against the slide files and the
+  original captions.
+- Student turns: only the lecturer is audible; mark `*[Student question, inaudible]*` /
+  `*[Student answer, inaudible]*` where the captions show a speaker change.
+
+## Images
+
+**Lecture 1 has images; no other lecture does yet.** They are committed rather than hotlinked, and
+they are the only part of this KB that redistributes course material rather than describing it.
+
+- Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
+  (1400px, `--format auto`, so a few vector slides come out `.png`). Skip title, agenda and
+  divider slides; text-only slides; tables the slide file reproduces exactly; build steps and
+  recaps that repeat a rendered figure; and photographs of course staff, guest lecturers and
+  award winners.
+- The raster test over-reports on these decks (part 1 carries a full-page template image on
+  every page; exclude images that recur on most pages) and under-reports vector charts and
+  diagrams (Venn builds, GFLOP charts). Use the slide file's prose as the deciding signal.
+- Place images with `embed_slide_images.py` (with `--deck-label` for multi-deck lectures), once per
+  wiki page that cites the slides, then hand-write captions for the figures where the caption
+  should say what to look at.
+- Each slide file's header lists which of its slides have images and why the others do not.
+  `grep -o 'raw/images/[^)]*' wiki/NN-*.md` enumerates a lecture's wiki images. There is no
+  image index file.
+- The chat resolves a relative image path by reading it; `INDEX.md` tells it never to construct
+  one. Attribution for every rendered slide is in `LICENSE.md`.
+
+| Lecture | Files | Where they came from |
+| --- | --- | --- |
+| 1 Introduction (parts 1 and 2) | 64 of 119 pages | 47 from `lecture_1_part_1.pdf` (69 pages), 17 from `lecture_1_part_2.pdf` (50 pages) |
 
 ## Rebuilding
 

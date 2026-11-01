@@ -18,6 +18,18 @@ Text and figures of all 50 pages of [`lecture_1_part_2.pdf`](https://cs231n.stan
 
 Not 1:1. PDF pages 1–3 print slides 1–3; PDF page 4 = slide 6 … page 42 = slide 44 (offset +2); PDF page 43 = slide 46 … page 50 = slide 53 (offset +3). Printed numbers 4, 5 and 45 do not exist in the PDF (hidden slides in the source deck).
 
+**Not presented aloud.** The recording skips slides 33–48 and 50: the award ceremony, CVPR
+statistics and every logistics slide (lectures, website, sections, Ed, office hours, communication,
+assignments, grading, late policy, collaboration policy, prerequisites, textbooks, why take the
+class). For those slides this file is the only source; the transcript has nothing on them.
+
+**Images.** 17 slides are rendered as images, each placed under its heading: 8–10, 14–18, 22–28,
+34 and 52. The others have none, because they are the title, staff and guest-lecturer photographs
+(1–3), agenda, divider and title-only slides (6, 11–13, 19–21, 29, 30, 35), a build step that adds
+nothing to slide 8 (7), photographs of award winners and the award ceremony (31–33), the schedule
+screenshot, whose table is transcribed in full below (37), or text-only logistics slides (36,
+38–44, 46–51, 53). Never construct an image path for a slide not listed here.
+
 Companion pages: [wiki page for this lecture](../../wiki/01-introduction.md) · [transcript](../transcripts/01-introduction.md) · [part 1 slides](01-introduction-part-1.md)
 
 ## Contents

@@ -27,21 +27,21 @@ Images opted in: every figure-bearing slide. PDFs link-only.
 - [x] raw/transcripts/01-introduction.md — Sonnet copy-edit; timestamp, number, ratio checks; proper-noun grep. 81/81 markers identical; ratios 0.78–0.99; number diff = 3 deliberate ("2 and 1 halfd" → two-and-a-half-D; "assignment three" → Assignment 3; false start "22,000 images, oh sorry" dropped, "22,000 categories" kept). Names not on the slides (Roomba, Midjourney, Bell Labs, H&S) are all in the captions. 7 inline [unclear]/[Ed:] flags. Part 2 hand-over inside [44:25]; overview proper from [45:14].
 
 ### Images (Step 1c)
-- [ ] raw/images/01-introduction-part-1/ — select, render, embed in slide file and wiki
-- [ ] raw/images/01-introduction-part-2/ — select, render, embed in slide file and wiki
-- [ ] Look at two rendered images against the slide-file claims
-- [ ] INDEX.md image rules; AGENTS.md Images section + table rows; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] raw/images/01-introduction-part-1/ — select, render, embed in slide file and wiki (47 of 69)
+- [x] raw/images/01-introduction-part-2/ — select, render, embed in slide file and wiki (17 of 50; 10.1 MB total with part 1)
+- [x] Look at two rendered images against the slide-file claims (part 1 slide 63 chart, part 2 slide 17 diagram: both agree)
+- [x] INDEX.md image rules; AGENTS.md Images section + table rows; BUILD_LOG.md render record; LICENSE.md attribution
 
 ### Wiki
-- [ ] wiki/01-introduction.md
-- [ ] Topic pages (cross-lecture concepts introduced in lecture 1)
-- [ ] INDEX.md table of contents
+- [x] wiki/01-introduction.md
+- [x] Topic pages (cross-lecture concepts introduced in lecture 1): imagenet, computer-vision-tasks, course-logistics
+- [x] INDEX.md table of contents
 
 ### Publish
-- [ ] kb.json — coverage, materials.method, provenance caveats
-- [ ] BUILD_LOG.md — lecture 1 record: notices, audit findings, printed slips, transcript edits
-- [ ] SEE_ALSO.md, if a sibling KB is genuinely relevant
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage, materials.method, provenance caveats
+- [x] BUILD_LOG.md — lecture 1 record: notices, audit findings, printed slips, transcript edits
+- [x] SEE_ALSO.md, if a sibling KB is genuinely relevant: MIT 6.7960, CS224N, CS224R
+- [x] verify_kb.py clean, and its review section read (all hard checks pass incl. KaTeX + GitHub math; review: coverage 1/18 stated, part 2 gaps 4/5/45 deliberate, image counts and numeric claims match)
 - [ ] Commit and push
 - [ ] PATCH kbUrl onto the catalog entry
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

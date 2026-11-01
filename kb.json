@@ -1,0 +1,49 @@
+{
+  "kbVersion": 1,
+  "course": {
+    "code": "CS231N",
+    "title": "Deep Learning for Computer Vision",
+    "instructor": "Fei-Fei Li, Ehsan Adeli, with Zane Durante and guest lecturers",
+    "term": "Spring 2025",
+    "catalogId": "5b4c7083-7bdd-4ca6-9e11-f8ed87717c71",
+    "courseUrl": "https://cs231n.stanford.edu/2025/"
+  },
+  "coverage": {
+    "lecturesCovered": 1,
+    "lecturesTotal": 18,
+    "transcripts": 1,
+    "wikiLecturePages": 1,
+    "wikiTopicPages": 3
+  },
+  "materials": {
+    "primary": "slides",
+    "slideDecks": { "available": 2, "transcribed": 2 },
+    "method": "page-images",
+    "figuresAudited": true,
+    "figureAudit": {
+      "decksAudited": 2,
+      "decksTotal": 2,
+      "unaudited": [],
+      "note": "Counts are for the decks of the covered lecture (lecture 1 has two). Eight figure-, chart- and table-heavy slides per deck were checked at 600 dpi by an independent reader: part 2 came back clean; part 1 had errors on two slides (62, 64), corrected."
+    },
+    "images": {
+      "lecturesWithImages": 1,
+      "files": 64,
+      "byLecture": { "1": 64 },
+      "format": "1400px whole-slide renders (60 JPEG, 4 PNG)",
+      "discovery": "inline in wiki/ and raw/slides/; each slide file's header lists its rendered slides; no index file",
+      "note": "Lecture 1 only: 47 of part 1's 69 pages and 17 of part 2's 50. Not rendered: title, agenda and divider slides, text-only and logistics slides, build steps and recaps that repeat a rendered figure, and photographs of course staff and award winners."
+    }
+  },
+  "provenance": {
+    "builtBy": ["claude-opus-5-5", "claude-sonnet-5-5"],
+    "caveats": [
+      "Covers lecture 1 of 18 only; nothing on lectures 2-18.",
+      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, so they run ahead of the PDF page numbers.",
+      "Lecture 1's logistics slides (part 2, slides 33-48 and 50) were not presented in the recording; wiki/course-logistics.md is sourced to the slides as posted on April 1, 2025.",
+      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers and seven passages marked unclear."
+    ]
+  },
+  "entryPoint": "INDEX.md",
+  "updated": "2026-11-01"
+}

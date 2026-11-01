@@ -21,6 +21,15 @@ transcribed from the deck (speaker: Fei-Fei Li; CS231n, Stanford, Spring 2025). 
 
 Many slides are **build steps** — the same slide re-shown with one more element revealed. They are transcribed individually so that a citation to any one of them resolves, with a note of what each adds relative to the previous one.
 
+**Images.** 47 slides are rendered as images, each placed under its heading: 8, 12, 14–17,
+19–24, 27, 29, 30, 32–41, 43, 44, 46–57, 59, 61–64 and 66–68. The others have none, because they
+are the title, anniversary collage and course-staff photographs (1–4), intermediate builds of the
+Venn diagram (5–7, 9–11), agenda and section dividers (13, 18, 26, 65, 69), text only (25), a
+plain grey fixation frame (28), recap or build slides that repeat a rendered figure (31 repeats
+27, 29 and 30; 42 repeats 41; 45 repeats 44; 60 repeats the layout of 59), or slide 58, a black
+rectangle where an embedded video did not render. Never construct an image path for a slide not
+listed here.
+
 Companion pages: [wiki page for this lecture](../../wiki/01-introduction.md) · [transcript](../transcripts/01-introduction.md) · [part 2 slides](01-introduction-part-2.md)
 
 ## Contents
