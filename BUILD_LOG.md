@@ -241,6 +241,6 @@ Scope: lecture 2 only, video pdqofxJeBN8 (67 min). One deck, `lecture_2.pdf`: 10
 #### Publish
 - [x] kb.json — coverage, images, caveats
 - [x] BUILD_LOG.md — lecture 2 record
-- [x] verify_kb.py clean, and its review section read (exit 0; chat KaTeX and github.com MathJax both clean after fixing one inline $H(p)$ and two mid-sentence $$ blocks; numeric claims in INDEX/AGENTS match the image table)
+- [x] verify_kb.py clean, and its review section read (exit 0; chat KaTeX and github.com MathJax both clean after fixing one inline H(p) formula that GitHub left as raw text and two display-math blocks set mid-sentence; numeric claims in INDEX/AGENTS match the image table)
 - [x] Commit and push — af4c210 on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, lecture page, topic pages and images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
