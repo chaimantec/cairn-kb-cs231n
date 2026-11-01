@@ -5,6 +5,7 @@ part: 1
 slides: 69
 source_pdf: https://cs231n.stanford.edu/slides/2025/lecture_1_part_1.pdf
 speaker: Fei-Fei Li
+figure_audit: Eight figure- and chart-heavy slides (19, 29, 44, 48, 50, 62, 64, 66) were checked against the PDF at 600 dpi by an independent reader. Six agreed; slide 62 had one point dated wrongly and slide 64 had one wrong bar value, two bar values wrongly called illegible and a mis-dated growth curve. All were corrected.
 note: Printed slide numbers (footer "CS231n: Lecture 1 - N") equal the PDF page numbers 1:1 for all 69 pages, read from the footer text layer. Pages 15 and 61 print the number bare in the bottom-right corner instead of in the footer bar.
 ---
 
@@ -495,7 +496,7 @@ Title: "GFLOP per Dollar". A scatter chart.
 - Axes: vertical, unlabelled, 0 to 50 in steps of 10 (GFLOP per dollar); horizontal, dates from Jan-04 to Jul-20 labelled Jan-04, Jul-05, Jan-07, Jul-08, Jan-10, Jul-11, Jan-13, Jul-14, Jan-16, Jul-17, Jan-19, Jul-20.
 - 2 series (legend at top): blue dots "CPU" and red dots "GPU (FP32)".
   - Blue (CPU): stays very low, close to 0, rising to only about 1–2 by 2014–2018 (a handful of points near 1.5 around 2013–2018).
-  - Red (GPU FP32): about 1–3 from 2007 to 2010, about 3–4 in early 2010, about 6–8 in 2011–2013, about 6–15 in 2014–2017 (e.g. ~15 in early 2016 and mid-2017), about 10–13 in early 2019 and 5 at mid-2018, then jumping to about 24, 34 and 43 at the right edge (around Sep 2020).
+  - Red (GPU FP32): about 1–3 from 2007 to 2010, about 3–4 in early 2010, about 6–8 in 2011–2013, about 6–15 in 2014–2017 (e.g. ~15 in early 2016 and mid-2017), about 10–13 in late 2018 (around Oct-18) and about 5 at Jan-19, then jumping to about 24, 34 and 43 at the right edge (around Sep 2020).
 - Annotations: black arrow with text "GeForce 8800 GTX" (pointing at roughly Jan-07); "GeForce GTX 580 (AlexNet)" (arrow pointing at about Jan-10 / mid-2010 red points; the text wraps with a stray ")" line); a curly bracket spanning about Jul-11 to Jan-19 labelled "Deep Learning Explosion"; "GTX 1080 Ti" and "RTX 2080 Ti" (the latter with an arrow pointing down at the 2018-19 points); at the top right, "RTX 3080" with an arrow pointing off to the right (off the chart, beyond the plotted points, at about y = 50) and "RTX 3090" with an arrow to the top red point at about 43.
 Vertical text at right: "Slide inspiration: Justin Johnson".
 
@@ -507,8 +508,8 @@ Same title and horizontal axis as slide 62, with a new vertical scale of 0 to 20
 
 Title: "AI's Explosive Growth & Impact". Three small charts, each with a caption and source:
 1. Left, "Number of attendance At AI conferences" (source: The Gradient). Line chart titled "Attendance at large conferences (1984-2019)", "Source: Conference provided data.", vertical axis "Number of attendees" (0 to 15,000, ticks 0, 5,000, 10,000, 15,000), horizontal axis years 1985 to 2015+, "Fig. 2.1a". 7 series (legend): CVPR (blue dots/line), IJCAI (red dots/line), AAAI (orange dots, dotted), NeurIPS (dark grey dots/line), IROS (orange solid), ICML (grey dashed), ICRA (light-blue solid). Qualitatively: AAAI and IJCAI start at about 3,000–5,000 in the mid-1980s and decline to about 1,000–1,500 by the late 1990s; all stay about 1,000–2,000 until about 2012; then NeurIPS rises fastest to about 13,500 in 2019 (about 8,000 in 2017–2018), CVPR to about 9,200, ICML to about 6,500, with IROS about 3,500, ICRA about 3,000, IJCAI about 3,000, AAAI about 3,200 at the end.
-2. Middle, "Startups Developing AI Systems" (source: Crunchbase, VentureSource, Sand Hill Econometrics). One light-blue line; vertical axis 0 to 600 (ticks 0, 200, 400, 600); horizontal axis "Year" 1995–2015. About 0–20 from 1990 to the late 1990s, about 50 around 2000–2005, then rising to about 100 in 2008, about 150 in 2012, about 280 in 2014 and about 640 in 2016.
-3. Right, "Enterprise Application AI Revenue" (source: Statista). A blue bar chart of 10 yearly bars, vertical axis labelled (in tiny print) "Revenue in million U.S. dollars", 0 to 35,000 in steps of 5,000; x-axis labels are too small to read exactly (they look like 2016 to 2025, marked with asterisks). Bars grow roughly exponentially; legible bar labels (tiny print): about 358, 641, 1,622, 3,068, 4,808, 7,714, 11,641, 17,284 for the first eight bars, then two taller bars, the last near 31,000 (the printed values of the last two bars are not legible).
+2. Middle, "Startups Developing AI Systems" (source: Crunchbase, VentureSource, Sand Hill Econometrics). One light-blue line; vertical axis 0 to 600 (ticks 0, 200, 400, 600); horizontal axis "Year" 1995–2015. The line starts near 5 at about 1992 and stays low through the late 1990s, about 50 around 2000–2005, then rises to about 100 in 2008, about 140 in 2010, about 180 in 2011, about 230 in 2012, about 280 in 2013, about 510 in 2015 and about 640 in 2016.
+3. Right, "Enterprise Application AI Revenue" (source: Statista). A blue bar chart of 10 yearly bars, vertical axis labelled (in tiny print) "Revenue in million U.S. dollars", 0 to 35,000 in steps of 5,000; x-axis labels "2016*" through "2025*" (tiny print; the slide does not say what the asterisks mean). Bars grow roughly exponentially; printed bar values, left to right: 357.99, 641.13, 1,622.4, 3,067.54, 4,808.3, 7,714.17, 11,840.54, 17,284.19, 23,886.79, 31,230.92.
 
 ## Slide 65 — Despite the successes, computer vision still has a long way to go
 

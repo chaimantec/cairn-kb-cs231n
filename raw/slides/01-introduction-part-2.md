@@ -6,6 +6,7 @@ slides: 50
 printed_numbers: "1–53; 4, 5 and 45 absent"
 source_pdf: https://cs231n.stanford.edu/slides/2025/lecture_1_part_2.pdf
 speaker: Ehsan Adeli
+figure_audit: Eight slides (8, 14, 22, 34, 37, 43, 44, 52), including every value of the slide 34 chart and the grading and schedule slides, were checked against the PDF at 600 dpi by an independent reader. All agreed.
 note: Numbering read from the footer text layer ("Lecture 1 - N"). Printed numbers are not equal to PDF page numbers.
 ---
 
