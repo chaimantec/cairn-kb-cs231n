@@ -46,7 +46,13 @@ printed slips, which slides were rendered and why) goes in
   say so on the page. Do not fill the gap from outside knowledge — the chat
   presents these pages as authoritative material from this course. That includes plausible
   glosses a transcriber adds, such as calling an untitled chart axis "top-5 error": check
-  slide-file inferences before they reach the wiki.
+  slide-file inferences before they reach the wiki. It also covers questions a deck poses
+  without printed answers (lecture 2's SVM quiz slides): state the question, say no answer is
+  printed, and do not supply one.
+- **Recompute worked arithmetic on the slides.** Decks print slips in their own worked examples
+  (a score missing its bias term, a log in a different base from the rest of the deck). Keep the
+  printed value, add an `*[Ed: …]*` line under the slide in the slide file, and say it on the
+  wiki page; never silently correct it.
 - **Prose over fragments.** The chat quotes these pages to learners; bullet
   fragments quote badly. Lists that cite rendered slides also stack every image after the
   list (the embed script never inserts inside a list), so write those passages as short
@@ -71,6 +77,9 @@ printed slips, which slides were rendered and why) goes in
   (or "Lecture N -"), neither in a corner nor centred. `slide_number_map.py` reads this as its
   split-footer case. A few pages that drop the footer print the number bare in the bottom-right
   corner instead. Decks hide slides: lecture 1 part 2 is missing printed numbers 4, 5 and 45.
+  The number span can overlap the "Lecture N -" span (lecture 2 page 32); the script handles
+  that now, but a single page reading a small number out of sequence is a misread, not a hidden
+  slide: check the raw spans before handing the map to agents.
 - Each deck prints per-image credit lines (CC licences, public domain, "Figures copyright …
   Reproduced with permission"). Grep the text layer for them to write `LICENSE.md`; permission
   granted to the course does not pass to this repo, and `LICENSE.md` says so.
@@ -80,13 +89,14 @@ printed slips, which slides were rendered and why) goes in
 - Copy-edit with a Sonnet agent against the finished slide files, then check in the parent:
   identical `[M:SS]` sequence, number inventory of the bodies, per-paragraph word ratio
   (0.72–1.10), and a grep of every restored proper noun against the slide files and the
-  original captions.
+  original captions. Trace every number difference the editor did not list to its paragraph:
+  an unlisted "2" in lecture 2 was an interpretive insertion ("there" became "with L2").
 - Student turns: only the lecturer is audible; mark `*[Student question, inaudible]*` /
   `*[Student answer, inaudible]*` where the captions show a speaker change.
 
 ## Images
 
-**Lecture 1 has images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1 and 2 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -99,7 +109,10 @@ they are the only part of this KB that redistributes course material rather than
   diagrams (Venn builds, GFLOP charts). Use the slide file's prose as the deciding signal.
 - Place images with `embed_slide_images.py` (with `--deck-label` for multi-deck lectures), once per
   wiki page that cites the slides, then hand-write captions for the figures where the caption
-  should say what to look at.
+  should say what to look at. The script anchors each image on the **first** citation of that
+  slide, ranges included ("slides 101–104" counts for 101), so keep slide ranges out of overview
+  paragraphs or the image lands in the introduction. On topic pages, cite "lecture N, slide M" and
+  embed with `--deck-label "Lecture N"` so captions name the lecture.
 - Each slide file's header lists which of its slides have images and why the others do not.
   `grep -o 'raw/images/[^)]*' wiki/NN-*.md` enumerates a lecture's wiki images. There is no
   image index file.
@@ -109,6 +122,7 @@ they are the only part of this KB that redistributes course material rather than
 | Lecture | Files | Where they came from |
 | --- | --- | --- |
 | 1 Introduction (parts 1 and 2) | 64 of 119 pages | 47 from `lecture_1_part_1.pdf` (69 pages), 17 from `lecture_1_part_2.pdf` (50 pages) |
+| 2 Image Classification with Linear Classifiers | 41 of 102 pages | `lecture_2.pdf` (102 pages, printed 1–104) |
 
 ## Rebuilding
 

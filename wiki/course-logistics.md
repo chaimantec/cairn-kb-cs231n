@@ -92,6 +92,14 @@ Wednesday 4/9 and due 4/23 by 11:59 PM, and covers:
 - image features;
 - deep neural networks and optimizers.
 
+Lecture 2 repeated these dates and added the course-project timeline: the **project proposal** is
+due Friday 4/25 at 11:59 PM; each project team is assigned a TA to contact for guidance (Canvas →
+People → Groups); a Google Form helps find project partners; and "Is X a valid project for 231n?"
+questions go to a private Ed post or TA office hours (lecture 2, slides 2–3). The first discussion
+section, on Friday 4/4, covered Python, NumPy and Google Colab in person and on Zoom, presented by
+Emily Jin with Matthew Jin (lecture 2, slide 4). These slides were not presented aloud; see
+[Lecture 2](02-image-classification.md#administrative-notes-slides-only).
+
 Assignment 3 includes implementing a generative model that produces emojis from text prompts
 (part 2, slide 25; said aloud at ≈57:03).
 

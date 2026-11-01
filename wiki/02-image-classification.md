@@ -545,7 +545,7 @@ perspective", and in this setting the KL divergence simplifies to the same negat
 
 $$H(P, Q) = H(P) + D_{KL}(P \Vert Q)$$
 
-(the slide prints the first term as $H(p)$). With one-hot correct labels the entropy $H(P)$ of the
+(on the slide, the first term's argument is printed as a lowercase p). With one-hot correct labels the entropy $H(P)$ of the
 correct distribution is zero, so cross-entropy is again the same negative log — which is why the
 loss is called cross-entropy (≈1:03:32–1:04:19). Adeli connects it to the cross-entropy losses in
 neural-network frameworks, naming "BCE, binary cross-entropy" (≈1:04:19).

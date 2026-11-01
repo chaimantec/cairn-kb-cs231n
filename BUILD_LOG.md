@@ -18,6 +18,7 @@ every build follows, and each lesson in general form, are in
 | Lecture | Runs |
 | --- | --- |
 | 1 Introduction | [Run 1](#run-1--lecture-1-introduction-2026-11-01) |
+| 2 Image Classification with Linear Classifiers | [Run 2](#run-2--lecture-2-image-classification-with-linear-classifiers-2026-11-02) |
 
 ## Runs
 
@@ -134,3 +135,77 @@ Images opted in: every figure-bearing slide. PDFs link-only.
 - [x] Commit and push — https://github.com/chaimantec/cairn-kb-cs231n (public; INDEX.md and images fetch 200 from raw.githubusercontent.com)
 - [x] PATCH kbUrl onto the catalog entry — re-fetched: kbUrl = https://github.com/chaimantec/cairn-kb-cs231n
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 2 — Lecture 2 (Image Classification with Linear Classifiers), 2026-11-02
+
+Built lecture 2 end to end: transcript, the deck, a figure audit, the transcript edit, the wiki
+page, five topic pages (image classification, k-nearest neighbours, hyperparameters and
+validation, linear classifiers, loss functions), 41 slide images, and updates to INDEX, AGENTS,
+LICENSE, kb.json, course logistics, computer vision tasks and the lecture 1 page. Images were
+opted in again; PDFs stay link-only.
+
+### Lecture 2 record
+
+**Deck.** One: `lecture_2.pdf`, 102 pages, Ehsan Adeli (per the course schedule; the recording
+does not name him), April 3, 2025. Printed numbers 1–104 with 32 and 49 absent: page 32 = slide 33,
+page 48 = slide 50. Footer "Lecture 2 - N" as a separate span. On page 32 the "33" box starts
+inside the "Lecture 2 -" box (x0 496 against x1 499), so `slide_number_map.py`'s split-footer test
+missed it and its corner fallback read a "1" subscript from the page's equations as the slide
+number. Fixed in the script (the left neighbour must start left of the number and end before its
+midpoint); all 541 decks on disk re-mapped identically apart from that page. No deck-wide licence
+statement; per-image credit lines on 18 slides (CC-BY 2.0, CC0, public domain, Canny 1986,
+Krizhevsky 2009, Wolfram Cloud, a LinkedIn image source).
+
+**Transcription.** Three Sonnet agents in parallel (pages 1–34, 35–68, 69–102), about 75k tokens
+each; the parent assembled the file, wrote the front matter and section table, and fixed two math
+renders (`\\` in a cases block → `\cr`; a `$|$` image-pair notation rewritten in prose).
+`--verify` clean.
+
+**Figure audit** (Sonnet, 600 dpi crops, 14 slides: 8, 23, 30, 33, 45, 57, 60, 62, 63, 64, 65, 74,
+94, 101). Eight agreed. Slide 8: the pixel array called "tiny, not transcribed, about 20 × 15" was
+legible at 600 dpi and is 24 × 16; the first row and value range are now given. Slide 33: the L1
+path from O to B goes up the axis first, then right, not the reverse. Slide 64: the third blue
+circle is left of the vertical axis, not right. Slide 30's white tie regions and slide 63's
+image placement were loosely described and are now exact. Slide 45's means were only roughly
+given; the audit's per-k reading (dots, mean, error bar) is now a table. The parent's own check of
+two renders: slide 99's squared-hinge curve agreed; slide 29's "narrow green spike into blue" was a
+broad green wedge to the top edge, corrected.
+
+**Printed slips, transcribed as printed.** Slide 3 has a sentence missing its verb ("your assigned
+TA for initial guidance"); slide 24's code uses Python 2 `xrange`; slide 33 prints
+"d2(O,A) = d2(O,A) = 1" (second should be O,B); slide 45 "bars indicated standard deviation";
+slide 69 "is a average"; slide 74 prints the frog probability as 0.00 (0.18/188.7 ≈ 0.001);
+slide 80 prints "H(p)" with a lowercase p; slides 81 and 102 print the exponent as "s y_i" without
+the subscript; slide 100's comment reads "only sum j is not y_i". Two are arithmetic slips the
+parent found by recomputing every worked example: slide 60's ship score 61.95 omits the bias
+(60.75 with it), and slide 101's −log(0.353) = 0.452 is base 10 (natural log ≈ 1.04, as slides
+76 and 83 use). Both carry an `[Ed:]` line in the slide file and a note on the wiki page. All
+other worked values recompute exactly (slide 23's 456; slides 73–76; slides 91–94's 2.9, 0, 12.9
+and 5.27; slide 101's scores and hinge loss 1.58).
+
+**Transcript edit** (Sonnet, ~100k tokens). 87 paragraphs; marker sequence identical; word ratios
+0.74–1.00; 26 restorations in the header. Number diff: 01 → O(1); "20 five minutes" →
+`[Ed: 25 minutes]`; "372" → `[Ed: 3072]` three times (slides 52–55); "2x two" → 2x2; "C4" →
+CIFAR-10; "CS2 229" → CS 229. One unlisted "2" traced to [34:51], where the editor had turned
+"while there we have" into "while with L2 we have"; reverted. Restored terms all appear in the
+deck, except "GPT", which is in the captions ("that GPT"). Five inline flags: [42:39] accuracy
+"29 28%"; [46:29] 25 minutes; [48:01] 3072 ×3; [1:01:13] "the value of 3"; [1:06:37] captions end
+mid-sentence. Student-turn markers at [7:01] (two), [20:56], [21:42], [24:01], [32:32], [38:00],
+[44:58], [1:05:04] (two); the editor's header also listed [1:05:51], which has none, corrected.
+**Coverage:** the recording starts at slide 5 (slides 2–4 unspoken) and ends at 1:06:37 during
+slide 83's second question; slides 84–104 (coming up, SVM reading assignment, softmax vs. SVM)
+are slide-only. The deck's backup slides, mentioned at [2:24], are not in the posted PDF.
+
+**Images.** 41 rendered (38 JPEG, 3 PNG; 5.0 MB): 7–16, 18, 19, 22, 23, 29–31, 33–35, 41, 42, 44, 45,
+47, 48, 55–57, 60, 62–65, 77, 80, 84, 89, 94, 99, 101. Not rendered: 1 (title); 2–6
+(administrative, syllabus, agenda); 17, 21, 24–28, 100 (code); 20, 51, 70 (section titles); 36,
+50, 85 (text); build steps whose final step is rendered (37–40 → 41, 43 → 44, 46 → 47, 52–54 → 55,
+59 → 60, 61 → 62, 71–76 → 77, 78–79 → 80, 86–88 → 89, 90–93 → 94, 95–98 → 99); 58 (CIFAR-10 grid
+repeated from 44); 66–69 (score table transcribed in full); 81–83, 102–104 (formulas and questions
+transcribed exactly). The raster test flagged 76 of 102 pages (no recurring template image this
+time); the slide-file prose and the agents' per-slide figure tables decided. All 41 are cited by
+the lecture page; the topic pages carry 4 (image-classification), 6 (k-nearest-neighbors), 3
+(hyperparameters-and-validation), 7 (linear-classifiers) and 7 (loss-functions), embedded with
+`--deck-label "Lecture 2"`. Sixteen captions are hand-written (8, 15, 23, 30, 33, 34, 45, 47, 48,
+60, 62, 63, 64, 80, 89, 101) and reused on the topic pages. The embed script first anchored slide
+101 on the introduction's "slides 101–104"; the range was reworded and the image re-placed.

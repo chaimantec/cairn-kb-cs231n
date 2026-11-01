@@ -424,9 +424,9 @@ $d_2(O,A) = d_2(O,A) = 1$
 
 Two columns, same headings and formulas as slide 31.
 
-Left: "L1 (Manhattan) distance", $$d_1(I_1, I_2) = \sum_p \vert I_1^p - I_2^p \vert$$, then a coloured-region scatter plot (same data and colour scheme as slide 29, with a small orange island inside the green region). Caption: "K = 1".
+Left: "L1 (Manhattan) distance", $d_1(I_1, I_2) = \sum_p \vert I_1^p - I_2^p \vert$, then a coloured-region scatter plot (same data and colour scheme as slide 29, with a small orange island inside the green region). Caption: "K = 1".
 
-Right: "L2 (Euclidean) distance", $$d_2(I_1, I_2) = \sqrt{\sum_p \left(I_1^p - I_2^p\right)^2}$$, then a coloured-region scatter plot of the same data. Caption: "K = 1". The two maps look similar overall, with small differences in some boundary shapes.
+Right: "L2 (Euclidean) distance", $d_2(I_1, I_2) = \sqrt{\sum_p \left(I_1^p - I_2^p\right)^2}$, then a coloured-region scatter plot of the same data. Caption: "K = 1". The two maps look similar overall, with small differences in some boundary shapes.
 
 ## Slide 35 — K-Nearest Neighbors: try it yourself!
 
@@ -664,6 +664,8 @@ Same as slide 59 (the input image labelled "Input image", the "Flatten tensors i
 Matrix W (3 rows by 4 columns), labelled "W" below. Row 1 (peach background): 0.2, -0.5, 0.1, 2.0. Row 2 (lavender background): 1.5, 1.3, 2.1, 0.0. Row 3 (light green background): 0, 0.25, 0.2, -0.3.
 
 Then the flattened vector (56, 231, 24, 2), then a "+" sign, then the bias column vector labelled "b" below: 1.1 (peach), 3.2 (lavender), -1.2 (green); then an "=" sign, then the result column: -96.8 (peach), 437.9 (lavender), 61.95 (green). Labels to the right of the result cells: "Cat score" (for -96.8), "Dog score" (for 437.9), "Ship score" (for 61.95).
+
+*[Ed: recomputed from the printed numbers, the cat and dog scores are exact, but 61.95 is the ship row times the vector before the bias; adding b = -1.2 gives 60.75. Transcribed as printed.]*
 
 ## Slide 61 — Interpreting a Linear Classifier
 
@@ -1160,6 +1162,8 @@ max(0, 0.86 - 0.28 + 1)
 1.58 (in bold red)
 
 Bottom arrow to a green-bordered box, label top-right "cross-entropy loss (Softmax)". Inside, left to right: the score column -2.85, 0.86, 0.28; an arrow labelled "exp" to a column 0.058, 2.36, 1.32; an arrow labelled "normalize (to sum to one)" to a column 0.016, 0.631, 0.353; then "- log(0.353) = 0.452" with 0.452 in bold green.
+
+*[Ed: 0.452 is the base-10 logarithm; the natural logarithm used on slides 76 and 83 gives about 1.04. Every other value on this slide recomputes exactly. Transcribed as printed.]*
 
 ## Slide 102 — Softmax vs. SVM
 

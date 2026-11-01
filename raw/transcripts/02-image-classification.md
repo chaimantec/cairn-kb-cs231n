@@ -45,7 +45,7 @@ This is the edited transcript. The captions have been repunctuated, stripped of 
 | log or ln of 10 | kept as spoken | slide 83 (log(10) is about 2.3) |
 | ">>" at [35:39] | dropped; no speaker change heard (the sentence continues unbroken) | context only |
 
-Student-turn markers were inserted at [7:01], [20:56], [21:42], [24:01], [32:32], [38:00], [44:58], [1:05:04] and [1:05:51]. They are inferred from the lecturer's wording and, where present, the captions' speaker-change marks, not heard.
+Student-turn markers were inserted at [7:01], [20:56], [21:42], [24:01], [32:32], [38:00], [44:58] and [1:05:04] (two answers in that paragraph). They are inferred from the lecturer's wording and, where present, the captions' speaker-change marks, not heard.
 
 ## Unclear passages
 

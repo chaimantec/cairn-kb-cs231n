@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1 decks. Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1 or Lecture 2 decks (lecture 2 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -171,3 +171,38 @@ agenda, divider and title-only slides (6, 11–13, 19–21, 29, 30, 35), the cat
 photographs of award winners and the award ceremony (31–33), the schedule screenshot (37), whose
 table is transcribed in full in `raw/slides/`, and the text-only logistics slides (36, 38–44,
 46–51, 53).
+
+### Lecture 2 — Image Classification with Linear Classifiers
+
+Deck: [lecture_2.pdf](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf).
+Rendered: 41 slides, in `raw/images/02-image-classification/`.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 7, 8, 9 | "This image by Nikita is licensed under CC-BY 2.0" (the tabby cat); the pixel grid and camera icons are the deck's own. |
+| 10, 11, 14 | Cat photographs, each credited "This image is CC0 1.0 public domain". |
+| 12 | Two photographs "CC0 1.0 public domain"; "This image by jonsson is licensed under CC-BY 2.0". |
+| 13 | "This image by Umberto Salvagnin is licensed under CC-BY 2.0" (two); "This image by sare bear is licensed under CC-BY 2.0"; "This image by Tom Thai is licensed under CC-BY 2.0". |
+| 15 | Two photographs of an animal behind a fence; "Image source:" a LinkedIn post URL printed on the slide. |
+| 16 | ImageNet logo built from a photo mosaic, credited "This image is CC0 1.0 public domain". |
+| 18 | The CC-BY 2.0 cat (Nikita) and its edge map; credit line "John Canny, 'A Computational Approach to Edge Detection', IEEE TPAMI 1986". |
+| 19, 44, 47 | CIFAR-10 image grids; slides 43–44 cite Alex Krizhevsky, "Learning Multiple Layers of Features from Tiny Images", Technical Report, 2009. |
+| 22 | Five small training photographs and the cat photograph. Not credited on this slide. |
+| 23, 31, 33, 41, 42, 55, 89, 94, 99, 101 | No third-party content beyond photographs credited elsewhere in the deck: the deck's own worked examples, diagrams and plots (slides 94 and 99 reuse the cat, car and frog photographs credited on slide 65). |
+| 29, 30, 34, 35 | k-nearest-neighbour decision-region plots, not credited; slide 35 links the CS231n demo at <http://vision.stanford.edu/teaching/cs231n-demos/knn/>. |
+| 45 | Cross-validation chart. Source not printed. |
+| 48 | Portrait photograph and three edited copies; "Original image is CC0 public domain". |
+| 56 | Photograph of toy blocks, "This image is CC0 1.0 public domain". |
+| 57 | Architecture figures from Krizhevsky et al. 2012 (AlexNet) and He et al. 2015 (ResNet), cited on the slide. |
+| 60, 62 | The deck's own matrix example; slide 62 adds learned CIFAR-10 templates and the CIFAR-10 grid. |
+| 63 | "Plot created using Wolfram Cloud"; "Cat image by Nikita is licensed under CC-BY 2.0"; small CIFAR-10 images. |
+| 64 | No third-party content identified: the deck's own region plots. |
+| 65 | "Cat image by Nikita is licensed under CC-BY 2.0; Car image is CC0 1.0 public domain; Frog image is in the public domain". |
+| 77, 80 | The cat photograph (credited on slides 7 and 65) with the deck's own softmax diagram. |
+| 84 | Rainbow heat-map image. Not credited. |
+
+Not rendered from this deck: the title (1), administrative, syllabus and agenda slides (2–6), code
+slides (17, 21, 24–28, 100), section titles (20, 51, 70), text-only slides (36, 50, 85), build steps
+whose final step is rendered (37–40, 43, 46, 52–54, 59, 61, 71–76, 78–79, 86–88, 90–93, 95–98), the
+repeated CIFAR-10 grid (58), the score-table slides whose table is transcribed in full (66–69), and
+formula and question slides transcribed exactly (81–83, 102–104).

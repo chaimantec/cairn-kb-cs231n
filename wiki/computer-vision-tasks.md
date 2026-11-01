@@ -23,7 +23,8 @@ space", "deceptively simple", and "the foundation for much of the more complex a
 self-driving to medical diagnosis" (≈46:04). It has "no spatial extent": the label says what is in
 the image, not where (part 2, slide 14). Image classification is the task of the ImageNet
 challenge ([ImageNet](imagenet.md)), and it is the subject of lectures 2 (linear classifiers) and
-5 (CNNs).
+5 (CNNs). [Lecture 2](02-image-classification.md) treats it in depth; see
+[image classification](image-classification.md).
 
 ![Part 2, slide 14 — Tasks Beyond Image Classification](../raw/images/01-introduction-part-2/slide-14.jpg)
 

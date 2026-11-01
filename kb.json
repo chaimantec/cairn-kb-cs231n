@@ -9,41 +9,52 @@
     "courseUrl": "https://cs231n.stanford.edu/2025/"
   },
   "coverage": {
-    "lecturesCovered": 1,
+    "lecturesCovered": 2,
     "lecturesTotal": 18,
-    "transcripts": 1,
-    "wikiLecturePages": 1,
-    "wikiTopicPages": 3
+    "transcripts": 2,
+    "wikiLecturePages": 2,
+    "wikiTopicPages": 8
   },
   "materials": {
     "primary": "slides",
-    "slideDecks": { "available": 2, "transcribed": 2 },
+    "slideDecks": {
+      "available": 3,
+      "transcribed": 3
+    },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 2,
-      "decksTotal": 2,
+      "decksAudited": 3,
+      "decksTotal": 3,
       "unaudited": [],
-      "note": "Counts are for the decks of the covered lecture (lecture 1 has two). Eight figure-, chart- and table-heavy slides per deck were checked at 600 dpi by an independent reader: part 2 came back clean; part 1 had errors on two slides (62, 64), corrected."
+      "note": "Counts are for the decks of the covered lectures (lecture 1 has two, lecture 2 one). Lecture 1: eight figure-, chart- and table-heavy slides per deck checked at 600 dpi by an independent reader; part 2 clean, part 1 errors on slides 62 and 64, corrected. Lecture 2: fourteen slides checked; errors on slides 8, 33 and 64 and loose detail on 30, 45 and 63, corrected; eight clean."
     },
     "images": {
-      "lecturesWithImages": 1,
-      "files": 64,
-      "byLecture": { "1": 64 },
-      "format": "1400px whole-slide renders (60 JPEG, 4 PNG)",
+      "lecturesWithImages": 2,
+      "files": 105,
+      "byLecture": {
+        "1": 64,
+        "2": 41
+      },
+      "format": "1400px whole-slide renders (98 JPEG, 7 PNG)",
       "discovery": "inline in wiki/ and raw/slides/; each slide file's header lists its rendered slides; no index file",
-      "note": "Lecture 1 only: 47 of part 1's 69 pages and 17 of part 2's 50. Not rendered: title, agenda and divider slides, text-only and logistics slides, build steps and recaps that repeat a rendered figure, and photographs of course staff and award winners."
+      "note": "Lectures 1 and 2 only. Lecture 1: 47 of part 1's 69 pages and 17 of part 2's 50. Lecture 2: 41 of 102 pages. Not rendered: title, agenda, administrative and divider slides, text-only and code slides, build steps whose final step is rendered, tables and formulas the slide file reproduces exactly, and photographs of course staff and award winners."
     }
   },
   "provenance": {
-    "builtBy": ["claude-opus-5-5", "claude-sonnet-5-5"],
+    "builtBy": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+    ],
     "caveats": [
-      "Covers lecture 1 of 18 only; nothing on lectures 2-18.",
-      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, so they run ahead of the PDF page numbers.",
+      "Covers lectures 1 and 2 of 18 only; nothing on lectures 3-18.",
+      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, and lecture 2's skip 32 and 49, so printed numbers run ahead of PDF page numbers.",
       "Lecture 1's logistics slides (part 2, slides 33-48 and 50) were not presented in the recording; wiki/course-logistics.md is sourced to the slides as posted on April 1, 2025.",
-      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers and seven passages marked unclear."
+      "Lecture 2's recording skips its administrative slides (2-4) and ends mid-sentence at 1:06:37, before the multiclass SVM loss (a reading assignment, slides 85-100) and softmax vs. SVM (slides 101-104); those are sourced to the slides alone, and their quiz questions have no printed answers.",
+      "Lecture 2's deck prints two arithmetic slips in worked examples (slide 60's ship score omits the bias; slide 101's 0.452 is a base-10 log); both are kept as printed and noted.",
+      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers, seven passages marked unclear in lecture 1 and five in lecture 2."
     ]
   },
   "entryPoint": "INDEX.md",
-  "updated": "2026-11-01"
+  "updated": "2026-11-02"
 }

@@ -31,18 +31,18 @@ Scope: lecture 2 only, video pdqofxJeBN8 (67 min). One deck, `lecture_2.pdf`: 10
 - [x] raw/transcripts/02-image-classification.md — Sonnet copy-edit; 87/87 markers identical; ratios 0.74–1.00; number diff all deliberate (01 → O(1); "20 five" → [Ed: 25]; 372 → [Ed: 3072] ×3; "2x two" → 2x2; C4 → CIFAR-10; CS2 229 → CS 229). Parent reverted one interpretive insertion at [34:51] ("there" → "with L2"). Restored terms all on the slides except GPT (in the captions). Recording covers slides 5–83 and stops mid-answer at 1:06:37; slides 2–4 and 84–104 are slide-file-only.
 
 #### Images (Step 1c)
-- [ ] raw/images/02-image-classification/ — select, render, embed in slide file and wiki (41 rendered, 5.0 MB, embedded in slide file; wiki pending)
+- [x] raw/images/02-image-classification/ — select, render, embed in slide file and wiki (41 rendered, 5.0 MB; all 41 in the lecture page; 27 on topic pages via --deck-label "Lecture 2"; 16 hand-written captions)
 - [x] Look at two rendered images against the slide-file claims (slide 99 squared-hinge curve agrees; slide 29's "narrow green spike into blue" was a broad wedge to the top edge, corrected)
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
 
 #### Wiki
-- [ ] wiki/02-image-classification.md
-- [ ] Topic pages (cross-lecture concepts introduced in lecture 2)
-- [ ] INDEX.md table of contents
+- [x] wiki/02-image-classification.md (slide 60 and 101 arithmetic slips noted; SVM and softmax-vs-SVM sections marked slide-only)
+- [x] Topic pages (cross-lecture concepts introduced in lecture 2): image-classification, k-nearest-neighbors, hyperparameters-and-validation, linear-classifiers, loss-functions; links added from computer-vision-tasks, course-logistics (lecture 2 announcements) and 01-introduction
+- [x] INDEX.md table of contents (coverage 2 of 18; citation rules for lecture 2; slide-only sections)
 
 #### Publish
-- [ ] kb.json — coverage, images, caveats
-- [ ] BUILD_LOG.md — lecture 2 record
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage, images, caveats
+- [x] BUILD_LOG.md — lecture 2 record
+- [x] verify_kb.py clean, and its review section read (exit 0; chat KaTeX and github.com MathJax both clean after fixing one inline $H(p)$ and two mid-sentence $$ blocks; numeric claims in INDEX/AGENTS match the image table)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

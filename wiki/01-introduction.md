@@ -705,7 +705,7 @@ The course's three learning objectives are (≈1:01:02; part 2, slide 49):
 The basics come first — "bear with us, because these are important topics and you need to
 understand the details first: how to build the models from scratch" (≈1:01:48). The next lecture
 is image classification with linear classifiers: k-nearest neighbour and linear classification
-(≈1:02:34; part 2, slide 52).
+(≈1:02:34; part 2, slide 52). See [Lecture 2](02-image-classification.md).
 
 ![Part 2, slide 52 — Next time: Image classification with Linear Classifiers](../raw/images/01-introduction-part-2/slide-52.jpg)
 
