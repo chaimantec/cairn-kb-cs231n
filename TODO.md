@@ -18,7 +18,7 @@ Scope: lecture 2 only, video pdqofxJeBN8 (67 min). One deck, `lecture_2.pdf`: 10
 1–104, 32 and 49 absent. Images opted in (every figure-bearing slide). PDFs link-only.
 
 #### Transcripts
-- [ ] 02 Image Classification with Linear Classifiers — video pdqofxJeBN8 (original captions in raw/transcripts/original/)
+- [x] 02 Image Classification with Linear Classifiers — video pdqofxJeBN8 (original captions in raw/transcripts/original/)
 
 #### Crawl
 - [x] Deck fetched by hand into raw/pdfs/slides/lecture_2.pdf (title slide: "Lecture 2: Image Classification with Linear Classifiers", April 3, 2025)
@@ -28,7 +28,7 @@ Scope: lecture 2 only, video pdqofxJeBN8 (67 min). One deck, `lecture_2.pdf`: 10
 - [x] Figure audit (Sonnet, 600 dpi crops) on 14 slides: 8, 23, 30, 33, 45, 57, 60, 62, 63, 64, 65, 74, 94, 101 → 8 clean; errors on 8 (pixel array "not transcribed, tiny" was legible: 24×16, not ~20×15), 33 (L1 path drawn up-then-right, not right-then-up), 64 (third circle left of the axis, not right); loose detail on 30, 45 (means per k now tabulated), 63. Fixes applied.
 
 #### Transcript edit (Step 1a)
-- [ ] raw/transcripts/02-image-classification.md — Sonnet copy-edit; timestamp, number, ratio checks; proper-noun grep
+- [x] raw/transcripts/02-image-classification.md — Sonnet copy-edit; 87/87 markers identical; ratios 0.74–1.00; number diff all deliberate (01 → O(1); "20 five" → [Ed: 25]; 372 → [Ed: 3072] ×3; "2x two" → 2x2; C4 → CIFAR-10; CS2 229 → CS 229). Parent reverted one interpretive insertion at [34:51] ("there" → "with L2"). Restored terms all on the slides except GPT (in the captions). Recording covers slides 5–83 and stops mid-answer at 1:06:37; slides 2–4 and 84–104 are slide-file-only.
 
 #### Images (Step 1c)
 - [ ] raw/images/02-image-classification/ — select, render, embed in slide file and wiki (41 rendered, 5.0 MB, embedded in slide file; wiki pending)
