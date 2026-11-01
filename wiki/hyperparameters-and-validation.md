@@ -6,7 +6,8 @@ A **hyperparameter** is a choice about the algorithm itself that has to be made 
 slide 36). Their best values are "very problem/dataset-dependent", so they must be found for each
 problem, which is called **hyperparameter tuning** (lecture 2, ≈36:25).
 
-Covered in: [Lecture 2](02-image-classification.md#hyperparameters-and-how-to-set-them).
+Covered in: [Lecture 2](02-image-classification.md#hyperparameters-and-how-to-set-them); lecture 3
+adds the regularization strength and the learning rate (below).
 
 ## Four ways to choose them
 
@@ -59,3 +60,12 @@ lecturer reads the accuracy there as about 28–29%, though the captions are unc
 
 "Choose hyperparameters using the validation set. Only run on the test set once at the very end!"
 (lecture 2, slide 50).
+
+## Hyperparameters from lecture 3
+
+Lecture 3 introduces two more. The **regularization strength** $\lambda$ weights the
+regularization term in the loss and is set with training and validation sets like any other
+(lecture 3, ≈14:01–14:47; see [regularization](regularization.md)). The **learning rate** is a
+hyperparameter of every optimiser the course uses (see
+[learning-rate schedules](learning-rate-schedules.md)), as are Adam's $\beta_1$ and $\beta_2$,
+whose usual starting values are 0.9 and 0.999 (see [optimizers](optimizers.md#adam)).

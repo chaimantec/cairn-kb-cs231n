@@ -68,7 +68,8 @@ and one class made of three separate modes.
 A linear classifier is only as good as its $W$. Choosing $W$ takes two things: a
 [loss function](loss-functions.md) that measures how unhappy we are with the scores on the training
 data, and optimisation, which finds the $W$ that minimises it (lecture 2, ≈55:01–55:49; lecture 2,
-slide 65). Optimisation is the subject of lecture 3, which this knowledge base does not yet cover.
+slide 65). Optimisation is the subject of [lecture 3](03-regularization-optimization.md#optimisation):
+see [gradient descent and SGD](gradient-descent.md) and [optimizers](optimizers.md).
 
 ![Lecture 2, slide 65 — Linear Classifier – Choose a good W](../raw/images/02-image-classification/slide-65.jpg)
 

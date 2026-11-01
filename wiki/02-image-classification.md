@@ -20,7 +20,7 @@ new image by its closest training images; it is used to introduce distance metri
 of every neural network in the rest of the course; the lecture reads it three ways (algebraic,
 visual, geometric), shows what it cannot separate, and defines the **softmax (cross-entropy) loss**
 that measures how good a choice of $W$ is. Finding the best $W$ — optimisation — is left for the
-next lecture.
+[next lecture](03-regularization-optimization.md).
 
 **What the recording covers.** The recording starts at the syllabus (slide 5), so the
 administrative slides 2–4 are known only from the deck. It ends mid-sentence at 1:06:37, while
@@ -466,7 +466,7 @@ some $W$ gives three images: the cat image's cat score is 2.9, but its dog score
 image's automobile score, 6.04, is its highest; and the frog image's frog score, −4.34, is among its
 lowest. Two things are needed. First, a **loss function** (also called an objective function) that
 quantifies "our unhappiness with the scores across the training data" — how badly the model is
-doing. Second, a way to efficiently change $W$ to minimise it: **optimisation**, which the next lecture covers
+doing. Second, a way to efficiently change $W$ to minimise it: **optimisation**, which [the next lecture](03-regularization-optimization.md#optimisation) covers
 (≈55:01–55:49; ≈1:05:04).
 
 ![Slide 65 — Linear Classifier – Choose a good W](../raw/images/02-image-classification/slide-65.jpg)
@@ -575,7 +575,8 @@ recording ends here, mid-sentence.
 *Slide 84 — Coming up:. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
 
 Everything in this section comes from the deck alone; the recording has ended. Slide 84 announces
-regularization and optimization as coming up next, beside an unlabelled rainbow heat-map. Slide 85
+regularization and optimization as coming up next (they are
+[lecture 3](03-regularization-optimization.md)), beside an unlabelled rainbow heat-map. Slide 85
 marks the SVM loss as a **reading assignment**.
 
 ### Multiclass SVM loss
@@ -644,3 +645,4 @@ when the correct class's score is doubled from 10 to 20. The deck prints no answ
   1–104; every figure described; [PDF](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf).
 - [Video](https://www.youtube.com/watch?v=pdqofxJeBN8).
 - Previous lecture: [Lecture 1 — Introduction](01-introduction.md).
+- Next lecture: [Lecture 3 — Regularization and Optimization](03-regularization-optimization.md).

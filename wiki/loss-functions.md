@@ -7,7 +7,9 @@ classification losses CS231N introduces with the [linear classifier](linear-clas
 **softmax (cross-entropy) loss**, presented in the lecture, and the **multiclass SVM (hinge)
 loss**, assigned as reading.
 
-Covered in: [Lecture 2](02-image-classification.md#choosing-w-the-loss-function).
+Covered in: [Lecture 2](02-image-classification.md#choosing-w-the-loss-function);
+[Lecture 3](03-regularization-optimization.md#recap-the-full-loss) recaps it, adds a
+[regularization](regularization.md) term, and repeats the softmax-vs-SVM example in its appendix.
 
 ## Setup
 
@@ -107,10 +109,12 @@ printed.
 
 *Lecture 2, slide 101 — one example through both losses: hinge loss 1.58 (top) and cross-entropy loss (bottom), printed as 0.452 with a base-10 log. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
 
-## Still to come
+## What comes next
 
-Regularization and optimization are announced as coming next (lecture 2, slide 84). They belong to
-lecture 3, which this knowledge base does not yet cover.
+Regularization and optimization are announced as coming next (lecture 2, slide 84). Lecture 3
+covers both: [regularization](regularization.md) adds a term $\lambda R(W)$ to the loss, and
+[gradient descent](gradient-descent.md) with the [optimizers](optimizers.md) built on it finds the
+$W$ that minimises the total.
 
 ![Lecture 2, slide 84 — Coming up:](../raw/images/02-image-classification/slide-84.jpg)
 

@@ -19,8 +19,8 @@ The course has four parts (part 2, slide 51). The lecture titles below are those
 | Lecture | Title | Part of the course |
 | --- | --- | --- |
 | 1 | Introduction — [wiki page](01-introduction.md) | — |
-| 2 | Image Classification with Linear Classifiers | Deep Learning Basics (lectures 2–4) |
-| 3 | Regularization and Optimization | Deep Learning Basics |
+| 2 | Image Classification with Linear Classifiers — [wiki page](02-image-classification.md) | Deep Learning Basics (lectures 2–4) |
+| 3 | Regularization and Optimization — [wiki page](03-regularization-optimization.md) | Deep Learning Basics |
 | 4 | Neural Networks and Backpropagation | Deep Learning Basics |
 | 5 | Image Classification with CNNs | Perceiving and Understanding the Visual World (lectures 5–12) |
 | 6 | CNN Architectures | Perceiving and Understanding |
