@@ -90,6 +90,8 @@ Same as slide 6, plus a smaller ellipse labelled "Deep Learning" lying inside Ma
 
 ## Slide 8 — [Venn diagram, build 4: "This class"]
 
+![Part 1, slide 8 — [Venn diagram, build 4: "This class"]](../images/01-introduction-part-1/slide-8.png)
+
 Same as slide 7, plus the region where Deep Learning overlaps Computer Vision (the left part of the Deep Learning ellipse inside Computer Vision) is filled solid red. A tan arrow comes down from the label "This class" (top right) and points to that red region.
 
 ## Slide 9 — [Venn diagram, build 5: Natural Language Processing]
@@ -106,6 +108,8 @@ Same as slide 10, plus a long, tilted ellipse labelled "Robotics" stretching fro
 
 ## Slide 12 — [Venn diagram, build 8: contributing disciplines]
 
+![Part 1, slide 12 — [Venn diagram, build 8: contributing disciplines]](../images/01-introduction-part-1/slide-12.jpg)
+
 Same as slide 11, plus six yellow-orange oval labels placed around the edges of the diagram: "Mathematics" (top left), "Neuroscience" (top right), "Computer Science" (right), "Psychology" (bottom right), "Biology" (bottom centre) and "Physics" (bottom left). They represent fields that feed into AI and its subfields.
 
 ## Slide 13 — Today's agenda
@@ -117,6 +121,8 @@ Same as slide 11, plus six yellow-orange oval labels placed around the edges of 
 
 ## Slide 14 — Evolution's Big Bang: Cambrian Explosion, 530-540million years, B.C.
 
+![Part 1, slide 14 — Evolution's Big Bang: Cambrian Explosion, 530-540million years, B.C.](../images/01-introduction-part-1/slide-14.jpg)
+
 Title (as printed, with "530-540million" run together): "Evolution's Big Bang: Cambrian Explosion, 530-540million years, B.C." Three images, each with a small "This image is licensed under CC-BY 2.5 / 3.0" credit:
 - Left, large: a warmly lit photograph of a trilobite-like fossil impressed in rock, segmented body, with a ruler edge visible at the lower right (CC-BY 2.5).
 - Top right: a photograph of a flat, oval, leaf-shaped fossil with fine parallel ribbing on reddish rock (CC-BY 2.5).
@@ -124,9 +130,13 @@ Title (as printed, with "530-540million" run together): "Evolution's Big Bang: C
 
 ## Slide 15 — [photographs: eyes of four animals]
 
+![Part 1, slide 15 — [photographs: eyes of four animals]](../images/01-introduction-part-1/slide-15.jpg)
+
 No title or text. Four equal quadrant close-up photographs of eyes/vision organs: top left, a red octopus arm with rows of suckers (on black); top right, the face of a bee-like insect with a large black compound eye and yellow markings against a green background; bottom left, a green chameleon's head with a swirled eye; bottom right, a human baby's face with wide blue-grey eyes looking upward. The date "April 1, 2025" and the slide number "15" appear faintly in the bottom corners instead of the footer bar.
 
 ## Slide 16 — Camera Obscura
+
+![Part 1, slide 16 — Camera Obscura](../images/01-introduction-part-1/slide-16.jpg)
 
 Title: "Camera Obscura". Four public-domain images ("This work is in the public domain"):
 - Top left, captioned "Gemma Frisius, 1545": an old engraving showing a distant sun/object at the left with a ray cone passing through a small hole into a dark room (a square room drawn with a tiled floor), where an inverted image forms; hand-written Latin text above it mentions a date (24 January 1544).
@@ -134,6 +144,8 @@ Title: "Camera Obscura". Four public-domain images ("This work is in the public 
 - Right, captioned "Encyclopedia, 18th Century": an 18th-century encyclopedia plate with several drawings of camera obscura devices: a box with an internal mirror and lens, a pyramid-shaped frame, a tent-like hooded device, and a small mirror-and-lens apparatus.
 
 ## Slide 17 — Computer Vision is everywhere!
+
+![Part 1, slide 17 — Computer Vision is everywhere!](../images/01-introduction-part-1/slide-17.jpg)
 
 Title: "Computer Vision is everywhere!". A grid of 12 photographs in three rows (4 per row), with tiny image-credit notes at the right of each row ("Left to right: Image by Roger H Goun is licensed under CC BY 2.0; Image is CC0 1.0 public domain" etc.; second row: "Image is free to use", CC0 public domain, "Image by NASA is licensed under CC BY 2.0", CC0 public domain; bottom row: CC0 public domain, "Image by Derek Keats is licensed under CC BY 2.0; changes made", public domain, "Image is licensed under CC-BY 2.0; changes made").
 - Row 1: a crowd of photographers with cameras at an event; a vintage folding film camera; a white quadcopter drone with a camera underneath; a smiling man's selfie shown on a smartphone screen held up in front of his face.
@@ -146,6 +158,8 @@ Single red centred line: "Where did we come from?" (section divider)
 
 ## Slide 19 — Hubel and Wiesel, 1959
 
+![Part 1, slide 19 — Hubel and Wiesel, 1959](../images/01-introduction-part-1/slide-19.jpg)
+
 Title: "Hubel and Wiesel, 1959". A diagram of the cat visual-cortex experiment:
 - Top left: a grey silhouette of a cat with the brain area marked; label "Measure brain activity"; a red line runs from the brain down to a grey box at the lower left.
 - Top centre: a drawing of a monitor/projector showing a tilted bar. Above it, a row of stimulus symbols with red motion arrows: a vertical bar moving left, a horizontal bar moving up/down, a diagonal bar moving diagonally, a black disc moving in all four directions, a small ellipse moving left/right and up/down. Red arrows connect the stimulus symbols to the monitor and the monitor to the response box.
@@ -157,6 +171,8 @@ Title: "Hubel and Wiesel, 1959". A diagram of the cat visual-cortex experiment:
 
 ## Slide 20 — Larry Roberts, 1963
 
+![Part 1, slide 20 — Larry Roberts, 1963](../images/01-introduction-part-1/slide-20.jpg)
+
 Title: "Larry Roberts, 1963". Three panels showing a wedge-shaped block:
 - (a) "Original picture": a grey shaded photograph-like image of a wedge/prism.
 - (b) "Differentiated picture": a black line drawing of the wedge's edges (edge map).
@@ -166,6 +182,8 @@ Bottom-left timeline marker: "1959 Hubel & Wiesel" and "1963 Roberts" boxes join
 
 ## Slide 21 — [document: "The Summer Vision Project", Seymour Papert, 1966]
 
+![Part 1, slide 21 — [document: "The Summer Vision Project", Seymour Papert, 1966]](../images/01-introduction-part-1/slide-21.jpg)
+
 No slide title. A scanned typewritten memo fills the slide:
 
 "MASSACHUSETTS INSTITUTE OF TECHNOLOGY / PROJECT MAC / Artificial Intelligence Group July 7, 1966 / Vision Memo. No. 100. / THE SUMMER VISION PROJECT / Seymour Papert / The summer vision project is an attempt to use our summer workers effectively in the construction of a significant part of a visual system. The particular task was chosen partly because it can be segmented into sub-problems which will allow individuals to work independently and yet participate in the construction of a system complex enough to be a real landmark in the development of "pattern recognition"."
@@ -173,6 +191,8 @@ No slide title. A scanned typewritten memo fills the slide:
 Below the memo: link https://dspace.mit.edu/handle/1721.1/6125. Bottom-left timeline marker: "1959 Hubel & Wiesel", "1963 Roberts". Bottom right: "Slide inspiration: Justin Johnson".
 
 ## Slide 22 — [David Marr, "Vision": stages of visual representation]
+
+![Part 1, slide 22 — [David Marr, "Vision": stages of visual representation]](../images/01-introduction-part-1/slide-22.jpg)
 
 No title at the top; caption at the bottom: "Stages of Visual Representation, David Marr, 1970s".
 
@@ -187,6 +207,8 @@ No title at the top; caption at the bottom: "Stages of Visual Representation, Da
 
 ## Slide 23 — Recognition via Parts (1970s)
 
+![Part 1, slide 23 — Recognition via Parts (1970s)](../images/01-introduction-part-1/slide-23.jpg)
+
 Title: "Recognition via Parts (1970s)". Two figures:
 - Left: a human figure built from grey 3-D cylinders (head, torso, two arm cylinders tilted outward, two leg cylinders), captioned "Generalized Cylinders, Brooks and Binford, 1979".
 - Right: a stick-figure graph of white circles (nodes) joined by black lines: head node on top, a central neck/shoulder node with two arms each of two nodes, a torso node below, then two legs each of two nodes; captioned "Pictorial Structures, Fischler and Elshlager, 1973".
@@ -194,6 +216,8 @@ Title: "Recognition via Parts (1970s)". Two figures:
 Timeline: "1959 Hubel & Wiesel", "1963 Roberts", "1970s David Marr", "1979 Gen. Cylinders". Bottom right: "Slide inspiration: Justin Johnson".
 
 ## Slide 24 — Recognition via Edge Detection (1980s)
+
+![Part 1, slide 24 — Recognition via Edge Detection (1980s)](../images/01-introduction-part-1/slide-24.jpg)
 
 Title: "Recognition via Edge Detection (1980s)". Left: a colour photograph of a pile of disposable razors (blue, black, green, pink, red, white and purple handles) on a pale background. Right: a black image with white outlines of the same razors (the edge-detected version). Right text: "John Canny, 1986 / David Lowe, 1987". Credit bottom-left: "Image is CC0 1.0 public domain".
 
@@ -216,6 +240,8 @@ Centred red text: "In the meantime…seminal work in cognitive and neuroscience"
 
 ## Slide 27 — Perceiving Real-World Scenes (Biederman)
 
+![Part 1, slide 27 — Perceiving Real-World Scenes (Biederman)](../images/01-introduction-part-1/slide-27.jpg)
+
 The slide shows the first page header of a paper: "Perceiving Real-World Scenes, Irving Biederman". Two black-and-white photographs:
 - Left: a coherent scene of a Stanford campus-style building with a tower and arched gateway, a man standing, a bicycle at the left and a fire hydrant in the foreground (panel labelled "a" at the lower left).
 - Right: the same photograph cut into a jumbled grid of tiles (about six pieces) rearranged out of order so the scene is incoherent: pieces include the hydrant, the bicycle, the tower, trees, arches and pavement.
@@ -227,6 +253,8 @@ Citation, bottom right: "I. Biederman, Science, 1972".
 Title: "Rapid Serial Visual Perception (RSVP)". A plain mid-grey rectangle with a small black fixation cross "+" in the centre (the first frame of an RSVP stimulus sequence). Citation: "Potter, etc. 1970s".
 
 ## Slide 29 — Speed of processing in the human visual system (Thorpe, Fize & Marlot)
+
+![Part 1, slide 29 — Speed of processing in the human visual system (Thorpe, Fize & Marlot)](../images/01-introduction-part-1/slide-29.jpg)
 
 A full-slide figure from the paper "Speed of processing in the human visual system, Simon Thorpe, Denis Fize & Catherine Marlot" with citation "Thorpe, et al. Nature, 1996" at the bottom. (No separate slide title; the footer is partly covered by the figure and the slide number 29 is hidden behind it.)
 
@@ -240,6 +268,8 @@ No numeric values beyond 6, 100, 200, 300 appear on the axes.
 
 ## Slide 30 — Neural correlates of object & scene recognition
 
+![Part 1, slide 30 — Neural correlates of object & scene recognition](../images/01-introduction-part-1/slide-30.jpg)
+
 Title: "Neural correlates of object & scene recognition".
 - Left panel, headed "Faces > Houses": top row three greyscale face photographs, bottom row three greyscale photographs of houses; to the right an axial brain MRI slice with coloured (red/yellow/blue) activation blobs, one box outlined in green, and a rotated axis label "% signal change". Citation: "Kanwisher et al. J. Neuro. 1997".
 - Right panel: a grid labelled "a" with column headings "Faces", "Objects", "Houses", "Scenes" and two row groups "Stimuli: Intact" (top) and "Scrambled" (bottom): intact images are a face, an object, a house and a building scene; scrambled versions are the same images cut into shuffled tiles. Below it, two coronal brain MRI slices with coloured activation blobs marked by green and yellow arrows pointing at both hemispheres. Citation: "Epstein & Kanwisher, Nature, 1998".
@@ -250,11 +280,15 @@ Red centred text: "Visual recognition is a fundamental task for visual intellige
 
 ## Slide 32 — Recognition via Grouping (1990s)
 
+![Part 1, slide 32 — Recognition via Grouping (1990s)](../images/01-introduction-part-1/slide-32.jpg)
+
 Title: "Recognition via Grouping (1990s)". A 2×3 image grid: top row original photographs, bottom row their segmentations into flat-coloured regions: (left) a monk in orange robes meditating on a ledge in front of green hills and sky; (middle) an aerial view of a plaza with yellow umbrellas, people and tables; (right) a tall tower (with a red-tiled top) and palm tree against black sky. The bottom row shows each as a flat-colour region segmentation. Right text: "Normalized Cuts, Shi and Malik, 1997". Tiny credits at bottom-left (left image CC BY 3.0; middle public domain; right CC BY 2.0 changes made).
 
 Timeline: "1959 Hubel & Wiesel", "1963 Roberts", "1970s David Marr", "1979 Gen. Cylinders", "1986 Canny", blue "AI Winter" box, "1997 Norm. Cuts". Bottom right: "Slide inspiration: Justin Johnson".
 
 ## Slide 33 — Recognition via Matching (2000s)
+
+![Part 1, slide 33 — Recognition via Matching (2000s)](../images/01-introduction-part-1/slide-33.jpg)
 
 Title: "Recognition via Matching (2000s)". Two photographs of stop signs: left, a red octagonal STOP sign on a pole at a street corner with a long shadow; right, a close-up of a STOP sign on the side of a yellow school bus (red flashing lights above and below). About eight yellow lines connect matching keypoints from the left sign to the right sign. Both images are marked "Image is public domain". Right text: "SIFT, David Lowe, 1999".
 
@@ -262,11 +296,15 @@ Timeline adds "1999 SIFT" after "1997 Norm. Cuts". Bottom right: "Slide inspirat
 
 ## Slide 34 — Face Detection
 
+![Part 1, slide 34 — Face Detection](../images/01-introduction-part-1/slide-34.jpg)
+
 Title: "Face Detection". Left text: "Viola and Jones, 2001 / One of the first successful applications of machine learning to vision". Right: a group photograph of seven people (five standing men at the back, a woman and an older man seated on a red sofa in front), each face enclosed by a green square (detected face).
 
 Timeline adds "2001 V&J". Bottom right: "Slide inspiration: Justin Johnson".
 
 ## Slide 35 — [Caltech 101 and PASCAL Visual Object Challenge]
+
+![Part 1, slide 35 — [Caltech 101 and PASCAL Visual Object Challenge]](../images/01-introduction-part-1/slide-35.jpg)
 
 Two headings: "Caltech 101 images" (left, blue) and "PASCAL Visual Object Challenge" (right).
 - Left: a dense mosaic of about 100 small thumbnail photographs of different object categories (airplane, ant, goldfish, barrel, brain, buddha, camera, cell phone, dollar bill, dalmatian, piano, motorbike, sailboat, soccer ball, stapler, stop sign, strawberry, umbrella, etc.).
@@ -276,12 +314,16 @@ Timeline adds "2004, 2007 Caltech101; PASCAL" after "2001 V&J". Bottom right: "S
 
 ## Slide 36 — [Rumelhart/Hinton/Williams paper title; Rosenblatt's perceptron machine]
 
+![Part 1, slide 36 — [Rumelhart/Hinton/Williams paper title; Rosenblatt's perceptron machine]](../images/01-introduction-part-1/slide-36.jpg)
+
 No separate title. Left: the title block of the paper "Learning representations by back-propagating errors, David E. Rumelhart*, Geoffrey E. Hinton† & Ronald J. Williams*" with affiliations ("* Institute for Cognitive Science, C-015, University of California, San Diego, La Jolla, California 92093, USA; † Department of Computer Science, Carnegie-Mellon University, Pittsburgh, Philadelphia 15213, USA"), and beneath it a diagram of a perceptron: an oval "S-SET" at the left with three arrows fanning out to ovals "A_I SET", "A_II SET", "A_III SET", each connected by an arrow to "R_I SET", "R_II SET", "R_III SET" at the right.
 - Right: a black-and-white photograph of a large cabinet of tangled wires (the Mark I Perceptron hardware, label "MARK I PERCEPTRON" visible at the top), captioned "Frank Rosenblatt, ~1957".
 
 Timeline: same as slide 35 plus a new box below the line at the left: "1958 Perceptron" attached under "1959 Hubel & Wiesel". Bottom right: "Slide inspiration: Justin Johnson".
 
 ## Slide 37 — Minsky and Papert, 1969
+
+![Part 1, slide 37 — Minsky and Papert, 1969](../images/01-introduction-part-1/slide-37.jpg)
 
 Title: "Minsky and Papert, 1969".
 - Left: a truth table with blue header row "X | Y | F(x,y)" and rows: (0, 0, 0), (0, 1, 1), (1, 0, 1), (1, 1, 0) (the XOR function).
@@ -301,6 +343,8 @@ Timeline adds below the line: "1969 Minsky & Papert". Bottom right: "Slide inspi
 
 ## Slide 38 — Neocognitron: Fukushima, 1980
 
+![Part 1, slide 38 — Neocognitron: Fukushima, 1980](../images/01-introduction-part-1/slide-38.png)
+
 Title: "Neocognitron: Fukushima, 1980". Left text:
 - "Computational model the visual system, directly inspired by Hubel and Wiesel's hierarchy of complex and simple cells"
 - "Interleaved simple cells (convolution) and complex cells (pooling)"
@@ -312,6 +356,8 @@ Timeline adds below the line: "1980 Neocognitron". Bottom right: "Slide inspirat
 
 ## Slide 39 — Backprop: Rumelhart, Hinton, and Williams, 1986
 
+![Part 1, slide 39 — Backprop: Rumelhart, Hinton, and Williams, 1986](../images/01-introduction-part-1/slide-39.jpg)
+
 Title: "Backprop: Rumelhart, Hinton, and Williams, 1986". Left text: "Introduced backpropagation for computing gradients in neural networks / Successfully trained perceptrons with multiple layers".
 
 Equation at top right: $\frac{\partial E_p}{\partial w_{ji}} = \frac{\partial E_p}{\partial o_{pj}} \frac{\partial o_{pj}}{\partial w_{ji}}$, with a grey arrow pointing to it from the label "recognizable math".
@@ -322,6 +368,8 @@ Timeline adds below the line: "1985 Backprop" (the title and the Canny box say 1
 
 ## Slide 40 — Convolutional Networks: LeCun et al, 1998
 
+![Part 1, slide 40 — Convolutional Networks: LeCun et al, 1998](../images/01-introduction-part-1/slide-40.jpg)
+
 Title: "Convolutional Networks: LeCun et al, 1998". Diagram: an input image (a handwritten-style letter "K") on the left, followed by a series of feature-map stacks (green and orange translucent squares of decreasing size) with small squares and lines showing receptive fields; labels "Input", "Image Maps", "Convolutions", "Subsampling", "Fully Connected", "Output". Text below:
 - Applied backprop algorithm to a Neocognitron-like architecture
 - Learned to recognize handwritten digits
@@ -331,6 +379,8 @@ Title: "Convolutional Networks: LeCun et al, 1998". Diagram: an input image (a h
 Timeline adds below the line: "1998 LeNet". Bottom right: "Slide inspiration: Justin Johnson".
 
 ## Slide 41 — 2000s: "Deep Learning"
+
+![Part 1, slide 41 — 2000s: "Deep Learning"](../images/01-introduction-part-1/slide-41.jpg)
 
 Title: 2000s: "Deep Learning"
 
@@ -352,19 +402,23 @@ Same as slide 41, plus a new line in red below the two bullets: "No good dataset
 
 ## Slide 43 — ImageNet Large Scale Visual Recognition Challenge
 
+![Part 1, slide 43 — ImageNet Large Scale Visual Recognition Challenge](../images/01-introduction-part-1/slide-43.jpg)
+
 Background: a dense mosaic of thousands of tiny photographs. A white banner at the top reads "IMAGENET Large Scale Visual Recognition Challenge" (the ImageNet logo with a red/green/orange coloured "A" shape).
 
 - Left white panel: "The Image Classification Challenge: / 1,000 object classes / 1,431,167 images".
 - Middle: a photograph of a small child hitting a steel drum (a steel pan) with a mallet, an African drum next to it.
-- Right box headed "Output:" with a list: Scale, T-shirt, Steel drum (underlined), Drumstick, Mud turtle (the model's top-5 predicted labels for that image; the underlined label is the correct one).
+- Right box headed "Output:" with a list: Scale, T-shirt, Steel drum (underlined), Drumstick, Mud turtle (five output labels for the photograph; the slide underlines "Steel drum" and does not explain the scoring).
 - Bottom right: "Deng et al, 2009 / Russakovsky et al. IJCV 2015".
 
 Timeline: same as slide 41 but "2004, 2007 Caltech101; PASCAL" is restored in place of "2007 PASCAL", and a new box "2009 ImageNet" is added above the line at the far right.
 
-## Slide 44 — [ImageNet challenge bar chart of top-5 error by year]
+## Slide 44 — [ImageNet challenge bar chart of winning error by year]
+
+![Part 1, slide 44 — [ImageNet challenge bar chart of winning error by year]](../images/01-introduction-part-1/slide-44.jpg)
 
 Same banner and mosaic background as slide 43, and the same timeline. A bar chart (a white plot panel):
-- Axes: vertical axis, unlabelled numbers 0 to 30 in steps of 5 (this is top-5 error, in percent, though the slide gives no axis title); horizontal axis lists years and winning entries. 10 bars, one data series (blue), with the value printed above each bar:
+- Axes: vertical axis, unlabelled numbers 0 to 30 in steps of 5 (the slide gives no axis title; in the lecture these are "the errors", ≈33:35); horizontal axis lists years and winning entries. 10 bars, one data series (blue), with the value printed above each bar:
   - 2010, "Lin et al": 28.2
   - 2011, "Sanchez & Perronnin": 25.8
   - 2012, "Krizhevsky et al (AlexNet)": 16.4
@@ -383,13 +437,19 @@ Same as slide 44, plus a label "AlexNet, 2012" above the 2012 bar with a red dow
 
 ## Slide 46 — AlexNet: Deep Learning Goes Mainstream
 
+![Part 1, slide 46 — AlexNet: Deep Learning Goes Mainstream](../images/01-introduction-part-1/slide-46.jpg)
+
 Title: "AlexNet: Deep Learning Goes Mainstream". A large (cropped at top) line drawing of the AlexNet architecture: input 224×224×3 image on the left with 11×11 filters and "Stride of 4"; two parallel streams (top and bottom) of 3-D convolutional blocks with sizes 55, 48, 27, 128, 13, 192, 192, 128 and 5×5 and 3×3 kernels, "Max pooling" labels, followed by "dense" layers of 2048 units in both streams, with crossing lines between the streams, then "dense" and a final 1000-unit output. Citation: "Krizhevsky, Sutskever, and Hinton, NeurIPS 2012". Timeline as slide 45.
 
 ## Slide 47 — AlexNet vs. Neocognitron: 32 years apart
 
+![Part 1, slide 47 — AlexNet vs. Neocognitron: 32 years apart](../images/01-introduction-part-1/slide-47.jpg)
+
 Title: "AlexNet vs. Neocognitron: 32 years apart". Left: the Neocognitron diagram from slide 38 (progressively smaller grey slabs with crossing connections). Right: the AlexNet diagram from slide 46. The two are shown side by side to make the point that the architectures are structurally similar. Timeline as slide 45.
 
 ## Slide 48 — 2012 to Present: Deep Learning Explosion
+
+![Part 1, slide 48 — 2012 to Present: Deep Learning Explosion](../images/01-introduction-part-1/slide-48.jpg)
 
 Title: "2012 to Present: Deep Learning Explosion". Two charts:
 
@@ -406,6 +466,8 @@ Timeline as slide 45. Vertical text at right: "Slide inspiration: Justin Johnson
 
 ## Slide 49 — 2012 to Present: Deep Learning is Everywhere
 
+![Part 1, slide 49 — 2012 to Present: Deep Learning is Everywhere](../images/01-introduction-part-1/slide-49.jpg)
+
 Title: "2012 to Present: Deep Learning is Everywhere". Four columns, each headed by a year (underlined) and a model name, showing how network architectures changed:
 - "Year 2010 — NEC-UIUC": a lion photo, then a vertical flow chart of boxes joined by arrows: "Dense descriptor grid: HOG, LBP" → "Coding: local coordinate, super-vector" → "Pooling, SPM" → "Linear SVM". Reference "[Lin CVPR 2011]". Credit: "Lion image by Swissfrog is licensed under CC BY 3.0".
 - "Year 2012 — SuperVision": the AlexNet diagram rotated to run vertically. Reference "[Krizhevsky NIPS 2012]". Credit: "Figure copyright Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton, 2012. Reproduced with permission."
@@ -414,8 +476,10 @@ Title: "2012 to Present: Deep Learning is Everywhere". Four columns, each headed
 
 ## Slide 50 — 2012 to Present: Deep Learning is Everywhere (image classification, image retrieval)
 
+![Part 1, slide 50 — 2012 to Present: Deep Learning is Everywhere (image classification, image retrieval)](../images/01-introduction-part-1/slide-50.jpg)
+
 Title: "2012 to Present: Deep Learning is Everywhere". Subheadings "Image Classification" (left) and "Image Retrieval" (right).
-- Left: eight photographs in two rows of four, each with the label below and a list of the five highest-scoring classes with horizontal score bars (the correct label's bar is drawn in pink where it appears among the five). Labels and top-5 lists:
+- Left: eight photographs in two rows of four, each with the label below and a list of the five highest-scoring classes with horizontal score bars (the correct label's bar is drawn in pink where it appears among the five). Labels and five-class lists:
   - "mite": mite, black widow, cockroach, tick, starfish
   - "container ship": container ship, lifeboat, amphibian, fireboat, drilling platform
   - "motor scooter": motor scooter, go-kart, moped, bumper car, golfcart
@@ -430,11 +494,15 @@ Credit: "Figures copyright Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton,
 
 ## Slide 51 — 2012 to Present: Deep Learning is Everywhere (object detection, image segmentation)
 
+![Part 1, slide 51 — 2012 to Present: Deep Learning is Everywhere (object detection, image segmentation)](../images/01-introduction-part-1/slide-51.jpg)
+
 Subheadings "Object Detection" (left) and "Image Segmentation" (right).
 - Left, captioned "Ren, He, Girshick, and Sun, 2015": four photographs with coloured bounding boxes and class-plus-confidence labels: a horse with rider (boxes "horse : 0.993", "person : 0.992", "dog : 0.997", "person : 0.979", plus a car "car : 1.000" in the background); a dog and a cat lying together ("dog : 0.994", "cat : 0.982"); a bus ("bus : 0.996", "person : 0.736"); a sailboat with people ("boat : 0.970", "person : 0.983", "person : 0.983", "person : 0.925", "person : 0.989").
 - Right, captioned "Fabaret et al, 2012" (as printed): a wide street-scene panorama (a park plaza with a stone arch and pedestrians) at the bottom, and above it the same scene overlaid with a semantic segmentation: coloured regions (green for trees/plants, grey for road, pink-red for people, etc.) with word labels such as "sky", "building", "tree", "plant", "person", "car", "road", "sidewalk", "balcony".
 
 ## Slide 52 — 2012 to Present: Deep Learning is Everywhere (video classification, activity recognition)
+
+![Part 1, slide 52 — 2012 to Present: Deep Learning is Everywhere (video classification, activity recognition)](../images/01-introduction-part-1/slide-52.jpg)
 
 Subheadings "Video Classification" (left, citing "Simonyan et al, 2014") and "Activity Recognition" (right).
 - Left: a two-stream network diagram. An "input video" frame stack on the far left feeds two parallel branches: a green "Spatial stream ConvNet" (input: "single frame") and a purple "Temporal stream ConvNet" (input: "multi-frame optical flow"). Each is a row of layer boxes: conv1 (7x7x96, stride 2, norm., pool 2x2), conv2 (5x5x256, stride 2, norm., pool 2x2), conv3 (3x3x512, stride 1), conv4 (3x3x512, stride 1), conv5 (3x3x512, stride 1, pool 2x2), full6 (4096, dropout), full7 (2048, dropout), softmax. Both feed a red box "class score fusion".
@@ -442,16 +510,22 @@ Subheadings "Video Classification" (left, citing "Simonyan et al, 2014") and "Ac
 
 ## Slide 53 — 2012 to Present: Deep Learning is Everywhere (pose recognition, Atari)
 
+![Part 1, slide 53 — 2012 to Present: Deep Learning is Everywhere (pose recognition, Atari)](../images/01-introduction-part-1/slide-53.jpg)
+
 - "Pose Recognition (Toshev and Szegedy, 2014)": a strip of six photographs of a man in different poses (arms raised, drinking, pointing, saluting, sitting on a kayak, reclining), each overlaid with a coloured skeleton (blue, green, orange, red segments for limbs and torso).
 - "Playing Atari games (Guo et al, 2014)": at the left, a small grid of four rows labelled "submarine" (red), "diver" (yellow), "enemy" (green) and "enemy+diver" (blue), with four black-and-white pixel maps each for frames "t-3, t-2, t-1, t" (frame label row); next to it an Atari underwater game screenshot (score 1220) with boxes around objects and a small black-and-white image of detected objects; at the right, three consecutive screenshots of the same game (a yellow submarine on blue water, with an oxygen gauge at the bottom, the score at the top shows 0).
 
 ## Slide 54 — 2012 to Present: Deep Learning is Everywhere (medical imaging, galaxies, whales)
+
+![Part 1, slide 54 — 2012 to Present: Deep Learning is Everywhere (medical imaging, galaxies, whales)](../images/01-introduction-part-1/slide-54.jpg)
 
 - "Medical Imaging" (Levy et al, 2016; figure reproduced with permission): a top row of five grey-scale breast-imaging patches labelled "Benign, Benign, Malignant, Malignant, Benign", and under each a dark, speckled saliency-style image.
 - "Galaxy Classification" (Dieleman et al, 2014): four galaxy images (spiral, spiral, barred spiral, an edge-on galaxy). Credit: "From left to right: public domain by NASA, usage permitted by ESA/Hubble, public domain by NASA, and public domain."
 - "Whale recognition" (large, right): an aerial photograph of a whale with a spout and a calf swimming on dark blue water; "Kaggle Challenge" link below. Credit: "This image by Christin Khan is in the public domain and originally came from the U.S. NOAA."
 
 ## Slide 55 — 2012 to Present: Deep Learning is Everywhere (image captioning)
+
+![Part 1, slide 55 — 2012 to Present: Deep Learning is Everywhere (image captioning)](../images/01-introduction-part-1/slide-55.jpg)
 
 Left text: "Image Captioning / Vinyals et al, 2015 / Karpathy and Fei-Fei, 2015". Six photographs with their generated captions:
 - "A white teddy bear sitting in the grass" (photo: a plush teddy bear in grass)
@@ -465,9 +539,13 @@ Small print: "All images are CC0 Public domain:" followed by six pixabay.com URL
 
 ## Slide 56 — 2012 to Present: Deep Learning is Everywhere (scene graphs / visual relationships)
 
+![Part 1, slide 56 — 2012 to Present: Deep Learning is Everywhere (scene graphs / visual relationships)](../images/01-introduction-part-1/slide-56.jpg)
+
 Left: a photograph of a woman and a small child skiing in snow, overlaid with coloured boxes: a red box around the woman, an orange box around the child, a purple box around the child's shirt, a blue box across the snow at the bottom, and an olive-green box around the woman's skis. Right: text "Results: spatial, comparative, asymmetrical, verb, prepositional", then a graph of words coloured to match the boxes: "person" (orange) —wear→ "shirt" (purple); "person" (orange) —"left of"→ "person" (red); "person" (red) —"taller than"→ "person" (orange); "person" (red) —"on"→ "snow" (blue); "person" (red) —"wear"→ "ski" (brown/olive). Citation: "Krishna*, Lu*, Bernstein, Fei-Fei, ECCV 2016".
 
 ## Slide 57 — [DeepDream and neural style transfer]
+
+![Part 1, slide 57 — [DeepDream and neural style transfer]](../images/01-introduction-part-1/slide-57.jpg)
 
 No title text. Left: two large "DeepDream" images: top, a psychedelic texture of many red/orange animal-like faces and swirls; bottom, a hazy landscape of hills filled with pagoda- or tower-like shapes. Right: a photo of three San Francisco row houses on a hill, shown at the top centre, and three stylised versions: one with a Starry-Night-like swirl style (top right), one in a colourful bokeh-dot mosaic style (centre) with a small inset of the style image (a colourful pattern), and one in the style of a Van Gogh painting of tree roots (right) with that painting as an inset. Citations: "Mordvinsev et al, 2015" and "Gatys et al, 2016". Small credits: "Figures copyright Justin Johnson, 2015. Reproduced with permission. Generated using the Inceptionism approach from a blog post by Google Research."; "Original image is CC0 public domain; Starry Night and Tree Roots by Van Gogh are in the public domain; Bokeh image is in the public domain; Stylized images copyright Justin Johnson, 2017; reproduced with permission".
 
@@ -477,6 +555,8 @@ Title: "2012 to Present: Deep Learning is Everywhere". A large solid black recta
 
 ## Slide 59 — 2012 to Present: Deep Learning is Everywhere (DALL·E, avocado armchair)
 
+![Part 1, slide 59 — 2012 to Present: Deep Learning is Everywhere (DALL·E, avocado armchair)](../images/01-introduction-part-1/slide-59.jpg)
+
 A DALL·E screenshot on black. "TEXT PROMPT": "an armchair in the shape of an avocado. an armchair imitating an avocado." (the words armchair, shape, avocado underlined). "AI-GENERATED IMAGES": five images on white of armchairs that look like avocados (green outer shell, yellow-green inner, brown pit-shaped seat or cushion; various shapes and viewpoints). Citation: Ramesh et al, "DALL·E: Creating Images from Text", 2021. https://openai.com/blog/dall-e/
 
 ## Slide 60 — 2012 to Present: Deep Learning is Everywhere (DALL·E, peach armchair)
@@ -485,12 +565,16 @@ Same layout as slide 59. Text prompt: "an armchair in the shape of a peach. an a
 
 ## Slide 61 — [Computation, Algorithms, Data]
 
+![Part 1, slide 61 — [Computation, Algorithms, Data]](../images/01-introduction-part-1/slide-61.jpg)
+
 No title. Three side-by-side image panels, each with a bold white or grey label at the bottom; the date "April 1, 2025" and the number "61" appear faintly at the bottom corners instead of the footer bar.
 - Left, label "Computation": a photograph of a data-centre aisle lined on both sides with racks of servers lit in blue, with a pale floor.
 - Middle, label "Algorithms": a diagram of a feed-forward neural network drawn pointing upward on white: four dark-red circles at the bottom (inputs), a row of three grey circles, a row of two grey circles, and one dark-red circle at the top (output), with arrows connecting every node to the nodes of the next layer.
 - Right, label "Data": a dense mosaic grid of many small photographs of everyday objects, food, and scenes (clocks, cameras, pastries, shoes, etc.).
 
 ## Slide 62 — GFLOP per Dollar
+
+![Part 1, slide 62 — GFLOP per Dollar](../images/01-introduction-part-1/slide-62.png)
 
 Title: "GFLOP per Dollar". A scatter chart.
 - Axes: vertical, unlabelled, 0 to 50 in steps of 10 (GFLOP per dollar); horizontal, dates from Jan-04 to Jul-20 labelled Jan-04, Jul-05, Jan-07, Jul-08, Jan-10, Jul-11, Jan-13, Jul-14, Jan-16, Jul-17, Jan-19, Jul-20.
@@ -502,9 +586,13 @@ Vertical text at right: "Slide inspiration: Justin Johnson".
 
 ## Slide 63 — GFLOP per Dollar (with Tensor Cores)
 
+![Part 1, slide 63 — GFLOP per Dollar (with Tensor Cores)](../images/01-introduction-part-1/slide-63.png)
+
 Same title and horizontal axis as slide 62, with a new vertical scale of 0 to 200 (ticks every 50). Now 3 series: blue "CPU" (all near 0), red "GPU (FP32)" (same points as slide 62, now looking low: up to about 15 until 2018, then about 5–13 in 2018-19 and about 24, 34, 43 at the right edge), and a new orange series "GPU (Tensor Core)": about 37 (mid-2017), about 53, 88, 107, 122 (around early 2019), and about 95, 136 and 171 at the right edge (c. Sep 2020). Orange bold text: "Recent GPUs have "Tensor Cores": Special hardware for deep learning!". Vertical text at right: "Slide inspiration: Justin Johnson".
 
 ## Slide 64 — AI's Explosive Growth & Impact
+
+![Part 1, slide 64 — AI's Explosive Growth & Impact](../images/01-introduction-part-1/slide-64.jpg)
 
 Title: "AI's Explosive Growth & Impact". Three small charts, each with a caption and source:
 1. Left, "Number of attendance At AI conferences" (source: The Gradient). Line chart titled "Attendance at large conferences (1984-2019)", "Source: Conference provided data.", vertical axis "Number of attendees" (0 to 15,000, ticks 0, 5,000, 10,000, 15,000), horizontal axis years 1985 to 2015+, "Fig. 2.1a". 7 series (legend): CVPR (blue dots/line), IJCAI (red dots/line), AAAI (orange dots, dotted), NeurIPS (dark grey dots/line), IROS (orange solid), ICML (grey dashed), ICRA (light-blue solid). Qualitatively: AAAI and IJCAI start at about 3,000–5,000 in the mid-1980s and decline to about 1,000–1,500 by the late 1990s; all stay about 1,000–2,000 until about 2012; then NeurIPS rises fastest to about 13,500 in 2019 (about 8,000 in 2017–2018), CVPR to about 9,200, ICML to about 6,500, with IROS about 3,500, ICRA about 3,000, IJCAI about 3,000, AAAI about 3,200 at the end.
@@ -516,6 +604,8 @@ Title: "AI's Explosive Growth & Impact". Three small charts, each with a caption
 Centred red text: "Despite the successes, computer vision still has a long way to go" (section divider).
 
 ## Slide 66 — Computer Vision Can Cause Harm
+
+![Part 1, slide 66 — Computer Vision Can Cause Harm](../images/01-introduction-part-1/slide-66.jpg)
 
 Title: "Computer Vision Can Cause Harm". Two columns.
 - Left, "Harmful Stereotypes": a table of gender-classifier accuracy by skin tone and gender, with a small coloured bar under each value (green for high, red/pink for low, yellow for the gap):
@@ -532,6 +622,8 @@ Title: "Computer Vision Can Cause Harm". Two columns.
 
 ## Slide 67 — Computer Vision Can Save Lives
 
+![Part 1, slide 67 — Computer Vision Can Save Lives](../images/01-introduction-part-1/slide-67.jpg)
+
 Title: "Computer Vision Can Save Lives". A composite graphic over a darkened living-room photograph, with a Stanford "S" tree logo at the bottom right:
 - Heading text: "How to take care of seniors while keeping them safe?"
 - Four round icon bullets: "Early Symptom Detection of COVID-19" (thermometer), "Monitor Patients with Mild Symptoms" (calendar, "14"), "Manage Chronic Conditions" (head with a lung/heart-like symbol).
@@ -540,6 +632,8 @@ Title: "Computer Vision Can Save Lives". A composite graphic over a darkened liv
 Vertical text at right: "Slide inspiration: Justin Johnson".
 
 ## Slide 68 — And there is a lot we don't know how to do
+
+![Part 1, slide 68 — And there is a lot we don't know how to do](../images/01-introduction-part-1/slide-68.jpg)
 
 Title: "And there is a lot we don't know how to do". Two photographs:
 - Left: four young children crouched in a wooded area examining plants and the ground, one holding a magnifying glass up to a plant. Credit text (small): https://fedandfit.com/wp-content/uploads/2020/06/summer-activities-for-kids_optimized-scaled.jpeg

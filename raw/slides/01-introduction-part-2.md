@@ -68,13 +68,19 @@ Bullet: "Image Classification: A core task in Computer Vision". Figure: a photog
 
 ## Slide 8 — Deep Learning Basics
 
+![Part 2, slide 8 — Deep Learning Basics](../images/01-introduction-part-2/slide-8.jpg)
+
 Same as slide 7 (cat photo, arrow to "cat"), plus a new figure at right captioned "Linear Classifier": a 2D scatter plot with axes x₁ (horizontal) and x₂ (vertical). About 8 filled black dots cluster at upper left and about 8 hollow circles at lower right. Three separating lines are drawn: a blue vertical line (labelled H₁), a red diagonal line running lower-left to upper-right (labelled H₂ in small text) with a thin segment marking the margin to nearby points, and a green near-vertical line at far right (labelled H₃). It illustrates linear decision boundaries separating two classes (the red one separates them best).
 
 ## Slide 9 — Deep Learning Basics
 
+![Part 2, slide 9 — Deep Learning Basics](../images/01-introduction-part-2/slide-9.jpg)
+
 Same as slide 7, plus at right (replacing the linear classifier) a figure captioned "Regularization & Optimization": axes x (horizontal) and y (vertical), five light-blue data points. A wiggly blue curve "f₁" passes through all five points (overfit, with large swings and falling off steeply at both ends), and a straight green line "f₂" passes near them (the simpler fit). It illustrates complex vs. simple fits and regularization.
 
 ## Slide 10 — Deep Learning Basics
+
+![Part 2, slide 10 — Deep Learning Basics](../images/01-introduction-part-2/slide-10.jpg)
 
 Same as slide 7, plus at right a figure captioned "Neural Networks": a fully connected feed-forward network diagram with 3 yellow input nodes, a layer of 4 blue nodes, a layer of 4 green nodes, and 1 red output node; every node is connected by arrows to all nodes of the next layer.
 
@@ -92,6 +98,8 @@ Two large circles side by side with no other text: a light-orange circle labelle
 
 ## Slide 14 — Tasks Beyond Image Classification
 
+![Part 2, slide 14 — Tasks Beyond Image Classification](../images/01-introduction-part-2/slide-14.jpg)
+
 Title word "Tasks" is in red. Four example panels, left to right:
 - **Classification**: photo of a kitten walking on grass; label "CAT". Brace beneath: "No spatial extent".
 - **Semantic Segmentation**: the same scene as a flat-colour map: blue top (sky), purple band (tree), green bottom (grass), a yellow cat silhouette; label "GRASS, CAT, TREE, SKY" (each word coloured to match: green, yellow, purple, blue). Brace beneath: "No objects, just pixels".
@@ -101,6 +109,8 @@ A shared brace under the last two panels: "Multiple Object". Small credit: "This
 
 ## Slide 15 — Tasks Beyond Image Classification
 
+![Part 2, slide 15 — Tasks Beyond Image Classification](../images/01-introduction-part-2/slide-15.jpg)
+
 Three examples:
 - **Video Classification**: a grayscale street frame showing a person in white shirt and shorts running along a sidewalk, seen from behind; caption "Running? Jumping?".
 - **Multimodal Video Understanding**: a young man in a dark vest playing a marimba/vibraphone (Yamaha) with mallets against a black background; beneath it a blue audio waveform in a box.
@@ -108,15 +118,21 @@ Three examples:
 
 ## Slide 16 — Models Beyond Multi-Layer Perceptron
 
+![Part 2, slide 16 — Models Beyond Multi-Layer Perceptron](../images/01-introduction-part-2/slide-16.jpg)
+
 Title word "Models" in red. Figure: convolutional network diagram. At left, the input image (a script capital letter "K") with a small square patch highlighted; "Input" label. Stacks of green "Image Maps" (feature maps) connected by lines from the patch ("Convolutions"), followed by smaller orange stacks ("Subsampling"), then alternating green and orange smaller stacks, ending in flattened layers labelled "Fully Connected" and "Output". Caption below: "Convolutional neural network". Credit: "Illustration of LeCun et al. 1998 from CS231n 2017 Lecture 1".
 
 ## Slide 17 — Models Beyond Multi-Layer Perceptron
+
+![Part 2, slide 17 — Models Beyond Multi-Layer Perceptron](../images/01-introduction-part-2/slide-17.jpg)
 
 Two figures:
 - Left, "Recurrent neural network": an unrolled RNN chain: inputs x₁, x₂, x₃, …, x_t (pink boxes) feed RNN blocks (green) that pass state left to right and output y₁, y₂, y₃, …, y_t (blue boxes). Below it an LSTM cell diagram: inputs c_{t-1} and h_{t-1} and x_t, "stack" of h and x multiplied by W, producing gates f, i, g, o; elementwise multiplications (⊙) and a "+" produce c_t; c_t passes through "tanh" and is multiplied by o to give h_t.
 - Right, "Attention mechanism / Transformers": input vectors x₀, x₁, x₂ (purple) produce keys k₀, k₁, k₂ (blue) and values v₀, v₁, v₂ (yellow); queries q₀, q₁, q₂ (green) at the bottom. Alignment grid e_{i,j} (grey) from queries and keys, then "softmax (↑)", then an Attention grid a_{i,j} (orange), combined with values by "mul(→) + add (↑)" to give outputs y₀, y₁, y₂ (top). Side labels: "Input vectors", "Alignment", "Attention".
 
 ## Slide 18 — Large Scale Distributed Training
+
+![Part 2, slide 18 — Large Scale Distributed Training](../images/01-introduction-part-2/slide-18.jpg)
 
 Bullets:
 - Train Large Models on big datasets faster
@@ -142,17 +158,25 @@ Title only; the rest of the slide is blank.
 
 ## Slide 22 — Beyond 2D Recognition: Self-supervised Learning
 
+![Part 2, slide 22 — Beyond 2D Recognition: Self-supervised Learning](../images/01-introduction-part-2/slide-22.jpg)
+
 Subtitle "Self-supervised Learning" in red. Figure: a Siamese-network diagram. Left box "Inputs" holds two photos of the same golden puppy on grass: x₁ (colour) and x₂ (grayscale version). Each goes into an "Embedding Network" box containing a pink trapezoid labelled θ (the two θ networks are linked by a line, i.e. shared weights). Outputs are vectors z₁ = θ(x₁) (blue bar) and z₂ = θ(x₂) (purple bar), which both feed a yellow "Distance Function" box D(z₁, z₂), whose output is a yellow circle labelled "Scalar Value". Credit: "Image Courtesy of Rohit Kundu".
 
 ## Slide 23 — Beyond 2D Recognition: Generative Modeling
+
+![Part 2, slide 23 — Beyond 2D Recognition: Generative Modeling](../images/01-introduction-part-2/slide-23.jpg)
 
 Subtitle "Generative Modeling" in red. Two photographs side by side, caption "Style Transfer": left, a night photo of the Stanford Hoover Tower and an arcade of lit arches under a dark blue sky; right, the same scene re-rendered in the swirling brush-stroke style of Van Gogh's "The Starry Night" (swirling blue and yellow sky, same buildings).
 
 ## Slide 24 — Beyond 2D Recognition: Generative Modeling
 
+![Part 2, slide 24 — Beyond 2D Recognition: Generative Modeling](../images/01-introduction-part-2/slide-24.jpg)
+
 At left, a generated image of two fluffy teddy bears underwater, each typing on a laptop, with bubbles and a coral/rocky floor. At right, the quoted prompt: "Teddy bears working on new AI research underwater with 1990s technology" followed by "DALL-E 2". Credit: "This image is public domain".
 
 ## Slide 25 — Beyond 2D Recognition: Generative Modeling
+
+![Part 2, slide 25 — Beyond 2D Recognition: Generative Modeling](../images/01-introduction-part-2/slide-25.jpg)
 
 Left, bold heading "Image Generation using Diffusion Models": a diagram with a noisy-static image on the left, an arrow into a box "Diffusion Model" with a looping arrow labelled "For T timesteps", and an arrow out to another noisy-static image on the right (iterative denoising). URL below it: https://learnopencv.com/image-generation-using-diffusion-models/
 
@@ -160,11 +184,15 @@ Right, bold text: "You will learn and implement a generative model in  Assignmen
 
 ## Slide 26 — Beyond 2D Recognition: Vision Language Models
 
+![Part 2, slide 26 — Beyond 2D Recognition: Vision Language Models](../images/01-introduction-part-2/slide-26.jpg)
+
 Subtitle "Vision Language Models" in red. Left: two VLM diagrams. Top: a text box "Labrador sitting near water." with an arrow into a red box "VLM" and an arrow to a photo of a yellow Labrador sitting on a wooden platform (text to image). Bottom: that photo, arrow into a red "VLM" box, arrow to the text box "Labrador sitting near water." (image to text). Citation: "Yasunaga, Michihiro, et al. "Retrieval-augmented multimodal language modeling." arXiv preprint arXiv:2211.12561 (2022)."
 
 Right: the CLIP contrastive pre-training diagram. A stack of text snippets ("Pepper the aussie pup") goes into a purple "Text Encoder", yielding text embeddings T₁, T₂, T₃, …, T_N across the top. A stack of images (a black-and-white/brown dog photo) goes into a green "Image Encoder", yielding image embeddings I₁, I₂, I₃, …, I_N down the left side. An N×N grid of dot products I_i·T_j (I₁·T₁, I₁·T₂, … I_N·T_N); the diagonal cells are shaded blue. Caption: "Contrastive pre-training in CLIP. The blue squares are the pairs for which we want to optimize the similarity. Image derived from https://github.com/openai/CLIP"
 
 ## Slide 27 — Beyond 2D Recognition: 3D Vision
+
+![Part 2, slide 27 — Beyond 2D Recognition: 3D Vision](../images/01-introduction-part-2/slide-27.jpg)
 
 Subtitle "3D Vision" in red. Three figure groups:
 - Top left: a photo of a pink-beige wingback armchair and, beside it, its voxel (blocky grey cube) 3D reconstruction. Citation: "Choy et al., 3D-R2N2: Recurrent Reconstruction Neural Network (2016)".
@@ -172,6 +200,8 @@ Subtitle "3D Vision" in red. Three figure groups:
 - Right: a living-room photo with green bounding boxes labelled "bookcase", "sofa", "chair", "chair" (blue sofa, red bookcase, small chairs) and below it the reconstructed 3D meshes of those objects (grey surfaces) in the same scene. Citation: "Gkioxari et al., "Mesh R-CNN", ICCV 2019".
 
 ## Slide 28 — Beyond 2D Recognition: Embodied Intelligence
+
+![Part 2, slide 28 — Beyond 2D Recognition: Embodied Intelligence](../images/01-introduction-part-2/slide-28.jpg)
 
 Subtitle "Embodied Intelligence" in red. Two video frames:
 - Left: a simulated messy living room/kitchen with strewn bottles, dishes and a plant, and a robot with a light-blue arm at left; caption overlay "Clean Your House After a Wild Party" and "BEHAVIOR Task #1". Citation: "Li et al., BEHAVIOR-1K: A Benchmark for Embodied AI with 1,000 Everyday Activities and Realistic Simulation (2022)".
@@ -198,6 +228,8 @@ Two photos: left, captioned "Hinton speaking at the Nobel Prize Lectures in Stoc
 Text: "Award recognizes ONE Computer Vision paper from ten years ago with significant impact on computer vision research." Red line: "At CVPR 2019, it was awarded to the 2009 original ImageNet paper". Two photographs of a conference stage. Left: a projection screen reading "PAMI Longuet-Higgins Prize / Retrospective Most Impactful Paper from CVPR 2009 / ImageNet: A large-scale hierarchical image database / Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei", with a few people at the bottom left. Right: a closer shot of people standing on stage at a lectern, with a white arrow and the label "That's Fei-Fei" pointing to one woman in the group; the screen shows "ImageNet: A large-… Jia Deng, Li-Jia Li, K…".
 
 ## Slide 34 — [CVPR Nashville and CVPR paper statistics]
+
+![Part 2, slide 34 — [CVPR Nashville and CVPR paper statistics]](../images/01-introduction-part-2/slide-34.jpg)
 
 No title text. Top left: the CVPR Nashville logo (navy guitar shape, "CVPR Nashville, June 11-15, 2025"). Right: a dusk photo of the Nashville skyline across a river, with the same logo overlaid. Bottom left: a line chart "CVPR Conference Paper Statistics". X-axis "Year", 2006–2023 (yearly); y-axis 0 to 10000 (gridlines 0, 2500, 5000, 7500, 10000). Two series (legend: blue "Submitted Papers", red "Accepted Papers"):
 - Submitted Papers (blue): 2006 1131; 2007 1250; 2008 1593; 2009 1464; 2010 1724; 2011 1677; 2012 1933; 2013 1798; 2014 1807; 2015 2123; 2016 2145; 2017 2680; 2018 3309; 2019 5165; 2020 6424; 2021 7093; 2022 8161; 2023 9155.
@@ -390,6 +422,8 @@ Apply computer vision to solve problems in other fields of science & engineering
 (Note: the section names here differ from the agenda on slides 6–30, which name "Generative and Interactive Visual Intelligence" and "Human-Centered Applications and Implications".)
 
 ## Slide 52 — Next time: Image classification with Linear Classifiers
+
+![Part 2, slide 52 — Next time: Image classification with Linear Classifiers](../images/01-introduction-part-2/slide-52.jpg)
 
 Two figures with headings "k- nearest neighbor" and "Linear classification":
 - Left: a 2D map coloured into five irregular regions (red/salmon at left, blue at top-centre, green in the middle, purple at right, orange/yellow at bottom), each containing same-coloured dots, with a small orange island inside the green region; it shows the decision regions of a k-nearest-neighbor classifier.
