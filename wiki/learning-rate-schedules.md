@@ -91,7 +91,10 @@ forgets the exact name, and stresses that it is shown empirically rather than pr
 
 Adam or AdamW often works even with a constant learning rate; Adam or AdamW with linear warm-up
 then cosine decay is a popular combination; and SGD with momentum usually needs more learning rates
-and schedules tried (lecture 3, slide 95; ≈1:05:24–1:06:09).
+and schedules tried (lecture 3, slide 95; ≈1:05:24–1:06:09). Recapping this at the start of
+lecture 4, the lecturer puts it more strongly: schedules are normally needed, "but in some of the
+more recent ones, Adam and its variants, we often do not need to manually or explicitly decrease
+it, because that is kind of encoded into the optimizer itself" (lecture 4, ≈9:26).
 
 ## Related pages
 

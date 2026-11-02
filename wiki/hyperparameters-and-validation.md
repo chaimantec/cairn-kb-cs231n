@@ -7,7 +7,8 @@ slide 36). Their best values are "very problem/dataset-dependent", so they must 
 problem, which is called **hyperparameter tuning** (lecture 2, ≈36:25).
 
 Covered in: [Lecture 2](02-image-classification.md#hyperparameters-and-how-to-set-them); lecture 3
-adds the regularization strength and the learning rate (below).
+adds the regularization strength and the learning rate, and lecture 4 a network's size and its
+activation function (below).
 
 ## Four ways to choose them
 
@@ -69,3 +70,13 @@ regularization term in the loss and is set with training and validation sets lik
 hyperparameter of every optimiser the course uses (see
 [learning-rate schedules](learning-rate-schedules.md)), as are Adam's $\beta_1$ and $\beta_2$,
 whose usual starting values are 0.9 and 0.999 (see [optimizers](optimizers.md#adam)).
+
+## Hyperparameters from lecture 4
+
+A [neural network](neural-networks.md) adds the number of layers, the number of neurons in each,
+and the activation function. All are chosen empirically: start from networks trained on similar
+data, or from the activation standard for that kind of architecture (ReLU is the usual default),
+and experiment (lecture 4, ≈22:46–23:33 and ≈33:37–34:26). The network's size is not normally
+tuned to control overfitting. Instead, "go with a bit of a bigger network than we need" and tune
+the regularization strength $\lambda$ (lecture 4, ≈29:48–30:34; see
+[regularization](regularization.md#the-regularization-strength-and-the-networks-size)).

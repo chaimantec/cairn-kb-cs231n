@@ -14,14 +14,14 @@ are not its PDF page numbers; the [lecture page](01-introduction.md) explains th
 ## Course roadmap
 
 The course has four parts (part 2, slide 51). The lecture titles below are those of the Spring
-2025 recordings; only lecture 1 is in this knowledge base so far.
+2025 recordings; lectures 1–4 are in this knowledge base so far.
 
 | Lecture | Title | Part of the course |
 | --- | --- | --- |
 | 1 | Introduction — [wiki page](01-introduction.md) | — |
 | 2 | Image Classification with Linear Classifiers — [wiki page](02-image-classification.md) | Deep Learning Basics (lectures 2–4) |
 | 3 | Regularization and Optimization — [wiki page](03-regularization-optimization.md) | Deep Learning Basics |
-| 4 | Neural Networks and Backpropagation | Deep Learning Basics |
+| 4 | Neural Networks and Backpropagation — [wiki page](04-neural-networks-backpropagation.md) | Deep Learning Basics |
 | 5 | Image Classification with CNNs | Perceiving and Understanding the Visual World (lectures 5–12) |
 | 6 | CNN Architectures | Perceiving and Understanding |
 | 7 | Recurrent Neural Networks | Perceiving and Understanding |

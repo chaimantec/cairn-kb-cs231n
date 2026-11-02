@@ -398,7 +398,8 @@ Linear functions stacked one after another, with more added between them, make u
 (≈48:47–49:33; slide 56, a photograph of stacked toy blocks with "linear classifiers" as the blocks
 and "neural network" as the stack). Linear layers are everywhere in popular architectures: slide 57
 boxes the final fully connected layers of AlexNet (Krizhevsky et al., 2012) and the final
-"avg pool, fc 1000" of a 34-layer ResNet (He et al., 2015) (≈49:33).
+"avg pool, fc 1000" of a 34-layer ResNet (He et al., 2015) (≈49:33). Lecture 4 builds these
+networks; see [neural networks](neural-networks.md).
 
 ![Slide 56 — Neural Network / Linear classifiers](../raw/images/02-image-classification/slide-56.jpg)
 

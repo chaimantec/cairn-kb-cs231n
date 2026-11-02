@@ -4,9 +4,12 @@
 training data so that it does better on data it has not seen. In lecture 3's words, it is there to
 "prevent the model from doing too well on training data" (lecture 3, ≈11:43). This page covers what
 CS231N says about it so far: the regularized loss, L2, L1 and elastic net, which weights each
-prefers, why regularize, and how regularization meets the optimiser in AdamW.
+prefers, why regularize, how regularization meets the optimiser in AdamW, and why a network's
+capacity is controlled with the regularization strength rather than its size.
 
-Covered in: [Lecture 3](03-regularization-optimization.md#regularization). Later lectures add
+Covered in: [Lecture 3](03-regularization-optimization.md#regularization);
+[Lecture 4](04-neural-networks-backpropagation.md#choosing-the-networks-size) adds the rule about
+network size. Later lectures add
 more complex regularizers (dropout, batch normalization and others); this knowledge base does not
 cover them yet.
 
@@ -94,7 +97,28 @@ lecturer notes that Meta's Llama models use it (lecture 3, ≈57:41–58:27). Se
 
 *Lecture 3, slide 80 — where each variant applies regularization, and ImageNet accuracy over 30 epochs for weight decay ("wd", blue) and L2 (orange); wd ends at about 0.94 against about 0.93. Chart from fast.ai. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_3.pdf)*
 
+## The regularization strength and the network's size
+
+For [neural networks](neural-networks.md), lecture 4's rule of thumb is: "Do not use size of neural
+network as a regularizer. Use stronger regularization instead" (lecture 4, slide 42). The slide
+shows one network trained at $\lambda = 0.001$, $0.01$ and $0.1$: as $\lambda$ grows, its decision
+boundary smooths from finger-like protrusions around individual points to a nearly straight line.
+"What we often do is go with a bit of a bigger network than we need" and then tune the
+regularization strength, rather than tuning the size (lecture 4, ≈29:48–30:34).
+
+![Lecture 4, slide 42 — Do not use size of neural network as a regularizer](../raw/images/04-neural-networks-backpropagation/slide-42.jpg)
+
+*Lecture 4, slide 42 — one network at regularization strengths λ = 0.001, 0.01 and 0.1: stronger regularization smooths the boundary, down to a nearly straight line. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_4.pdf)*
+
+A larger $\lambda$ underfits because the regularizer acts on the weights: the more it contributes to
+the loss, the less freedom the weights have, and "less freedom equals more generic boundaries"
+(lecture 4, ≈31:20). Nor is more regularization always better. The data loss is about predicting
+the right output, and the regularizer only about the weights, so "a regularizer is always good,
+but nothing is good if you use too much of it" (lecture 4, ≈32:06).
+
 ## Related pages
+
+- [Neural networks](neural-networks.md) — the models whose capacity this controls.
 
 - [Loss functions](loss-functions.md) — the data-loss half of the objective.
 - [Optimizers](optimizers.md) — how the regularized loss is minimised.

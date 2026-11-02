@@ -10,6 +10,8 @@ loss**, assigned as reading.
 Covered in: [Lecture 2](02-image-classification.md#choosing-w-the-loss-function);
 [Lecture 3](03-regularization-optimization.md#recap-the-full-loss) recaps it, adds a
 [regularization](regularization.md) term, and repeats the softmax-vs-SVM example in its appendix.
+[Lecture 4](04-neural-networks-backpropagation.md#recap-of-lectures-2-and-3) explains the hinge loss
+in its recap and puts the loss at the end of a network's computational graph.
 
 ## Setup
 
@@ -114,7 +116,17 @@ printed.
 Regularization and optimization are announced as coming next (lecture 2, slide 84). Lecture 3
 covers both: [regularization](regularization.md) adds a term $\lambda R(W)$ to the loss, and
 [gradient descent](gradient-descent.md) with the [optimizers](optimizers.md) built on it finds the
-$W$ that minimises the total.
+$W$ that minimises the total. Lecture 4 replaces the linear score function with a
+[neural network](neural-networks.md) and keeps the same losses on top. The loss becomes the last
+node of a computational graph, and [backpropagation](backpropagation.md) starts from it.
+
+In lecture 4's recap, the lecturer adds a few words on the hinge loss because students had asked
+why the course only uses softmax (lecture 4, ≈2:23–4:45). It is one of many losses, widely used in
+the early years of neural networks. Unlike softmax it does not turn scores into probabilities: it
+asks the correct class's score to beat every other class's by a margin, the 1 in the formula, and
+grows linearly when it does not. Lecture 4's 20-line training example uses neither loss but the
+summed squared difference between prediction and target, `np.square(y_pred - y).sum()`
+(lecture 4, slide 36).
 
 ![Lecture 2, slide 84 — Coming up:](../raw/images/02-image-classification/slide-84.jpg)
 

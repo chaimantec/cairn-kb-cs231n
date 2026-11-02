@@ -20,6 +20,7 @@ every build follows, and each lesson in general form, are in
 | 1 Introduction | [Run 1](#run-1--lecture-1-introduction-2026-11-01) |
 | 2 Image Classification with Linear Classifiers | [Run 2](#run-2--lecture-2-image-classification-with-linear-classifiers-2026-11-02) |
 | 3 Regularization and Optimization | [Run 3](#run-3--lecture-3-regularization-and-optimization-2026-11-02) |
+| 4 Neural Networks and Backpropagation | [Run 4](#run-4--lecture-4-neural-networks-and-backpropagation-2026-11-02) |
 
 ## Runs
 
@@ -370,3 +371,107 @@ Slug `03-regularization-optimization`.
 - [x] verify_kb.py clean, and its review section read (exit 0; one inline formula GitHub left as raw text, "(O(n^3))" in parentheses, rephrased; image and page counts in INDEX/AGENTS match the measured table; AGENTS range-expansion sentence corrected to "up to 12 slides")
 - [x] Commit and push — a6b5fb5, 915a917, 747b7a3 on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, lecture page, topic pages, slide file, transcript, images and kb.json fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 4 — Lecture 4 (Neural Networks and Backpropagation), 2026-11-02
+
+Built lecture 4 end to end: transcript, the deck, two figure audits, the transcript edit, the wiki
+page, two topic pages (neural networks; backpropagation and computational graphs), 35 slide
+images, and updates to INDEX, AGENTS, LICENSE, kb.json, sources.md, the course-logistics roadmap
+(row 4 linked; its "only lecture 1" sentence, stale since run 2, corrected), regularization,
+gradient descent, loss functions, linear classifiers, hyperparameters and validation, learning-rate
+schedules, and the lecture 1, 2 and 3 pages. Images opted in again; PDFs stay link-only.
+
+### Lecture 4 record
+
+**Deck.** One: `lecture_4.pdf`, 147 pages, Ehsan Adeli (per the course schedule; the recording
+does not name the lecturer), April 10, 2025. Printed numbers 1–152 with 2, 47, 112, 113 and 114
+absent: page 2 = slide 3, page 46 = slide 48, page 110 = slide 115. Footer "Lecture 4 - N" as a
+separate span at x≈494; the spans either side of every gap sit in the same position and the
+sequence only increases. Page 55 prints no number (a Karpathy figure credit sits where it would be)
+and is labelled 57, the only number between 56 and 58. On page 18 (slide 19) a full-page Sora
+frame is drawn over the title, footer and link, which remain in the text layer, so the map reads
+the number and the page shows none. No deck-wide licence. Per-image credits: slide 7 (CC0 1.0
+landscape and walking man), 13 (Sam Altman / OpenAI), 14 (Ramesh et al. 2022), 15–16 (Betker et
+al. 2023), 17 (OpenAI GPT-4; "Source: Barnorama" inside the screenshot), 18 (Kirillov et al.
+2023), 19–21 (OpenAI Sora link), 43 (Fotis Bobolas, CC-BY 2.0), 44–46 (Felipe Perucho, CC-BY
+3.0), 48–49 (CC0; Xie et al. ICCV 2019), 50 (London and Hausser), 55 (Krizhevsky, Sutskever and
+Hinton 2012, "Reproduced with permission"), 56–57 (Karpathy, "reproduced with permission").
+Schedule readings: the Backprop course notes, the linear-backprop and derivatives handouts,
+Efficient BackProp (LeCun et al.), and Why Momentum Really Works; the two handouts resolve at
+`https://cs231n.stanford.edu/handouts/`, not under `/2025/` where the schedule's relative link
+points, and are now in `sources.md`.
+
+**Transcription.** Four Sonnet agents in parallel (pages 1–37, 38–74, 75–111, 112–147), 78–84k
+tokens each, all finished, every chunk appended as written. `--verify` clean (147 headings). The
+parent removed one inference (slide 116: "each operator in PyTorch is implemented as its own
+file", not printed), restored slide 18's citation "Kirillov et al., Segment Anything, 2023" (found
+by grepping the text layer's credit lines against the file), rewrote slide 19's heading, and fixed
+19 GitHub math warnings (`\\` and `\,` in math, `)_` before subscripts, inline math after a quote
+mark, math inside the italic `[Ed:]` lines).
+
+**Figure audit** (Sonnet, two agents, 23 slides). A: 10, 11, 19, 25, 26, 30, 33, 41, 42, 46, 50,
+53. B: 74, 96, 100, 104, 105, 116, 134, 136, 143, 148, 152. Both rendered below the 600 dpi asked
+for: A at 150 dpi with `pdftoppm` (it reported PyMuPDF missing in its environment), cropping to
+400–600 dpi only for 11 and 53; B at 200 dpi, with 600 and 900 dpi for 116. Errors: slide 11's
+step levels (about 1.4 after epoch 30, 1.05 falling to 0.95 after 60, 0.9 after 90, not 1.5 and
+1.3; one "Reduce learning rate" label; arrows end above the curve); slides 25–26 have 7 red and 15
+blue points, not 8 and about 16, and the red column sits right of the θ axis. Omissions: 41 (an
+upper-left green region in the 3- and 6-neuron panels), 96 (the derivative table, every other
+gradient, the rectangle around w0 and x0), 116 (the last rows' commit messages), 134 (the second
+set of arrows). Confirmed: no optimizer paths on 10 (an animation frame); no figure at all on 50;
+the plus sign printed in all three expansions on 53; every entry of slide 143's four matrices.
+The parent's own check of two renders: slide 150 shows every matrix entry as transcribed (so the
+143 slip is real), and slide 26 has 7 red and 15 blue points in both panels.
+
+**Printed slips, transcribed as printed.** Slide 53 expands the hinge term as
+W[j,:]·x **+** W[yᵢ,:]·x + 1 in all three places, where the score difference gives a minus; `[Ed:]`
+line and wiki note. Slide 143's y = [[13, 9, -2, -6], [5, 2, 17, 1]] is not x·w =
+[[-1, -1, 2, 6], [5, 2, 11, 7]] (only 5 and 2 agree), repeated on slides 144–150; `[Ed:]` line,
+wiki note, INDEX rule and kb.json caveat. Recomputed and exact: the (x+y)z graph; every forward
+value and gradient of the sigmoid graph (each printed value is the two-decimal rounding of the
+step before; full precision gives -0.534, -0.197, 0.197 and a sigmoid gradient of 0.197); the
+add, mul, copy and max gate values; the ReLU vectors; slide 144's ~256 GB (2^36 entries at 4
+bytes is exactly 256 GiB).
+
+**Transcript edit** (Sonnet, ~96k tokens). 99 paragraphs; marker sequence identical; word ratios
+0.75–1.01. Number diff traced in full: "3264" was "32, 64" with the 32 already said (7:53); the
+self-corrected "10 templates, 100 templates" kept as 100 (16:27); "x1 and y" → x and y (43:48);
+three → 3 (44:35); "x 2" → x squared (54:39, 55:27); decimals at 56:12, 56:58, 57:44; "4,96" →
+4096 (1:12:27). Parent fixes: at 20:25 the editor had turned the false start "for uh efficient" into
+"their efficient models", now "their models"; the header said the hinge-loss digression had no
+slide (slide 6 prints it) and cited a section map that did not exist. Restored names all appear in
+the deck or in the captions (Swish, EfficientNet, polar coordinates and overfitting are in the
+captions). Ten student-turn markers (17:59 answer; 22:46, 23:33, 25:53, 30:34, 32:06, 32:51,
+33:37, 34:26, 52:22 questions); at 32:51 the captions carry the question in the clear, so it is
+marked `*[Student question]*` without "inaudible". One `[unclear: 2]` at 1:00:04, where the slide
+prints 0.2. **Coverage:** slides 3–4 and 12–21 are never presented; the recording ends at 1:16:19
+at slides 151–152, with slides 143–150 in outline.
+
+**Images.** 35 rendered (31 JPEG, 4 PNG; 5.2 MB): 13–21, 26, 30, 33, 34, 41, 42, 43, 46, 48, 49,
+54–57, 74, 80, 96, 100, 104, 105, 116, 130, 137, 142, 150, 152. Not rendered: 1 (title); 3–4
+(administrative); 5, 12, 22, 58, 59, 120, 151 (dividers and text); 6, 7, 11 (recaps of lecture 3
+figures); 10 (animation frame); 8, 9, 23, 24, 27, 28, 31, 32, 36–40, 50–53, 115, 117–119,
+121–123, 138, 144 (formulas, code and text transcribed exactly); build steps whose last step is
+rendered (25 → 26, 29 → 30, 44–45 → 46, 60–73 → 74, 75–79 → 80, 81–95 → 96, 97–99 → 100, 101–103
+→ 104, 106–111 → 105, 124–129 and 131 → 130, 132–136 → 137, 139–141 → 142, 143 and 145–149 → 150);
+35 (slide 34's diagram beside code). The raster test flagged 111 of 147 pages with no recurring
+template image; most of the gap to 35 is build steps and code screenshots. All 35 are in the
+lecture page with hand-written captions; the topic pages carry 9 (neural-networks), 13
+(backpropagation), 1 (regularization, slide 42) and 1 (gradient-descent, slide 54). Embed
+problems, all fixed by moving the block: slide 33 landed between a sentence and its table, slide
+42 between "in the regularized loss" and its formula, slide 104 (backpropagation page) between a
+sentence and its list, and slide 105 in the sigmoid section because "printed on slide 105" there
+was its first citation. Slides 80, 96, 130 and 150 were kept from the same problem by rewording
+before the first embed.
+
+**Wiki.** Lecture page: recording coverage and the two slips up front; administrative notes and
+the "Today: Deep Learning" examples from the slides alone; the recap (with the lecturer's account
+of the hinge loss and of Adam needing no manual decay); from linear classifiers to 2- and 3-layer
+networks; non-linearity; templates; activation functions and the Q&A on choosing them;
+architectures; the 20-line training loop; network size and regularization with the four student
+questions (the lecturer's two practices, "a bit of a bigger network than we need" and "start with
+smaller networks and increase", both recorded); biological neurons; computational graphs; both
+worked examples with a value table; gate patterns; flat and modular implementations and PyTorch;
+vectors, Jacobians, ReLU, matrices and the matrix-multiply gradients; summary. Two topic pages,
+neural-networks and backpropagation.
+

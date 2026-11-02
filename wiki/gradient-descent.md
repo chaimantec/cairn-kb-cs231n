@@ -8,7 +8,9 @@ why second-order methods are rarely used in deep learning. The optimisers that f
 (momentum, RMSProp, Adam, AdamW) are on [optimizers](optimizers.md), and how to set and change the
 step size is on [learning-rate schedules](learning-rate-schedules.md).
 
-Covered in: [Lecture 3](03-regularization-optimization.md#optimisation).
+Covered in: [Lecture 3](03-regularization-optimization.md#optimisation); recapped at the start of
+[Lecture 4](04-neural-networks-backpropagation.md#recap-of-lectures-2-and-3), which then shows how
+to compute the analytic gradient of any network with [backpropagation](backpropagation.md).
 
 ## The loss landscape
 
@@ -41,7 +43,13 @@ on top (lecture 3, ≈29:20).
 
 **Analytic gradient.** The loss is a known function of $W$, so its gradient $\nabla_W L$ can be
 derived with calculus, holding the data fixed (lecture 3, ≈29:20–30:52). It is exact and fast, but
-error-prone to derive and code.
+error-prone to derive and code. For a neural network, deriving it on paper is tedious and must be
+redone whenever the loss changes; lecture 4's answer is [backpropagation](backpropagation.md),
+which computes it mechanically from a computational graph (lecture 4, slides 53–54).
+
+![Lecture 4, slide 54 — Better Idea: Computational graphs + Backpropagation](../raw/images/04-neural-networks-backpropagation/slide-54.jpg)
+
+*Lecture 4, slide 54 — the linear classifier with hinge loss and regularization as a computational graph: x and W multiply into scores s, and the hinge loss and R(W) add into L. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_4.pdf)*
 
 **Gradient check.** "In practice: Always use analytic gradient, but check implementation with
 numerical gradient" (lecture 3, slide 48). The assignments use gradient checks to catch bugs

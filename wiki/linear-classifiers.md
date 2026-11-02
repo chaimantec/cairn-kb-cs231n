@@ -6,6 +6,8 @@ learning": neural networks are linear functions stacked one after another with m
 them (lecture 2, ≈46:29; ≈48:47–49:33).
 
 Covered in: [Lecture 2](02-image-classification.md#the-linear-classifier).
+[Lecture 4](04-neural-networks-backpropagation.md#from-linear-classifiers-to-neural-networks) builds
+[neural networks](neural-networks.md) from it.
 
 ## The function
 
@@ -80,6 +82,12 @@ see [gradient descent and SGD](gradient-descent.md) and [optimizers](optimizers.
 Linear layers appear throughout modern architectures. Lecture 2 points to the fully connected
 layers at the end of AlexNet (Krizhevsky et al., 2012) and the final "fc 1000" layer of a 34-layer
 ResNet (He et al., 2015) (lecture 2, ≈49:33; lecture 2, slide 57).
+
+Lecture 4 makes the stacking concrete. A 2-layer network is $f = W_2 \max(0, W_1 x)$: two linear
+layers with a non-linearity between them, without which the two would collapse into one linear
+classifier, $W_3 x$. With a 100-neuron hidden layer the network can learn 100 templates instead of
+the linear classifier's 10, and share them between classes (lecture 4, ≈15:40–16:27). See
+[neural networks](neural-networks.md).
 
 ![Lecture 2, slide 57 — Linear layers](../raw/images/02-image-classification/slide-57.jpg)
 

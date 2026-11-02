@@ -558,7 +558,7 @@ The neuron drawing from slide 44, with all its labels and the credit "This image
 
 ![Slide 46 — (no title) sigmoid activation function](../images/04-neural-networks-backpropagation/slide-46.jpg)
 
-Same slide as slide 45 (biological neuron drawing at upper left, black diagonal line, artificial neuron diagram at the right with $x_0$, $w_0$, $w_0 x_0$, $w_1 x_1$, $w_2 x_2$, $\sum_i w_i x_i + b$, $f$, "synapse", "dendrite", "cell body", "axon from a neuron", "output axon", "activation function", $f\left(\sum_i w_i x_i + b\right)$), with an added plot at the lower left.
+Same slide as slide 45 (biological neuron drawing at upper left, black diagonal line, and the artificial neuron diagram at the right with all of slide 45's labels and formulas), with an added plot at the lower left.
 
 The plot: a blue S-shaped curve (one series). The x axis is labelled at -10, -5, 0, 5, 10; the y axis at 0.0, 0.2, 0.4, 0.6, 0.8, 1.0. The curve is near 0.0 for x below about -5, rises through 0.5 at x = 0, and reaches about 1.0 by x of about 5, staying flat at 1.0 to x = 10. Beside it the text "sigmoid activation function" and the formula
 
@@ -597,13 +597,21 @@ Citation below: "[Dendritic Computation. London and Hausser]". There is empty sp
 
 Title: "Plugging in neural networks with loss functions"
 
-$$s = f(x; W_1, W_2) = W_2 \max(0, W_1 x)$$ with the blue label "Nonlinear score function"
+$$s = f(x; W_1, W_2) = W_2 \max(0, W_1 x)$$
 
-$$L_i = \sum_{j \neq y_i} \max(0, s_j - s_{y_i} + 1)$$ with the blue label "Hinge Loss on predictions"
+(with the blue label "Nonlinear score function".)
 
-$$R(W) = \sum_k W_k^2$$ with the blue label "Regularization"
+$$L_i = \sum_{j \neq y_i} \max(0, s_j - s_{y_i} + 1)$$
 
-$$L = \frac{1}{N}\sum_{i=1}^{N} L_i + \lambda R(W_1) + \lambda R(W_2)$$ with the blue label "Total loss: data loss + regularization"
+(with the blue label "Hinge Loss on predictions".)
+
+$$R(W) = \sum_k W_k^2$$
+
+(with the blue label "Regularization".)
+
+$$L = \frac{1}{N}\sum_{i=1}^{N} L_i + \lambda R(W_1) + \lambda R(W_2)$$
+
+(with the blue label "Total loss: data loss + regularization".)
 
 ## Slide 52 — Problem: How to compute gradients?
 
@@ -881,7 +889,9 @@ Black text: "Want:" $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y
 The graph is as on slide 61 (Forward values are printed in green next to the labels: x -2, y 5, q 3, z -4, f -12.) Red gradients printed: 1 under f, 3 under z, -4 under q. The magenta box now contains $\frac{\partial f}{\partial y}$, with a magenta arrow pointing to the y input line.
 
 A green-bordered box labelled "Chain rule:" (green) contains
+
 $$\frac{\partial f}{\partial y} = \frac{\partial f}{\partial q}\frac{\partial q}{\partial y}$$
+
 Below the box two red labels with red arrows: "Upstream gradient" (arrow to $\frac{\partial f}{\partial q}$) and "Local gradient" (arrow to $\frac{\partial q}{\partial y}$).
 
 ## Slide 72 — Backpropagation: a simple example
@@ -903,7 +913,9 @@ Black text: "Want:" $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y
 The graph is as on slide 61 (Forward values are printed in green next to the labels: x -2, y 5, q 3, z -4, f -12.) Red gradients printed: 1 under f, 3 under z, -4 under q, and new: red "-4" under y 5. The magenta box $\frac{\partial f}{\partial y}$ with its arrow to the y input remains.
 
 A green-bordered box labelled "Chain rule:" (green) contains
+
 $$\frac{\partial f}{\partial y} = \frac{\partial f}{\partial q}\frac{\partial q}{\partial y}$$
+
 Below the box two red labels with red arrows: "Upstream gradient" (arrow to $\frac{\partial f}{\partial q}$) and "Local gradient" (arrow to $\frac{\partial q}{\partial y}$).
 
 ## Slide 73 — Backpropagation: a simple example
@@ -925,7 +937,9 @@ Black text: "Want:" $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y
 The graph is as on slide 61 (Forward values are printed in green next to the labels: x -2, y 5, q 3, z -4, f -12.) Red gradients printed: 1 under f, 3 under z, -4 under q, -4 under y. The magenta box now contains $\frac{\partial f}{\partial x}$, with a magenta arrow pointing to the x input line.
 
 A green-bordered box labelled "Chain rule:" (green) contains
+
 $$\frac{\partial f}{\partial x} = \frac{\partial f}{\partial q}\frac{\partial q}{\partial x}$$
+
 Below the box two red labels with red arrows: "Upstream gradient" (arrow to $\frac{\partial f}{\partial q}$) and "Local gradient" (arrow to $\frac{\partial q}{\partial x}$).
 
 ## Slide 74 — Backpropagation: a simple example
@@ -949,7 +963,9 @@ Black text: "Want:" $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y
 The graph is as on slide 61 (Forward values are printed in green next to the labels: x -2, y 5, q 3, z -4, f -12.) Red gradients printed: 1 under f, 3 under z, -4 under q, -4 under y, and new: red "-4" under x -2. The magenta box $\frac{\partial f}{\partial x}$ with its arrow to the x input remains.
 
 A green-bordered box labelled "Chain rule:" (green) contains
+
 $$\frac{\partial f}{\partial x} = \frac{\partial f}{\partial q}\frac{\partial q}{\partial x}$$
+
 Below the box two red labels with red arrows: "Upstream gradient" (arrow to $\frac{\partial f}{\partial q}$) and "Local gradient" (arrow to $\frac{\partial q}{\partial x}$).
 
 ## Slide 75 — (no title) generic node

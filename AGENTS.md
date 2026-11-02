@@ -81,7 +81,8 @@ printed slips, which slides were rendered and why) goes in
   that now, but a single page reading a small number out of sequence is a misread, not a hidden
   slide: check the raw spans before handing the map to agents.
 - Each deck prints per-image credit lines (CC licences, public domain, "Figures copyright …
-  Reproduced with permission"). Grep the text layer for them to write `LICENSE.md`; permission
+  Reproduced with permission"). Grep the text layer for them to write `LICENSE.md`, and check each is in the slide file
+  (transcribers drop them); permission
   granted to the course does not pass to this repo, and `LICENSE.md` says so.
 
 ## Transcripts
@@ -96,7 +97,7 @@ printed slips, which slides were rendered and why) goes in
 
 ## Images
 
-**Lectures 1–3 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–4 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -108,6 +109,9 @@ they are the only part of this KB that redistributes course material rather than
   every page; exclude images that recur on most pages; code listings and equations are often
   pasted in as images) and under-reports vector charts and diagrams (Venn builds, GFLOP charts).
   Use the slide file's prose as the deciding signal.
+- **Audit agents under-render.** Figure-audit agents have rendered at 150–200 dpi when asked for
+  600 and said so only in passing. Read each report's method line, and confirm any value the wiki
+  will quote as a correction (a printed slip, a matrix) on the 1400px render as well.
 - **Decks hold animation frames.** A slide whose animation drew paths or builds exports to the PDF
   as its background frame only (lecture 3's optimizer comparisons: a loss surface and a legend,
   no paths). Confirm the absence at 600 dpi in the figure audit, say so in the slide file's
@@ -118,8 +122,8 @@ they are the only part of this KB that redistributes course material rather than
   should say what to look at. The script anchors each image after the block holding the
   **first** citation of that slide, and a range spanning up to 12 slides counts for every slide in
   it ("slides 96–99" counts for 99), so keep such ranges out of overview paragraphs or the image
-  lands in the introduction. A block ending "(slide N):" before a display formula gets the image
-  between the sentence and its formula; move it below the formula. On topic pages, cite "lecture N, slide M" and
+  lands in the introduction. A block ending "(slide N):" before a display formula, a table or a
+  code block gets the image between the sentence and what it introduces; move it below. On topic pages, cite "lecture N, slide M" and
   embed with `--deck-label "Lecture N"` so captions name the lecture.
 - Each slide file's header lists which of its slides have images and why the others do not.
   `grep -o 'raw/images/[^)]*' wiki/NN-*.md` enumerates a lecture's wiki images. There is no
@@ -132,6 +136,7 @@ they are the only part of this KB that redistributes course material rather than
 | 1 Introduction (parts 1 and 2) | 64 of 119 pages | 47 from `lecture_1_part_1.pdf` (69 pages), 17 from `lecture_1_part_2.pdf` (50 pages) |
 | 2 Image Classification with Linear Classifiers | 41 of 102 pages | `lecture_2.pdf` (102 pages, printed 1–104) |
 | 3 Regularization and Optimization | 24 of 119 pages | `lecture_3.pdf` (119 pages, printed 1–123) |
+| 4 Neural Networks and Backpropagation | 35 of 147 pages | `lecture_4.pdf` (147 pages, printed 1–152) |
 
 ## Rebuilding
 

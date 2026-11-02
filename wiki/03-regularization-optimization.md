@@ -609,7 +609,9 @@ that its final, linear layer can separate the data (≈1:07:40–1:08:25). The r
 Slide 100 notes that "neural network" is a broad term, and these are more accurately called
 **fully-connected networks** or **multi-layer perceptrons** (MLP). Slide 101 announces the next
 lecture: an introduction to neural networks, and backpropagation ("How do you calculate dx for
-neural nets?"). This knowledge base does not yet cover lecture 4.
+neural nets?"). Both are in
+[Lecture 4 — Neural Networks and Backpropagation](04-neural-networks-backpropagation.md); see also
+[neural networks](neural-networks.md) and [backpropagation](backpropagation.md).
 
 The rest is an appendix of "Slides from Previous Years" (slide 102), never presented.
 
@@ -695,5 +697,6 @@ choose between W and 2W?" and prints no answer.
 - Reading listed on the course schedule for this lecture: the course notes,
   [Optimization](https://cs231n.github.io/optimization-1/).
 - Previous lecture: [Lecture 2 — Image Classification with Linear Classifiers](02-image-classification.md).
+- Next lecture: [Lecture 4 — Neural Networks and Backpropagation](04-neural-networks-backpropagation.md).
 - Topics: [regularization](regularization.md), [gradient descent](gradient-descent.md),
   [optimizers](optimizers.md), [learning-rate schedules](learning-rate-schedules.md).

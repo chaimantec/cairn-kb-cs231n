@@ -231,3 +231,35 @@ transcribed exactly, text slides, build steps whose last step is rendered (16–
 53–54, 56, 58, 82, 90, 98, 103), heat-map frames whose animated paths are not in the PDF (60, 70,
 75, 109), and the AdaGrad slides repeating slide 53's contour plot (111–114). The slide file's
 header lists every slide and the reason.
+
+### Lecture 4 — Neural Networks and Backpropagation
+
+Deck: [lecture_4.pdf](https://cs231n.stanford.edu/slides/2025/lecture_4.pdf).
+Rendered: 35 slides, in `raw/images/04-neural-networks-backpropagation/`.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 13 | Three DALL-E 2 images; "Image source: Sam Altman, https://openai.com/dall-e-2/, https://twitter.com/sama/status/1511724264629678084". |
+| 14 | DALL-E 2 samples and architecture diagram; "Ramesh et al., Hierarchical Text-Conditional Image Generation with CLIP Latents, 2022." |
+| 15, 16 | DALL-E 3 images and prompts; "Betker, James, et al. "Improving image generation with better captions." … https://cdn.openai.com/papers/dall-e-3.pdf (2023)." |
+| 17 | Two GPT-4 conversation screenshots; "Image source: https://openai.com/research/gpt-4"; the taxi photograph inside one is marked "Source: Barnorama". |
+| 18 | Segment Anything mask examples; "Kirillov et al., Segment Anything, 2023". |
+| 19, 20, 21 | Sora video frames; "https://openai.com/research/video-generation-models-as-world-simulators" (on slide 19 the link is in the text layer, hidden under the image). |
+| 41, 42 | Decision-region plots from a web demo; slide 42 cites "Web demo with ConvNetJS: http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html" and the TensorFlow Playground. |
+| 43 | Neuron illustration; "This image by Fotis Bobolas is licensed under CC-BY 2.0". |
+| 46 | Neuron drawing; "This image by Felipe Perucho is licensed under CC-BY 3.0". |
+| 48 | Neuron illustration; "This image is CC0 Public Domain". |
+| 49 | The same CC0 illustration, and randomly wired network graphs from "Xie et al, "Exploring Randomly Wired Neural Networks for Image Recognition", IEEE/CVF International Conference on Computer Vision 2019". |
+| 55 | Crop of the AlexNet architecture figure; "Figure copyright Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton, 2012. Reproduced with permission." |
+| 56, 57 | Large computational-graph renderings; "Figure reproduced with permission from a Twitter post by Andrej Karpathy." |
+| 116 | Screenshot of a file listing in the pytorch/pytorch GitHub repository. Source not printed. |
+| 152 | The AlexNet architecture figure; no credit on this slide (slide 55 credits the same figure to Krizhevsky, Sutskever and Hinton, "Reproduced with permission"). |
+| 26, 30, 33, 34, 54, 74, 80, 96, 100, 104, 105, 130, 137, 142, 150 | No third-party content identifiable: the deck's own plots, diagrams and worked examples (slide 30's strip is lecture 2's learned templates). |
+
+Not rendered from this deck: the title (1), administrative slides (3–4), section dividers and
+text, recaps of lecture 3 figures (6, 7, 11; slide 7 credits its landscape and walking-man images
+as CC0 1.0 public domain), the optimizer animation frame (10), formulas, code and text transcribed
+exactly (including the PyTorch source screenshots on 117–119), build steps whose last step is
+rendered, and slide 35's repeat of slide 34's diagram. The slide file's header lists every slide
+and the reason.
+

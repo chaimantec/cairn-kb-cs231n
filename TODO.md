@@ -37,18 +37,18 @@ Slug `04-neural-networks-backpropagation`.
 
 ### Images (Step 1c)
 - [x] raw/images/04-neural-networks-backpropagation/ — select, render (35; 5.2 MB; 31 JPEG, 4 PNG), embed in slide file (35)
-- [ ] Embed in the wiki page and topic pages
+- [x] Embed in the wiki page (35, all with hand-written captions) and topic pages (neural-networks 9, backpropagation 13, regularization 1, gradient-descent 1); four blocks moved by hand (33, 42, 104 on the backpropagation page, 105)
 - [x] Look at two rendered images against the slide-file claims (slide 150: every matrix entry as transcribed, so slide 143's slip is real; slide 26: 7 red and 15 blue in both panels, as the audit found)
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] INDEX.md image rules; AGENTS.md table row (and three general lessons: audit agents under-render; credit lines dropped by transcribers; the colon rule covers tables and code); BUILD_LOG.md render record; LICENSE.md attribution
 
 ### Wiki
-- [ ] wiki/04-neural-networks-backpropagation.md
-- [ ] Topic pages: neural-networks, backpropagation; links from existing pages (gradient-descent, linear-classifiers, regularization, loss-functions, 03 page, course-logistics roadmap)
-- [ ] INDEX.md table of contents (coverage 4 of 18)
+- [x] wiki/04-neural-networks-backpropagation.md (slips on slides 53 and 143 noted; slides 3–4 and 12–21 marked slide-only)
+- [x] Topic pages: neural-networks, backpropagation; links from gradient-descent, linear-classifiers, regularization (new section on λ vs. network size), loss-functions, hyperparameters-and-validation, learning-rate-schedules, the 01, 02 and 03 pages, and the course-logistics roadmap (row 4; its stale "only lecture 1" sentence fixed)
+- [x] INDEX.md table of contents (coverage 4 of 18; lecture 4 citation rule; skipped slides; printed-slips rule)
 
 ### Publish
-- [ ] kb.json — coverage, decks, figure audit, images, caveats
-- [ ] BUILD_LOG.md — lecture 4 record
+- [x] kb.json — coverage (4 of 18; 14 topic pages), decks 5/5, figure audit 5/5 (with lecture 4's low-dpi note), images 164 (byLecture 4: 35; 146 JPEG, 18 PNG), caveats for lecture 4 coverage, numbering and slips
+- [x] BUILD_LOG.md — lecture 4 record
 - [ ] verify_kb.py clean, and its review section read
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

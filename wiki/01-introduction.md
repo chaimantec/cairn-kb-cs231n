@@ -302,7 +302,8 @@ $j$, where $E_p$ is the error on pattern $p$ and $o_{pj}$ the output of unit $j$
 $$\frac{\partial E_p}{\partial w_{ji}} = \frac{\partial E_p}{\partial o_{pj}} \frac{\partial o_{pj}}{\partial w_{ji}}$$
 
 Li calls it "a watershed moment for neural network algorithms" (≈29:40). The slide's title says
-1986; its timeline box prints "1985 Backprop" (part 1, slide 39).
+1986; its timeline box prints "1985 Backprop" (part 1, slide 39). Lecture 4 teaches the method
+itself; see [backpropagation](backpropagation.md).
 
 ![Part 1, slide 39 — Backprop: Rumelhart, Hinton, and Williams, 1986](../raw/images/01-introduction-part-1/slide-39.jpg)
 
