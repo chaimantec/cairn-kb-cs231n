@@ -101,15 +101,41 @@ information about the input's exact position (lecture 7, slide 10; ≈2:24).
 
 *Lecture 7, slide 7 — training and test loss (log scale) for the quadrant function: bad initialization without normalization (blue) stays near 10⁴; adding LayerNorm (green) brings it to about 10⁻², still above the good-initialization runs (orange, red). [Deck](https://cs231n.stanford.edu/slides/2025/lecture_7.pdf)*
 
+## Layer normalization in transformers
+
+Lecture 8's Transformer block puts a layer normalization after each of its two residual
+connections, one after self-attention and one after the MLP (lecture 8, slides 87–90), because
+normalization makes architectures train more stably (lecture 8, ≈1:03:03). Slide 87 recalls it
+for vectors $h_1, \dots, h_N$ of shape $D$, with a scale $\gamma$ and a shift $\beta$ of shape
+$D$ (Ba et al., 2016):
+
+$$\mu_i = \Big(\sum_j h_{i,j}\Big) / D \qquad \sigma_i = \Big(\sum_j (h_{i,j} - \mu_i)^2 / D\Big)^{1/2} \qquad z_i = (h_i - \mu_i) / \sigma_i \qquad y_i = \gamma \ast z_i + \beta$$
+
+Two later changes are on the slides only; the recording leaves them as reading (lecture 8, slides
+111–113; ≈1:05:22). **Pre-norm** moves layer normalization "before the Self-Attention and MLP,
+inside the residual connections", because outside them "the model can't actually learn the
+identify function" (printed "identify"), and "training is more stable" (Baevski & Auli, 2018).
+**RMSNorm** replaces layer normalization (Zhang and Sennrich, 2019). For $x$ and a weight $\gamma$
+of shape $D$:
+
+$$y_i = \frac{x_i}{RMS(x)} \ast \gamma_i \qquad RMS(x) = \sqrt{\varepsilon + \frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
+
+"Training is a bit more stable." The slide averages over "N" entries although it gives the shape
+of $x$ as $D$; the sum presumably runs over the $D$ entries. Compared with slide 87's formula, it
+subtracts no mean and adds no shift. See [transformers](transformers.md#later-changes-to-the-block).
+
 ## Lectures
 
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#normalization-layers):
   everything on this page except the lecture 7 experiment.
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#clarifications-from-last-time):
   whether normalization can fix bad initialization.
+- [Lecture 8 — Attention and Transformers](08-attention-transformers.md#the-transformer):
+  layer normalization in the Transformer block, pre-norm and RMSNorm.
 
 ## Related pages
 
 - [CNN architectures](cnn-architectures.md) — the networks these layers sit in.
+- [Transformers](transformers.md) — the architecture with a normalization layer in every block.
 - [Regularization](regularization.md#dropout) — dropout, the other layer lecture 6 adds.
 - [Neural networks](neural-networks.md) — the fully connected layers they normalize.

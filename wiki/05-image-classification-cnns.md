@@ -294,7 +294,8 @@ COVID, it was transformers". Transformers were published in 2017 for text (Vaswa
 NeurIPS 2017). A 2021 paper applied nearly the same architecture to images (Dosovitskiy et al.,
 ICLR 2021, the Vision Transformer). For many problems ConvNets used to solve, swapping the CNN
 for a transformer and keeping everything else gives better performance, and transformers scale
-better with more data and compute (≈28:24–29:57; slide 41, "Wait until Lecture 8!").
+better with more data and compute (≈28:24–29:57; slide 41, "Wait until Lecture 8!"). Lecture 8
+builds the transformer and the Vision Transformer; see [transformers](transformers.md).
 
 ![Slide 41 — 2021 - Present: Transformers have taken over](../raw/images/05-image-classification-cnns/slide-41.jpg)
 

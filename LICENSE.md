@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2, 3, 6 or 7 decks (lectures 2, 3, 6 and 7 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3, 6, 7 or 8 decks (lectures 2, 3, 6, 7 and 8 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -364,3 +364,26 @@ slides (including the min-char-rnn listing, slide 67, "Written by Andrej Karpath
 License", https://gist.github.com/karpathy/d4dee566867f8291f086), generated text, build steps
 whose last step is rendered, and one repeat of a rendered figure. The slide file's header lists
 every slide and the reason.
+
+### Lecture 8 — Attention and Transformers
+
+Deck: [lecture_8.pdf](https://cs231n.stanford.edu/slides/2025/lecture_8.pdf).
+Rendered: 23 slides, in `raw/images/08-attention-transformers/`. The deck prints no copyright,
+licence or permission line anywhere; its credits are paper citations.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 11 | Sequence-to-sequence diagram, citing Sutskever et al., "Sequence to sequence learning with neural networks", NeurIPS 2014. Not otherwise credited. |
+| 19, 22, 23 | Attention diagrams, citing Bahdanau et al., "Neural machine translation by jointly learning to align and translate", ICLR 2015. Not otherwise credited. |
+| 24, 27 | Attention-weight heatmap for English–French translation, citing Bahdanau et al., ICLR 2015, the paper the lecturer says the example is from (≈25:25). No copyright or licence line. |
+| 91, 95 | Transformer block diagrams, citing Vaswani et al., "Attention is all you need," NeurIPS 2017; slide 95's sizes also cite Radford et al., 2019 (GPT-2) and Brown et al., 2020 (GPT-3). |
+| 109 | A photograph of a cat cut into patches, and the ViT pipeline, citing Dosovitskiy et al., "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale", ICLR 2021. The photograph is not credited. |
+| 111, 112 | Post-norm and pre-norm block diagrams, citing Baevski & Auli, "Adaptive Input Representations for Neural Language Modeling", arXiv 2018. |
+| 5, 29, 35, 46, 47, 57, 59, 61, 66, 82, 99, 120 | No third-party content identifiable: the deck's own diagrams (slide 5's two figures recur on slide 121; slides 29 and 35 recolour and annotate the attention diagram of slides 13–23; slide 120 carries no citation, while slides 113–118, which show the same block, cite Zhang and Sennrich, NeurIPS 2019, Shazeer, 2020, and Shazeer et al., 2017). |
+
+Not rendered from this deck: the title, the administrative slide, the recap of lecture 7's
+sequence-task figure, title-only and text slides, the matrix-shape and memory slides (68–78; slide
+78 cites Dao et al., "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+2022), build steps whose last step is rendered, and rendered figures repeated with new text or
+equations (including slide 83's "Attention is All You Need" title box over slide 82). The slide
+file's header lists every slide and the reason.

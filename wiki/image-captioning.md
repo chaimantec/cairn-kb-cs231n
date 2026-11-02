@@ -116,5 +116,8 @@ floor plan (lecture 7, ≈56:25).
 
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#rnns-in-computer-vision):
   everything on this page.
+- [Lecture 8 — Attention and Transformers](08-attention-transformers.md#the-self-attention-layer)
+  names captioning as a natural use of cross-attention, comparing pieces of the image with the
+  words being generated (≈49:57); see [attention](attention.md#cross-attention-and-self-attention).
 - [Computer vision tasks](computer-vision-tasks.md) places captioning among the course's other tasks.
 - Lecture 16, Vision and Language, is not yet in this knowledge base.

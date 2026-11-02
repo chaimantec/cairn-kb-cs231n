@@ -1,8 +1,8 @@
 # See also
 
 Sibling knowledge bases that cover material CS231N reaches in later lectures. This KB covers only
-lectures 1–7 so far, so these are the places to look for a neighbouring treatment of a topic it does
-not have yet. Pass the `KB:` URL as `kb` to `kb_read` / `kb_list`, starting at that KB's
+lectures 1–8 so far, so these are the places to look for a topic it does not have yet, or for
+another course's treatment of one it does. Pass the `KB:` URL as `kb` to `kb_read` / `kb_list`, starting at that KB's
 `INDEX.md`. Cite them as their own courses, never as CS231N.
 
 - **MIT 6.7960 — Deep Learning** (MIT OpenCourseWare, Fall 2024; Phillip Isola, Sara Beery,

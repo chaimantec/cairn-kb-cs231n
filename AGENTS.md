@@ -100,12 +100,14 @@ printed slips, which slides were rendered and why) goes in
   (0.72–1.10), and a grep of every restored proper noun against the slide files and the
   original captions. Trace every number difference the editor did not list to its paragraph:
   an unlisted "2" in lecture 2 was an interpretive insertion ("there" became "with L2").
+  Read every ratio outlier against the original yourself, whatever the editor says about it: an
+  outlier reported as filler removal can be a sentence moved across the marker (lecture 8).
 - Student turns: only the lecturer is audible; mark `*[Student question, inaudible]*` /
   `*[Student answer, inaudible]*` where the captions show a speaker change.
 
 ## Images
 
-**Lectures 1–7 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–8 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -123,7 +125,11 @@ they are the only part of this KB that redistributes course material rather than
   Code listings pasted in as images have no text layer: when a slide file quotes lines or values
   from one (lecture 7's min-char-rnn, described as too small to read yet quoted in detail), put it
   in the audit. Read each report's method line, and confirm any value the wiki
-  will quote as a correction (a printed slip, a matrix) on the 1400px render as well.
+  will quote as a correction (a printed slip, a matrix) on the 1400px render as well. On drawn
+  (vector) slides the text layer's span positions settle layout exactly (which grid row is on top,
+  where a label sits): check a disputed or self-contradictory audit claim there before
+  re-auditing. A pasted-in copy of the same diagram has no such layer and may be drawn the other
+  way up (lecture 8).
 - **Decks hold animation frames.** A slide whose animation drew paths or builds exports to the PDF
   as its background frame only (lecture 3's optimizer comparisons: a loss surface and a legend,
   no paths). Confirm the absence at 600 dpi in the figure audit, say so in the slide file's
@@ -152,6 +158,7 @@ they are the only part of this KB that redistributes course material rather than
 | 5 Image Classification with CNNs | 53 of 141 pages | `lecture_5.pdf` (141 pages, printed 1–141) |
 | 6 Training CNNs and CNN Architectures | 33 of 97 pages | `lecture_6.pdf` (97 pages, printed 1–97) |
 | 7 Recurrent Neural Networks | 43 of 124 pages | `lecture_7.pdf` (124 pages, printed 1–133) |
+| 8 Attention and Transformers | 23 of 122 pages | `lecture_8.pdf` (122 pages, printed 1–122) |
 
 ## Rebuilding
 

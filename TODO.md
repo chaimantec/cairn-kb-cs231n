@@ -36,18 +36,18 @@ reading" (≈1:05:22).
 
 #### Images (Step 1c)
 - [x] raw/images/08-attention-transformers/ — rendered 23 (3 JPEG, 20 PNG; 3.1 MB): 5, 11, 19, 22, 23, 24, 27, 29, 35, 46, 47, 57, 59, 61, 66, 82, 91, 95, 99, 109, 111, 112, 120; embedded in the slide file (23); header lists every unrendered slide and why (99)
-- [ ] Embed in the wiki page and topic pages; hand-written captions
+- [x] Embed in the wiki page (23, all with hand-written captions, placed by hand; the embed script then found nothing to add) and topic pages (14: attention 8, transformers 6); captions plain text for GitHub
 - [x] Look at two rendered images against the slide-file claims (27 heatmap: gold and purple boxes as corrected; 61 diagram: −∞ and 0 cells, words) plus 19 (s0 → s1 arrow is drawn) and a scratch render of 20
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] INDEX.md image rules (lectures 1–8; lecture 8 has 23); AGENTS.md table row (23 of 122) and two general lessons (ratio outliers; text-layer positions settle layout claims); BUILD_LOG.md render record; LICENSE.md attribution (lecture 8 table and not-rendered note; decks-checked sentence)
 
 #### Wiki
-- [ ] wiki/08-attention-transformers.md
-- [ ] Topic pages and cross-links
-- [ ] INDEX.md table of contents; SEE_ALSO
+- [x] wiki/08-attention-transformers.md (six slips noted: 62, 66–78, 77, 82, 111, 113; slide 2 slide-only; four unwalked parts; the s0-arrow remark vs. slides 17–19; the lecturer's "input" slip at 23:05 and row/column self-correction at 42:19; "200 million" vs. 213M)
+- [x] Topic pages attention, transformers; sections or links in recurrent-neural-networks (sequence to sequence and the bottleneck), language-models (transformer language models), normalization-layers (layer normalization in transformers, pre-norm, RMSNorm), convolutional-networks (compared with attention; ViT patch embedding), cnn-architectures, image-captioning, course-logistics (row 8; "lectures 1–8"), lecture 5 page ("Wait until Lecture 8!"), lecture 7 page (next lecture)
+- [x] INDEX.md table of contents (coverage 8 of 18; lecture 8 citation rule, skipped and unwalked slides and spoken additions, six slips; lecture 8 and two topic entries; five one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–8" and its intro sentence
 
 #### Publish
-- [ ] kb.json — coverage, images, caveats
-- [ ] BUILD_LOG.md — lecture 8 record and index row
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage (8 of 18; 26 topic pages), decks 9/9, figure audit 9/9 (lecture 8 note), images 316 (byLecture 8: 23; 227 JPEG, 89 PNG), caveats for lecture 8's coverage, numbering, slips and unclear marks
+- [x] BUILD_LOG.md — lecture 8 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 after fixing 2 GitHub math problems — slide file header's $O(N^2)$ before ")", and run 7's "dropout-$p$" in BUILD_LOG; 3,772 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 8 23 on disk / 23 in wiki)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

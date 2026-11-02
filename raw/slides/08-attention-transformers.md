@@ -44,7 +44,7 @@ similarity keeps the single-head $\sqrt{D_Q}$, although $D_Q$ is not among that 
 and each head's queries have dimension $D_H$. Slide 77's "1.192 TB" for 64 heads of
 $100{,}000 \times 100{,}000$ attention weights is the 1,192 GiB that 2-byte values give, so its units are
 mixed (1.28 TB in decimal units). Slide 82 prints O(N) memory for self-attention, which slide 78
-gives only with Flash Attention (slides 76–77 say $O(N^2)$). Slide 111 prints "identify function".
+gives only with Flash Attention; slides 76–77 say $O(N^2)$. Slide 111 prints "identify function".
 Slide 113's RMSNorm averages over "N" entries of a vector whose shape it gives as D. Worked values
 that recompute: the example attention weights on slides 18 and 22 each sum to 1; slide 104's
 $16 \times 16 \times 3$ patch flattens to 768 values; and slide 115's SwiGLU with $H = 8D/3$ has

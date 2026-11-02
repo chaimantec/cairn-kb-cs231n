@@ -787,7 +787,8 @@ are simple but don't work very well. More complex variants (e.g. LSTMs, Mamba) i
 selectively pass information forward. The backward flow of gradients in an RNN can explode or vanish;
 exploding is controlled with gradient clipping, and backpropagation through time is often needed.
 Better and simpler architectures are a hot topic of current research, as are new paradigms for
-reasoning over sequences. Next time: attention and transformers (slide 133).
+reasoning over sequences. Next time: attention and transformers (slide 133;
+[lecture 8](08-attention-transformers.md)).
 
 ## Related pages
 
@@ -803,3 +804,4 @@ reasoning over sequences. Next time: attention and transformers (slide 133).
   [regularization](regularization.md#dropout) — the two clarifications of lecture 6.
 - [CNN architectures](cnn-architectures.md#resnet-residual-connections) — ResNet's skip connections.
 - Previous lecture: [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md).
+- Next lecture: [Lecture 8 — Attention and Transformers](08-attention-transformers.md).

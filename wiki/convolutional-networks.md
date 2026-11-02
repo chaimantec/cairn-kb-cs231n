@@ -221,7 +221,22 @@ per class ([linear classifiers](linear-classifiers.md)).
 - **Transformers, 2021 on**: after the Vision Transformer (2021), replacing a ConvNet with a
   transformer often gives better performance and scales better. ConvNets are still used, often
   in hybrids with transformers, and they teach intuitions about images (lecture 5,
-  ≈28:24–30:42). The course covers transformers in lecture 8.
+  ≈28:24–30:42). The course covers transformers in [lecture 8](08-attention-transformers.md); see
+  [transformers](transformers.md#vision-transformers).
+
+## Convolution compared with attention
+
+Lecture 8 sets convolution beside recurrence and self-attention as three ways of processing
+sequences (lecture 8, slides 80–82; ≈58:26–59:13). Convolution "works on N-dimensional grids", 1D
+to 4D as well as images, and is parallelisable, since every position of the kernel can be computed
+at once. But it is "bad for long sequences: need to stack many layers to build up large receptive
+fields", where in one self-attention layer every output depends on every input (see
+[attention](attention.md#attention-compared-with-recurrence-and-convolution)). Self-attention has
+its own equivariance, to permutations of its inputs, which the lecturer compares with
+convolution's (lecture 8, ≈51:29). And the Vision Transformer's first step, flattening each
+$16 \times 16 \times 3$ patch and applying a linear transform to $D$ values, is the same as a
+"16x16 conv with stride 16, 3 input channels, D output channels" (lecture 8, slide 104; see
+[transformers](transformers.md#vision-transformers)).
 
 ## Lectures
 
@@ -234,3 +249,6 @@ per class ([linear classifiers](linear-classifiers.md)).
   history of vision.
 - [Lecture 4 — Neural Networks and Backpropagation](04-neural-networks-backpropagation.md): the
   fully connected networks ConvNets extend, and backpropagation, which trains them.
+- [Lecture 8 — Attention and Transformers](08-attention-transformers.md#three-ways-of-processing-sequences):
+  convolution compared with recurrence and self-attention, and the ViT patch embedding as a
+  strided convolution.

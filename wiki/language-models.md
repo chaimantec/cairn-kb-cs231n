@@ -123,9 +123,25 @@ These cells are read straight off the activations, "without needing to do any fa
 RNN is "internally doing a very similar process" to the hand-built example of lecture 7, whose hidden
 state was set by hand to track the current and previous inputs (lecture 7, ≈47:13–47:59).
 
+## Transformer language models
+
+Lecture 8 does the same next-token task without recurrence. Masked self-attention lets each
+position look only at the ones before it, so "the same language modeling task that we saw last
+lecture with RNNs" can be done "natively with this self-attention block" (lecture 8, ≈54:33;
+slides 60–61). The slides then build a transformer language model in four steps (lecture 8,
+slides 96–99, not walked through in the recording). An embedding matrix of shape $[V \times D]$,
+for vocabulary size $V$ and model dimension $D$, turns words into vectors; every transformer block
+uses masked attention; a projection matrix of shape $[D \times V]$ turns each output vector into
+scores over the vocabulary; and the model is trained "to predict next token using softmax +
+cross-entropy loss". The slides list transformers from the original's 213M parameters (2017) to
+GPT-2's 1.5B and GPT-3's 175B (lecture 8, slides 93–95). See
+[transformers](transformers.md#language-models).
+
 ## Where the course covers language models
 
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#a-character-level-language-model):
   everything on this page.
+- [Lecture 8 — Attention and Transformers](08-attention-transformers.md#transformers-for-language-modelling):
+  masked self-attention and transformer language models.
 - [Image captioning](image-captioning.md) uses the same generate-and-feed-back loop, conditioned on
   an image.

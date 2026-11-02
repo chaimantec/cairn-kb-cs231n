@@ -13,6 +13,8 @@ and timestamps "(lecture 7, ≈M:SS)" to the
 Related pages: the [LSTM](lstm.md), the most successful RNN variant;
 [character-level language models](language-models.md), the lecture's main worked application;
 and [image captioning and visual question answering](image-captioning.md), its vision applications.
+[Attention](attention.md) grew out of RNN translation models, and [transformers](transformers.md)
+largely replaced RNNs.
 
 ## Why sequences need a different model
 
@@ -169,6 +171,25 @@ inputs are processed symmetrically. But recurrent computation is slow, because e
 needs the previous one, which makes training hard to batch and scale; and in practice information
 from many steps back is hard to reach, because everything must fit in a fixed-size hidden state.
 
+## Sequence to sequence and the bottleneck
+
+Lecture 8 opens with the recurrent translation model that attention was invented to fix
+(lecture 8, slides 6–12; ≈3:07–8:30), citing Sutskever et al. (NeurIPS 2014). An **encoder** RNN,
+$h_t = f_W(x_t, h_{t-1})$, reads the input sentence, and from its final hidden state come the
+initial decoder state $s_0$ and a **context vector** $c$, "often $c = h_T$". A **decoder** RNN with
+its own weights, $s_t = g_U(y_{t-1}, s_{t-1}, c)$, then produces the output one token at a time,
+reading the same $c$ at every step. The weakness: "Input sequence bottlenecks through fixed sized
+c. What if T=1000?" (lecture 8, slide 11). The context vector's size is fixed by the architecture,
+so a whole paragraph or book would have to fit in it (lecture 8, ≈7:43).
+[Attention](attention.md#where-attention-came-from-the-sequence-to-sequence-bottleneck) removes
+the bottleneck by computing a new context vector at every decoder step from all the encoder
+states.
+
+Lecture 8 later sets RNNs beside convolution and self-attention as three ways of processing
+sequences. RNNs work on 1D ordered sequences with $O(N)$ compute and memory, but are "not
+parallelizable", since each hidden state needs the previous one (lecture 8, slide 80), which makes
+them "very difficult to scale, very difficult to make very big" (lecture 8, ≈58:26).
+
 ## Modern RNNs: state space models
 
 Recurrent models have "made a bit of a resurgence in the last year or two", sometimes under the name
@@ -178,8 +199,8 @@ where a transformer's scales quadratically because it has an operation that look
 input. The lecture names **RWKV** and **Mamba**; slide 131's "RWKV Scaling" chart shows RWKV matching
 transformer language models of similar compute (Pythia, OPT) on accuracy. The research question is
 "how can you get the performance of transformers with the scaling of RNNs?" (lecture 7, ≈1:10:18).
-The course turns to attention and transformers in lecture 8 (lecture 7, slide 133), which is not yet
-in this knowledge base.
+The course turns to attention and transformers in lecture 8 (lecture 7, slide 133); see
+[attention](attention.md) and [transformers](transformers.md).
 
 ![Lecture 7, slide 131 — Modern RNNs](../raw/images/07-recurrent-neural-networks/slide-131.jpg)
 
@@ -187,6 +208,10 @@ in this knowledge base.
 
 ## Where the course covers RNNs
 
-- [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md): everything on this page.
+- [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md): everything on this page
+  except the sequence-to-sequence section.
+- [Lecture 8 — Attention and Transformers](08-attention-transformers.md#sequence-to-sequence-with-rnns):
+  the sequence-to-sequence model and its bottleneck, and RNNs compared with convolution and
+  self-attention.
 - [Lecture 1](01-introduction.md) previews recurrent networks in its tour of the course, with an
   unrolled RNN built from LSTM cells (lecture 1, part 2, slide 17).

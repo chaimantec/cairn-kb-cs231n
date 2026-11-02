@@ -186,10 +186,15 @@ architectures from scratch: a model pretrained on ImageNet is the usual starting
 - [Lecture 1 — Introduction](01-introduction.md): LeNet, AlexNet and the deep-learning explosion.
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#similar-to-resnet): ResNet compared
   with the LSTM, and an unnamed VGG-style network used for image captioning.
+- [Lecture 8 — Attention and Transformers](08-attention-transformers.md#the-transformer): the
+  Transformer block wraps self-attention and its MLP in residual connections "for all the same
+  reasons" as ResNet (≈1:02:18).
 
 ## Related pages
 
 - [Convolutional networks](convolutional-networks.md) — the layers these architectures stack.
+- [Transformers](transformers.md) — the architecture that reuses residual connections, and the
+  Vision Transformer.
 - [ImageNet](imagenet.md) — the challenge they competed in.
 - [Normalization layers](normalization-layers.md) and [regularization](regularization.md#dropout)
   — the other layers a CNN may include.

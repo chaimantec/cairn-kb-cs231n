@@ -24,6 +24,7 @@ every build follows, and each lesson in general form, are in
 | 5 Image Classification with CNNs | [Run 5](#run-5--lecture-5-image-classification-with-cnns-2026-11-02) |
 | 6 Training CNNs and CNN Architectures | [Run 6](#run-6--lecture-6-training-cnns-and-cnn-architectures-2026-11-02) |
 | 7 Recurrent Neural Networks | [Run 7](#run-7--lecture-7-recurrent-neural-networks-2026-11-02) |
+| 8 Attention and Transformers | [Run 8](#run-8--lecture-8-attention-and-transformers-2026-11-02) |
 
 ## Runs
 
@@ -817,7 +818,7 @@ Built lecture 7 end to end: transcript, the deck (four transcription agents), tw
 (recurrent neural networks, LSTM, character-level language models, image captioning and visual
 question answering), 43 slide images, and updates to INDEX, AGENTS (image row and one general
 lesson: code listings pasted as images have no text layer, so values a slide file quotes from one
-go into the audit), LICENSE, kb.json, SEE_ALSO, regularization (lecture 7's dropout-$p$
+go into the audit), LICENSE, kb.json, SEE_ALSO, regularization (lecture 7's dropout $p$
 clarification), normalization layers (the LayerNorm vs. initialization experiment, with slide 7),
 weight initialization, backpropagation (through time), computer vision tasks (captioning), CNN
 architectures (the LSTM parallel), transfer learning (captioning's CNN encoder), hyperparameters
@@ -962,3 +963,116 @@ and 128). Title slide "Lecture 7: Recurrent Neural Networks", April 22, 2025. Im
 - [x] verify_kb.py clean, and its review section read (exit 0 after fixing 22 GitHub math problems — math in italic [Ed:] lines and captions, math after a quote, `$` before ")", inline pmatrix with `&`, `_` after `}` — and 6 topic-page image links with the wrong extension; 2,528 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 7 43 on disk / 43 in wiki)
 - [x] Commit and push — e2f24b2, 6f09288, e37674b on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, topic page, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 8 — Lecture 8 (Attention and Transformers), 2026-11-02
+
+Built lecture 8 end to end: transcript, the deck (four transcription agents), two figure audits,
+the transcript edit, the wiki page, two topic pages (attention, transformers), 23 slide images,
+and updates to INDEX, AGENTS (image row and two general lessons: read every ratio outlier against
+the original whatever the editor says; on drawn slides the text layer's span positions settle
+layout claims), LICENSE, kb.json, SEE_ALSO, recurrent neural networks (a sequence-to-sequence
+section), language models (a transformer section), normalization layers (layer normalization in
+transformers, pre-norm, RMSNorm), convolutional networks (convolution compared with attention; the
+ViT patch embedding), CNN architectures, image captioning, course logistics (row 8; "lectures
+1–8"), and the lecture 5 and 7 pages (forward links). Images opted in again; PDFs stay link-only.
+
+### Lecture 8 record
+
+**Deck.** One: `lecture_8.pdf`, 122 pages, April 24, 2025, title slide "Lecture 8: Attention and
+Transformers". Printed numbers 1–122, one per page, 1:1 with the PDF. The lecturer is not named in
+the recording or on the deck. No copyright, licence or permission line anywhere in the deck; the
+credits are citations: slides 6–12 Sutskever et al. NeurIPS 2014; 13–27 Bahdanau et al. ICLR 2015;
+78 Dao et al. 2022 (FlashAttention); 83 "Vaswani et al, NeurIPS 2017"; 84–95 Vaswani et al.
+"Attention is all you need," NeurIPS 2017; 87 "Ba et al, 2016"; 94–95 Radford et al. 2019 and
+Brown et al. 2020; 100–109 Dosovitskiy et al. ICLR 2021; 111–112 Baevski & Auli arXiv 2018; 113
+Zhang and Sennrich NeurIPS 2019; 114–116 Shazeer 2020; 117–118 Shazeer et al. 2017. Slide 109's
+cat photograph is not credited.
+
+**Transcription.** Four Sonnet agents in parallel (pages 1–31, 32–62, 63–92, 93–122), 74–78k
+tokens each, 9–11 tool calls, all finished, every chunk appended. `--verify` clean (122 headings).
+The deck is mostly build steps, written "Same as slide N, plus …". The parent wrote the header,
+rewrote the `[Ed:]` lines without math or bold (GitHub renders neither inside italics), corrected
+the agent's explanation of slide 77 (it called 1.192 "binary terabytes"; it is the GiB count at
+2 bytes per weight divided by 1,000), added an `[Ed:]` line on slide 66 (√D_Q with D_Q undefined),
+removed two transcriber glosses ("post-norm layout, as in the original Transformer" on 110 and
+121), and unquoted 25 quoted strings that opened with math and rewrote 7 formulas for GitHub.
+
+**Figure audit** (Sonnet, two agents, 33 slides). A: 4, 20, 23, 24, 26, 27, 28, 38, 44, 47, 54, 55,
+60, 61, every claim from 600 dpi crops (4 and 20 first from page views). B: 63, 64, 65, 66, 81, 82,
+87, 92, 93, 96, 98, 101, 105, 109, 110, 112, 113, 115, 121, from 600 dpi crops (63 and the layout
+of 64 from page views). Corrections: 20 (s0 keeps its arrow into s1 and an arrow drops into c1;
+the single "+" is fed from the multiplication nodes and feeds c2; the file had said s0 lost its
+arrow), 26 (purple cell block 5 by 4), 27 (gold column box takes "European Economic Area"; a gold
+row-label box around "zone économique européenne" was omitted), 100–101 (no faint vertical line on
+the photograph; the nine patches' contents). Additions: 81 (10 arrows; which inputs feed each
+output), 93 and 112 (residual routing), 109 (an arrow out of Pooling), 64 (stack index order).
+Confirmed: 4's two blocks; 24's 14 column and 15 row labels; 38's four lines; 44, 47, 54, 55, 60,
+61 grid labels; 63–65 head diagrams; 66's √D_Q; 82's "O(N) memory"; 87's LayerNorm block; 92–93
+three blocks, 96–98 and 105 two; 110 and 112 box order; 113's RMSNorm (ε inside the root, 1/N);
+115's SwiGLU (σ on XW1 only); 121's two figures. Audit A's report contradicted itself on grid
+orientation (slide 4's key-1 row at the bottom, then "slides 4 and 47 have row 1 at the top"); the
+text layer's span positions settled it: on the drawn slides 43–61 E1,1 sits above E1,3 and K1
+above K3, while the pasted figure on 4 and 121 is the other way up (both audits agree on 4 and 121).
+Parent checks on 1400px renders: 19 (s0 → s1 arrow drawn), 20 (scratch render; as the audit), 27
+and 61 (as corrected).
+
+**Printed slips, transcribed as printed.** Slide 62: faded output line Y = AX (for AV), repeated on
+63. Slides 66–78: similarity scaled by √D_Q, D_Q not among the multi-head inputs (each head's query
+dimension is D_H). Slide 77: "If N=100K, H=64 then HxNxN attention weights take 1.192 TB!":
+6.4 × 10¹¹ weights × 2 bytes = 1.28 × 10¹² bytes = 1,192 GiB = 1.28 TB = 1.16 TiB, so the printed
+figure divides a GiB count by 1,000 (bytes per weight not printed). Slide 82: O(N) memory for
+self-attention (slides 76–77 O(N²); slide 78 O(N) with Flash Attention). Slide 111: "identify
+function". Slide 113: RMSNorm sums i = 1 to N and divides by N for x of shape D. Each has an
+`[Ed:]` line and a wiki note; INDEX and kb.json list them. Recomputed and consistent: slides 18 and
+22's example weights sum to 1; 104's 16 × 16 × 3 = 768; 115's H = 8D/3 gives 3DH = 8D², the classic
+MLP's D·4D + 4D·D.
+
+**Transcript edit** (Sonnet). 87 paragraphs; marker sequence identical. The agent reported one
+ratio outlier, 25:25 at 0.68, as filler and false starts; the parent found the paragraph's first
+sentence ("different word order between words in English and words in French. Or in the middle you
+see there's a little") moved into 24:38, and moved it back (ratios then 0.75–0.96). At 53:01 the
+agent had paraphrased "blah blah blah" as "and so on" and respelled "index 3" as "index three",
+both unlisted; the parent restored them. The number diff is otherwise all listed: 10:01 "as zero"
+→ s0 (added to the header by the parent), 11:33 and 12:19 "one" → "1", 23:51 "one:1" → one-to-one.
+The parent corrected three header claims: the 23:05 slip sentence was garbled; "N squared memory
+(slides 75-78 do too)" ignored slide 78's Flash Attention; and the 16:58 remark that the s0 → s1
+arrow was "dropped" is now set against slides 17–19, which draw it. LaTeX in the header was turned
+into code spans. Capitalised words new to the edit are all on the slides or are form changes
+(CNNs, ICLR, V-weighting). 19 student-question markers (five inferred from a change of topic), 1
+partly audible; 6 `[unclear]`. Spoken only: the ICLR 2025 Test of Time award (runner-up) for the
+Bahdanau paper (26:12), the search-engine analogy (40:46), "decoder-only attention" (48:26–49:11),
+"blanket the entire Stanford campus with processors" (1:01:31), and "12 blocks, 200 million
+parameters" for the original transformer against slide 93's 213M (1:03:48).
+**Coverage:** opens at 0:04, never presents slide 2, follows the deck to the summary and ends at
+1:06:08. Not walked through: 68–78 (one-sentence summary at 56:07–57:40 and the cost remark at
+59:58; "there's some stuff there that we can skip", 57:40), 94–95, 96–99 (one sentence at 1:04:36),
+110–120 ("extra reading", 1:05:22).
+
+**Images.** 23 rendered (3 JPEG, 20 PNG; 3.1 MB): 5, 11, 19, 22, 23, 24, 27, 29, 35, 46, 47, 57,
+59, 61, 66, 82, 91, 95, 99, 109, 111, 112, 120. Not rendered: 1 (title); 2 (administrative); 3
+(recap of lecture 7's sequence-task figure, lecture 7 slide 18); 79, 122 (title-only, text);
+68–78 (text and equations transcribed exactly); build steps whose last step is rendered (4 → 5;
+6–10, 12 → 11; 13–18 → 19; 20–21 → 22; 25–26 → 27; 30–34 → 35; 41–45 → 46; 52–56 → 57; 58 → 59;
+60 → 61; 62–65 → 66; 80–81 → 82; 84–90 → 91; 92–94 → 95; 96–98 → 99; 100–108 → 109); rendered
+figures repeated with new text or equations (28, 22's diagram recoloured; 36–40 → 35; 48–51 → 47;
+67 → 66; 83, 82 under a title box; 110 → 111; 113–119 → 120; 121, slide 5's two figures). The
+raster test flagged 42 pages (pasted figures on 3–5, 24–27, 30–40, 63–67, 92–109, 121) and missed
+the drawn diagrams that were rendered (11, 19, 22, 23, 29, 46, 47, 57, 59, 61, 82, 91, 111, 112,
+120). All 23 are in the lecture page with hand-written captions, placed by hand (the embed script
+then found nothing to add); the topic pages carry 14 more embeds (attention 8, transformers 6).
+
+**Wiki.** Lecture page: lecturer unnamed; coverage (four unwalked parts as their own paragraph)
+and the six slips up front; administrative notes from slide 2; recap; sequence to sequence and the
+bottleneck; attention in the decoder (alignment scores, weights, context vector, intuition, the
+initialisation Q&A and the s0 arrow remark against slides 17–19); repeat per step; attention
+heatmaps (the lecturer's "input" slip at 23:05; the award, spoken only); the attention layer
+(roles, single-query layer, dot product, scaled dot product with slide 38's argument and the
+spoken example, multiple queries, keys and values, the search-engine analogy), cross-attention
+step by step (the softmax column vs. row, and the lecturer's self-correction at 42:19);
+self-attention (fused QKV, D_in/D_out, "decoder-only attention" remark, self vs. cross);
+permutation equivariance and positional encoding ("add" on the slide, "concatenate" spoken);
+masking; multi-head (the √D_Q note); four matmuls and cost (slides only, with slide 77's units);
+three ways of processing sequences (slide 82's O(N) memory vs. 76–77 and the lecturer); the
+Transformer block, LayerNorm recall, sizes table (spoken "200 million" vs. 213M); language models
+and ViT (slides; one spoken sentence); tweaks (slides only: pre-norm, RMSNorm with the N/D slip,
+SwiGLU with the 8D² check, MoE); summary.
