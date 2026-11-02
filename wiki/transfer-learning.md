@@ -114,6 +114,9 @@ as well, for getting good visual representations of images" (lecture 7, slides 8
   nearest-neighbour and linear classifiers that a frozen network's features feed.
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#image-captioning): a
   pretrained CNN's second-to-last layer as the image input to a captioning RNN.
+- [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md): an
+  ImageNet-pretrained ConvNet inside R-CNN, backbone networks in Fast R-CNN, and "Finetune on your
+  own dataset with pre-trained models" for detectors (lecture 9, slides 82, 88 and 124).
 
 ## Related pages
 

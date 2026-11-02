@@ -628,8 +628,7 @@ lot of other things as well" (≈1:04:36).
 ## Tweaking Transformers (slides only)
 
 "The Transformer architecture has not changed much since 2017. But a few changes have become
-common" (slide 110). The recording leaves these "as extra reading" (≈1:05:22), so this section
-comes from the slides alone.
+common" (slide 110). The recording leaves these "as extra reading" (≈1:05:22), so this section comes from the slides alone; lecture 9 repeats the slides and walks through them ([lecture 9](09-detection-segmentation-visualization.md#tweaking-transformers), ≈8:39–13:24).
 
 **Pre-norm.** In the block of slides 84–93, layer normalization "is outside the residual
 connections". The slide calls this "kind of weird, the model can't actually learn the identify
@@ -718,3 +717,4 @@ visualisation (slide 122).
   sequences, and the ViT patch embedding as a strided convolution.
 - [Course logistics](course-logistics.md) — slide 2's dates.
 - Previous lecture: [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md).
+- Next lecture: [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md), which opens by walking through the tweaks this lecture left as reading.

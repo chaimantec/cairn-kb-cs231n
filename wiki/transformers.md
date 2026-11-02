@@ -96,10 +96,11 @@ $N \times D$ vectors to one and applies a linear layer from $D$ to $C$ class sco
 
 *Lecture 8, slide 109 — patches become vectors, the Transformer gives one output per patch, and pooling plus a linear layer give the class scores. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_8.pdf)*
 
+Lecture 9 recaps the ViT with a second version that adds a learned **classification token**: an extra $D$-dimensional input whose output vector alone is projected to the $C$ class scores, while self-attention mixes information between it and the patch tokens (lecture 9, slides 5–12; ≈5:30–6:16, ≈13:24–14:09). See the [lecture 9 page](09-detection-segmentation-visualization.md#recap-the-transformer-and-the-vision-transformer). Lecture 9 also detects objects with a transformer, DETR ([object detection](object-detection.md#detr-detection-with-a-transformer)).
+
 ## Later changes to the block
 
-Four changes "have become common" since 2017 (lecture 8, slides 110–120). The recording leaves
-these slides as "extra reading" (lecture 8, ≈1:05:22), so this section comes from the slides alone.
+Four changes "have become common" since 2017 (lecture 8, slides 110–120). Lecture 8's recording leaves these slides as "extra reading" (lecture 8, ≈1:05:22); lecture 9 repeats them as its slides 20–29 and walks through them (lecture 9, ≈8:39–13:24). Its spoken additions: a normalization right after the residual addition means "you will never have the identity in the features", which pre-norm fixes (lecture 9, ≈9:28, ≈14:57); RMSNorm drops the mean and is adopted because it is "empirically shown" to make training more stable (lecture 9, ≈10:13); and a router sends each token to A of the E experts, whose number is a hyperparameter, "often predefined" (lecture 9, ≈11:51, ≈14:57).
 
 - **Pre-norm** (slides 111–112, Baevski & Auli, 2018). In the original block, layer normalization
   "is outside the residual connections", so "the model can't actually learn the identify
@@ -143,6 +144,7 @@ recurrent models try to avoid (see [recurrent neural networks](recurrent-neural-
 ## Where the course covers transformers
 
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md): everything on this page.
+- [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md): the ViT with a class token, the four later changes walked through, DETR, and a ViT's attention maps as a visualization.
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#modern-rnns) compares
   modern recurrent models with transformers.
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md) mentions

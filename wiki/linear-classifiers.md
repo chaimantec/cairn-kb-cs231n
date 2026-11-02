@@ -46,6 +46,8 @@ slide 62).
 
 *Lecture 2, slide 62 — the visual viewpoint: each row of W reshaped into an image, one learned template per CIFAR-10 class (bottom row). [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
 
+Lecture 9 recalls this slide as the simplest case of visualizing what a model has learned (lecture 9, slide 127; ≈1:02:09; see [visualizing what networks learn](visualizing-networks.md)), and reprints the ship score as 61.95, without the bias.
+
 **Geometric.** Each class's score defines a line in 2D, or a hyperplane in higher dimensions, that
 separates that class from the others (lecture 2, ≈52:43; lecture 2, slide 63). The bias is what
 lets these boundaries avoid passing through the origin (lecture 2, ≈53:29).

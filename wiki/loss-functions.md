@@ -137,6 +137,8 @@ Lecture 7 uses the softmax loss at every time step of a sequence: a character-le
 scores each possible next character, and training is "a time step-wise classification problem …
 based on softmax" (lecture 7, ≈37:56). See [character-level language models](language-models.md).
 
+Lecture 9 uses the softmax loss at every pixel for semantic segmentation, summed over the pixels (lecture 9, ≈23:25–24:11; [image segmentation](image-segmentation.md)), and adds a softmax loss for the class and an L2 loss for the box into one **multitask loss** for object detection (lecture 9, slides 69–70; [object detection](object-detection.md)).
+
 ![Lecture 2, slide 84 — Coming up:](../raw/images/02-image-classification/slide-84.jpg)
 
 *Lecture 2, slide 84 — Coming up:. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*

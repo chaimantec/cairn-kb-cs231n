@@ -7,12 +7,13 @@ self-supervised learning, generative models, 3D vision, vision and language, rob
 and human-centred AI. The Spring 2025 offering is taught by Fei-Fei Li and Ehsan Adeli, with Zane
 Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/2025/>.
 
-> **Coverage: 8 of 18 lectures.** This knowledge base currently covers **Lecture 1
+> **Coverage: 9 of 18 lectures.** This knowledge base currently covers **Lecture 1
 > (Introduction), Lecture 2 (Image Classification with Linear Classifiers), Lecture 3
 > (Regularization and Optimization), Lecture 4 (Neural Networks and Backpropagation), Lecture 5
 > (Image Classification with CNNs), Lecture 6 (Training CNNs and CNN Architectures), Lecture 7
-> (Recurrent Neural Networks) and Lecture 8 (Attention and Transformers) only**. It has nothing on
-> lectures 9–18 — detection, segmentation and visualization, and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
+> (Recurrent Neural Networks), Lecture 8 (Attention and Transformers) and Lecture 9 (Detection,
+> Segmentation, Visualization, and Understanding) only**. It has nothing on lectures 10–18 — video
+> understanding and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
 > answering as if from the course; the
 > [course roadmap](wiki/course-logistics.md#course-roadmap) shows which lecture a topic belongs
 > to, and [SEE_ALSO.md](SEE_ALSO.md) lists sibling knowledge bases that cover some of that
@@ -37,7 +38,8 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   topic pages). Lecture 7 has one deck ("lecture 7, slide N" on topic pages); it is missing printed
   numbers 19, 20, 52, 53, 71, 72, 73, 100 and 103, and its page 118 prints no number (it is slide
   127), so slide 133 is PDF page 124. Lecture 8 has one deck ("lecture 8, slide N" on topic pages),
-  and its 122 printed numbers match its PDF pages exactly.
+  and its 122 printed numbers match its PDF pages exactly; so do lecture 9's 178 ("lecture 9, slide
+  N" on topic pages).
 - **Transcripts are edited.** `raw/transcripts/` holds copy-edited transcripts — punctuated,
   filler removed, mis-heard names and terms restored, every change listed in the file's header —
   with every `[M:SS]` marker in its original place. Read these, not the raw captions, which are
@@ -70,7 +72,14 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   (110–120: pre-norm, RMSNorm, SwiGLU, mixture of experts), left "as extra reading". Its spoken
   additions include the attention paper's ICLR 2025 award, a search-engine analogy for keys and
   values, a remark on "decoder-only attention", and arguments for parallelism and for attention's
-  quadratic cost.
+  quadratic cost. Lecture 9's recording skips its administrative slide (2) and the deck's
+  "Additional Reading Material" (slides 150–178: convolution and transposed convolution as matrix
+  multiplication, RoI Pool and RoI Align, the R-CNN timing charts, Faster R-CNN's four losses and
+  two stages, detection trade-offs, guided backpropagation), which are sourced to the slides alone.
+  It does walk through lecture 8's "Tweaking Transformers" slides, repeated as its slides 20–29.
+  Its spoken additions include the per-pixel softmax loss for segmentation, a long run of answers
+  about DETR's object queries, and the lecturer's views that the R-CNN family is "not being used
+  anymore", that DETR is "deprecated", and that U-Net still leads in medical segmentation.
 - **Printed slips are flagged, not corrected.** Where a deck's worked example prints a wrong
   number or sign, the slide file keeps it as printed with an `[Ed: …]` line and the wiki page says
   so. Quote the correction, not the slip. Lecture 4's matrix-multiply example (slides 143–150)
@@ -94,7 +103,11 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   "1.192 TB" of attention weights mixes units (at 2 bytes a weight it is 1,192 GiB, or 1.28 TB);
   slide 82 prints $O(N)$ memory for self-attention, which holds only with Flash Attention (slide
   78); slide 111 prints "identify function"; and slide 113's RMSNorm averages over N entries of a
-  vector of shape D.
+  vector of shape D. Lecture 9's deck has six: slide 3's encoder labels its inputs x0, x1, x2, x2;
+  slides 4, 21 and 23 repeat lecture 8's O(N) memory, "identify function" and RMSNorm slips;
+  slide 43 labels the low-resolution stage "D3 x H/4 x W/4", the same size as the medium-resolution
+  stages (repeated on 44 and 59); and slide 127 reprints lecture 2's ship score of 61.95, which
+  omits the bias (with $b = -1.2$ it is 60.75).
 - **Lecture 3's optimizer-comparison animations are not in the PDF.** Its slides comparing
   optimizers' paths on a loss surface show only the surface and a legend, as do lecture 4's
   and lecture 5's recaps of them (lecture 4, slide 10; lecture 5, slide 8). What the paths did is
@@ -106,9 +119,9 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
 
 ## Images
 
-**Lectures 1–8 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
+**Lectures 1–9 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
 part 2 deck), lecture 2 has 41, lecture 3 has 24, lecture 4 has 35, lecture 5 has 53, lecture 6
-has 33, lecture 7 has 43 and lecture 8 has 23. No other lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
+has 33, lecture 7 has 43, lecture 8 has 23 and lecture 9 has 53. No other lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
 in the wiki passage that cites that slide.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern,
@@ -204,6 +217,16 @@ in the wiki passage that cites that slide.
   block and its sizes (original, GPT-2, GPT-3); transformer language models; the Vision
   Transformer; pre-norm, RMSNorm, SwiGLU and mixture of experts (slides only). Six printed slips
   noted. 23 embedded slide images.
+- [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](wiki/09-detection-segmentation-visualization.md)
+  — a recap of the Vision Transformer (class token or pooled outputs) and a walk through pre-norm,
+  RMSNorm, SwiGLU and mixture of experts; semantic segmentation (sliding window, fully
+  convolutional networks, the per-pixel loss, unpooling, max unpooling, transposed convolution,
+  U-Net); object detection (classification plus localization and the multitask loss, region
+  proposals, R-CNN, Fast R-CNN, RoI Pool and RoI Align, region proposal networks, Faster R-CNN,
+  YOLO and single-stage detectors, DETR and its object queries); instance segmentation with Mask
+  R-CNN; visualization (linear-classifier templates, first-layer filters, saliency maps, CAM,
+  Grad-CAM, guided backpropagation, ViT attention maps). Six printed slips noted. 53 embedded
+  slide images.
 
 ### Topics
 
@@ -215,7 +238,8 @@ in the wiki passage that cites that slide.
 - [Computer vision tasks](wiki/computer-vision-tasks.md) — what each task asks for:
   classification, semantic segmentation, object detection, instance segmentation, video
   classification, multimodal video understanding, visualization, retrieval, pose, captioning,
-  visual relationships, generation — and which lecture covers each; lecture 7's captioning, VQA,
+  visual relationships, generation — and which lecture covers each, with links to lecture 9's
+  segmentation, detection and visualization pages; lecture 7's captioning, VQA,
   visual dialog and navigation are on the image captioning page.
 - [Image classification](wiki/image-classification.md) — the task, the semantic gap, why it is
   hard, the data-driven approach (collect, train, predict), CIFAR-10, how well pixel-based
@@ -233,11 +257,13 @@ in the wiki passage that cites that slide.
   (lecture 7).
 - [Linear classifiers](wiki/linear-classifiers.md) — $f(x, W) = Wx + b$ and its dimensions for
   CIFAR-10; the bias; algebraic, visual (templates) and geometric (hyperplanes) viewpoints; the
-  cases it cannot separate; linear layers inside AlexNet and ResNet.
+  cases it cannot separate; linear layers inside AlexNet and ResNet; the templates recalled as a
+  visualization (lecture 9).
 - [Loss functions](wiki/loss-functions.md) — the dataset loss as an average; the softmax loss with
   worked numbers, logits, maximum likelihood, KL divergence and cross-entropy, its value at
   initialisation ($\log C$); the multiclass SVM (hinge) loss and its worked example; softmax vs.
-  SVM; softmax at every time step of a language model (lecture 7).
+  SVM; softmax at every time step of a language model (lecture 7); softmax at every pixel and the
+  multitask loss of detection (lecture 9).
 - [Regularization](wiki/regularization.md) — the regularized loss and the strength $\lambda$;
   prefer simpler models; L2, L1 and elastic net, with the worked example of which weights each
   prefers; why regularize; L2 inside Adam vs. weight decay in AdamW; tuning $\lambda$ rather than a
@@ -253,14 +279,16 @@ in the wiki passage that cites that slide.
   derived by hand; computational graphs; upstream × local = downstream at each node; the two worked
   examples; the sigmoid gate; add, mul, copy and max gate patterns; flat and modular (PyTorch)
   implementations; gradients and Jacobians for vectors; never forming the Jacobian (ReLU); the
-  matrix-multiply gradients; backpropagation through time in recurrent networks (lecture 7).
+  matrix-multiply gradients; backpropagation through time in recurrent networks (lecture 7); a link
+  to gradients with respect to the pixels (saliency, Grad-CAM, lecture 9).
 - [Convolutional networks](wiki/convolutional-networks.md) — why ConvNets (spatial structure,
   end-to-end learning); the convolution layer and its shapes; parameters vs. hyperparameters;
   non-linearity between convolutions; output size, padding and stride, with common settings;
   counting parameters and multiply-adds; receptive fields; 1D, 3D and 1x1 convolution; pooling;
   translation equivariance; what filters learn; history from Hubel and Wiesel to transformers;
   links on to lecture 6's architectures; convolution compared with recurrence and attention, and
-  the ViT patch embedding as a strided convolution (lecture 8).
+  the ViT patch embedding as a strided convolution (lecture 8); fully convolutional networks and
+  the transposed convolution (lecture 9).
 - [CNN architectures](wiki/cnn-architectures.md) — block diagrams; the ImageNet winners' error and
   number of layers by year; AlexNet; VGG (small filters, the receptive field of stacked $3 \times 3$
   layers, parameter counts); ResNet (why deeper plain networks do worse, residual blocks, the full
@@ -270,7 +298,7 @@ in the wiki passage that cites that slide.
   learned parameters; LayerNorm and its shapes; batch, layer, instance and group norm compared;
   normalization and initialization, with lecture 7's experiment (LayerNorm narrows but does not
   close the gap left by bad initialization); layer normalization in the Transformer block,
-  pre-norm and RMSNorm (lecture 8).
+  pre-norm and RMSNorm (lecture 8), and lecture 9's spoken argument for pre-norm.
 - [Weight initialization](wiki/weight-initialization.md) — activations that vanish (scale 0.01) or
   explode (0.05) through six ReLU layers; Kaiming / MSRA initialization, $\sqrt{2 / D_{\text{in}}}$;
   convolution layers; how to tell it is right; why normalization does not replace it (lecture 7).
@@ -280,7 +308,8 @@ in the wiki passage that cites that slide.
 - [Transfer learning](wiki/transfer-learning.md) — why a pretrained network's features transfer
   (nearest neighbours in feature space); freeze and retrain the last layer, or finetune
   everything; the similar/different, little/lots-of-data table; dataset bias; LoRA; model zoos;
-  a pretrained CNN as the image encoder for captioning (lecture 7).
+  a pretrained CNN as the image encoder for captioning (lecture 7); pretrained backbones in
+  detectors (lecture 9).
 - [Gradient descent and SGD](wiki/gradient-descent.md) — the loss landscape; the gradient,
   numerical vs. analytic, and the gradient check; gradient descent, stopping, minibatch SGD and
   epochs; poor conditioning (condition number), local minima, saddle points, noisy gradients;
@@ -312,11 +341,24 @@ in the wiki passage that cites that slide.
   general attention layer (scaled dot-product similarity, multiple queries, keys and values) and a
   search-engine intuition; cross-attention and self-attention; permutation equivariance and
   positional encoding; masked and multi-headed self-attention; four matrix multiplies, $O(N^2)$
-  cost and Flash Attention; attention compared with recurrence and convolution.
+  cost and Flash Attention; attention compared with recurrence and convolution; DETR's
+  cross-attention and ViT attention maps (lecture 9).
 - [Transformers](wiki/transformers.md) — the Transformer block (self-attention, residual
   connections, layer normalization, per-vector MLP); stacks and their sizes (original, GPT-2,
-  GPT-3); transformer language models; the Vision Transformer; pre-norm, RMSNorm, SwiGLU and
-  mixture of experts; why transformers took over.
+  GPT-3); transformer language models; the Vision Transformer, with pooled outputs or a class
+  token (lecture 9); pre-norm, RMSNorm, SwiGLU and mixture of experts, with lecture 9's spoken
+  walk-through; why transformers took over.
+- [Image segmentation](wiki/image-segmentation.md) — semantic segmentation as per-pixel
+  classification; sliding windows; fully convolutional networks with downsampling and upsampling;
+  the per-pixel loss; unpooling, max unpooling and the transposed convolution; U-Net and its skip
+  connections; instance segmentation with Mask R-CNN (lecture 9).
+- [Object detection](wiki/object-detection.md) — one object as classification plus localization
+  with a multitask loss; why many objects are harder; region proposals; R-CNN, Fast R-CNN (RoI
+  Pool and RoI Align, the timing comparison) and Faster R-CNN with its region proposal network;
+  single-stage detectors and YOLO; DETR and its object queries (lecture 9).
+- [Visualizing what networks learn](wiki/visualizing-networks.md) — linear-classifier templates;
+  first-layer filters; saliency maps from gradients with respect to pixels; CAM and its equations;
+  Grad-CAM; guided backpropagation; attention maps in Vision Transformers (lecture 9).
 - [Course logistics](wiki/course-logistics.md) — the lecture-by-lecture roadmap and the course's
   four parts; lectures, sections, Ed, office hours; Assignment 1; grading weights (assignments
   45%, midterm 20%, project 35%); late days; the collaboration policy (including "do not submit
@@ -332,7 +374,8 @@ in the wiki passage that cites that slide.
   lecture 5: [05-image-classification-cnns.md](raw/transcripts/05-image-classification-cnns.md); lecture 6:
   [06-training-cnns-architectures.md](raw/transcripts/06-training-cnns-architectures.md); lecture 7:
   [07-recurrent-neural-networks.md](raw/transcripts/07-recurrent-neural-networks.md); lecture 8:
-  [08-attention-transformers.md](raw/transcripts/08-attention-transformers.md).
+  [08-attention-transformers.md](raw/transcripts/08-attention-transformers.md); lecture 9:
+  [09-detection-segmentation-visualization.md](raw/transcripts/09-detection-segmentation-visualization.md).
 - [`raw/slides/`](raw/slides/) — slide-by-slide transcriptions with section tables:
   [part 1](raw/slides/01-introduction-part-1.md) (69 slides) and
   [part 2](raw/slides/01-introduction-part-2.md) (50 pages, printed numbers 1–53) for lecture 1;
@@ -342,7 +385,8 @@ in the wiki passage that cites that slide.
   [lecture 5](raw/slides/05-image-classification-cnns.md) (141 pages, printed numbers 1–141);
   [lecture 6](raw/slides/06-training-cnns-architectures.md) (97 pages, printed numbers 1–97);
   [lecture 7](raw/slides/07-recurrent-neural-networks.md) (124 pages, printed numbers 1–133);
-  [lecture 8](raw/slides/08-attention-transformers.md) (122 pages, printed numbers 1–122).
+  [lecture 8](raw/slides/08-attention-transformers.md) (122 pages, printed numbers 1–122);
+  [lecture 9](raw/slides/09-detection-segmentation-visualization.md) (178 pages, printed numbers 1–178).
 - [`sources.md`](sources.md) — every document the course website links, with its canonical URL.
   Slide PDFs are **not** committed here; link to them at those URLs.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every rendered image.

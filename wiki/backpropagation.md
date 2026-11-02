@@ -241,3 +241,4 @@ and the [LSTM](lstm.md).
   numerical gradient check.
 - [Optimizers](optimizers.md) — momentum, RMSProp and Adam, which all consume these gradients.
 - [Loss functions](loss-functions.md) — the node at the end of every graph.
+- [Visualizing what networks learn](visualizing-networks.md) — gradients with respect to the input pixels instead of the weights: saliency maps, Grad-CAM and guided backpropagation (lecture 9).

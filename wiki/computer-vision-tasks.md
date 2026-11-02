@@ -6,7 +6,7 @@ the computational frameworks built to solve them (≈49:12–49:59; part 2, slid
 the task side. It is the first thing to read when a later lecture assumes you know the difference
 between, say, semantic and instance segmentation.
 
-**Sources so far:** lecture 1 only — [lecture page](01-introduction.md),
+**Sources so far:** lectures 1 and 9. [Lecture 9](09-detection-segmentation-visualization.md) shows how segmentation, detection and visualization are done; see [image segmentation](image-segmentation.md), [object detection](object-detection.md) and [visualizing what networks learn](visualizing-networks.md). Lecture 1 — [lecture page](01-introduction.md),
 [transcript](../raw/transcripts/01-introduction.md), and both decks: part 1
 ([text](../raw/slides/01-introduction-part-1.md),
 [PDF](https://cs231n.stanford.edu/slides/2025/lecture_1_part_1.pdf)) and part 2
@@ -51,8 +51,7 @@ segmentation, the two dogs are separate masks.
 The slide groups detection and instance segmentation as "multiple object" tasks. Fei-Fei Li's
 history shows early results for both detection and segmentation — boxes with class confidences
 such as "dog : 0.994" (Ren, He, Girshick and Sun, 2015), and a street scene parsed into labelled
-regions (Farabet et al., 2012; printed "Fabaret") (part 1, slide 51). These tasks are covered in
-lecture 9, Object Detection, Image Segmentation, Visualizing.
+regions (Farabet et al., 2012; printed "Fabaret") (part 1, slide 51). These tasks are covered in [lecture 9](09-detection-segmentation-visualization.md): see [image segmentation](image-segmentation.md) and [object detection](object-detection.md).
 
 ![Part 1, slide 51 — 2012 to Present: Deep Learning is Everywhere (object detection, image segmentation)](../raw/images/01-introduction-part-1/slide-51.jpg)
 
@@ -81,7 +80,7 @@ features to be able to understand what's happening" (≈52:21–53:08).
 
 **Visualization and understanding** turns the question around: interpret "what's being learned by
 the models", e.g. an attention map of what a model attends to when it classifies an image
-(≈53:08). The slide pairs a photo of a dog with a saliency-style map (part 2, slide 15).
+(≈53:08). The slide pairs a photo of a dog with a saliency-style map (part 2, slide 15). Lecture 9 covers the methods: see [visualizing what networks learn](visualizing-networks.md).
 
 ## Other tasks named in lecture 1
 

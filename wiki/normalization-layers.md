@@ -111,8 +111,8 @@ $D$ (Ba et al., 2016):
 
 $$\mu_i = \Big(\sum_j h_{i,j}\Big) / D \qquad \sigma_i = \Big(\sum_j (h_{i,j} - \mu_i)^2 / D\Big)^{1/2} \qquad z_i = (h_i - \mu_i) / \sigma_i \qquad y_i = \gamma \ast z_i + \beta$$
 
-Two later changes are on the slides only; the recording leaves them as reading (lecture 8, slides
-111–113; ≈1:05:22). **Pre-norm** moves layer normalization "before the Self-Attention and MLP,
+Two later changes are on lecture 8's slides only; its recording leaves them as reading (lecture 8,
+slides 111–113; ≈1:05:22), and lecture 9 walks through them (lecture 9, slides 21–23; ≈9:28–10:13). **Pre-norm** moves layer normalization "before the Self-Attention and MLP,
 inside the residual connections", because outside them "the model can't actually learn the
 identify function" (printed "identify"), and "training is more stable" (Baevski & Auli, 2018).
 **RMSNorm** replaces layer normalization (Zhang and Sennrich, 2019). For $x$ and a weight $\gamma$
@@ -124,6 +124,8 @@ $$y_i = \frac{x_i}{RMS(x)} \ast \gamma_i \qquad RMS(x) = \sqrt{\varepsilon + \fr
 of $x$ as $D$; the sum presumably runs over the $D$ entries. Compared with slide 87's formula, it
 subtracts no mean and adds no shift. See [transformers](transformers.md#later-changes-to-the-block).
 
+Lecture 9 adds the spoken argument. With the normalization right after the residual addition, "the feature values are changed because you have a normalization. You will never have the identity in the features"; moving it inside the branch keeps the identity path (lecture 9, ≈9:28, ≈14:57–15:42). RMSNorm "doesn't use the mean value of the feature for normalization", and it and the other changes are adopted mostly because they are "empirically shown" to make training more stable (lecture 9, ≈10:13).
+
 ## Lectures
 
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#normalization-layers):
@@ -132,6 +134,8 @@ subtracts no mean and adds no shift. See [transformers](transformers.md#later-ch
   whether normalization can fix bad initialization.
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md#the-transformer):
   layer normalization in the Transformer block, pre-norm and RMSNorm.
+- [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md#tweaking-transformers):
+  pre-norm and RMSNorm walked through.
 
 ## Related pages
 

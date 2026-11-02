@@ -25,6 +25,7 @@ every build follows, and each lesson in general form, are in
 | 6 Training CNNs and CNN Architectures | [Run 6](#run-6--lecture-6-training-cnns-and-cnn-architectures-2026-11-02) |
 | 7 Recurrent Neural Networks | [Run 7](#run-7--lecture-7-recurrent-neural-networks-2026-11-02) |
 | 8 Attention and Transformers | [Run 8](#run-8--lecture-8-attention-and-transformers-2026-11-02) |
+| 9 Detection, Segmentation, Visualization, and Understanding | [Run 9](#run-9--lecture-9-detection-segmentation-visualization-and-understanding-2026-11-02) |
 
 ## Runs
 
@@ -1113,6 +1114,132 @@ reading" (≈1:05:22).
 #### Publish
 - [x] kb.json — coverage (8 of 18; 26 topic pages), decks 9/9, figure audit 9/9 (lecture 8 note), images 316 (byLecture 8: 23; 227 JPEG, 89 PNG), caveats for lecture 8's coverage, numbering, slips and unclear marks
 - [x] BUILD_LOG.md — lecture 8 record and index row
-- [x] verify_kb.py clean, and its review section read (exit 0 after fixing 2 GitHub math problems — slide file header's $O(N^2)$ before ")", and run 7's "dropout-$p$" in BUILD_LOG; 3,772 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 8 23 on disk / 23 in wiki)
+- [x] verify_kb.py clean, and its review section read (exit 0 after fixing 2 GitHub math problems — slide file header's `$O(N^2)$` before ")", and run 7's "`dropout-$p$`" in BUILD_LOG; 3,772 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 8 23 on disk / 23 in wiki)
 - [x] Commit and push — f22de52, b04b279, 7cb35db on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, both topic pages, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 9 — Lecture 9 (Detection, Segmentation, Visualization, and Understanding), 2026-11-02
+
+Built lecture 9 end to end: transcript, the deck (six transcription agents), two figure audits,
+the transcript edit, the wiki page, three topic pages (image segmentation, object detection,
+visualizing what networks learn), 53 slide images, and updates to INDEX, AGENTS (image row and two
+general lessons: sweep the words a transcript edit introduced; citations of another lecture's
+slide numbers anchor the embed script too), LICENSE, kb.json, SEE_ALSO, computer vision tasks,
+transformers (the class-token ViT; the tweaks walked through), attention, convolutional networks,
+normalization layers, linear classifiers, loss functions, backpropagation, transfer learning,
+course logistics (row 9; "lectures 1–9"), and the lecture 6 and 8 pages. Images opted in again;
+PDFs stay link-only.
+
+### Lecture 9 record
+
+**Deck.** One: `lecture_9.pdf`, 178 pages, April 29, 2025, title slide "Lecture 9: Detection,
+Segmentation, Visualization, and Understanding". Printed numbers 1–178, one per page, 1:1 with the
+PDF. The lecturer is not named in the recording or on the deck, and refers to lecture 8's lecturer
+as "Justin". No licence for the deck as a whole. Credit lines: Pixabay licence for the ViT cat
+(6–12); "This image is CC0 public domain" (31, 65, 68–70, 125); "This image by Nikita is licensed
+under CC-BY 2.0" (32); "Ronneberger et al. (2015) U-net Architecture" (60–63); "Figure copyright
+Ross Girshick, 2015; source. Reproduced with permission." (79–92) and "Figure copyright 2015, Ross
+Girshick; reproduced with permission" (167, 168, 170); "Figures copyright Karen Simonyan, Andrea
+Vedaldi, and Andrew Zisserman, 2014; reproduced with permission." (130–132); "Reproduced for
+educational purposes" (147, Chen et al. ICLR 2022 and Paul and Chen AAAI 2022); "Figure copyright
+Jost Tobias Springenberg, Alexey Dosovitskiy, Thomas Brox, Martin Riedmiller, 2015; reproduced with
+permission." (176–178). Citations only: Dosovitskiy et al. (5–19), Baevski & Auli (21–22), Zhang and
+Sennrich (23), Shazeer (24–25), Shazeer et al. (26–27), Farabet et al. and Pinheiro and Collobert
+(38–39), Long et al. and Noh et al. (43–44, 59), Alexe, Uijlings, Cheng, Zitnick and Dollár (78),
+Redmon, Liu, Lin (99), Redmon (100–106), Carion et al. (107–112), He et al. Mask R-CNN (115–117,
+122–123, 160–164), Krizhevsky, He et al., Huang et al. (128–129), Zhou et al. (133–141), Selvaraju
+et al. (142–146), Girshick (153–159), the timing charts' three papers (165–166), Ren et al.
+(167–170), Huang et al. and the backbone papers (173–174), Zou et al. (174), Zeiler and Fergus and
+Springenberg et al. (175–178). Photographs on 34–42, 64, 71–77, 93–98 and 118–121 carry no credit line.
+
+**Transcription.** Six Sonnet agents in parallel (pages 1–30, 31–60, 61–90, 91–120, 121–150,
+151–178), 75–79k tokens each, 8–13 tool calls, all finished, every chunk appended. `--verify` clean
+(178 headings). The parent wrote the header (section table, coverage, the slides repeated from
+lectures 1, 2 and 8, slips, image list), corrected the agent's [Ed:] note on slide 127 (it gave
+61.35; the printed 61.95 is the score without the bias, 60.75 with it), added [Ed:] lines on 3, 4,
+21 and 43, and rewrote three formulas with `\ast` for GitHub (check_math clean, 206 formulas). The
+agents classified every slide (figure, build of N, repeat of N, text, divider), which is what the
+render list was chosen from without opening a page. One agent reported PyMuPDF missing: `python3 -I`
+hides the user site-packages where it is installed; plain `python3` finds it.
+
+**Figure audit** (Sonnet, two agents, 37 slides). A: 3, 4, 22, 43, 45, 46, 58, 60, 61, 64, 68, 93,
+95, 96, 97, 99, 100, from 600 dpi renders with tight crops on 3, 43, 60, 61 and 64 and half-page
+crops on the rest. B: 107, 112, 115, 116, 117, 120, 121, 127, 139, 140, 145, 146, 147, 152, 156,
+158, 163, 165, 169, 176, crops of every value on 107, 127, 139 (right side), 140, 145, 146, 147, 163
+and 176, and whole-page views only on 115–121, 152, 156, 158, 165 and 169. Corrections: 3 (the
+encoder stack draws 4 bars, 1 above "x N" and 3 below; the decoder 4 bars fed by the c column), 43
+and 64 (the right high-res group is 2 slabs, blue and grey, not 3; 64's left group likewise 2), 60
+and 61 (U-Net: 3 bars per level on both sides, the channel number only over bars 2 and 3,
+concatenated half-white bars on the right, dotted crop regions; the file had 2 bars per level; both
+pages are on white), 96 (the cyan box overlaps the anchor, not inside it), 97 (four distinct anchor
+shapes), 107 (dashed "no object" curves leave the black, blue and gold squares; no lines leave the
+pink and yellow ones; the file had green and had solid lines from pink and yellow), 127 (the [Ed:]
+arithmetic), and small additions on 146 (a trace at the dog's ear), 147 (the beacon photo is rotated
+90 degrees), 176 (the guided grid's colours). Confirmed: x0, x1, x2, x2 on 3; O(N) memory on 4;
+"Low-res: D3 x H/4 x W/4" on 43; every grid on 45, 46, 152, 176; RPN shapes on 93–97; YOLO's 7 x 7
+and "5 * B + C" on 99; DETR's four queries and FFN outputs on 112; Mask R-CNN shapes on 116–117;
+CAM, Grad-CAM and bilinear equations; CAM scores on 140; ViT percentages on 147; bar values on 165
+and 169. Parent checks on 1400px renders: 165 (every bar value) and 60 (three bars per level).
+
+**Printed slips, transcribed as printed.** Slide 3: encoder inputs x0, x1, x2, x2. Slide 4: lecture
+8's slide 82 with its O(N) memory for self-attention. Slide 21: "identify function". Slide 23:
+RMSNorm averages over N for x of shape D. Slide 43: "Low-res: D3 x H/4 x W/4", the same size as
+"Med-res: D2 x H/4 x W/4" (repeated on 44 and 59). Slide 127: lecture 2's ship score 61.95, bias
+omitted (60.75). Each has an [Ed:] line and a wiki note; INDEX and kb.json list them. Typos noted
+in place: "pretranied" (82), "summing at where at overlaps" (58), "a corrections" (96), "Image a set
+of base boxes" (99). Recomputed and consistent: 25's SwiGLU (8D² both), 46's max pool and unpool,
+72's 4 and 12 numbers, 151–152's matrix products, every cell of 176's ReLU example.
+
+**Transcript edit** (Sonnet). 95 paragraphs; marker sequence identical; ratios 0.77–1.00; the
+number diff fully listed. The agent reported no outliers. A sweep of words the edit introduced
+(per paragraph, absent from the original) found five unlisted mis-edits the other checks passed:
+11:51 "routed to a of those e experts" became "a few of those experts" (restored as "A of those E
+experts", slide 27's A < E); 14:57 "don't necessarily over fine-tune them" became "overfit"; 22:38
+"reverse of uppooling or reverse reverse right convolutions" became "a reverse of pooling,
+unpooling, or reverse convolutions" (now two [unclear] marks); 23:25 "train or" dropped; 14:09 "the
+ability" and 53:37 "through" inserted. The agent's 11:03 "8 di divided by 3" → "8 D divided by 3"
+was reverted to "8 divided by 3" ("di" may be a stutter). Header corrected: coverage (transposed
+convolution is walked through at 26:31–28:49; the 31:08 "backup slides" are 151–152, which the
+lecturer refers to at 31:54; slides 150–178 not presented) and pronouns made neutral. 22 student-
+question markers (4 inferred), 1 student answer; 10 [unclear]. Capitalised words new to the edit
+are all on the slides or are forms (CNNs, RNNs, C-dimensional, Zero-shot). Spoken only: the
+per-pixel softmax loss and ground-truth discussion (22:38–24:58), the DETR Q&A (52:03–57:30), U-Net
+in medical segmentation (29:35), "R-CNN and Mask R-CNN ... not being used anymore" (43:31, said
+before Mask R-CNN is presented), DETR "deprecated" (49:00), the tomatoes example (1:00:33).
+**Coverage:** opens at 0:05, never presents slide 2, recaps 3–19, walks through lecture 8's tweaks
+(20–29) at 8:39–13:24, follows the deck to 147 and ends at 1:13:01 with slide 149's "next time".
+Not presented: the Additional Reading Material (150–178).
+
+**Images.** 53 rendered (48 JPEG, 5 PNG; 7.5 MB): 3, 12, 34, 39, 40, 42, 43, 46, 52, 56, 58, 60,
+63, 64, 65, 70, 72, 74, 77, 78, 86, 92, 95, 96, 98, 99, 100, 104, 106, 107, 112, 115, 117, 120, 121,
+122, 123, 129, 131, 132, 139, 140, 146, 147, 158, 163, 164, 165, 169, 171, 176, 177, 178. Not
+rendered: 1 (title); 2, 30, 124, 126, 148, 149, 150, 173, 174 (administrative, agenda, divider,
+text); 142–145, 151, 152 (equations and matrices transcribed exactly); 45 (grids transcribed
+exactly); figures rendered for an earlier lecture (4, lecture 8's 82; 13–19, lecture 8's 109;
+20–29, lecture 8's 111, 112, 120; 31, 33, 66, 67, 113, 125, lecture 1 part 2's 14; 32, lecture 2's
+7; 127, lecture 2's 62); build steps whose last step is rendered (5–11 → 12; 35–38 → 39; 41 → 42;
+47–51 → 52; 53–55 → 56; 68–69 → 70; 71 → 72; 79–85 → 86; 87–91 → 92; 93–94 → 95; 97 → 98;
+101–103 → 104; 105 → 106; 108–111 → 112; 114 → 115; 116 → 117; 118–119 → 120; 128 → 129;
+130 → 131; 133–138 → 139; 153–157 → 158; 160–161 → 164; 162 → 163; 175 → 176); rendered figures
+repeated with new text or a moved box (44, 59 → 43; 57 = 56; 61–62 → 60; 73, 75, 76 → 74;
+141 → 140; 159 → 158; 166 → 165; 167, 168, 170, 172 → 171). A script checked that the two lists
+cover 1–178. The raster test flagged 132 pages and is no guide on this deck (most pages carry a
+photograph); the agents' classifications decided. All 53 are in the lecture page (3, 12, 43 and
+139 placed by hand; the embed script placed 49, of which 12 were moved: citations of other
+lectures' slides 60, 78, 100–109 and 112 had pulled 60, 78, 100, 104, 106, 107 and 112 into the
+slips paragraph and the recap, and 158, 163, 164, 165 and 176 sat between a sentence and the formula
+or table it introduces); 21 hand-written captions. The lecture page also reuses lecture 8's slide
+112 and lecture 1 part 2's slide 14. Topic pages carry 8 (image segmentation 3, object detection 3,
+visualizing networks 2).
+
+**Wiki.** Lecture page: lecturer unnamed ("Justin" for lecture 8's); coverage with the Additional
+Reading Material as its own "(slides only)" sections (transposed convolution as matrix
+multiplication, RoI Pool and RoI Align, timings as a table, Faster R-CNN, detection trade-offs,
+guided backpropagation with the ReLU matrices); six slips up front; administrative notes; recap
+(slide 3's encoder and decoder, the class-token and pooled ViT, the class-token Q&A); the four
+tweaks with equations and the spoken arguments and Q&A; tasks; semantic segmentation (sliding
+window, FCN, the spoken per-pixel loss, unpooling tables, transposed convolution, 1D example,
+U-Net, summary); object detection (single object and multitask loss, multiple objects, region
+proposals, R-CNN, Fast R-CNN, RPN, YOLO, DETR and its Q&A); Mask R-CNN; visualization (templates
+with the slip, filters, saliency, CAM equations and maps, Grad-CAM steps, ViT features); next time.
+

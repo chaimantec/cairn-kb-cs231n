@@ -14,7 +14,7 @@ are not its PDF page numbers; the [lecture page](01-introduction.md) explains th
 ## Course roadmap
 
 The course has four parts (part 2, slide 51). The lecture titles below are those of the Spring
-2025 recordings; lectures 1–8 are in this knowledge base so far.
+2025 recordings; lectures 1–9 are in this knowledge base so far.
 
 | Lecture | Title | Part of the course |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ The course has four parts (part 2, slide 51). The lecture titles below are those
 | 6 | CNN Architectures — [wiki page](06-training-cnns-architectures.md) | Perceiving and Understanding |
 | 7 | Recurrent Neural Networks — [wiki page](07-recurrent-neural-networks.md) | Perceiving and Understanding |
 | 8 | Attention and Transformers — [wiki page](08-attention-transformers.md) | Perceiving and Understanding |
-| 9 | Object Detection, Image Segmentation, Visualizing | Perceiving and Understanding |
+| 9 | Object Detection, Image Segmentation, Visualizing — [wiki page](09-detection-segmentation-visualization.md) | Perceiving and Understanding |
 | 10 | Video Understanding | Perceiving and Understanding |
 | 11 | Large Scale Distributed Training | Perceiving and Understanding |
 | 12 | Self-Supervised Learning | Perceiving and Understanding |

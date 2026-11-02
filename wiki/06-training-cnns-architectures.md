@@ -663,8 +663,7 @@ of lecture 2, except on features instead of pixels, and it means a linear or $k$
 classifier built on those features would classify very well (≈58:33–1:00:05; see
 [k-nearest neighbours](k-nearest-neighbors.md)). Both slides add "(More on this in Lecture 13)".
 In this offering's schedule, lecture 13 is Generative Models 1 and visualizing is part of
-lecture 9 (see the [course roadmap](course-logistics.md#course-roadmap)); the pointer appears to
-date from an earlier offering.
+lecture 9 (see the [course roadmap](course-logistics.md#course-roadmap)); the pointer appears to date from an earlier offering. The visualization methods are on the [lecture 9 page](09-detection-segmentation-visualization.md#visualization-and-understanding).
 
 ![Slide 78 — Transfer Learning with CNNs: first-layer filters](../raw/images/06-training-cnns-architectures/slide-78.jpg)
 

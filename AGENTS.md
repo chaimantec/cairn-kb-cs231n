@@ -102,12 +102,15 @@ printed slips, which slides were rendered and why) goes in
   an unlisted "2" in lecture 2 was an interpretive insertion ("there" became "with L2").
   Read every ratio outlier against the original yourself, whatever the editor says about it: an
   outlier reported as filler removal can be a sentence moved across the marker (lecture 8).
+  Then list, per paragraph, the words the edit introduced that the original paragraph lacks, and
+  read each: substitutions pass every other check (lecture 9: "routed to a of those e experts",
+  slide 27's A of E, became "a few of those experts"; "over fine-tune" became "overfit").
 - Student turns: only the lecturer is audible; mark `*[Student question, inaudible]*` /
   `*[Student answer, inaudible]*` where the captions show a speaker change.
 
 ## Images
 
-**Lectures 1–8 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–9 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -140,7 +143,8 @@ they are the only part of this KB that redistributes course material rather than
   should say what to look at. The script anchors each image after the block holding the
   **first** citation of that slide, and a range spanning up to 12 slides counts for every slide in
   it ("slides 96–99" counts for 99), so keep such ranges out of overview paragraphs or the image
-  lands in the introduction. A block ending "(slide N):" before a display formula, a table or a
+  lands in the introduction. A citation of another lecture's slides ("lecture 8's slides 100–109") anchors
+  too, on this lecture's slides of the same numbers; list where every image landed after the run. A block ending "(slide N):" before a display formula, a table or a
   code block gets the image between the sentence and what it introduces; move it below. On topic pages, cite "lecture N, slide M" and
   embed with `--deck-label "Lecture N"` so captions name the lecture.
 - Each slide file's header lists which of its slides have images and why the others do not.
@@ -159,6 +163,7 @@ they are the only part of this KB that redistributes course material rather than
 | 6 Training CNNs and CNN Architectures | 33 of 97 pages | `lecture_6.pdf` (97 pages, printed 1–97) |
 | 7 Recurrent Neural Networks | 43 of 124 pages | `lecture_7.pdf` (124 pages, printed 1–133) |
 | 8 Attention and Transformers | 23 of 122 pages | `lecture_8.pdf` (122 pages, printed 1–122) |
+| 9 Detection, Segmentation, Visualization, and Understanding | 53 of 178 pages | `lecture_9.pdf` (178 pages, printed 1–178) |
 
 ## Rebuilding
 

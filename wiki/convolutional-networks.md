@@ -238,6 +238,8 @@ $16 \times 16 \times 3$ patch and applying a linear transform to $D$ values, is 
 "16x16 conv with stride 16, 3 input channels, D output channels" (lecture 8, slide 104; see
 [transformers](transformers.md#vision-transformers)).
 
+Lecture 9 shows the same view for ResNet-18, ResNet-101 and DenseNet-121, whose first-layer filters are $64 \times 3 \times 7 \times 7$, and the methods for looking deeper: saliency maps, CAM, Grad-CAM and guided backpropagation (lecture 9, slides 128–129; see [visualizing what networks learn](visualizing-networks.md)).
+
 ## Lectures
 
 - [Lecture 5 — Image Classification with CNNs](05-image-classification-cnns.md): everything on
@@ -249,6 +251,9 @@ $16 \times 16 \times 3$ patch and applying a linear transform to $D$ values, is 
   history of vision.
 - [Lecture 4 — Neural Networks and Backpropagation](04-neural-networks-backpropagation.md): the
   fully connected networks ConvNets extend, and backpropagation, which trains them.
+- [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md#fully-convolutional-networks):
+  fully convolutional networks, unpooling, the transposed convolution as learnable upsampling, and
+  convolution as a matrix multiplication ([image segmentation](image-segmentation.md#upsampling)).
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md#three-ways-of-processing-sequences):
   convolution compared with recurrence and self-attention, and the ViT patch embedding as a
   strided convolution.

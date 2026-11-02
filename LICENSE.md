@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2, 3, 6, 7 or 8 decks (lectures 2, 3, 6, 7 and 8 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3, 6, 7, 8 or 9 decks (lectures 2, 3, 6, 7, 8 and 9 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -387,3 +387,47 @@ sequence-task figure, title-only and text slides, the matrix-shape and memory sl
 2022), build steps whose last step is rendered, and rendered figures repeated with new text or
 equations (including slide 83's "Attention is All You Need" title box over slide 82). The slide
 file's header lists every slide and the reason.
+
+### Lecture 9 — Detection, Segmentation, Visualization, and Understanding
+
+Deck: [lecture_9.pdf](https://cs231n.stanford.edu/slides/2025/lecture_9.pdf).
+Rendered: 53 slides, in `raw/images/09-detection-segmentation-visualization/`. The deck prints no
+licence for itself. Its credit lines for individual images are copied below; several slides carry
+"Figure copyright …; reproduced with permission", a permission granted to the course that does not
+pass to this repository.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 12 | A photograph of a cat cut into patches, and the ViT pipeline, citing Dosovitskiy et al., "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale", ICLR 2021; "Cat image is free for commercial use under a Pixabay license". |
+| 34, 39, 40, 42, 43, 64 | Photographs of a kitten and of two cows, with no credit line on these slides (slide 65 marks the same cow photograph "This image is CC0 public domain"). Slides 38–39 cite Farabet et al., TPAMI 2013, and Pinheiro and Collobert, ICML 2014; slide 43 cites Long, Shelhamer and Darrell, CVPR 2015, and Noh et al., ICCV 2015. |
+| 60, 63 | The U-Net architecture figure, credited "Ronneberger et al. (2015) U-net Architecture". |
+| 65, 70 | Photographs of a kitten and of cows, "This image is CC0 public domain". |
+| 72, 74, 77 | Photographs of a kitten, of two dogs and a cat in front of a Christmas tree, and of a goose with goslings, with no credit line on these slides (slide 31 marks the four-task figure's images "This image is CC0 public domain"). |
+| 78 | A photograph of a kitten and a puppy among flowers, with region proposals; citations to Alexe et al., TPAMI 2012, Uijlings et al., IJCV 2013, Cheng et al., CVPR 2014, and Zitnick and Dollár, ECCV 2014. The photograph is not credited. |
+| 86 | The R-CNN figure: Girshick et al., "Rich feature hierarchies for accurate object detection and semantic segmentation", CVPR 2014. "Figure copyright Ross Girshick, 2015; source. Reproduced with permission." |
+| 92 | The Fast R-CNN figure: Girshick, "Fast R-CNN", ICCV 2015. "Figure copyright Ross Girshick, 2015; source. Reproduced with permission." |
+| 95, 96, 98 | A photograph of a kitten with anchor boxes, not credited on these slides. |
+| 99 | The dogs-and-cat photograph with a grid of base boxes, citing Redmon et al., CVPR 2016 (YOLO), Liu et al., ECCV 2016 (SSD), and Lin et al., ICCV 2017 (focal loss). |
+| 100, 104, 106 | The YOLO pipeline figure and a photograph of a dog, a bicycle and a car, credited "Redmon et al. 'You only look once: unified, real-time object detection (2015).'" |
+| 107, 112 | The DETR pipeline figure and a photograph of two seagulls, citing Carion et al., "End-to-End Object Detection with Transformers", ECCV 2020. |
+| 115 | The Faster R-CNN diagram with a mask branch, citing He et al., "Mask R-CNN", ICCV 2017; the same diagram is credited "Figure copyright 2015, Ross Girshick; reproduced with permission" on slides 167, 168 and 170. |
+| 117 | The Mask R-CNN head on the Christmas-tree photograph, citing He et al., "Mask R-CNN", arXiv 2017. |
+| 120, 121 | A photograph of a bedroom with a child, and mask targets; no credit line printed. |
+| 122, 123 | Instance-segmentation and pose results on photographs, citing He et al., "Mask R-CNN", ICCV 2017. |
+| 129 | First-layer filter visualizations of AlexNet, ResNet-18, ResNet-101 and DenseNet-121, citing Krizhevsky, arXiv 2014; He et al., CVPR 2016; Huang et al., CVPR 2017. |
+| 131, 132 | Saliency maps and photographs from Simonyan, Vedaldi and Zisserman, "Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps", ICLR Workshop 2014. "Figures copyright Karen Simonyan, Andrea Vedaldi, and Andrew Zisserman, 2014; reproduced with permission." |
+| 139, 140 | The CAM diagram and class activation maps, citing Zhou et al., "Learning Deep Features for Discriminative Localization", CVPR 2016. |
+| 146 | Grad-CAM, guided backpropagation and occlusion maps of a dog and a cat, citing Selvaraju et al., "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization", CVPR 2017. |
+| 147 | ViT feature visualizations, citing Chen et al., ICLR 2022, and Paul and Chen, AAAI 2022, "Reproduced for educational purposes." |
+| 158 | The kitten photograph with RoI Pool, citing Girshick, "Fast R-CNN", ICCV 2015. |
+| 163, 164 | RoI Align diagrams over the kitten photograph, citing He et al., "Mask R-CNN", ICCV 2017. |
+| 165 | Training- and test-time bar charts citing Girshick et al., CVPR 2014; He et al., ECCV 2014; Girshick, ICCV 2015. |
+| 171 | The Faster R-CNN figure (Ren et al., NIPS 2015; credited "Figure copyright 2015, Ross Girshick; reproduced with permission" on slides 167, 168 and 170, not on 171). |
+| 176, 177, 178 | A photograph of an elephant, a ReLU example, and maximally activating patches with guided-backprop images, citing Zeiler and Fergus, ECCV 2014, and Springenberg et al., ICLR Workshop 2015. "Figure copyright Jost Tobias Springenberg, Alexey Dosovitskiy, Thomas Brox, Martin Riedmiller, 2015; reproduced with permission." |
+| 3, 46, 52, 56, 58, 169 | No third-party content identifiable: the deck's own diagrams and chart (slide 3's encoder and decoder; the unpooling and transposed-convolution grids; slide 169's test-time chart, which prints no citation). |
+
+Not rendered from this deck: the title, the administrative, agenda, divider and text slides,
+equations and matrices the slide file reproduces exactly, figures already rendered for an earlier
+lecture (lecture 8's ViT and transformer tweaks, lecture 1's four-task figure, lecture 2's cat and
+linear-classifier slides), build steps whose last step is rendered, and rendered figures repeated
+with new text. The slide file's header lists every slide and the reason.
