@@ -35,18 +35,18 @@ and 128). Title slide "Lecture 7: Recurrent Neural Networks", April 22, 2025. Im
 
 ### Images (Step 1c)
 - [x] raw/images/07-recurrent-neural-networks/ — rendered 43 (29 JPEG, 14 PNG; 5.0 MB); embedded in the slide file (43); header lists every unrendered slide and why (81)
-- [ ] Embed in the wiki page and topic pages; hand-written captions
+- [x] Embed in the wiki page (43, all with hand-written captions, placed by hand; the embed script then found nothing to add) and topic pages (27: recurrent-neural-networks 7, lstm 4, language-models 7, image-captioning 7, normalization-layers 1, hyperparameters 1); 20 `.jpg` links corrected to the actual `.png` files; caption math converted to plain text for GitHub
 - [x] Look at two rendered images against the slide-file claims (slide 65 chart-like table: softmax values as printed, slips confirmed; slide 66 diagram: w14 rows, embedding layer, as the file says)
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] INDEX.md image rules (lectures 1–7; lecture 7 has 43); AGENTS.md table row (43 of 124); BUILD_LOG.md render record; LICENSE.md attribution (lecture 7 table and not-rendered note; decks-checked sentence)
 
 ### Wiki
-- [ ] wiki/07-recurrent-neural-networks.md
-- [ ] Topic pages and cross-links
-- [ ] INDEX.md table of contents (coverage 7 of 18); SEE_ALSO
+- [x] wiki/07-recurrent-neural-networks.md (six slips noted: 65, 66, 106, 110, 116, 129; slide 2 slide-only; the chunking Q&A vs. the slides; the lecturer's acknowledgement of slide 65; "row" vs. "column" for embeddings; "diagonally positioned" vs. slide 106)
+- [x] Topic pages recurrent-neural-networks, lstm, language-models, image-captioning; sections or links in regularization, normalization-layers, weight-initialization, backpropagation, computer-vision-tasks, cnn-architectures, transfer-learning, hyperparameters-and-validation, neural-networks, loss-functions, course-logistics (row 7; "lectures 1–7"), lecture 6 page
+- [x] INDEX.md table of contents (coverage 7 of 18; lecture 7 citation rule, skipped slide and spoken additions, six slips; lecture 7 and four topic entries; ten one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–7"
 
 ### Publish
-- [ ] kb.json — coverage, decks, figure audit, images, caveats
-- [ ] BUILD_LOG.md — lecture 7 record and index row
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage (7 of 18; 24 topic pages), decks 8/8, figure audit 8/8 (lecture 7 note), images 293 (byLecture 7: 43; 222 JPEG, 71 PNG), caveats for lecture 7's coverage, numbering, slips and unclear marks
+- [x] BUILD_LOG.md — lecture 7 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 after fixing 22 GitHub math problems — math in italic [Ed:] lines and captions, math after a quote, `$` before ")", inline pmatrix with `&`, `_` after `}` — and 6 topic-page image links with the wrong extension; 2,528 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 7 43 on disk / 43 in wiki)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

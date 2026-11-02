@@ -220,6 +220,20 @@ gives the correct product. The derivation is in the course's
 
 *Lecture 4, slide 150 — the matrix multiply's backward pass, ∂L/∂x = (∂L/∂y)wᵀ and ∂L/∂w = xᵀ(∂L/∂y), the only products whose shapes match. The printed y is not x times w (see the lecture 4 page). [Deck](https://cs231n.stanford.edu/slides/2025/lecture_4.pdf)*
 
+## Through time: recurrent networks
+
+Lecture 7 applies the same machinery to [recurrent neural networks](recurrent-neural-networks.md),
+whose computational graph reuses one weight matrix at every time step (lecture 7, slides 39–45).
+As at a copy gate, the gradient for the shared weights is the sum of the gradients from every place
+they are used: "you can calculate the gradient for each time step separately and then you're going
+to sum them all together" (lecture 7, ≈24:52). Running backward through the whole sequence is
+**backpropagation through time**; on long sequences it runs out of memory, so **truncated**
+backpropagation through time backpropagates only within chunks while carrying the hidden state
+forward (lecture 7, slides 54–58). The chain rule through many steps multiplies many Jacobians
+together, which is why gradients in a vanilla RNN vanish or explode (lecture 7, slides 106–115). See
+[vanishing and exploding gradients](recurrent-neural-networks.md#vanishing-and-exploding-gradients)
+and the [LSTM](lstm.md).
+
 ## Related pages
 
 - [Neural networks](neural-networks.md) — the functions backpropagation is applied to.

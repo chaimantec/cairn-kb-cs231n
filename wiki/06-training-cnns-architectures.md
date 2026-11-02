@@ -206,6 +206,9 @@ hidden layer's activations by `p` ("scale at test time"). In that code `p = 0.5`
 probability of keeping a unit; the lecturer calls it "the probability of dropout" (≈13:55, ≈14:41),
 which is the same number at 0.5. The slide labels this "Vanilla Dropout: Not recommended
 implementation (see notes below)", but the notes it refers to are not on the slide.
+Lecture 7 opens by clarifying this: in most libraries $p$ is the fraction dropped, and the
+test-time factor is the fraction kept (lecture 7, ≈0:05–0:51; see
+[lecture 7](07-recurrent-neural-networks.md#clarifications-from-last-time)).
 
 Dropout is one instance of a pattern the lecture returns to under data augmentation: add
 randomness at training time, average it out at test time. See
@@ -814,3 +817,5 @@ ImageNet first) and hyperparameter selection (checking losses, random search).
 - [Hyperparameters and validation](hyperparameters-and-validation.md) — the seven-step recipe and
   random search.
 - Previous lecture: [Lecture 5 — Image Classification with CNNs](05-image-classification-cnns.md).
+- Next lecture: [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md), which
+  opens with clarifications of dropout's $p$ and of normalization vs. initialization.

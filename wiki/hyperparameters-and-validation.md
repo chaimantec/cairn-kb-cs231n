@@ -140,3 +140,14 @@ random, and keep going until you have the best model (lecture 6, ≈1:09:17–1:
 ![Lecture 6, slide 95 — Random Search vs. Grid Search](../raw/images/06-training-cnns-architectures/slide-95.png)
 
 *Lecture 6, slide 95 — nine trials on a 3x3 grid test only three values of the important parameter; nine random trials test nine, one near the peak. Illustration of Bergstra and Bengio, 2012. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
+**Tracking many runs.** For tuning and evaluation, the lecture 7 lecturer recommends Weights and
+Biases, "something I use in basically all my projects" (lecture 7, ≈3:57); TensorBoard is an
+alternative (≈4:43). Its parallel-coordinates plot draws one line per run through each
+hyperparameter's value to its accuracy, coloured by accuracy (lecture 7, slide 12); reading a
+dropout sweep this way, "generally the lower values of dropout will achieve higher accuracy"
+(≈3:57).
+
+![Lecture 7, slide 12 — Evaluate models and tune hyperparameters](../raw/images/07-recurrent-neural-networks/slide-12.jpg)
+
+*Lecture 7, slide 12 — a Weights and Biases sweep of 211 runs: each line passes through a run's batch size and dropout to its accuracy, coloured from purple (low) to orange (high). [Deck](https://cs231n.stanford.edu/slides/2025/lecture_7.pdf)*

@@ -93,10 +93,20 @@ initialised randomly with Kaiming initialization (lecture 6, ≈1:02:22; see
 **Normalization** layers would also stop activations blowing up, but the network might still be
 harder to optimise (lecture 6, ≈48:28; see [normalization layers](normalization-layers.md)).
 
+## Can normalization replace good initialization?
+
+No, according to lecture 7's answer to a question from lecture 6 (lecture 7, slides 7–10;
+≈0:51–2:24). In a toy experiment, adding LayerNorm to a badly initialized network removed most of the
+damage, but "to get the best performance you still need good weight initialization": a gap remained
+between the badly and well initialized runs, both with LayerNorm. See
+[normalization layers](normalization-layers.md#normalization-and-initialization).
+
 ## Lectures
 
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#weight-initialization):
-  everything on this page.
+  everything on this page except the last section.
+- [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#clarifications-from-last-time):
+  initialization with and without LayerNorm.
 
 ## Related pages
 

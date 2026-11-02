@@ -97,6 +97,11 @@ zero-centered function". GELU (Gaussian error linear unit) is used more in trans
 (sigmoid linear unit, also called Swish) in some modern CNNs, including EfficientNet. Sigmoid and
 tanh "squash values into a narrow range", which can cause **vanishing gradients**. So they are not
 used in the middle of a network, only in later layers, for example to binarize outputs.
+Recurrent networks are the exception: the vanilla RNN of lecture 7 uses tanh for its hidden state,
+because it is bounded between $-1$ and $1$, so values stay in range when the same update is applied
+step after step, and because it is zero-centred (lecture 7, ≈13:15). Its vanishing gradients are
+exactly the problem there: see
+[vanishing and exploding gradients](recurrent-neural-networks.md#vanishing-and-exploding-gradients).
 
 Choosing one is "mostly empirical": start with ReLU, or with whatever is standard for the
 architecture, and treat the choice like any other hyperparameter (lecture 4, ≈22:46–23:33). All of

@@ -349,7 +349,7 @@ Same as slide 29, except that the bold red text at the bottom right now reads: "
 
 ## Slide 31 — Vanilla(-ish) RNN: Concrete Example
 
-Same as slide 29 (X and Y columns, equations $h_t = f_W(h_{t-1}, x_t)$ and $y_t = f_y(W_{hy} h_t)$), without the question text, plus:
+Same as slide 29 without the question text: the X and Y columns and the equations $h_t = f_W(h_{t-1}, x_t)$ and $y_t = f_y(W_{hy} h_t)$. Added:
 
 - a note between the table and the equations: "Set $f_W$ and $f_y$ to both be ReLU for simplicity".
 - a displayed vector equation, printed as
@@ -434,7 +434,7 @@ $$h_t = \mathrm{ReLU}(W_{hh} h_{t-1} + W_{xh} x_t)$$
 
 $$y_t = \mathrm{ReLU}(W_{hy} h_t)$$
 
-Far right, the hidden state is written as a 3-entry column vector with a large bracket: $h_t = $ (Current, Previous, 1), the three entries stacked top to bottom as words.
+Far right, the hidden state is written as a 3-entry column vector with a large bracket: $h_t$ = (Current, Previous, 1), the three entries stacked top to bottom as words.
 
 Bottom right, a table-like drawing: a column "X" and a column "Y" joined by an arrow labelled "RNN". The X column reads 0, 1, 0, 1, 1, 1, 0, 1, 1 and the Y column reads 0, 0, 0, 0, 1, 1, 0, 0, 1. In both columns the 5th, 6th and 9th entries are in bold (X = 1, 1, 1; Y = 1, 1, 1).
 
@@ -635,7 +635,7 @@ Text at left (title, not bold): "Example: Character-level Language Model Samplin
 
 (subscripts are printed as subscripts, e.g. $w_{11}$). Caption beneath: "Matrix multiplication with a one-hot vector just extracts a column from the weight matrix. We often put a separate embedding layer between the input and hidden layers."
 
-*[Ed: rows 2 and 3 of the printed matrix end in $w_{14}$ (the printed row 2 is $w_{21}\ w_{22}\ w_{23}\ w_{14}$ and row 3 is $w_{31}\ w_{32}\ w_{33}\ w_{14}$); by the pattern of rows 1 and 4 these last entries would be $w_{24}$ and $w_{34}$. The product printed on the right, $w_{11}, w_{21}, w_{31}, w_{41}$, is the first column of the matrix, as the caption says.]*
+*[Ed: rows 2 and 3 of the printed matrix end in w14 (row 2 reads w21 w22 w23 w14, row 3 w31 w32 w33 w14); by the pattern of rows 1 and 4 these last entries would be w24 and w34. The product printed on the right, w11, w21, w31, w41, is the first column of the matrix, as the caption says.]*
 
 Figure at right, a four-column RNN on a light-grey rounded panel, from bottom to top: pink input one-hot vectors (label "input layer", input chars “h”, “e”, “l”, “l”: (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 1, 0)); red arrows (the last labelled "W_xh") up to a new light-blue "Embedding layer" row with vectors (.03, .13, .00, .84), (.25, .20, .05, .50), (.11, .17, .68, .03), (.11, .17, .68, .03); grey arrows up to the green hidden layer (0.3, -0.1, 0.9), (1.0, 0.3, 0.1), (0.1, -0.5, -0.3), (-0.3, 0.9, 0.7) joined by green arrows (the last labelled "W_hh"); blue arrows (the last labelled "W_hy") up to the blue output layer (1.0, 2.2, -3.0, 4.1), (0.5, 0.3, -1.0, 1.2), (0.1, 0.5, 1.9, -1.1), (0.2, -1.5, -0.1, 2.2) with the same bold green entries as slide 61 (2.2, -1.0, 1.9, 2.2); and above them "target chars:" “e”, “l”, “l”, “o”. This figure has no softmax row and no sample row. The third and fourth embedding vectors are identical; both inputs are “l”.
 
@@ -947,7 +947,7 @@ RNN Disadvantages:
 
 ![Slide 85 — Image Captioning](../images/07-recurrent-neural-networks/slide-85.jpg)
 
-Title: "Image Captioning". Figure: a photograph at upper left of an older man in profile wearing a straw hat with an orange band, in front of purple flowers. A down arrow leads from the photograph to a drawn CNN labelled "$CNN_{\theta_c}$" (printed as CNN with subscript theta c): three stacked convolution-feature-map blocks narrowing into a trapezoid. An arrow labelled "$W_{hi}$" (printed W with subscript hi) curves from the CNN to the first hidden node of an unrolled RNN with 3 time steps. Each time step has three circles in a column: a green input circle at the bottom, a yellow hidden circle in the middle, and a blue output circle at the top. The inputs, left to right, are labelled "START", "straw", "hat"; the outputs above them are labelled "straw", "hat", "END". Horizontal arrows connect the three yellow hidden circles, the first two labelled with nothing and the label "$W_{hh}$" (W with subscript hh) printed above the arrow between the second and third. Labels at the right-most step: $y_t$ (output), $W_{oh}$ (between hidden and output), $h_t$ (hidden), $W_{hx}$ (between input and hidden), $x_t$ (input). Small grey credit text beside the figure: "Figure from Karpathy et a, "Deep Visual-Semantic Alignments for Generating Image Descriptions", CVPR 2015; figure copyright IEEE, 2015. Reproduced for educational purposes."
+Title: "Image Captioning". Figure: a photograph at upper left of an older man in profile wearing a straw hat with an orange band, in front of purple flowers. A down arrow leads from the photograph to a drawn CNN labelled $\mathrm{CNN}_ {\theta_c}$ (printed as CNN with subscript theta c): three stacked convolution-feature-map blocks narrowing into a trapezoid. An arrow labelled $W_{hi}$ (printed W with subscript hi) curves from the CNN to the first hidden node of an unrolled RNN with 3 time steps. Each time step has three circles in a column: a green input circle at the bottom, a yellow hidden circle in the middle, and a blue output circle at the top. The inputs, left to right, are labelled "START", "straw", "hat"; the outputs above them are labelled "straw", "hat", "END". Horizontal arrows connect the three yellow hidden circles, the first two labelled with nothing and the label $W_{hh}$ (W with subscript hh) printed above the arrow between the second and third. Labels at the right-most step: $y_t$ (output), $W_{oh}$ (between hidden and output), $h_t$ (hidden), $W_{hx}$ (between input and hidden), $x_t$ (input). Small grey credit text beside the figure: "Figure from Karpathy et a, "Deep Visual-Semantic Alignments for Generating Image Descriptions", CVPR 2015; figure copyright IEEE, 2015. Reproduced for educational purposes."
 
 Reference list at the bottom:
 - Explain Images with Multimodal Recurrent Neural Networks, Mao et al.
@@ -1116,7 +1116,7 @@ $$= \tanh\left( \begin{pmatrix} W_{hh} & W_{hx} \end{pmatrix} \begin{pmatrix} h_
 
 $$= \tanh\left( W \begin{pmatrix} h_{t-1} \cr x_t \end{pmatrix}\right)$$
 
-*[Ed: the slide prints $W_{xh}$ in the first line and $W_{hx}$ in the second, for the same input weights; transcribed as printed.]*
+*[Ed: the slide prints W_xh in the first line and W_hx in the second, for the same input weights; transcribed as printed.]*
 
 ## Slide 107 — Vanilla RNN Gradient Flow
 
@@ -1144,7 +1144,7 @@ Same as slide 109, plus the subtitle "Gradients over multiple time steps:" under
 
 $$\frac{\partial L_T}{\partial W} = \frac{\partial L_T}{\partial h_T} \frac{\partial h_t}{\partial h_{t-1}} \cdots \frac{\partial h_1}{\partial W}$$
 
-*[Ed: the second factor is printed with a lowercase $t$; in this chain, which starts at step $T$, it stands for $\partial h_T / \partial h_{T-1}$. Slide 111's product form, over $t = 2$ to $T$, writes the general factor.]*
+*[Ed: the second factor is printed with a lowercase t; in this chain, which starts at step T, it stands for the derivative of h(T) with respect to h(T−1). Slide 111's product form, over t = 2 to T, writes the general factor.]*
 
 ## Slide 111 — Vanilla RNN Gradient Flow
 
@@ -1226,7 +1226,7 @@ $$c_t = f \odot c_{t-1} + i \odot g$$
 
 $$h_t = o \odot \tanh(c_t)$$
 
-Added blue annotations with arrows pointing at the right-hand box: "Four gates" (arrow to the stacked vector $(i, f, o, g)$), "Cell state" (arrow to the $c_t$ line) and "Hidden state" (arrow to the $h_t$ line).
+Added blue annotations with arrows pointing at the right-hand box: "Four gates", with an arrow to the stacked vector $(i, f, o, g)$; "Cell state", with an arrow to the $c_t$ line; and "Hidden state", with an arrow to the $h_t$ line.
 
 ## Slide 120 — Long Short Term Memory (LSTM)
 
@@ -1236,7 +1236,7 @@ Diagram, left to right. A large light-grey rectangle labelled "W" with the size 
 
 ## Slide 121 — Long Short Term Memory (LSTM)
 
-Same diagram as slide 120, plus: a red-boxed line of text at the top right, "g: Gate gate (?), How much to write to cell" (the words "Gate gate" underlined), and at the lower right a copy of the LSTM equations (the gate-vector equation, then $c_t = f \odot c_{t-1} + i \odot g$ and $h_t = o \odot \tanh(c_t)$) with the gate-vector equation inside a blue box, a red box around the "tanh" entry, and a red box around $g$ in the $c_t$ equation.
+Same diagram as slide 120, plus: a red-boxed line of text at the top right, "g: Gate gate (?), How much to write to cell" (the words "Gate gate" underlined), and at the lower right a copy of the LSTM equations (the gate-vector equation, then $c_t = f \odot c_{t-1} + i \odot g$ and $h_t = o \odot \tanh(c_t)$ below it) with the gate-vector equation inside a blue box, a red box around the "tanh" entry, and a red box around $g$ in the $c_t$ equation.
 
 ## Slide 122 — Long Short Term Memory (LSTM)
 

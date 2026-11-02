@@ -149,6 +149,13 @@ dropout" (lecture 6, slide 19). The lecturer calls the factor "the probability o
 (lecture 6, ≈13:55), the same number at 0.5. See
 [lecture 6](06-training-cnns-architectures.md#dropout).
 
+Lecture 7 opens by clarifying this point (lecture 7, slides 3–6; ≈0:05–0:51). Depending on the
+implementation, $p$ is either the fraction of units dropped or the fraction kept, and "in most
+libraries" it is the fraction dropped; lecture 6's code uses the other convention. Whichever is
+used, the test-time output must match the expected training output: "if you dropped 25% of your
+activations during training time, at test time you would scale by 75%" (lecture 7, ≈0:51). See
+[lecture 7](07-recurrent-neural-networks.md#clarifications-from-last-time).
+
 ## Randomness in training, averaged at test time
 
 Dropout is one case of "a common pattern" (lecture 6, slide 69). In training, add some kind of

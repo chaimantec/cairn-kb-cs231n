@@ -125,6 +125,13 @@ networks' performance however long they trained, which the lecturer puts down to
 essentially local minima. Exactly why residual connections avoid this is still being researched
 (lecture 6, ≈34:44–36:15).
 
+Lecture 7 relates residual connections to the [LSTM](lstm.md), whose cell state lets the gradient
+pass from one time step to the previous through only an elementwise multiplication. Directly adding
+a value and skipping activation functions is "highly related to the idea that we discussed in
+ResNets", applied across many time steps rather than many layers: "a parallel, but it's a little
+different" (lecture 7, slides 129–130; ≈1:08:00–1:08:45). Highway Networks, which gate the
+shortcut, sit in between (lecture 7, slide 130).
+
 ### The full architecture
 
 A ResNet is a stack of residual blocks, each with two $3 \times 3$ convolutions (lecture 6,
@@ -177,6 +184,8 @@ architectures from scratch: a model pretrained on ImageNet is the usual starting
 - [Lecture 5 — Image Classification with CNNs](05-image-classification-cnns.md#summary-and-next-time):
   the layers, and a preview of four architecture diagrams.
 - [Lecture 1 — Introduction](01-introduction.md): LeNet, AlexNet and the deep-learning explosion.
+- [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#similar-to-resnet): ResNet compared
+  with the LSTM, and an unnamed VGG-style network used for image captioning.
 
 ## Related pages
 

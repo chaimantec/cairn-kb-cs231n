@@ -23,6 +23,7 @@ every build follows, and each lesson in general form, are in
 | 4 Neural Networks and Backpropagation | [Run 4](#run-4--lecture-4-neural-networks-and-backpropagation-2026-11-02) |
 | 5 Image Classification with CNNs | [Run 5](#run-5--lecture-5-image-classification-with-cnns-2026-11-02) |
 | 6 Training CNNs and CNN Architectures | [Run 6](#run-6--lecture-6-training-cnns-and-cnn-architectures-2026-11-02) |
+| 7 Recurrent Neural Networks | [Run 7](#run-7--lecture-7-recurrent-neural-networks-2026-11-02) |
 
 ## Runs
 
@@ -808,3 +809,118 @@ link-only. Slug `06-training-cnns-architectures`.
 - [x] verify_kb.py clean, and its review section read (exit 0 after fixing six GitHub math problems the --github pass found: two inline maths wrapped across a line break, a `$...$` followed by ")", `x < 0` and two `\,` in the slide file; 2,055 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 6 33 on disk / 33 in wiki; AGENTS.md gains one general lesson: count drawn architectures box by box)
 - [x] Commit and push — cc11465, 15e39a3, 7ed2cb1 on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, topic page, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 7 — Lecture 7 (Recurrent Neural Networks), 2026-11-02
+
+Built lecture 7 end to end: transcript, the deck (four transcription agents), two figure audits
+(one extended to the min-char-rnn listing), the transcript edit, the wiki page, four topic pages
+(recurrent neural networks, LSTM, character-level language models, image captioning and visual
+question answering), 43 slide images, and updates to INDEX, AGENTS (image row and one general
+lesson: code listings pasted as images have no text layer, so values a slide file quotes from one
+go into the audit), LICENSE, kb.json, SEE_ALSO, regularization (lecture 7's dropout-$p$
+clarification), normalization layers (the LayerNorm vs. initialization experiment, with slide 7),
+weight initialization, backpropagation (through time), computer vision tasks (captioning), CNN
+architectures (the LSTM parallel), transfer learning (captioning's CNN encoder), hyperparameters
+and validation (Weights and Biases, with slide 12), neural networks (tanh in RNNs), loss functions
+(per-step softmax), course logistics (row 7; "lectures 1–7"), and the lecture 6 page (forward
+pointer from its dropout passage; next-lecture link). Images opted in again; PDFs stay link-only.
+
+### Lecture 7 record
+
+**Deck.** One: `lecture_7.pdf`, 124 pages, April 22, 2025, title slide "Lecture 7: Recurrent Neural
+Networks". The lecturer is Zane Durante: he opens with clarifications of "when I gave lecture last
+time" (lecture 6). Printed numbers 1–133 with 19, 20, 52, 53, 71, 72, 73, 100 and 103 absent; page
+118 prints no number (127, between 126 and 128; `slide_number_map.py` marks it inferred). No
+deck-wide licence. Credits and citations: slide 4 Srivastava et al., JMLR 2014; 12 the wandb docs
+URL; 67 the min-char-rnn gist URL and "Written by Andrej Karpathy (@karpathy) BSD License"; 68
+"Blogpost from Andrej Karpathy back in 2015!"; 76 the openai-codex URL; 78–83 Karpathy, Johnson and
+Fei-Fei, ICLR Workshop 2016, "Figures copyright Karpathy, Johnson, and Fei-Fei, 2015; reproduced
+with permission"; 85 "Figure from Karpathy et a, … CVPR 2015; figure copyright IEEE, 2015.
+Reproduced for educational purposes."; 87 "This image is CC0 public domain"; 97–98 neuraltalk2 and
+CC0 image credits; 99 Agrawal et al. ICCV 2015, Zhu et al. CVPR 2016, "Figure from Zhu et al,
+copyright IEEE 2016. Reproduced for educational purposes."; 101 Das et al. CVPR 2017, "Figures from
+Das et al, copyright IEEE 2017. Reproduced with permission."; 102 Wang et al. CVPR 2018, "Figures
+from Wang et al, copyright IEEE 2017. Reproduced with permission." (year as printed); 105–119
+Hochreiter and Schmidhuber 1997; 106–117 Bengio et al. 1994 and Pascanu et al. 2013; 120–130
+"[Hochreiter et al., 1997]"; 130 Srivastava et al., Highway Networks, 2015; 131 "RWKV Scaling
+(arXiv)" and the S5 and Mamba paper titles.
+
+**Transcription.** Four Sonnet agents in parallel (pages 1–31, 32–62, 63–93, 94–124), 130–133k
+tokens each, all finished, every chunk appended. `--verify` clean (124 headings). The parent
+fixed GitHub math on slides 31, 34, 85, 119, 121 (a space inside `$`, math after a quote mark, a
+closing `$` before ")", `_` after `}`) and rewrote the `[Ed:]` lines on 66, 106 and 110 without
+math (GitHub does not render math inside italics). Slide 67's transcriber called the listing "too
+small to read at slide size" yet quoted hyperparameters and lines from it; the code is a raster
+image with no text layer, so the parent sent it to the audit, which confirmed every quoted item on
+600 dpi crops.
+
+**Figure audit** (Sonnet, two agents, 27 slides). A: 7, 12, 23, 33, 54, 56, 58, 61, 62, 64, 65, 66,
+crops of 600 dpi renders for 7, 12, 61, 62, 64, 65, 66 (23, 33, 54, 56, 58 from ~150 dpi page
+views). B: 85, 88, 91, 97, 98, 99, 104, 111, 113, 116, 120, 125, 129, 131, then 67; crops of 600 dpi
+renders (pdftoppm) for 85, 88, 91, 111, 113, 116, 120, 125, 129, 131, 99 (questions 3–4) and six
+strips of 67 (97, 98, 99's first two questions and 104 from ~150 dpi views). Corrections: 7 (orange
+and red start values in the train panel), 58 (the grey box also encloses the output box), 61 (the
+"target chars:" label is black), 88 (20 boxes, 10 conv + 3 FC = 13 weight layers; the transcriber
+listed all ten conv boxes but counted eight), 131 (a missing Pythia point; OPT's last point).
+Confirmed: every hidden, output, softmax and embedding vector on 61–66 (slide 66's third and fourth
+embeddings are identical; both inputs are "l"), slide 66's w14 rows, 67's listing, 85's labels,
+91's equations, 111's lowercase $t$, 113's equation and chart, 116's code (no square root), 120's
+size labels, 125's arrows, 129's labels and arcs (last group "3x3 conv, 64"). Parent check of two
+renders: slides 65 and 66 agree with the audit (the slips are printed).
+
+**Printed slips, transcribed as printed.** Slide 65: softmax columns 1 and 2 printed
+(.03, .84, .00, .13) and (.25, .20, .50, .05); the printed scores (1.0, 2.2, -3.0, 4.1) and
+(0.5, 0.3, -1.0, 1.2) give (.038, .125, .001, .837) and (.247, .202, .055, .497); columns 3 and 4
+recompute exactly. The lecturer acknowledges it: "This is incorrect, actually … no one noticed it"
+(38:42) and "imagine the probabilities are correct here" (43:21). Slide 66: rows 2 and 3 end in
+w14. Slide 106: W_xh then W_hx. Slide 110: lowercase t in the chain from T. Slide 116: `grad_norm =
+np.sum(grad * grad)` is the squared norm. Slide 129: ResNet's last stage "3x3 conv, 64" (lecture 6,
+slide 57's figure). Each has an `[Ed:]` line and a wiki note; INDEX and kb.json list them. The
+hand-built repeated-1s RNN (29–38) recomputes exactly.
+
+**Transcript edit** (Sonnet). 93 paragraphs; marker sequence identical; word ratios 0.76–1.02.
+Number diff: 13:15 "10h" → tanh, 15:36 "001" → "0 0 1", 17:08 "one" → "1" (all listed); 45:39
+"minus one" → "minus 1" twice, unlisted, reverted by the parent. The parent corrected three header
+claims: Karpathy is on slides 67–68 (the editor called him spoken-only and added "former course
+instructor" as its own gloss; the lecturer does say "a former instructor of this course" at 39:30),
+and "four gates" / "gate gate" are printed on slides 119 and 121–124, not 125. Restored names are on
+the slides or are the course staff; TensorBoard, RoPE and beam search are spoken only. 13
+student-question, 2 student-answer and 5 partly-audible markers; 3 `[unclear]`.
+**Coverage:** opens at 0:05 with the clarifications (slides 3–10), never presents slide 2, follows
+the deck to the summary and ends shortly after 1:11:03. The chunked-backpropagation answer
+(31:48–35:36) describes carrying a gradient across chunk boundaries with one update per chunk,
+which slides 56–58 do not draw and which differs from the lecturer's own 28:44 "the gradients are no
+longer carrying over"; the wiki reports both. The interpretable-cell colour code (−1 red, +1 blue)
+is spoken only (45:39).
+
+**Images.** 43 rendered (29 JPEG, 14 PNG; 5.0 MB): 7, 12, 18, 22, 26, 28, 42, 45, 47, 50, 51, 54,
+57, 58, 61, 65, 66, 68, 74, 76, 77, 78, 79, 80, 81, 82, 83, 85, 96, 97, 98, 99, 101, 102, 104, 108,
+113, 116, 124, 125, 126, 130, 131. Not rendered: 1 (title); 2 (logistics); 3, 11, 13, 84, 128, 132,
+133 (overview, recap, text); 4 (recap of lecture 6's dropout figure); 5, 6, 24, 25, 27, 29–38, 105,
+118, 119 (text, equations, code and the X/Y table transcribed exactly); 67 (code listing,
+summarised); 69, 70, 75 (generated text transcribed); build steps whose last step is rendered (8–10
+→ 7; 14–17 → 18; 21 → 22; 23 → 26; 39–41 → 42; 43–44 → 45; 46 → 47; 48–49 → 50; 55–56 → 57; 59–60 →
+61; 62–64 → 65; 86 → 85; 87–95 → 96; 106–107 → 108; 109–112 → 113; 114–115 → 116; 120–123 → 124;
+127, 129 → 130); 117 (repeat of 116's figure with text transcribed). The raster test flagged 89 of
+124 pages (code images, equations, generated text, build steps) and missed 12 vector diagrams that
+were rendered (22, 26, 42, 45, 47, 50, 51, 54, 57, 58, 77, 104). All 43 are in the lecture page with
+hand-written captions; the topic pages carry 27 more embeds (recurrent-neural-networks 7, lstm 4,
+language-models 7, image-captioning 7, normalization-layers 1, hyperparameters-and-validation 1).
+The images were placed by hand and the embed script run afterwards (it found nothing to add in the
+wiki); every image was first linked as `.jpg`, so the 14 PNGs had to be corrected from the files on
+disk. Captions were first written with inline math, which GitHub does not render inside italics;
+they were converted to plain text (Unicode subscripts, "4h x 2h").
+
+**Wiki.** Lecture page: lecturer, coverage and the six slips up front; administrative notes from
+slide 2; the two clarifications (dropout's $p$; the LayerNorm vs. initialization experiment);
+recap and Weights and Biases; sequence shapes; the recurrence, unrolling and the vanilla RNN, with
+the Q&A; the hand-built repeated-1s RNN with its weight matrices; computational graphs (many to
+many, many to one, one to many), backpropagation through time, truncated, the single-output case
+and the chunking Q&A; the character-level language model, sampling (slide 65's slip and the
+lecturer's acknowledgement), greedy decoding and beam search, the embedding layer (the lecturer's
+"row" vs. the slide's "column"); min-char-rnn and generated text; interpretable cells; tradeoffs;
+captioning (the CNN drawn on 88–96 counted box by box), results and failures, VQA, visual dialog,
+navigation; multilayer RNNs; gradient flow (the lecturer's "diagonally positioned … zeros" vs.
+slide 106's side-by-side blocks), clipping (the squared norm); the LSTM, its gates, cell diagram,
+gradient flow, slide 128, ResNet and Highway Networks; modern RNNs; summary.
+

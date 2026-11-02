@@ -105,7 +105,7 @@ printed slips, which slides were rendered and why) goes in
 
 ## Images
 
-**Lectures 1–6 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–7 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -119,7 +119,10 @@ they are the only part of this KB that redistributes course material rather than
   Use the slide file's prose as the deciding signal.
 - **Audit agents under-render.** Figure-audit agents have rendered at 150–200 dpi when asked for
   600 and said so only in passing; even a true 600 dpi page render is shown to them downscaled to
-  about 200 dpi, so only crops are read at full resolution. Ask for crops of every value checked. Read each report's method line, and confirm any value the wiki
+  about 200 dpi, so only crops are read at full resolution. Ask for crops of every value checked.
+  Code listings pasted in as images have no text layer: when a slide file quotes lines or values
+  from one (lecture 7's min-char-rnn, described as too small to read yet quoted in detail), put it
+  in the audit. Read each report's method line, and confirm any value the wiki
   will quote as a correction (a printed slip, a matrix) on the 1400px render as well.
 - **Decks hold animation frames.** A slide whose animation drew paths or builds exports to the PDF
   as its background frame only (lecture 3's optimizer comparisons: a loss surface and a legend,
@@ -148,6 +151,7 @@ they are the only part of this KB that redistributes course material rather than
 | 4 Neural Networks and Backpropagation | 35 of 147 pages | `lecture_4.pdf` (147 pages, printed 1–152) |
 | 5 Image Classification with CNNs | 53 of 141 pages | `lecture_5.pdf` (141 pages, printed 1–141) |
 | 6 Training CNNs and CNN Architectures | 33 of 97 pages | `lecture_6.pdf` (97 pages, printed 1–97) |
+| 7 Recurrent Neural Networks | 43 of 124 pages | `lecture_7.pdf` (124 pages, printed 1–133) |
 
 ## Rebuilding
 

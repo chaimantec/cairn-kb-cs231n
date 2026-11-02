@@ -86,10 +86,27 @@ harder to optimise (lecture 6, ≈48:28). Normalizing the input images themselve
 network, is a separate step: see
 [data preprocessing](data-augmentation.md#data-preprocessing).
 
+Lecture 7 answers a related question from lecture 6 — can normalization resolve the issues caused by
+badly initialized weights? — with a toy experiment: a two-layer ReLU network learning which quadrant
+a 2D point lies in, trained with good (Kaiming) or bad (too large) initialization, each with and
+without LayerNorm (lecture 7, slides 7–10; ≈0:51–2:24). LayerNorm brings the badly initialized run's
+loss down by several orders of magnitude, from around $10^{4}$ to a few hundredths, but a gap to good
+initialization remains: "you can't get by this weight initialization issue with just normalization"
+(lecture 7, ≈2:24). And normalization "may not always make sense": it helps here because LayerNorm
+does not change an input's quadrant, but for functions in the accompanying code that need the exact
+coordinates it hurts, because subtracting the mean and dividing by the standard deviation loses
+information about the input's exact position (lecture 7, slide 10; ≈2:24).
+
+![Lecture 7, slide 7 — Question in class: can normalization resolve the issues that arise with having weights initialized incorrectly?](../raw/images/07-recurrent-neural-networks/slide-7.jpg)
+
+*Lecture 7, slide 7 — training and test loss (log scale) for the quadrant function: bad initialization without normalization (blue) stays near 10⁴; adding LayerNorm (green) brings it to about 10⁻², still above the good-initialization runs (orange, red). [Deck](https://cs231n.stanford.edu/slides/2025/lecture_7.pdf)*
+
 ## Lectures
 
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#normalization-layers):
-  everything on this page.
+  everything on this page except the lecture 7 experiment.
+- [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#clarifications-from-last-time):
+  whether normalization can fix bad initialization.
 
 ## Related pages
 

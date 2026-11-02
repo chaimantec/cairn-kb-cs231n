@@ -133,6 +133,10 @@ grows linearly when it does not. Lecture 4's 20-line training example uses neith
 summed squared difference between prediction and target, `np.square(y_pred - y).sum()`
 (lecture 4, slide 36).
 
+Lecture 7 uses the softmax loss at every time step of a sequence: a character-level language model
+scores each possible next character, and training is "a time step-wise classification problem …
+based on softmax" (lecture 7, ≈37:56). See [character-level language models](language-models.md).
+
 ![Lecture 2, slide 84 — Coming up:](../raw/images/02-image-classification/slide-84.jpg)
 
 *Lecture 2, slide 84 — Coming up:. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*

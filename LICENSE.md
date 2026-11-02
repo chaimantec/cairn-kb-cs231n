@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2, 3 or 6 decks (lectures 2, 3 and 6 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3, 6 or 7 decks (lectures 2, 3, 6 and 7 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -331,3 +331,36 @@ Not rendered from this deck: the title, course logistics, the lecture overview, 
 recaps (slide 6 carries "Slide inspiration: Justin Johnson"), the weight-initialization divider,
 text, equation and code slides, build steps whose last step is rendered, and repeats of rendered
 figures. The slide file's header lists every slide and the reason.
+
+### Lecture 7 — Recurrent Neural Networks
+
+Deck: [lecture_7.pdf](https://cs231n.stanford.edu/slides/2025/lecture_7.pdf).
+Rendered: 43 slides, in `raw/images/07-recurrent-neural-networks/`.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 7 | Loss curves from the course's own toy experiment ("Link to code (colab)", "Link to Ed Post"). No third-party content identified. |
+| 12 | Screenshot of a Weights & Biases sweep page; "https://docs.wandb.ai/guides/track/app". |
+| 68 | Page of Shakespeare's sonnets; link "Blogpost from Andrej Karpathy back in 2015!". Not otherwise credited. |
+| 74 | Screenshot of the torvalds/linux repository page on GitHub. Not credited. |
+| 76 | Screenshot of a code-generation demo with a rocketship image; "https://openai.com/blog/openai-codex/". Not otherwise credited. |
+| 77–83 | "Karpathy, Johnson, and Fei-Fei: Visualizing and Understanding Recurrent Networks, ICLR Workshop 2016"; "Figures copyright Karpathy, Johnson, and Fei-Fei, 2015; reproduced with permission" (slides 78–83; slide 77 is the deck's own diagram). |
+| 85 | "Figure from Karpathy et a, "Deep Visual-Semantic Alignments for Generating Image Descriptions", CVPR 2015; figure copyright IEEE, 2015. Reproduced for educational purposes." (printed "et a"). |
+| 96 | Test photograph credited on slide 87: "This image is CC0 public domain". |
+| 97 | "Captions generated using neuraltalk2. All images are CC0 Public domain: cat suitcase, cat tree, dog, bear, surfers, tennis, giraffe, motorcycle". |
+| 98 | "Captions generated using neuraltalk2. All images are CC0 Public domain: fur coat, handstand, spider web, baseball". |
+| 99 | Agrawal et al., "VQA: Visual Question Answering", ICCV 2015; Zhu et al., "Visual 7W", CVPR 2016; "Figure from Zhu et al, copyright IEEE 2016. Reproduced for educational purposes." |
+| 101 | Das et al., "Visual Dialog", CVPR 2017; "Figures from Das et al, copyright IEEE 2017. Reproduced with permission." |
+| 102 | Wang et al., "Reinforced Cross-Modal Matching and Self-Supervised Imitation Learning for Vision-Language Navigation", CVPR 2018; "Figures from Wang et al, copyright IEEE 2017. Reproduced with permission." (the year as printed). |
+| 108, 113, 116 | Cite Bengio et al., IEEE Transactions on Neural Networks 1994, and Pascanu et al., ICML 2013. The diagrams and the tanh-derivative plot are not otherwise credited. |
+| 124, 125, 126 | LSTM diagrams, cited "[Hochreiter et al., 1997]". |
+| 130 | LSTM chain, a ResNet diagram (the same figure as lecture 6, slide 57, cited there to He et al., 2015) and the Highway Networks equations, citing Srivastava et al., "Highway Networks", ICML DL Workshop 2015. |
+| 131 | Chart captioned "RWKV Scaling (arXiv)", and the title lines of the "Simplified State Space Layers for Sequence Modeling" and "Mamba: Linear-Time Sequence Modeling with Selective State Spaces" papers. No further credit. |
+| 18, 22, 26, 28, 42, 45, 47, 50, 51, 54, 57, 58, 61, 65, 66, 104 | No third-party content identifiable: the deck's own diagrams (slide 28's tanh plot; slides 61–66's character-level model, slides the lecturer says the course has had "for quite a few years"). |
+
+Not rendered from this deck: the title, course logistics, overview and text slides, the recap of
+lecture 6's dropout figure (slide 4 cites Srivastava et al., JMLR 2014), text, equation and code
+slides (including the min-char-rnn listing, slide 67, "Written by Andrej Karpathy (@karpathy) BSD
+License", https://gist.github.com/karpathy/d4dee566867f8291f086), generated text, build steps
+whose last step is rendered, and one repeat of a rendered figure. The slide file's header lists
+every slide and the reason.

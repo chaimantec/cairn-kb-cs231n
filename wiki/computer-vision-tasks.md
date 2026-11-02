@@ -104,6 +104,9 @@ each photograph (Toshev and Szegedy, 2014; part 1, slide 53).
 
 **Image captioning** generates a sentence describing a photo — "A cat sitting on a suitcase on the
 floor" — including Andrej Karpathy's thesis work with Li (≈38:56; part 1, slide 55).
+Lecture 7 shows how it is done, with a CNN that encodes the image and a recurrent network that
+generates the caption, and covers visual question answering, visual dialog and visual language
+navigation: see [image captioning and visual question answering](image-captioning.md).
 
 ![Part 1, slide 55 — 2012 to Present: Deep Learning is Everywhere (image captioning)](../raw/images/01-introduction-part-1/slide-55.jpg)
 

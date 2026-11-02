@@ -100,12 +100,20 @@ zoos" of pretrained models so that you need not train your own: PyTorch's torchv
 (<https://github.com/pytorch/vision>) and Hugging Face's PyTorch image models
 (<https://github.com/huggingface/pytorch-image-models>) (lecture 6, slide 86; ≈1:06:13–1:06:59).
 
+Lecture 7's image captioning model is built the same way: a CNN pretrained on ImageNet with its
+last two layers (FC-1000 and softmax) removed, so that its second-to-last layer feeds a recurrent
+network that writes the caption. "This is sort of the common strategy we saw for transfer learning
+as well, for getting good visual representations of images" (lecture 7, slides 88–91; ≈51:52). See
+[image captioning](image-captioning.md#how-the-cnn-and-the-rnn-are-joined).
+
 ## Lectures
 
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#transfer-learning):
   everything on this page.
 - [Lecture 2 — Image Classification with Linear Classifiers](02-image-classification.md): the
   nearest-neighbour and linear classifiers that a frozen network's features feed.
+- [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#image-captioning): a
+  pretrained CNN's second-to-last layer as the image input to a captioning RNN.
 
 ## Related pages
 
