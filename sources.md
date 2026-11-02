@@ -2,9 +2,16 @@
 
 Every slide deck, handout and reading the course website (<https://cs231n.stanford.edu/2025/>) links to, with its canonical URL. The PDF binaries are deliberately **not** committed to this repo: this knowledge base is read by an agent that navigates markdown, so the URL is what is useful, and committing the decks would add well over 100MB to every clone. Cite these URLs directly.
 
-## Course materials (23)
+## Course materials (25)
 
 Hosted on the course website itself.
+
+### handouts
+
+| Document | URL | Seen |
+| -------- | --- | ---- |
+| `handouts-derivatives.pdf` | <https://cs231n.stanford.edu/handouts/derivatives.pdf> | 2026-11-02 |
+| `handouts-linear-backprop.pdf` | <https://cs231n.stanford.edu/handouts/linear-backprop.pdf> | 2026-11-02 |
 
 ### papers
 
@@ -53,10 +60,12 @@ Papers and readings the course links to but which are hosted elsewhere. They are
 - **Lecture 1 has two decks**: `lecture_1_part_1.pdf` (Fei-Fei Li's history of computer
   vision and deep learning) and `lecture_1_part_2.pdf` (Ehsan Adeli's course overview).
   Both are transcribed slide by slide in [`raw/slides/`](raw/slides/).
-- The schedule page also links two handouts, `handouts/derivatives.pdf` and
-  `handouts/linear-backprop.pdf`, by a relative path that returned 404 when this
-  inventory was taken (2026-11-01), and some 2024 decks (`slides/2024/…`) for lectures
-  whose 2025 deck was not posted separately. They are not listed above.
+- The schedule page links lecture 4's two handouts, `handouts/derivatives.pdf` and
+  `handouts/linear-backprop.pdf`, by a relative path that resolves under `/2025/` and fails
+  there. Both are served from the site root, at the URLs listed above (checked 2026-11-02);
+  lecture 4's slide 143 links the second at that address. The schedule also links some 2024
+  decks (`slides/2024/…`) for lectures whose 2025 deck was not posted separately; those are not
+  listed above.
 - The schedule also links readings on arxiv.org (abstract pages, not PDFs) and Colab
   notebooks. Those are not inventoried here; follow them from
   <https://cs231n.stanford.edu/2025/schedule.html>.
