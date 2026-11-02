@@ -49,6 +49,10 @@ printed slips, which slides were rendered and why) goes in
   slide-file inferences before they reach the wiki. It also covers questions a deck poses
   without printed answers (lecture 2's SVM quiz slides): state the question, say no answer is
   printed, and do not supply one.
+- **Count drawn architectures box by box.** Transcribers normalise a diagram toward what its name
+  leads them to expect (lecture 6: an extra conv box in each VGG stack, so the drawing seemed to add
+  up to 16 and 19 layers). Have the audit count every box on a crop; when the drawn count disagrees
+  with the name, transcribe the drawing and add an `*[Ed: …]*` line.
 - **Recompute worked arithmetic on the slides.** Decks print slips in their own worked examples
   (a score missing its bias term, a log in a different base from the rest of the deck). Keep the
   printed value, add an `*[Ed: …]*` line under the slide in the slide file, and say it on the
@@ -101,7 +105,7 @@ printed slips, which slides were rendered and why) goes in
 
 ## Images
 
-**Lectures 1–5 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–6 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -143,6 +147,7 @@ they are the only part of this KB that redistributes course material rather than
 | 3 Regularization and Optimization | 24 of 119 pages | `lecture_3.pdf` (119 pages, printed 1–123) |
 | 4 Neural Networks and Backpropagation | 35 of 147 pages | `lecture_4.pdf` (147 pages, printed 1–152) |
 | 5 Image Classification with CNNs | 53 of 141 pages | `lecture_5.pdf` (141 pages, printed 1–141) |
+| 6 Training CNNs and CNN Architectures | 33 of 97 pages | `lecture_6.pdf` (97 pages, printed 1–97) |
 
 ## Rebuilding
 

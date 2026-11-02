@@ -22,6 +22,7 @@ every build follows, and each lesson in general form, are in
 | 3 Regularization and Optimization | [Run 3](#run-3--lecture-3-regularization-and-optimization-2026-11-02) |
 | 4 Neural Networks and Backpropagation | [Run 4](#run-4--lecture-4-neural-networks-and-backpropagation-2026-11-02) |
 | 5 Image Classification with CNNs | [Run 5](#run-5--lecture-5-image-classification-with-cnns-2026-11-02) |
+| 6 Training CNNs and CNN Architectures | [Run 6](#run-6--lecture-6-training-cnns-and-cnn-architectures-2026-11-02) |
 
 ## Runs
 
@@ -664,3 +665,107 @@ Slug `05-image-classification-cnns`.
 - [x] verify_kb.py clean, and its review section read (exit 0; all 1,857 formulas render in the chat and on github.com after joining six inline formulas that wrapped across a line break, which only the --github pass caught, and fixing slide-62's extension on the topic page; numeric claims in INDEX/AGENTS match the measured table, lecture 5 53 on disk / 53 in wiki; AGENTS.md gains three general lessons: wrapped inline math, shape notation and digit asterisks; audit renders shown downscaled)
 - [x] Commit and push — 7575c00, 54c3756, 978a327 on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, topic page, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 6 — Lecture 6 (Training CNNs and CNN Architectures), 2026-11-02
+
+Built lecture 6 end to end: transcript, the deck, two figure audits, the transcript edit, the wiki
+page, five topic pages (CNN architectures, normalization layers, weight initialization, data
+preprocessing and augmentation, transfer learning), 33 slide images, and updates to INDEX, AGENTS
+(image row and one general lesson: count drawn architectures box by box), LICENSE, kb.json,
+SEE_ALSO, regularization (dropout and the training-randomness pattern), neural networks (lecture
+6's account of activation functions), hyperparameters and validation (the seven-step recipe,
+accuracy curves, random search), ImageNet (the winners' depth), convolutional networks (stacked
+3x3 receptive field; its "lecture 6 is not yet in this knowledge base" sentence replaced),
+k-nearest neighbours (feature-space neighbours), image classification (frozen features), the
+course-logistics roadmap (row 6 linked; its stale "lectures 1–4 are in this knowledge base"
+corrected to 1–6), and the lecture 5 page's look ahead. Images opted in again; PDFs stay link-only.
+
+### Lecture 6 record
+
+**Deck.** One: `lecture_6.pdf`, 97 pages, Zane Durante (he introduces himself in the recording,
+and mentions he gave lecture 3), April 17, 2025. Title slide "Lecture 6: Training CNNs and CNN
+Architectures"; the catalog calls the lecture "CNN Architectures". Printed numbers 1–97, 1:1 with
+the pages (`slide_number_map.py`: every page numbered, no gaps). No deck-wide licence. Credits and
+citations: slide 6 "Slide inspiration: Justin Johnson"; 10–11 Ba, Kiros and Hinton 2016; 12 Wu and
+He, ECCV 2018; 15 Srivastava et al., JMLR 2014; 25 Krizhevsky et al. 2012; 27 Hendrycks et al. 2016
+and "Source: https://en.m.wikipedia.org/wiki/File:ReLU_and_GELU.svg"; 32–34, 44 the winners' papers;
+35–43 Simonyan and Zisserman 2014; 45–57 He et al. 2015; 64–65 He et al., ICCV 2015; 75 DeVries and
+Taylor, arXiv 2017; 80–82 Donahue et al. (DeCAF, ICML 2014) and Razavian et al. (CVPR Workshops
+2014); 86 the torchvision and pytorch-image-models URLs; 95 Bergstra and Bengio 2012 and
+"Illustration of Bergstra et al., 2012 by Shayne Longpre, copyright CS231n 2017". No "Reproduced
+with permission" or CC line anywhere in the deck; the cat photographs (71–75) and the
+nearest-neighbour grid (79) are uncredited.
+
+**Transcription.** Three Sonnet agents in parallel (pages 1–33, 34–66, 67–97), 127–137k tokens
+each, all finished, every chunk appended. `--verify` clean (97 headings). The parent fixed GitHub
+math on slides 11 and 27 (inline math after a quote mark; math inside bold), later `x < 0` → `\lt`
+on 28 and `\,` → `\thinspace` on 69–70 (both found only by the `--github` pass), tidied the
+transcriber's own notes on 35 and 63, and added an `[Ed:]` line to 78.
+
+**Figure audit** (Sonnet, two agents, 24 slides). A: 11, 12, 16, 27, 28, 32, 35, 41, 46, 49, 53,
+57. B: 61, 63, 65, 71, 73, 75, 78, 79, 82, 85, 91, 95. Both rendered at 600 dpi but read most pages
+downscaled (A about 110 dpi, B about 130 dpi); A cropped 35 and 41 at 300 dpi and 57 at 600; B
+cropped 61, 63 and 65 at 600 dpi and 73 at 300. Errors: 35 (the transcriber drew three "3x3 conv,
+256" boxes in VGG16 and four in VGG19; the page draws two in each, so the stacks count 15 and 17
+weight layers, confirmed by the parent on the 1400px render); 41 (no blue square on A1 in the last
+step); 73 (exactly four crop rectangles); 75 (grey-square positions); 78 (an 8x8 filter grid, not
+8x7; the red box is on the 55x55x48 stage, not the input); 79 (the red box covers only the upper
+2048 pair); 95 (the grid layout's three circles sit on the flat part and the two flanks, none at
+the peak; guide lines in both plots). Small: 63's "all mass lies beyond the plotted range" was the
+transcriber's inference (removed); 32's box positions added. Confirmed: 11's "Statistics
+calculated per batch" (also in the text layer), 57's "3x3 conv, 64" top group (600 dpi crop and
+the text layer), all 36 histogram means and stds on 61, 63 and 65, 85's four cells, 12's cells,
+16's crossed-out features, 27–28's axes and formulas, 32's ten bars, 53's stack. Parent check of
+two renders: slide 35 (diagram) agrees with the audit; slide 32 (chart) agrees with the file.
+
+**Printed oddities, transcribed as printed.** Slide 11: "Statistics calculated per batch" points
+at μ, σ: N x 1, one pair per sample (the lecturer describes per-sample statistics, 4:45–5:31).
+Slide 35: VGG16 and VGG19 stacks draw 12 + 3 and 14 + 3 weight layers. Slide 57: the last group is
+labelled "3x3 conv, 64"; slides 53–56 print 512. Slides 78–79: "(More on this in Lecture 13)";
+in the 2025 schedule lecture 13 is Generative Models 1 and visualizing is in lecture 9. Each has an
+`[Ed:]` line and a wiki note; INDEX and kb.json list them. Recomputed and exact: 28x28 (6), the
+max and average pools (7), 2^4096 ~ 10^1233 (17), the 7x7 receptive field (37–42), 27C² vs. 49C²
+(43), 10 test crops (73). The lecturer's spoken "0.022" for the right scale matches sqrt(2/4096) =
+0.0221. Slide 19's code defines p as the probability of keeping a unit while the lecturer says
+"probability of dropout" (same number at 0.5); the wiki states both.
+
+**Transcript edit** (Sonnet). The agent hit the session's usage limit after writing the whole file
+and its final header, before it could report; the parent checked the file as written. 93
+paragraphs; marker sequence identical; word ratios 0.73–1.03, the low one 1:01:37, where the
+captions repeat "say" 61 times (collapsed, with an `[Ed:]` note). Number diff: 20:06 caption "5x"
+→ Phi (the Gaussian CDF; listed); 1:01:37 "60" added inside the Ed note. Restored names: GELU,
+SiLU, AlexNet, ImageNet, LayerNorm, ResNet, Kaiming, Phi are on the slides; Zane Durante, Ehsan,
+Fei-Fei are the course staff; LoRA ("Laura") and Ed ("Edge") are spoken only. 22 student-question
+and 4 student-answer markers, 2 "Student, partly audible" (7:48, 8:35), 2 `[unclear]` plus the Ed
+note. **Coverage:** the recording opens at 0:05 with the introduction and the overview (slide 3),
+never presents slide 2, follows the deck to the summary and ends at about 1:10:50; at 51:34 a
+question returns to weight initialization, and 1:04:40–1:06:59 answer questions on LoRA and on
+ResNet's paired convolutions with no slide.
+
+**Images.** 33 rendered (13 JPEG, 20 PNG; 3.9 MB): 8, 12, 15, 16, 24, 26, 27, 28, 32, 35, 41, 47,
+49, 52, 54, 55, 57, 61, 63, 65, 71, 72, 73, 74, 75, 78, 79, 82, 85, 90, 92, 93, 95. Not rendered: 1
+(title); 2 (logistics); 3–5, 20, 31, 58, 66, 68, 76, 87 (overview); 6, 7 (lecture 5 recaps,
+values transcribed); 59 (divider); 10, 11, 17, 18, 19, 45, 48, 60, 62, 64, 67, 69, 70, 77, 86, 88,
+89, 94, 96, 97 (text, equations and code transcribed exactly); build steps whose last step is
+rendered (9, 13, 14, 21, 22 → 8; 23 → 24; 25 → 26; 29–30 → 28; 33, 34, 44 → 32; 37–40 → 41; 46 →
+47; 50–51 → 52; 80–81 → 82; 83–84 → 85; 91 → 92); repeats with transcribed text (36, 42, 43 → 35;
+53, 56 → 54–55). The raster test flagged 36 of 97 pages; it missed the vector diagrams (stacks,
+receptive-field grids, residual blocks) and flagged pasted equations. All 33 are in the lecture
+page with hand-written captions; the topic pages carry 31 more embeds (cnn-architectures 8,
+normalization-layers 2, weight-initialization 3, data-augmentation 5, transfer-learning 4,
+regularization 3, hyperparameters-and-validation 4, imagenet 1, k-nearest-neighbors 1), captioned
+from the lecture page's captions. One embed problem, fixed by moving the block: slide 85 landed
+between "fill in a table … :" and its table (lecture page); on the transfer-learning page the
+sentence was rewritten to follow the table instead.
+
+**Wiki.** Lecture page: recording coverage and the four oddities up front; administrative notes
+from slide 2; the lecturer; the two sets of topics; the convolution and pooling recap; the
+components of a CNN; normalization layers (the two steps, LayerNorm and its shapes, the four-way
+comparison and its Q&A); dropout (the idea, redundant representations, the ensemble view, the Q&A,
+test-time scaling and slide 19's keep-probability p); activation functions (sigmoid, ReLU, GELU and
+SiLU, the zoo, where they go); CNN architectures (the winners chart, AlexNet and VGG, the receptive
+field and parameter count, the plain-network degradation, residual blocks, the full ResNet, the
+Q&A); weight initialization (the three experiments, Kaiming, the Q&A including the 51:34 return);
+data preprocessing; data augmentation; transfer learning (features, the three steps, bias, the
+table, LoRA, model zoos); choosing hyperparameters (the recipe, the curves with the lecturer's
+"loss"/"accuracy" slip noted, random vs. grid); summary.

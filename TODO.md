@@ -34,19 +34,19 @@ link-only. Slug `06-training-cnns-architectures`.
 - [x] raw/transcripts/06-training-cnns-architectures.md — Sonnet copy-edit (the agent hit the session limit after writing the whole file and header, before its report); 93/93 markers identical; ratios 0.73–1.03 (0.73 is 1:01:37, the 61-times "say" caption glitch collapsed with an Ed note); number diff: 20:06 "5x" → Phi (listed), 1:01:37 "60" added in the Ed note. Restored names in the slides or the course staff list (Ehsan, Fei-Fei, Zane Durante); LoRA spoken only. 3 [unclear] (17:00, 27:45, 1:01:37 note), 2 "Student, partly audible" (7:48, 8:35)
 
 #### Images (Step 1c)
-- [ ] raw/images/06-training-cnns-architectures/ — rendered 33 (13 JPEG, 20 PNG; 3.9 MB); embed in slide file
-- [ ] Embed in the wiki page and topic pages; hand-written captions
-- [ ] Look at two rendered images against the slide-file claims
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] raw/images/06-training-cnns-architectures/ — rendered 33 (13 JPEG, 20 PNG; 3.9 MB); embedded in the slide file (33); header lists every unrendered slide and why
+- [x] Embed in the wiki page (33, all with hand-written captions; slide 85 moved below its table) and nine topic pages (31: cnn-architectures 8, normalization-layers 2, weight-initialization 3, data-augmentation 5, transfer-learning 4, regularization 3, hyperparameters 4, imagenet 1, k-NN 1), captions taken from the lecture page
+- [x] Look at two rendered images against the slide-file claims (slide 35 diagram: agrees with the audit, two 256 boxes per VGG stack; slide 32 chart: values, boxes and triangles as the file says)
+- [x] INDEX.md image rules (lectures 1–6; lecture 6 has 33); AGENTS.md table row (33 of 97); BUILD_LOG.md render record; LICENSE.md attribution (lecture 6 table and not-rendered note)
 
 #### Wiki
-- [ ] wiki/06-training-cnns-architectures.md
-- [ ] Topic pages and cross-links
-- [ ] INDEX.md table of contents; SEE_ALSO coverage line
+- [x] wiki/06-training-cnns-architectures.md (four printed oddities noted: 11, 35, 57, 78–79; slide 2 slide-only; the 51:34 detour and the LoRA / paired-convolution answers marked; slide 19's keep-probability p vs. the spoken "probability of dropout"; the spoken "loss" for the accuracy curves)
+- [x] Topic pages cnn-architectures, normalization-layers, weight-initialization, data-augmentation, transfer-learning; sections or links in regularization (dropout, the randomness pattern), neural-networks (lecture 6 activations), hyperparameters-and-validation (lecture 6 section), imagenet, convolutional-networks ("not yet in this knowledge base" replaced), k-nearest-neighbors, image-classification, course-logistics (row 6; stale "lectures 1–4" fixed), lecture 5 page
+- [x] INDEX.md table of contents (coverage 6 of 18; lecture 6 citation rule, skipped slide, four oddities; lecture 6 and five topic entries; seven one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–6"
 
 #### Publish
-- [ ] kb.json
-- [ ] BUILD_LOG.md — lecture 6 record and index row
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage (6 of 18; 20 topic pages), decks 7/7, figure audit 7/7 (lecture 6 note), images 250 (byLecture 6: 33; 193 JPEG, 57 PNG), caveats for lecture 6's coverage, numbering, oddities and unclear marks
+- [x] BUILD_LOG.md — lecture 6 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 after fixing six GitHub math problems the --github pass found: two inline maths wrapped across a line break, a `$...$` followed by ")", `x < 0` and two `\,` in the slide file; 2,055 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 6 33 on disk / 33 in wiki; AGENTS.md gains one general lesson: count drawn architectures box by box)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

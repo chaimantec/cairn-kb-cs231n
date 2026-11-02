@@ -4,14 +4,14 @@
 training data so that it does better on data it has not seen. In lecture 3's words, it is there to
 "prevent the model from doing too well on training data" (lecture 3, ≈11:43). This page covers what
 CS231N says about it so far: the regularized loss, L2, L1 and elastic net, which weights each
-prefers, why regularize, how regularization meets the optimiser in AdamW, and why a network's
-capacity is controlled with the regularization strength rather than its size.
+prefers, why regularize, how regularization meets the optimiser in AdamW, why a network's capacity is controlled with
+the regularization strength rather than its size, and dropout, with the pattern of training-time
+randomness that data augmentation shares.
 
 Covered in: [Lecture 3](03-regularization-optimization.md#regularization);
 [Lecture 4](04-neural-networks-backpropagation.md#choosing-the-networks-size) adds the rule about
-network size. Later lectures add
-more complex regularizers (dropout, batch normalization and others); this knowledge base does not
-cover them yet.
+network size. [Lecture 6](06-training-cnns-architectures.md#dropout) adds dropout, and the pattern
+it shares with data augmentation: add randomness in training, average it out at test time.
 
 ## The regularized loss
 
@@ -116,9 +116,62 @@ the loss, the less freedom the weights have, and "less freedom equals more gener
 the right output, and the regularizer only about the weights, so "a regularizer is always good,
 but nothing is good if you use too much of it" (lecture 4, ≈32:06).
 
+## Dropout
+
+Lecture 6 adds a regularizer that lives inside the architecture. **Dropout** sets some neurons'
+outputs to zero at random in each forward pass. The probability of dropping is a hyperparameter;
+0.5 is common (lecture 6, slide 15), and 0.25 is also used (lecture 6, ≈10:07). The aim is to
+make the training data harder to fit so that the model generalises better (lecture 6, ≈9:22).
+
+![Lecture 6, slide 15 — Regularization: Dropout](../raw/images/06-training-cnns-architectures/slide-15.png)
+
+*Lecture 6, slide 15 — a small network before (left) and after (right) dropout: dropped neurons are dashed and crossed, and only connections between surviving neurons remain. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
+Why it works is "more of an empirical thing" than a well-studied theoretical one, but there are two
+ways to see it (lecture 6, ≈10:53). It forces a **redundant representation** and prevents
+co-adaptation of features: if a cat score depends on features such as "has an ear", "is furry" and
+"has claws", any of which may be dropped, the network cannot rely on a particular combination
+appearing together, and has to learn broader correspondences (lecture 6, slide 16;
+≈10:53–12:25). And it trains a large **ensemble** of models that share parameters, one per binary
+mask; a fully connected layer of 4096 units has $2^{4096} \sim 10^{1233}$ masks (lecture 6,
+slide 17). Which units are dropped is completely random, not chosen. A dropped unit's gradient is
+zero, so the weights tied to it are not updated at that step (lecture 6, ≈12:25–14:41).
+
+![Lecture 6, slide 16 — Regularization: Dropout](../raw/images/06-training-cnns-architectures/slide-16.png)
+
+*Lecture 6, slide 16 — why dropout helps: features such as "has an ear" and "is furry" feed a cat score, and dropping some (red X) stops the network relying on any one combination. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
+**At test time nothing is dropped**, so the activations are scaled so that each neuron's "output
+at test time = expected output at training time" (lecture 6, slide 18). Lecture 6's code draws a
+mask `U1 = np.random.rand(*H1.shape) < p` in training and multiplies each hidden layer by `p` in
+`predict`, with `p = 0.5` defined as the "probability of keeping a unit active. higher = less
+dropout" (lecture 6, slide 19). The lecturer calls the factor "the probability of dropout"
+(lecture 6, ≈13:55), the same number at 0.5. See
+[lecture 6](06-training-cnns-architectures.md#dropout).
+
+## Randomness in training, averaged at test time
+
+Dropout is one case of "a common pattern" (lecture 6, slide 69). In training, add some kind of
+randomness $z$, so the network computes $y = f_W(x, z)$; at test time, average it out,
+$y = f(x) = E_z[f(x, z)] = \int p(z) f(x, z) \thinspace dz$, sometimes only approximately. For
+dropout the randomness is the mask, and the test-time scaling is the average (lecture 6, slide 70).
+**Data augmentation** applies the pattern to the input image: random flips, crops, scales, colour
+jitter and cutout in training, and the full image, or an average over a fixed set of crops, at test
+time (lecture 6, ≈50:03–50:49). See
+[data preprocessing and augmentation](data-augmentation.md#augmentation-as-regularization).
+
+When the training accuracy keeps rising while the validation accuracy falls, lecture 6's advice is
+to increase regularization or get more data (lecture 6, slide 92; see
+[hyperparameters and validation](hyperparameters-and-validation.md#hyperparameters-from-lecture-6)).
+
+![Lecture 6, slide 92 — Accuracy curves: overfitting](../raw/images/06-training-cnns-architectures/slide-92.png)
+
+*Lecture 6, slide 92 — training accuracy keeps rising while validation accuracy peaks and falls: a huge train/val gap means overfitting. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
 ## Related pages
 
 - [Neural networks](neural-networks.md) — the models whose capacity this controls.
+- [Data preprocessing and augmentation](data-augmentation.md) — regularizing through the input.
 
 - [Loss functions](loss-functions.md) — the data-loss half of the objective.
 - [Optimizers](optimizers.md) — how the regularized loss is minimised.

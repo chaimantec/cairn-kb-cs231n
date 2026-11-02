@@ -3,8 +3,9 @@
 A **convolutional network** (ConvNet, CNN) is a neural network for images built from four kinds
 of layer: convolution layers, pooling layers, activation functions and fully connected layers.
 This page gathers what the course says about them. Their main treatment is
-[lecture 5](05-image-classification-cnns.md) (Justin Johnson, April 15, 2025); the next lecture,
-on CNN architectures, is not yet in this knowledge base. Citations of the form "lecture 5,
+[lecture 5](05-image-classification-cnns.md) (Justin Johnson, April 15, 2025); [lecture 6](06-training-cnns-architectures.md)
+assembles them into [CNN architectures](cnn-architectures.md) and adds normalization layers and
+dropout. Citations of the form "lecture 5,
 slide N" are to the [lecture 5 slide file](../raw/slides/05-image-classification-cnns.md), and
 timestamps "(≈M:SS)" are to the
 [lecture 5 transcript](../raw/transcripts/05-image-classification-cnns.md).
@@ -133,6 +134,11 @@ inside the network, by strided convolution or by pooling, fixes this: if each la
 feature map, the effective receptive field grows exponentially with depth (lecture 5, ≈55:17).
 Receptive fields are also why deeper layers learn larger structures (lecture 5, ≈49:11).
 
+Lecture 6 uses the same arithmetic to explain VGG's design: a stack of three $3 \times 3$ stride-1
+layers sees the same $7 \times 7$ region as one $7 \times 7$ layer, adding two per layer, but is
+deeper, has more non-linearities and has fewer weights, $27C^2$ against $49C^2$ for $C$ channels
+(lecture 6, ≈25:26–28:30). See [CNN architectures](cnn-architectures.md#vgg-small-filters-deeper-networks).
+
 ## Other convolutions
 
 The same idea works in other dimensions. A **1D convolution** has input $C_{in} \times W$ and
@@ -220,7 +226,10 @@ per class ([linear classifiers](linear-classifiers.md)).
 ## Lectures
 
 - [Lecture 5 — Image Classification with CNNs](05-image-classification-cnns.md): everything on
-  this page.
+  this page, except where lecture 6 is cited.
+- [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md): the
+  stacked $3 \times 3$ receptive field, and the architectures, normalization layers, dropout,
+  initialization and training practice that build on this page.
 - [Lecture 1 — Introduction](01-introduction.md): the Neocognitron, LeNet and AlexNet in the
   history of vision.
 - [Lecture 4 — Neural Networks and Backpropagation](04-neural-networks-backpropagation.md): the

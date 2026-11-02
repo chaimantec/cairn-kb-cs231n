@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2 or 3 decks (lectures 2 and 3 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3 or 6 decks (lectures 2, 3 and 6 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -305,3 +305,29 @@ formulas and the PyTorch documentation screenshots (95, 115; "PyTorch is license
 3-clause."), build steps whose last step is rendered, and repeats of rendered figures. The slide
 file's header lists every slide and the reason.
 
+### Lecture 6 — Training CNNs and CNN Architectures
+
+Deck: [lecture_6.pdf](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf).
+Rendered: 33 slides, in `raw/images/06-training-cnns-architectures/`.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 8 | Components grid; its pooling panel repeats lecture 5's downsampled activation image (224 to 112). Not credited. |
+| 12 | Normalization-methods figure from Wu and He, "Group Normalization", ECCV 2018. No further credit. |
+| 15, 16 | Dropout network drawings; slide 15 cites Srivastava et al., "Dropout: A simple way to prevent neural networks from overfitting", JMLR 2014. |
+| 27 | ReLU and GELU chart: "Source: https://en.m.wikipedia.org/wiki/File:ReLU_and_GELU.svg"; cites Hendrycks et al., 2016. |
+| 32 | Chart of ILSVRC winners compiled from the cited papers (Lin et al., Krizhevsky et al., Szegedy et al., He et al., Russakovsky et al., Shao et al., Hu et al.). |
+| 35, 41 | VGG and AlexNet layer stacks and receptive-field grids, cited "[Simonyan and Zisserman, 2014]". |
+| 47 | Training and test error curves of 20- and 56-layer plain networks, cited "[He et al., 2015]". Not otherwise credited. |
+| 49, 52, 54, 55, 57 | Residual-block and ResNet diagrams, cited "[He et al., 2015]". |
+| 65 | Cites He et al., "Delving Deep into Rectifiers", ICCV 2015. |
+| 71, 72, 73, 74, 75 | Photograph of a tabby cat, not credited on these slides; slide 75's cutout examples cite DeVries and Taylor, "Improved Regularization of Convolutional Neural Networks with Cutout", arXiv 2017. |
+| 78, 79 | AlexNet architecture figure (lecture 5 credits it "Figure copyright Krizhevsky, Sutskever, and Hinton, 2012. Reproduced with permission."), AlexNet's first-layer filters, and a grid of nearest-neighbour photographs. Not credited on these slides. |
+| 82, 85 | Transfer-learning layer stacks; slides 80–82 cite Donahue et al., "DeCAF", ICML 2014, and Razavian et al., "CNN Features Off-the-Shelf", CVPR Workshops 2014. |
+| 95 | "Illustration of Bergstra et al., 2012 by Shayne Longpre, copyright CS231n 2017"; cites Bergstra and Bengio, "Random Search for Hyper-Parameter Optimization", 2012. |
+| 24, 26, 28, 61, 63, 90, 92, 93 | No third-party content identifiable: the deck's own plots, histograms and curves. |
+
+Not rendered from this deck: the title, course logistics, the lecture overview, the lecture 5
+recaps (slide 6 carries "Slide inspiration: Justin Johnson"), the weight-initialization divider,
+text, equation and code slides, build steps whose last step is rendered, and repeats of rendered
+figures. The slide file's header lists every slide and the reason.

@@ -7,8 +7,9 @@ slide 36). Their best values are "very problem/dataset-dependent", so they must 
 problem, which is called **hyperparameter tuning** (lecture 2, ≈36:25).
 
 Covered in: [Lecture 2](02-image-classification.md#hyperparameters-and-how-to-set-them); lecture 3
-adds the regularization strength and the learning rate, and lecture 4 a network's size and its
-activation function (below).
+adds the regularization strength and the learning rate, lecture 4 a network's size and its
+activation function, lecture 5 the convolution and pooling settings, and lecture 6 a recipe for
+choosing them and random search (below).
 
 ## Four ways to choose them
 
@@ -91,3 +92,51 @@ filter size, for example, is one "you would typically set via cross validation i
 (lecture 5, ≈37:37–39:10). In practice most are set by convention rather than tuned: "same"
 padding $P = (K - 1)/2$ (lecture 5, ≈52:13), channel counts in powers of 2 (lecture 5, slide 94),
 and for pooling "by far the most common" $2 \times 2$ with stride 2 (lecture 5, ≈1:02:15).
+
+## Hyperparameters from lecture 6
+
+Lecture 6 gives a recipe in seven steps (lecture 6, slides 88–89, 94). Step 1: check the initial
+loss. Step 2: overfit a small sample. Step 3: find a learning rate that makes the loss go down:
+with the previous step's architecture, all the training data and a small weight decay, find one
+that makes the loss drop significantly within about 100 iterations, trying "1e-1, 1e-2, 1e-3,
+1e-4, 1e-5". Step 4: a coarse grid of hyperparameters, training each for about 1–5 epochs. Step 5:
+refine the grid and train longer. Step 6: look at the loss and accuracy curves. Step 7: go back to
+step 5. The recording does not discuss step 1; lecture 2's softmax loss has a known value at
+initialisation (see [loss functions](loss-functions.md)).
+
+Overfitting a small sample is "the default debugging strategy in deep learning": a model should
+be able to drive its training loss on a single example to essentially zero, and if it cannot, there
+is a bug or the model is the wrong kind for the problem. It also shows which learning rates work
+(lecture 6, ≈1:06:59–1:07:45). For the coarse grid, the lecturer tries learning rates first and
+keeps the one whose training loss decreases most steadily over maybe one epoch (lecture 6,
+≈1:07:45).
+
+The accuracy curves say what to do next (lecture 6, slides 90–93). Training and validation
+accuracy both still rising: "you need to train longer". Training accuracy rising while validation
+accuracy falls: "huge train / val gap means overfitting! Increase regularization or get more
+data", and the best model so far is at the validation peak. No gap between them: "underfitting:
+train longer, can possibly use a bigger model" (lecture 6, ≈1:08:31–1:09:17). The lecturer twice
+says "loss" for what these slides plot as accuracy (lecture 6, ≈1:08:31–1:09:17).
+
+![Lecture 6, slide 90 — Accuracy curves: still going up](../raw/images/06-training-cnns-architectures/slide-90.png)
+
+*Lecture 6, slide 90 — training (blue) and validation (orange) accuracy both still rising: train longer. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
+![Lecture 6, slide 92 — Accuracy curves: overfitting](../raw/images/06-training-cnns-architectures/slide-92.png)
+
+*Lecture 6, slide 92 — training accuracy keeps rising while validation accuracy peaks and falls: a huge train/val gap means overfitting. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
+![Lecture 6, slide 93 — Accuracy curves: underfitting](../raw/images/06-training-cnns-architectures/slide-93.png)
+
+*Lecture 6, slide 93 — no gap between training and validation accuracy: underfitting, so train longer or use a bigger model. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
+
+**Random search beats grid search** (Bergstra and Bengio, 2012; lecture 6, slide 95). With nine
+trials over one important and one unimportant hyperparameter, a $3 \times 3$ grid tries only three
+values of the important one, while nine random trials try nine. A grid wastes trials re-checking
+an unimportant hyperparameter. So define a range for each hyperparameter, sample from the ranges at
+random, and keep going until you have the best model (lecture 6, ≈1:09:17–1:10:04). See
+[lecture 6](06-training-cnns-architectures.md#choosing-hyperparameters).
+
+![Lecture 6, slide 95 — Random Search vs. Grid Search](../raw/images/06-training-cnns-architectures/slide-95.png)
+
+*Lecture 6, slide 95 — nine trials on a 3x3 grid test only three values of the important parameter; nine random trials test nine, one near the peak. Illustration of Bergstra and Bengio, 2012. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*

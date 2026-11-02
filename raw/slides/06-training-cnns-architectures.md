@@ -133,6 +133,8 @@ Right: two 2x2 outputs, with the same block colours.
 
 ## Slide 8 — Components of CNNs
 
+![Slide 8 — Components of CNNs](../images/06-training-cnns-architectures/slide-8.jpg)
+
 A 2x3 grid of six components, each with a heading and a small figure.
 
 - "Convolution Layers": a pink 3D slab with a small purple patch on its surface, with lines from the patch converging to a single light-blue circle on the right.
@@ -170,6 +172,8 @@ Citation (bottom): "Ba, Kiros, and Hinton, "Layer Normalization", arXiv 2016"
 
 ## Slide 12 — Other Normalization Layers
 
+![Slide 12 — Other Normalization Layers](../images/06-training-cnns-architectures/slide-12.jpg)
+
 A figure of four 3D cubes side by side, titled (left to right) "Batch Norm", "Layer Norm", "Instance Norm" and "Group Norm" (Group Norm in bold). Each cube is a grid with axes labelled "H, W" (vertical), "C" (depth, toward the lower left) and "N" (horizontal, toward the lower right). Grey cells are not selected; blue cells are the set over which statistics are computed.
 
 - Batch Norm: the blue region is one slice at a single C position, spanning all of N and all of H, W.
@@ -191,6 +195,8 @@ Same six-component grid as slide 8, with the red rectangle now around the "Dropo
 
 ## Slide 15 — Regularization: Dropout
 
+![Slide 15 — Regularization: Dropout](../images/06-training-cnns-architectures/slide-15.png)
+
 - In each forward pass, randomly set some neurons to zero
 - Probability of dropping is a hyperparameter; 0.5 is common
 
@@ -199,6 +205,8 @@ Figure: two small feed-forward network drawings side by side. Left: a full netwo
 Citation (bottom): "Srivastava et al, "Dropout: A simple way to prevent neural networks from overfitting", JMLR 2014"
 
 ## Slide 16 — Regularization: Dropout
+
+![Slide 16 — Regularization: Dropout](../images/06-training-cnns-architectures/slide-16.png)
 
 Subtitle: "How can this possibly be a good idea?"
 
@@ -312,6 +320,8 @@ No answer is printed on this slide (slide 24 follows).
 
 ## Slide 24 — Activation Functions
 
+![Slide 24 — Activation Functions](../images/06-training-cnns-architectures/slide-24.png)
+
 Same as slide 23 (sigmoid formula, plot, the two bullets, "Key problem:"), with these changes. On the plot a red dot sits on the flat top of the curve at about x = 8 with a red arrow pointing right along the curve. The red text now reads: "Large positive or negative values can "kill" the gradients. Many layers of sigmoids -> smaller and smaller gradients in practice". The question from slide 23 is removed.
 
 ## Slide 25 — Activation Functions
@@ -332,6 +342,8 @@ Citation (blue, lower right): "[Krizhevsky et al., 2012]"
 
 ## Slide 26 — Activation Functions
 
+![Slide 26 — Activation Functions](../images/06-training-cnns-architectures/slide-26.png)
+
 Same as slide 25 (ReLU plot, label, f(x) = max(0,x), the three green bullets), without the citation, plus in red:
 
 - Not zero-centered output
@@ -340,6 +352,8 @@ Same as slide 25 (ReLU plot, label, f(x) = max(0,x), the three green bullets), w
 Dead ReLUs when x < 0!
 
 ## Slide 27 — Activation Functions
+
+![Slide 27 — Activation Functions](../images/06-training-cnns-architectures/slide-27.png)
 
 Citation (blue, upper right): "[Hendrycks et al., 2016]"
 
@@ -368,11 +382,13 @@ In red:
 
 ## Slide 28 — Activation Function Zoo
 
+![Slide 28 — Activation Function Zoo](../images/06-training-cnns-architectures/slide-28.png)
+
 Five small plots, three in the top row and two in the bottom row, each a single blue curve on axes from -10 to 10 with the upper y limit labelled 10. Five series in total, one per panel.
 
 - "ReLU", formula $\max(0, x)$: y axis marks 0 and 10; flat at 0 for x < 0, then a straight line rising to 10 at x = 10.
 - "Leaky ReLU", formula $\max(0.1x, x)$: y axis marks -2 and 10; a shallow line with slope 0.1 on the negative side (about -1 at x = -10), then a straight line y = x on the positive side.
-- "ELU", formula printed as a piecewise definition: $x$ for $x \geq 0$ and $\alpha(e^x - 1)$ for $x < 0$: y axis marks -2 and 10; the negative side flattens to a constant near -1 (about -1 to -2 on the scale shown), the positive side is the line y = x.
+- "ELU", formula printed as a piecewise definition: $x$ for $x \geq 0$ and $\alpha(e^x - 1)$ for $x \lt 0$: y axis marks -2 and 10; the negative side flattens to a constant near -1 (about -1 to -2 on the scale shown), the positive side is the line y = x.
 - "GELU", formula $x \cdot \Phi(x)$: y axis marks -1 and 10; near 0 for negative x with a very small dip below zero near x = -1 (about -0.17), then rising along y = x.
 - "SiLU", formula $f(x) = x \cdot \sigma(x)$: y axis marks -1 and 10; near 0 for negative x with a small dip below zero (about -0.28 near x = -1.3), then rising along y = x.
 
@@ -395,6 +411,8 @@ Same as slide 29, with the answer added in blue bold text below the question:
 Same as slide 3 (top group "How to build CNNs?" highlighted, bottom group greyed out), with "CNN Architectures" in red and the other three items (Layers in CNNs; Activation Functions; Weight Initialization) in black.
 
 ## Slide 32 — ImageNet Large Scale Visual Recognition Challenge (ILSVRC) winners
+
+![Slide 32 — ImageNet Large Scale Visual Recognition Challenge (ILSVRC) winners](../images/06-training-cnns-architectures/slide-32.jpg)
 
 A bar chart with an overlaid dashed line. The y axis is unlabelled, with gridlines at 0, 5, 10, 15, 20, 25, 30 (the slide does not say what the y axis measures). The x axis has ten categories, each labelled with a year and an author line. Two series: (1) ten blue bars with a printed value above each, and (2) an orange dashed line with triangle markers, one marker per year for the nine years 2010 to 2017 (the "Human" bar has no marker), whose height is not tied to the y axis but is annotated by white boxes giving the number of layers.
 
@@ -462,6 +480,8 @@ A red rectangle outlines the 2014 Simonyan & Zisserman (VGG) bar together with i
 
 ## Slide 35 — Case Study: VGGNet
 
+![Slide 35 — Case Study: VGGNet](../images/06-training-cnns-architectures/slide-35.png)
+
 Title "Case Study: VGGNet", citation "[Simonyan and Zisserman, 2014]".
 
 Left text (first line red, the rest blue):
@@ -517,6 +537,8 @@ Text: "Q: What is the effective receptive field of three 3x3 conv (stride 1) lay
 
 ## Slide 41 — Case Study: VGGNet
 
+![Slide 41 — Case Study: VGGNet](../images/06-training-cnns-architectures/slide-41.png)
+
 Same as slide 40, plus a blue square on the Input grid enclosing the union of the two purple 3x3 squares (a 7x7 region of the Input); the blue 5x5 square on A1 is not drawn on this slide. The final picture: a single red cell on A3 and a red 3x3 square on A2; two orange 3x3 squares on A1; two purple 3x3 squares and the blue 7x7 square on the Input. All four grids are 8x8 cells.
 
 Text: "Q: What is the effective receptive field of three 3x3 conv (stride 1) layers?"
@@ -571,6 +593,8 @@ Two line plots side by side, each with two curves and no numeric tick values on 
 
 ## Slide 47 — Case Study: ResNet
 
+![Slide 47 — Case Study: ResNet](../images/06-training-cnns-architectures/slide-47.png)
+
 Same as slide 46 (same two plots), plus text beneath, blue with the final words in red:
 
 "56-layer model performs worse on both test and training error
@@ -586,6 +610,8 @@ Text:
 - "Hypothesis: the problem is an *optimization* problem, **deeper models are harder to optimize**" ("optimization" is italic; "deeper models are harder to optimize" is bold.)
 
 ## Slide 49 — Case Study: ResNet
+
+![Slide 49 — Case Study: ResNet](../images/06-training-cnns-architectures/slide-49.png)
 
 Title "Case Study: ResNet", citation "[He et al., 2015]".
 
@@ -620,6 +646,8 @@ Blue text at upper right: "Identity mapping: H(x) = x if F(x) = 0".
 
 ## Slide 52 — Case Study: ResNet
 
+![Slide 52 — Case Study: ResNet](../images/06-training-cnns-architectures/slide-52.png)
+
 Same as slide 51, plus: blue text "H(x) = F(x) + x" at the top centre with two blue arrows, one pointing to the "H(x)" output of the plain-layers diagram and one to the "H(x) = F(x) + x" label on the residual block; and blue text at the lower right: "Use layers to fit **residual** F(x) = H(x) - x instead of H(x) directly" ("residual" in bold).
 
 ## Slide 53 — Case Study: ResNet
@@ -633,6 +661,8 @@ Centre diagram, a larger residual block, bottom to top: "X" at an open circle (c
 Far right: a vertical architecture stack, bottom to top, with curved skip arrows (grey) over each pair of 3x3 conv boxes: Input (grey); "7x7 conv, 64, / 2" (orange); Pool (blue); three pairs of "3x3 conv, 64" (six boxes, dark red outline); then "3x3 conv, 128, / 2" and "3x3 conv, 128" (first pair) followed by two further pairs of "3x3 conv, 128" (six boxes in all, purple); a vertical dotted line "..." showing omitted layers; then (yellow) "3x3 conv, 512, / 2", "3x3 conv, 512", followed by two further pairs of "3x3 conv, 512" (six boxes in all); Pool (blue); FC 1000 (green); Softmax (red).
 
 ## Slide 54 — Case Study: ResNet
+
+![Slide 54 — Case Study: ResNet](../images/06-training-cnns-architectures/slide-54.png)
 
 Title "Case Study: ResNet", citation "[He et al., 2015]".
 
@@ -648,6 +678,8 @@ Blue text at left: "Full ResNet architecture:" followed by dash items:
 Figures: same as slide 53 (the 3x3 conv residual block "F(x) + x" with "X identity" skip, and the full-network stack at the right with a bracket), plus two blue annotations with arrows at the right of the stack: "3x3 conv, 128 filters, /2 spatially with stride 2" pointing at the "3x3 conv, 128, / 2" box, and "3x3 conv, 64 filters" pointing at the lowest-but-three 64-filter box (the first "3x3 conv, 64" above the Pool).
 
 ## Slide 55 — Case Study: ResNet
+
+![Slide 55 — Case Study: ResNet](../images/06-training-cnns-architectures/slide-55.png)
 
 Same as slide 53 (residual block and full-network stack), with blue text at left:
 
@@ -669,6 +701,8 @@ Blue text with a blue arrow pointing to the dotted gap in the middle of the stac
 Figure: the full-network ResNet stack alone (bottom to top): Input; "7x7 conv, 64, / 2"; Pool; three pairs of "3x3 conv, 64"; "3x3 conv, 128, / 2" and "3x3 conv, 128" followed by two further pairs of "3x3 conv, 128"; a dotted gap ("..."); "3x3 conv, 512, / 2" and "3x3 conv, 512" followed by two further pairs of "3x3 conv, 512"; Pool; FC 1000; Softmax; grey curved skip arrows over each pair of conv boxes.
 
 ## Slide 57 — Case Study: ResNet
+
+![Slide 57 — Case Study: ResNet](../images/06-training-cnns-architectures/slide-57.png)
 
 Title "Case Study: ResNet", citation "[He et al., 2015]".
 
@@ -718,6 +752,8 @@ Blue annotation at lower right: "Forward pass for a 6-layer net with hidden size
 
 ## Slide 61 — Weight Initialization Case: Values too small
 
+![Slide 61 — Weight Initialization Case: Values too small](../images/06-training-cnns-architectures/slide-61.jpg)
+
 Same code listing as slide 60, with a blue rectangle around the line `W = 0.01 * np.random.randn(Din, Dout)`. Black text at upper right: "All activations tend to zero for deeper network layers".
 
 Below the code, a row of 6 histogram panels (activation histograms for hidden layers 1 to 6). Each panel has x-axis from -1 to 1 (ticks -1, 0, 1) and y-axis ticks 0, 10000, 20000, 30000. The panel titles give the printed mean and std:
@@ -752,6 +788,8 @@ A blue rectangle surrounds the `W = 0.05 * ...` line. Blue text to its upper rig
 
 ## Slide 63 — Weight Initialization Case: Values too large
 
+![Slide 63 — Weight Initialization Case: Values too large](../images/06-training-cnns-architectures/slide-63.jpg)
+
 Same code and blue annotation as slide 62 (the `W = 0.05 * ...` line boxed, "Increase std of initial weights from 0.01 to 0.05"), plus black text at upper right "Activations blow up quickly" and a row of 6 blue histogram panels (layers 1 to 6). Each panel has x-axis from -1 to 1 (ticks -1, 0, 1) and y-axis ticks 0, 10000, 20000, 30000 (bars reach about 35000 at the top). Titles give the printed mean and std:
 
 - Layer 1: mean=1.27, std=1.86. A wide bar from 0 to about 0.25 reaching about 35000, then three bars of about 2000 out to x=1.
@@ -784,6 +822,8 @@ A blue rectangle surrounds the `W = ...` line.
 Small print at lower left: He et al, “Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification”, ICCV 2015
 
 ## Slide 65 — One solution: Kaiming / MSRA Initialization
+
+![Slide 65 — One solution: Kaiming / MSRA Initialization](../images/06-training-cnns-architectures/slide-65.jpg)
 
 Title "One solution: Kaiming / MSRA Initialization".
 
@@ -837,13 +877,13 @@ $$y = f_{W}(x, z)$$
 
 **Testing:** Average out randomness (sometimes approximate)
 
-$$y = f(x) = E_{z}\left[f(x,z)\right] = \int p(z) f(x,z)\,dz$$
+$$y = f(x) = E_{z}\left[f(x,z)\right] = \int p(z) f(x,z) \thinspace dz$$
 
 (The two equations are images on the slide; $z$ is not defined in text on this slide.)
 
 ## Slide 70 — Regularization: A common pattern
 
-Same as slide 69 (left column: Training: Add some kind of randomness, $y = f_{W}(x, z)$; Testing: Average out randomness (sometimes approximate), $y = f(x) = E_{z}\left[f(x,z)\right] = \int p(z) f(x,z)\,dz$), plus a right-hand column:
+Same as slide 69 (left column: Training: Add some kind of randomness, $y = f_{W}(x, z)$; Testing: Average out randomness (sometimes approximate), $y = f(x) = E_{z}\left[f(x,z)\right] = \int p(z) f(x,z) \thinspace dz$), plus a right-hand column:
 
 **Example**: Dropout
 
@@ -853,6 +893,8 @@ Same as slide 69 (left column: Training: Add some kind of randomness, $y = f_{W}
 
 ## Slide 71 — Regularization: Data Augmentation
 
+![Slide 71 — Regularization: Data Augmentation](../images/06-training-cnns-architectures/slide-71.jpg)
+
 A pipeline diagram, left to right:
 
 - A grey database cylinder at left. An arrow labelled "Load image and label" goes up and to the right to the text "cat" (in quotes), then a long arrow from "cat" goes down-right to the text "Compute loss" at the far right.
@@ -861,11 +903,15 @@ A pipeline diagram, left to right:
 
 ## Slide 72 — Data Augmentation: Horizontal Flips
 
+![Slide 72 — Data Augmentation: Horizontal Flips](../images/06-training-cnns-architectures/slide-72.jpg)
+
 Title "Data Augmentation", subtitle "Horizontal Flips".
 
 Figure: a photo of a grey tabby cat (sitting, head turned toward the right of the frame, brick wall and green rail behind) on the left, an arrow pointing right, and on the right the same photo mirrored left-to-right (cat now facing left of the frame).
 
 ## Slide 73 — Data Augmentation: Random crops and scales
+
+![Slide 73 — Data Augmentation: Random crops and scales](../images/06-training-cnns-architectures/slide-73.jpg)
 
 Title "Data Augmentation", subtitle "Random crops and scales".
 
@@ -890,6 +936,8 @@ Figure (top right): the cat photo with four red rectangles drawn on it as exampl
 
 ## Slide 74 — Data Augmentation: Color Jitter
 
+![Slide 74 — Data Augmentation: Color Jitter](../images/06-training-cnns-architectures/slide-74.jpg)
+
 Title "Data Augmentation", subtitle "Color Jitter".
 
 Text: "Simple: Randomize contrast and brightness"
@@ -897,6 +945,8 @@ Text: "Simple: Randomize contrast and brightness"
 Figure: the cat photo (original, saturated colours, higher contrast) at left, an arrow pointing right, and the same photo at right with visibly lower contrast and a washed-out, lighter look.
 
 ## Slide 75 — Regularization: Cutout
+
+![Slide 75 — Regularization: Cutout](../images/06-training-cnns-architectures/slide-75.jpg)
 
 **Training**: Set random image regions to zero
 
@@ -926,6 +976,8 @@ Text-only slide: "What if you don't have a lot of data? Can you still train CNNs
 
 ## Slide 78 — Transfer Learning with CNNs
 
+![Slide 78 — Transfer Learning with CNNs](../images/06-training-cnns-architectures/slide-78.jpg)
+
 Title "Transfer Learning with CNNs".
 
 Left: a tall, narrow hand-drawn style diagram of a two-column (two-stream) convolutional network drawn as 3D boxes, in which small numerals are printed along the boxes (for example 224, 55, 48, 27, 128, 13, 192, 2048, 1000, with labels "Stride of 4", "Max pooling", "dense"). A red box encloses the first stage's output, the 55 / 55 / 48 feature maps with their 5x5 filters, together with the "Stride of 4" and "Max pooling" labels; the 224 input plane with its 11x11 window sits just below the box, outside it.
@@ -937,6 +989,8 @@ Bottom right: "(More on this in Lecture 13)".
 *[Ed: printed "Lecture 13" here and on slide 79. In the Spring 2025 schedule lecture 13 is Generative Models 1; visualizing is part of lecture 9 (Object Detection, Image Segmentation, Visualizing).]*
 
 ## Slide 79 — Transfer Learning with CNNs
+
+![Slide 79 — Transfer Learning with CNNs](../images/06-training-cnns-architectures/slide-79.jpg)
 
 Title "Transfer Learning with CNNs".
 
@@ -988,6 +1042,8 @@ Same as slide 80 (the stack under "1. Train on Imagenet", FC-1000 at top, Image 
 
 ## Slide 82 — Transfer Learning with CNNs
 
+![Slide 82 — Transfer Learning with CNNs](../images/06-training-cnns-architectures/slide-82.png)
+
 Same credits as slide 80.
 
 Same as slide 81, plus a third stack headed "3. Bigger dataset". Its boxes are: FC-C, FC-4096, FC-4096, MaxPool, Conv-512, Conv-512, MaxPool, Conv-512, Conv-512, MaxPool, Conv-256, Conv-256, MaxPool, Conv-128, Conv-128, MaxPool, Conv-64, Conv-64, Image. The whole stack except the Image box is enclosed in one red rectangle, with a red arrow from red text "Initialize from pretrained model, then finetune everything". Black text below: "With bigger dataset, it's better to train more layers".
@@ -1015,6 +1071,8 @@ Same as slide 83, with the left-hand column's cells filled:
 (Same layer stack and "More specific" / "More generic" arrows as slide 83.)
 
 ## Slide 85 — (no title) Transfer learning decision table, complete
+
+![Slide 85 — (no title) Transfer learning decision table, complete](../images/06-training-cnns-architectures/slide-85.png)
 
 Same as slide 84, with the "very different dataset" cells filled:
 
@@ -1072,6 +1130,8 @@ Good learning rates to try: 1e-1, 1e-2, 1e-3, 1e-4, 1e-5
 
 ## Slide 90 — (no title) Accuracy curves: still going up
 
+![Slide 90 — (no title) Accuracy curves: still going up](../images/06-training-cnns-architectures/slide-90.png)
+
 A line chart. Vertical axis label "Accuracy" (arrow up, no numeric ticks); horizontal axis label "time" (arrow right, no numeric ticks). Two series (2 curves):
 
 - Train (blue, labelled "Train"): starts low on the vertical axis, rises steeply, bends to a slow, steady rise, ending highest (about two thirds of the way up the plotted area).
@@ -1090,9 +1150,13 @@ Text in red bold: "Q: What is happening here?" (no answer is printed on this sli
 
 ## Slide 92 — (no title) Accuracy curves: overfitting
 
+![Slide 92 — (no title) Accuracy curves: overfitting](../images/06-training-cnns-architectures/slide-92.png)
+
 Same chart as slide 91 (blue Train curve rising; orange Val curve peaking early then declining). Annotation text: "Huge train / val gap means overfitting! Increase regularization or get more data"
 
 ## Slide 93 — (no title) Accuracy curves: underfitting
+
+![Slide 93 — (no title) Accuracy curves: underfitting](../images/06-training-cnns-architectures/slide-93.png)
 
 Same axes. Two series: Train (blue) rising steadily with a small bump near the right; Val (orange) tracking just below it throughout with almost no gap, both still rising at the right edge. Annotation text: "No gap between train / val means underfitting: train longer, can possibly use a bigger model"
 
@@ -1115,6 +1179,8 @@ Same axes. Two series: Train (blue) rising steadily with a small bump near the r
 (Note: Step 4 here reads "Coarse grid, train for ~1-5 epochs"; on slide 89 it reads "Coarse grid of hyperparams, train for ~1-5 epochs".)
 
 ## Slide 95 — Random Search vs. Grid Search
+
+![Slide 95 — Random Search vs. Grid Search](../images/06-training-cnns-architectures/slide-95.png)
 
 Citation (top right, blue italic): "Random Search for Hyper-Parameter Optimization", Bergstra and Bengio, 2012
 

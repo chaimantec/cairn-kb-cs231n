@@ -106,3 +106,14 @@ Neighbor with pixel distance never used."
 ![Lecture 2, slide 48 — k-Nearest Neighbor with pixel distance never used.](../raw/images/02-image-classification/slide-48.jpg)
 
 *Lecture 2, slide 48 — occluded, shifted by one pixel, and tinted copies all sit at the same pixel distance from the original. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
+
+Nearest neighbours come back in lecture 6 on learned features instead of pixels. Take the vector a
+trained CNN produces just before its class scores and compare images by the L2 distance between
+those vectors: a test image's nearest neighbours are then images of the same category — flowers,
+elephants, ships, jack-o'-lanterns, dogs (lecture 6, slide 79). A $k$-nearest-neighbour or linear
+classifier on those features classifies very well, which is the basis of
+[transfer learning](transfer-learning.md) (lecture 6, ≈58:33–1:00:05).
+
+![Lecture 6, slide 79 — Transfer Learning with CNNs: nearest neighbours](../raw/images/06-training-cnns-architectures/slide-79.jpg)
+
+*Lecture 6, slide 79 — test images (left of the red line) and their six nearest neighbours by L2 distance in the feature space of the boxed last hidden layer: flowers, elephants, ships, jack-o'-lanterns and dogs. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*

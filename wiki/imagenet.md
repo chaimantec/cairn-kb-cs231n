@@ -9,10 +9,10 @@ gathers what the course says about the dataset, the challenge and that result.
 **Sources so far:** lecture 1 only — [lecture page](01-introduction.md),
 [transcript](../raw/transcripts/01-introduction.md) (≈31:14–36:40), and the part 1 deck
 ([text](../raw/slides/01-introduction-part-1.md),
-[PDF](https://cs231n.stanford.edu/slides/2025/lecture_1_part_1.pdf)). Later lectures (image
-classification, CNN architectures) will add to it as they are built;
-[lecture 5](05-image-classification-cnns.md) places AlexNet between LeCun et al.'s 1998 network
-and the transformers that displaced ConvNets.
+[PDF](https://cs231n.stanford.edu/slides/2025/lecture_1_part_1.pdf)). [Lecture 5](05-image-classification-cnns.md)
+places AlexNet between LeCun et al.'s 1998 network and the transformers that displaced ConvNets,
+and [lecture 6](06-training-cnns-architectures.md#cnn-architectures) studies the winners' depth
+and the VGG and ResNet architectures.
 
 ## Why a dataset: data as a first-class citizen
 
@@ -129,8 +129,15 @@ following years", and some "have had a profound impact in the progress of the fi
 vision" (≈35:54). The deck's architecture slide traces the winners' structure: the 2010 NEC-UIUC
 pipeline of hand-designed descriptors and a linear SVM, AlexNet ("SuperVision") in 2012,
 GoogLeNet and VGG in 2014, and MSRA's very deep residual network in 2015 (part 1, slide 49). The
-course studies several of these in its CNN-architectures lecture (lecture 6 on the
-[roadmap](course-logistics.md#course-roadmap)).
+course studies several of these in [lecture 6](06-training-cnns-architectures.md#cnn-architectures).
+Its chart of the winners adds each one's number of layers: "shallow" in 2010 and 2011, 8 in 2012
+and 2013, 19 (VGG) and 22 (GoogLeNet) in 2014, and 152 from 2015 (ResNet), the year the winning
+error, 3.6, first fell below the human figure of 5.1 (lecture 6, slide 32; ≈21:37–22:22). The deck
+calls 2015–2017 the "Revolution of Depth". See [CNN architectures](cnn-architectures.md).
+
+![Lecture 6, slide 32 — ILSVRC winners](../raw/images/06-training-cnns-architectures/slide-32.jpg)
+
+*Lecture 6, slide 32 — the challenge winners by year: blue bars the error rate (no axis title on the slide), orange triangles the number of layers. The error falls below the human bar (5.1) in 2015, when depth jumps to 152 layers. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_6.pdf)*
 
 ![Part 1, slide 49 — 2012 to Present: Deep Learning is Everywhere](../raw/images/01-introduction-part-1/slide-49.jpg)
 

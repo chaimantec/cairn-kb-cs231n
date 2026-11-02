@@ -696,7 +696,8 @@ network (≈1:06:49–1:07:34).
 The lecture covered why convolutional networks are interesting and the two new operators,
 convolution and pooling. The summary slide (slide 107) shows the four building blocks: the fully
 connected layer, the activation function, the convolution layer and the pooling layer. The next
-lecture stitches these together into CNN architectures (≈1:07:34). Slide 108 previews that with
+lecture, [lecture 6](06-training-cnns-architectures.md), stitches these together into CNN
+architectures (≈1:07:34). Slide 108 previews that with
 four unnamed diagrams: the 1998 network of slides 29–33, the AlexNet figure of slide 34, a
 module whose $1 \times 1$, $3 \times 3$ and $5 \times 5$ convolutions and $3 \times 3$ max pooling run in parallel into a "Filter
 concatenation", and a long chain of $3 \times 3$ convolutions with curved arcs skipping over pairs of

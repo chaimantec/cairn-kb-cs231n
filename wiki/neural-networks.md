@@ -105,6 +105,21 @@ by gradients. Being zero-centred and smooth can make networks converge faster. U
 activation is used throughout, except sometimes a sigmoid or tanh at the output
 (lecture 4, ≈24:19–25:53).
 
+Lecture 6 revisits them with the reasons behind the modern choices. The purpose of an activation
+function is to introduce non-linearity, without which convolutions and fully connected layers are
+only multiplications and additions (lecture 6, ≈16:13). The **sigmoid** fell out of use because
+its gradient is close to zero for very negative and very positive inputs, so many layers of
+sigmoids give "smaller and smaller gradients" towards the early layers (lecture 6, ≈16:13–17:45).
+**ReLU**'s gradient is one for every positive input and zero for every negative one, and it is
+much cheaper to compute; it converged about six times faster than sigmoid in Krizhevsky et al.
+2012 (lecture 6, ≈17:45–18:30). **GELU**, $x \cdot \Phi(x)$ with $\Phi$ the cumulative distribution
+function of the unit Gaussian, approaches ReLU at both extremes but is smooth near zero and has
+non-zero gradients just below it; it is the main activation in transformers today. **SiLU**,
+$x \cdot \sigma(x)$, has the same shape for the same reason (lecture 6, ≈18:30–20:51). Activations
+are generally placed after linear operators: after a fully connected layer or a convolution
+(lecture 6, ≈20:51–21:37). See
+[lecture 6](06-training-cnns-architectures.md#activation-functions).
+
 ## Architectures, and how layers are counted
 
 Layers are counted by their weights, not their neurons (lecture 4, slide 34). Three inputs, one

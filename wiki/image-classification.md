@@ -99,7 +99,10 @@ neural network instead learns every stage from pixels to scores by gradient desc
 descent is probably a better programmer than you and lots of data probably knows more about your
 problem than you do", and this end-to-end approach "has basically won over the past decade and a
 half" (lecture 5, ≈19:58–20:43). The image-specific network the course builds for this is the
-[convolutional network](convolutional-networks.md).
+[convolutional network](convolutional-networks.md). Lecture 6 closes the circle: a network
+pretrained on a large dataset and then frozen is "a predefined feature extractor", much like the
+old hand-designed ones, with a classifier trained on top of its features (lecture 6, ≈1:00:51;
+see [transfer learning](transfer-learning.md)).
 
 ## Evaluating honestly
 
