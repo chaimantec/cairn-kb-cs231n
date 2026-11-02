@@ -49,6 +49,6 @@ Slug `04-neural-networks-backpropagation`.
 ### Publish
 - [x] kb.json — coverage (4 of 18; 14 topic pages), decks 5/5, figure audit 5/5 (with lecture 4's low-dpi note), images 164 (byLecture 4: 35; 146 JPEG, 18 PNG), caveats for lecture 4 coverage, numbering and slips
 - [x] BUILD_LOG.md — lecture 4 record
-- [ ] verify_kb.py clean, and its review section read
+- [x] verify_kb.py clean, and its review section read (exit 0; all 1,412 formulas render in the chat and on github.com after fixing 8 `$$` blocks that GitHub set inline and slide 46's label list, which GitHub left as raw text; numeric claims in INDEX/AGENTS match the measured table; SEE_ALSO's "covers only Lecture 1" (stale since run 2) corrected)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

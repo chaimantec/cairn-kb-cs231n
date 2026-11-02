@@ -1,7 +1,7 @@
 # See also
 
 Sibling knowledge bases that cover material CS231N reaches in later lectures. This KB covers only
-Lecture 1 so far, so these are the places to look for a neighbouring treatment of a topic it does
+lectures 1–4 so far, so these are the places to look for a neighbouring treatment of a topic it does
 not have yet. Pass the `KB:` URL as `kb` to `kb_read` / `kb_list`, starting at that KB's
 `INDEX.md`. Cite them as their own courses, never as CS231N.
 
