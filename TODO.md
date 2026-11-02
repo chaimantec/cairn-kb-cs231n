@@ -26,15 +26,15 @@ link-only. Slug `06-training-cnns-architectures`.
 - [x] Deck fetched by hand into raw/pdfs/slides/lecture_6.pdf (title slide checked); already in sources.md
 
 #### Slides (Step 1b)
-- [ ] raw/slides/06-training-cnns-architectures.md — Sonnet transcription, --verify
-- [ ] Figure audit (Sonnet)
-- [ ] Worked arithmetic recomputed; printed slips kept with [Ed:] lines
+- [x] raw/slides/06-training-cnns-architectures.md — Sonnet transcription (three agents, pages 1–33 / 34–66 / 67–97, all finished, chunks appended), --verify (97 headings; OK); parent fixed four GitHub-unsafe maths on slides 11 and 27, tidied two transcriber notes (35, 63), added the "Lecture 13" Ed line (78)
+- [x] Figure audit (Sonnet), two agents: 11, 12, 16, 27, 28, 32, 35, 41, 46, 49, 53, 57 and 61, 63, 65, 71, 73, 75, 78, 79, 82, 85, 91, 95. Both rendered at 600 dpi but read most pages downscaled (~110–130 dpi); crops of 35, 41, 73 at 300 dpi and 57, 61, 63, 65 at 600 dpi. Corrections: 35 (each VGG stack draws two "3x3 conv, 256" boxes, not three/four), 41 (no blue square on A1), 63 (an inference removed), 73 (four rectangles), 75 (square positions), 78 (8x8 grid; red box position), 79 (red box on the upper 2048 pair only), 95 (grid circles on the flat part and flanks, none at the peak; guide lines in both plots); 32 box positions added. Confirmed: 11 "Statistics calculated per batch" (also text layer), 57 top group "3x3 conv, 64" (600 dpi crop and text layer), every histogram mean/std on 61/63/65, 85's cells. Parent check of slide 35 on its 1400px render agrees with the audit.
+- [x] Worked arithmetic recomputed: 28x28 (6), pooling (7), 2^4096 ~ 10^1233 (17), 7x7 receptive field (37–42), 27C^2 vs 49C^2 (43), 10 crops (73) all exact; sqrt(2/4096) = 0.0221 matches the lecturer's spoken "0.022". Printed oddities kept with [Ed:] lines: 11 ("per batch" for N x 1 per-sample statistics), 35 (VGG16/VGG19 stacks draw 15 and 17 weight layers), 57 (last group labelled 64, slides 53–56 print 512), 78–79 ("Lecture 13"; visualizing is lecture 9 in 2025)
 
 #### Transcript edit (Step 1a)
-- [ ] raw/transcripts/06-training-cnns-architectures.md — Sonnet copy-edit; marker, number and ratio checks in the parent
+- [x] raw/transcripts/06-training-cnns-architectures.md — Sonnet copy-edit (the agent hit the session limit after writing the whole file and header, before its report); 93/93 markers identical; ratios 0.73–1.03 (0.73 is 1:01:37, the 61-times "say" caption glitch collapsed with an Ed note); number diff: 20:06 "5x" → Phi (listed), 1:01:37 "60" added in the Ed note. Restored names in the slides or the course staff list (Ehsan, Fei-Fei, Zane Durante); LoRA spoken only. 3 [unclear] (17:00, 27:45, 1:01:37 note), 2 "Student, partly audible" (7:48, 8:35)
 
 #### Images (Step 1c)
-- [ ] raw/images/06-training-cnns-architectures/ — select, render, embed in slide file
+- [ ] raw/images/06-training-cnns-architectures/ — rendered 33 (13 JPEG, 20 PNG; 3.9 MB); embed in slide file
 - [ ] Embed in the wiki page and topic pages; hand-written captions
 - [ ] Look at two rendered images against the slide-file claims
 - [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
