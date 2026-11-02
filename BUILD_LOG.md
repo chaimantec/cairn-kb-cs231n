@@ -1076,3 +1076,43 @@ three ways of processing sequences (slide 82's O(N) memory vs. 76–77 and the l
 Transformer block, LayerNorm recall, sizes table (spoken "200 million" vs. 213M); language models
 and ViT (slides; one spoken sentence); tweaks (slides only: pre-norm, RMSNorm with the N/D slip,
 SwiGLU with the 8D² check, MoE); summary.
+
+### Run 8 checklist (moved verbatim from TODO.md)
+
+Scope: lecture 8 only, video RQowiOF_FvQ (66:31). One deck, `lecture_8.pdf`: 122 pages, printed
+1–122, 1:1 with the PDF (no hidden slides, no unnumbered pages). Title slide "Lecture 8: Attention
+and Transformers", April 24, 2025. Images opted in (every figure-bearing slide). PDFs link-only.
+Slug `08-attention-transformers`. The recording leaves "Tweaking Transformers" (110–120) "as extra
+reading" (≈1:05:22).
+
+#### Transcripts
+- [x] 08 Attention and Transformers — video RQowiOF_FvQ (original captions in raw/transcripts/original/; 87 paragraphs)
+
+#### Crawl
+- [x] Deck fetched by hand into raw/pdfs/slides/lecture_8.pdf (title slide checked); already in sources.md
+
+#### Slides (Step 1b)
+- [x] raw/slides/08-attention-transformers.md — Sonnet transcription (four agents, pages 1–31 / 32–62 / 63–92 / 93–122, all finished, chunks appended), --verify (122 headings; OK); header written by the parent; 25 quoted strings opening with math unquoted and 7 formulas rewritten for GitHub (check_math clean, 907 formulas)
+- [x] Figure audit (Sonnet), two agents, 33 slides: 4, 20, 23, 24, 26, 27, 28, 38, 44, 47, 54, 55, 60, 61 and 63, 64, 65, 66, 81, 82, 87, 92, 93, 96, 98, 101, 105, 109, 110, 112, 113, 115, 121; 600 dpi crops (4 and 20 first from page views; 63 page view only). Corrections: 20 (s0 keeps its arrow into s1, an arrow drops into c1; the "+" feeds c2), 26 (purple cell block 5 by 4), 27 (gold column box takes three labels; a gold row-label box was omitted), 100–101 (no vertical line on the photo; patch contents). Additions: 81 (10 arrows), 93 and 112 (residual routing), 109 (arrow out of Pooling). Audit A's report contradicted itself on grid orientation; the text layer settled it (slides 43–61 key 1 at the top; the pasted figure on 4 and 121 at the bottom). Parent checked 19, 20, 27, 61 on 1400px renders
+- [x] Worked arithmetic and drawn architectures recomputed / counted: slide 18 and 22 weights sum to 1; 104's 768; 115's 8D/3 (8D² both); blocks counted (2 on 4, 96–99, 105, 121; 3 on 92–95). Slips kept with [Ed:] lines: 62 (Y = AX, repeated faded on 63), 66 (√D_Q with D_Q undefined; repeated to 78), 77 (1.192 TB is 1,192 GiB at 2 bytes: mixed units; 1.28 TB decimal), 82 (O(N) memory, which 78 gives only with Flash Attention), 111 ("identify"), 113 (RMSNorm averages over N for a D-vector)
+
+#### Transcript edit (Step 1a)
+- [x] raw/transcripts/08-attention-transformers.md — Sonnet copy-edit; 87/87 markers identical; ratios 0.75–0.96 after the parent moved "different word order … there's a little" back from 24:38 into 25:25 (the agent reported 0.68 as filler loss); 53:01 "blah blah blah" and "index 3" restored (paraphrased and respelled, unlisted); number diff otherwise all listed (10:01 "as zero" → s0 added to the header); capitalised words all in captions or slides; header corrected (23:05 slip sentence, the memory claim, the s0 → s1 arrow remark at 16:58 vs slides 17–19). 19 student-question markers, 1 partly audible; 6 [unclear]
+
+#### Images (Step 1c)
+- [x] raw/images/08-attention-transformers/ — rendered 23 (3 JPEG, 20 PNG; 3.1 MB): 5, 11, 19, 22, 23, 24, 27, 29, 35, 46, 47, 57, 59, 61, 66, 82, 91, 95, 99, 109, 111, 112, 120; embedded in the slide file (23); header lists every unrendered slide and why (99)
+- [x] Embed in the wiki page (23, all with hand-written captions, placed by hand; the embed script then found nothing to add) and topic pages (14: attention 8, transformers 6); captions plain text for GitHub
+- [x] Look at two rendered images against the slide-file claims (27 heatmap: gold and purple boxes as corrected; 61 diagram: −∞ and 0 cells, words) plus 19 (s0 → s1 arrow is drawn) and a scratch render of 20
+- [x] INDEX.md image rules (lectures 1–8; lecture 8 has 23); AGENTS.md table row (23 of 122) and two general lessons (ratio outliers; text-layer positions settle layout claims); BUILD_LOG.md render record; LICENSE.md attribution (lecture 8 table and not-rendered note; decks-checked sentence)
+
+#### Wiki
+- [x] wiki/08-attention-transformers.md (six slips noted: 62, 66–78, 77, 82, 111, 113; slide 2 slide-only; four unwalked parts; the s0-arrow remark vs. slides 17–19; the lecturer's "input" slip at 23:05 and row/column self-correction at 42:19; "200 million" vs. 213M)
+- [x] Topic pages attention, transformers; sections or links in recurrent-neural-networks (sequence to sequence and the bottleneck), language-models (transformer language models), normalization-layers (layer normalization in transformers, pre-norm, RMSNorm), convolutional-networks (compared with attention; ViT patch embedding), cnn-architectures, image-captioning, course-logistics (row 8; "lectures 1–8"), lecture 5 page ("Wait until Lecture 8!"), lecture 7 page (next lecture)
+- [x] INDEX.md table of contents (coverage 8 of 18; lecture 8 citation rule, skipped and unwalked slides and spoken additions, six slips; lecture 8 and two topic entries; five one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–8" and its intro sentence
+
+#### Publish
+- [x] kb.json — coverage (8 of 18; 26 topic pages), decks 9/9, figure audit 9/9 (lecture 8 note), images 316 (byLecture 8: 23; 227 JPEG, 89 PNG), caveats for lecture 8's coverage, numbering, slips and unclear marks
+- [x] BUILD_LOG.md — lecture 8 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 after fixing 2 GitHub math problems — slide file header's $O(N^2)$ before ")", and run 7's "dropout-$p$" in BUILD_LOG; 3,772 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 8 23 on disk / 23 in wiki)
+- [x] Commit and push — f22de52, b04b279, 7cb35db on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, both topic pages, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
+- [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
