@@ -924,3 +924,41 @@ navigation; multilayer RNNs; gradient flow (the lecturer's "diagonally positione
 slide 106's side-by-side blocks), clipping (the squared norm); the LSTM, its gates, cell diagram,
 gradient flow, slide 128, ResNet and Highway Networks; modern RNNs; summary.
 
+### Run 7 checklist (moved verbatim from TODO.md)
+
+Scope: lecture 7 only, video kG2lAPBF7zA (71:48). One deck, `lecture_7.pdf`: 124 pages, printed
+1–133; hidden 19, 20, 52, 53, 71, 72, 73, 100, 103; page 118 prints no number (127, between 126
+and 128). Title slide "Lecture 7: Recurrent Neural Networks", April 22, 2025. Images opted in
+(every figure-bearing slide). PDFs link-only. Slug `07-recurrent-neural-networks`.
+
+#### Transcripts
+- [x] 07 Recurrent Neural Networks — video kG2lAPBF7zA (original captions in raw/transcripts/original/; 93 paragraphs)
+
+#### Crawl
+- [x] Deck fetched by hand into raw/pdfs/slides/lecture_7.pdf (title slide checked); already in sources.md
+
+#### Slides (Step 1b)
+- [x] raw/slides/07-recurrent-neural-networks.md — Sonnet transcription (four agents, pages 1–31 / 32–62 / 63–93 / 94–124, all finished, chunks appended), --verify (124 headings; OK)
+- [x] Figure audit (Sonnet), two agents, 27 slides: 7, 12, 23, 33, 54, 56, 58, 61, 62, 64, 65, 66 and 67, 85, 88, 91, 97, 98, 99, 104, 111, 113, 116, 120, 125, 129, 131; 600 dpi crops of every number checked (23, 33, 54, 56, 58, 97, 98, 104 from ~150 dpi page views). Corrections: 7 (two start values), 58 (grey box includes the output), 61 (label colour), 88 (20 boxes, 10 conv, 13 weight layers; the transcriber listed 10 but counted 8), 131 (a missing Pythia point). Confirmed: every vector on 61–66, slide 67's listing values (the transcriber's summary was unverified until cropped), 111's lowercase t, 116's code (no sqrt), 129's "3x3 conv, 64". Parent checked slides 65 and 66 on their 1400px renders: the slips are printed.
+- [x] Worked arithmetic recomputed: the repeated-1s RNN (29–38) and slide 65 columns 3–4 exact. Slips kept with [Ed:] lines: 65 (softmax columns 1–2 misplaced: printed (.03,.84,.00,.13) and (.25,.20,.50,.05), scores give (.04,.13,.00,.84) and (.25,.20,.06,.50); the lecturer acknowledges it at 38:42 and 43:21), 66 (w14 in rows 2–3), 106 (W_xh then W_hx), 110 (lowercase t in the chain), 116 (squared norm called the norm), 129 (ResNet's last stage "3x3 conv, 64", as lecture 6 slide 57)
+
+#### Transcript edit (Step 1a)
+- [x] raw/transcripts/07-recurrent-neural-networks.md — Sonnet copy-edit; 93/93 markers identical; ratios 0.76–1.02; number diff: 13:15 "10h" → tanh, 15:36 "001" → "0 0 1", 17:08 "one" → "1" (all listed), 45:39 "minus one" → "minus 1" twice (unlisted; reverted by the parent). Restored names on the slides, course staff, or spoken-only (TensorBoard, RoPE, beam search); the parent corrected three header claims (Karpathy is on slides 67–68; "four gates"/"gate gate" are on 119 and 121–124). 13 student-question, 2 student-answer, 5 partly-audible markers; 3 [unclear]
+
+#### Images (Step 1c)
+- [x] raw/images/07-recurrent-neural-networks/ — rendered 43 (29 JPEG, 14 PNG; 5.0 MB); embedded in the slide file (43); header lists every unrendered slide and why (81)
+- [x] Embed in the wiki page (43, all with hand-written captions, placed by hand; the embed script then found nothing to add) and topic pages (27: recurrent-neural-networks 7, lstm 4, language-models 7, image-captioning 7, normalization-layers 1, hyperparameters 1); 20 `.jpg` links corrected to the actual `.png` files; caption math converted to plain text for GitHub
+- [x] Look at two rendered images against the slide-file claims (slide 65 chart-like table: softmax values as printed, slips confirmed; slide 66 diagram: w14 rows, embedding layer, as the file says)
+- [x] INDEX.md image rules (lectures 1–7; lecture 7 has 43); AGENTS.md table row (43 of 124); BUILD_LOG.md render record; LICENSE.md attribution (lecture 7 table and not-rendered note; decks-checked sentence)
+
+#### Wiki
+- [x] wiki/07-recurrent-neural-networks.md (six slips noted: 65, 66, 106, 110, 116, 129; slide 2 slide-only; the chunking Q&A vs. the slides; the lecturer's acknowledgement of slide 65; "row" vs. "column" for embeddings; "diagonally positioned" vs. slide 106)
+- [x] Topic pages recurrent-neural-networks, lstm, language-models, image-captioning; sections or links in regularization, normalization-layers, weight-initialization, backpropagation, computer-vision-tasks, cnn-architectures, transfer-learning, hyperparameters-and-validation, neural-networks, loss-functions, course-logistics (row 7; "lectures 1–7"), lecture 6 page
+- [x] INDEX.md table of contents (coverage 7 of 18; lecture 7 citation rule, skipped slide and spoken additions, six slips; lecture 7 and four topic entries; ten one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–7"
+
+#### Publish
+- [x] kb.json — coverage (7 of 18; 24 topic pages), decks 8/8, figure audit 8/8 (lecture 7 note), images 293 (byLecture 7: 43; 222 JPEG, 71 PNG), caveats for lecture 7's coverage, numbering, slips and unclear marks
+- [x] BUILD_LOG.md — lecture 7 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 after fixing 22 GitHub math problems — math in italic [Ed:] lines and captions, math after a quote, `$` before ")", inline pmatrix with `&`, `_` after `}` — and 6 topic-page image links with the wrong extension; 2,528 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 7 43 on disk / 43 in wiki)
+- [x] Commit and push — e2f24b2, 6f09288, e37674b on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, topic page, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
+- [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
