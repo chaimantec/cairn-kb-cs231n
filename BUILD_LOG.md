@@ -21,6 +21,7 @@ every build follows, and each lesson in general form, are in
 | 2 Image Classification with Linear Classifiers | [Run 2](#run-2--lecture-2-image-classification-with-linear-classifiers-2026-11-02) |
 | 3 Regularization and Optimization | [Run 3](#run-3--lecture-3-regularization-and-optimization-2026-11-02) |
 | 4 Neural Networks and Backpropagation | [Run 4](#run-4--lecture-4-neural-networks-and-backpropagation-2026-11-02) |
+| 5 Image Classification with CNNs | [Run 5](#run-5--lecture-5-image-classification-with-cnns-2026-11-02) |
 
 ## Runs
 
@@ -515,3 +516,112 @@ Slug `04-neural-networks-backpropagation`.
 - [x] verify_kb.py clean, and its review section read (exit 0; all 1,412 formulas render in the chat and on github.com after fixing 8 `$$` blocks that GitHub set inline and slide 46's label list, which GitHub left as raw text; numeric claims in INDEX/AGENTS match the measured table; SEE_ALSO's "covers only Lecture 1" (stale since run 2) corrected)
 - [x] Commit and push — 49b5274, 95a754d, 83c5db8 on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, both topic pages, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 5 — Lecture 5 (Image Classification with CNNs), 2026-11-02
+
+Built lecture 5 end to end: transcript, the deck, two figure audits, the transcript edit, the wiki
+page, a convolutional-networks topic page, 53 slide images, and updates to INDEX, AGENTS, LICENSE,
+kb.json, SEE_ALSO, the course-logistics roadmap (row 5 linked), neural networks (its "lecture 5 is
+not covered" sentence replaced), image classification (a section on hand-designed features vs.
+end-to-end learning), hyperparameters and validation (a lecture 5 section), linear classifiers,
+loss functions (slide 129's slip), optimizers (the Adam Test of Time aside), ImageNet, computer
+vision tasks, and the lecture 1 and 4 pages. Images opted in again; PDFs stay link-only.
+
+### Lecture 5 record
+
+**Deck.** One: `lecture_5.pdf`, 141 pages, Justin Johnson (per the schedule; he introduces
+himself in the recording), April 15, 2025. Printed numbers 1–141, 1:1 with the pages: every page
+prints its number in the "Lecture 5 - N" footer, and a scan of the bottom-of-page number spans
+found no page out of sequence. No deck-wide licence. Per-image credits: slide 19 (Nikita, CC-BY
+2.0), 26 and 34 (Krizhevsky, Sutskever and Hinton 2012, "Reproduced with permission"), 29–32
+("Illustration of LeCun et al. 1998 from CS231n 2017 Lecture 1"), 35 (Ren, He, Girshick, Sun
+2015 and Farabet 2012, "Reproduced with permission"), 36 (CC0, pixabay URLs; captions by Justin
+Johnson with Neuraltalk2), 115 (PyTorch, BSD 3-clause), 133 (Rocky Acosta, CC-BY 3.0), 134
+(Widrow 1960, with permission from Stanford University Special Collections), 135–137 and 140
+(illustrations by Lane McIntosh, copyright CS231n 2017; 137 also Krizhevsky et al.), 138 (CNX
+OpenStax, CC BY 4.0), 139 (retinotopy images courtesy of Jesse Gomez). Citations without a
+licence line: 23 (Lowe 1999; Dalal and Triggs 2005), 24 (Fei-Fei and Perona 2005), 37 (Rombach et
+al. 2022), 39–41 (Vaswani et al. 2017; Dosovitskiy et al. 2021), 69 (Springenberg et al. 2015),
+141 (Fukushima 1980). "Slide inspiration: Justin Johnson" on 58–62 and 80–83. Schedule reading:
+the Convolutional Networks course notes (cs231n.github.io/convolutional-networks), already in
+`sources.md` with the deck.
+
+**Transcription.** Four Sonnet agents in parallel (pages 1–36, 37–71, 72–106, 107–141), 74–85k
+tokens each, all finished, every chunk appended as written. `--verify` clean (141 headings). The
+parent fixed 24 GitHub math warnings (20 inline maths opened after a quote mark, a `_` after a
+`}` in the PyTorch formula, math inside an italic `[Ed:]` line), escaped six digit asterisks
+("5*5*3", "30*40*9") that GitHub would italicise, and removed the transcriber's architecture
+names from slide 108 ("inception-style module", "residual-style network": the slide names
+neither).
+
+**Figure audit** (Sonnet, two agents, 24 slides). A: 4, 6, 22, 24, 26, 34, 35, 38, 62, 69, 80, 81.
+B: 94, 101, 102, 108, 113, 118, 120, 124, 127, 129, 133, 136. Both rendered at 600 dpi but viewed
+the pages downscaled to about 200 dpi; B cropped at true 600 dpi on 127, 129 and 133, A made no
+crops (a `fitz` import failed under `python3 -I`). Errors: slide 4's timeline (World Labs to about
+2026.5, axis to about 2028, navy teaching marks at about 2019.7, 2020.6 and 2022.6); 22 (bin 5 is
+yellow-green, bar 7 medium); 24 (tall bars 1, 3, 4, 6, 9 in the top row, bar 4 tallest in the
+bottom); 81 (the two blue input squares do not overlap: rows 1–3 / cols 1–3 and rows 5–7 / cols
+5–7, and every square's position). Small fixes: 35 (one confidence blurry, 0.982 or 0.987, now
+marked so), 38 (the title sits above the screenshot), 80 (dashed lines from two corners), 108
+(maroon boxes; the "/ 2" on the last box of each group), 136 (the decoder continues upward).
+Confirmed: 6's W, b, pixels and printed 61.95; 62's $C_{out}$ x $C_{in}$ x $K_w$ x $K_h$ order;
+101's swapped labels; 102's grid; 124's "Conv layer" wording; every number on 127; the minus signs
+on 129 (600 dpi crop); 133's formulas. The parent's own check of two renders: slide 101 shows the
+swap as described; slide 81 matches the audit's positions except the second blue cell, which is
+at row 6, column 6 (the centre of its square), not column 5.
+
+**Printed slips, transcribed as printed.** Slide 6: the ship score 61.95 is the ship row times the
+pixels without the bias; with $b = -1.2$ it is 60.75 (the same slip as lecture 2, slide 60, whose
+figure the recap reuses). Slide 101: "64 x 112 x 112" over the larger cube and "64 x 224 x 224"
+over the smaller, the reverse of the downsampling the figure shows; slides 18, 44, 100, 107 and
+121 label it the right way round. Slide 124: "Conv layer needs 2 hyperparameters" under the
+heading "Pooling layer: summary". Slide 129: the softmax loss with $e^{-s_y}$ and $e^{-s_i}$, which
+would reward $s_y \to -\infty$, against the slide's own caption. Each has an `[Ed:]` line and a
+wiki note; INDEX and kb.json list them. Recomputed and exact: HoG's 10,800 (slide 23); 28 and 24
+(56, 64); 5×5 (75); 3×3 at stride 2 (86); 32, 760 and 768,000 (89, 91, 93); the max-pool output 6,
+8, 3, 4 (102, 122); 28×28×5 (118); 1216 (127).
+
+**Transcript edit** (Sonnet, ~96k tokens). 89 paragraphs; marker sequence identical; word ratios
+0.80–1.02. Number diff traced in full: 30:42 false-start "3" and "372" dropped; 49:56 and 54:31
+counts ("1 2 3 4 5", "1 2 3") written as words; 56:51 "2k + one" → 2K plus 1; 59:56 "64x12 x112",
+"112 x12" (twice) and "224 x24" → 112 and 224 (the captions drop a digit after "x"; the lecturer
+is reading slide 101's swapped labels); 1:00:44 and 1:02:15 "2x two" → 2 by 2, and a false-start
+"two" before "4x4" dropped. Parent fixes: at 30:42 the editor had changed "that 32x32x3 vector"
+to "tensor" (reverted); "760 multiple 760" (56:51) had become "760, multiply, 760", now
+`[unclear: multiple]`; "it's a lot seven" (57:38) now `[unclear: it's a lot seven]`; the header
+claimed no digit was changed in value and had no coverage note (both rewritten). Restored names
+are on the slides or in the captions: LeNet ("lenat"), Inception, Stable Diffusion, MATLAB,
+FLOPs, aspect ratio bucketing and Test of Time are in the captions; COVID is restored from "co" in
+"what happened in 2020 other than co … it wasn't co, it was transformers". 19 student-question and
+6 student-answer markers; 5 `[unclear]`. **Coverage:** the recording opens at 0:05 on slide 4,
+never presents slides 2–3 or the appendix (109–141), and ends at 1:07:34 on slides 107–108.
+
+**Images.** 53 rendered (34 JPEG, 19 PNG; 5.8 MB): 18, 20–26, 28, 31, 34–38, 41, 47, 50, 51,
+55, 57, 60–62, 65, 67–69, 75, 79–81, 87, 97, 98, 101, 102, 106, 108, 114, 117, 118, 120, 127,
+133–141. Not rendered: 1 (title); 2–3 (administrative); 4 (the lecturer's career timeline); 5,
+15, 16 (outline); 6, 7, 9–14, 19, 66, 128–131 (recaps of lecture 2–4 figures); 8 (animation
+frame); 42, 109 (dividers); 94, 95, 103, 111, 112, 115, 124, 125, 132 (text, formulas and
+documentation screenshots transcribed exactly); 88–93 (the worked example's two unlabelled
+slabs); build steps whose last step is rendered (17 → 18, 27 → 28, 29–30 → 31, 39–40 → 41, 46 →
+47, 48–49 → 50, 52–54 → 55, 56 → 57, 58–59 → 60, 63–64 → 65, 71–74 and 76–77 → 75, 78 → 79,
+82–83 → 81, 84–86 → 87, 104–105 → 106, 113 → 114); repeats of rendered figures (32, 33 → 31;
+43–45, 99, 100, 107, 110 → 18; 70 → 65; 96 → 97–98; 116 → 51; 119 → 47; 121 → 101; 122–123 →
+102; 126 → 120). The raster test flagged 66 of 141 pages (no recurring template image); it
+missed the vector convolution diagrams (46–94) and flagged code and documentation screenshots.
+All 53 are in the lecture page with hand-written captions; the convolutional-networks topic page
+carries 6 (62, 65, 68, 81, 102, 106). One embed problem, fixed by moving the block: slide 75
+landed between "a filter of width $K$," and its formula. The page's dimensions were first
+written as plain "32×32×3", which check_math flags as notation (163 warnings): prose now uses
+inline math, captions the slides' own "5x5x3".
+
+**Wiki.** Lecture page: recording coverage and the four slips up front; administrative notes from
+the slides; the lecturer; the recap (with the Adam Test of Time aside and the slide 6 slip); the
+course's parts and the two new operators; hand-designed features (colour histogram, HoG, bag of
+words from the slides only) vs. end-to-end learning; the spatial-structure problem; structure and
+history to transformers, with the four reasons to still learn ConvNets; the fully connected layer
+as template matching; the convolution layer and its eight questions; batches and general shapes;
+the non-linearity exercise and the students' answers; what filters learn and four more
+questions; output size and padding; receptive fields; stride; the worked example; the summary,
+PyTorch and 1D/3D convolution; pooling, slide 101's slip and five questions; translation
+equivariance; next time; the appendix slide by slide, with its change of notation ($K$ = number
+of filters); summary. Topic page: convolutional networks.

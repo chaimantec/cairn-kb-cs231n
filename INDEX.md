@@ -7,10 +7,11 @@ self-supervised learning, generative models, 3D vision, vision and language, rob
 and human-centred AI. The Spring 2025 offering is taught by Fei-Fei Li and Ehsan Adeli, with Zane
 Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/2025/>.
 
-> **Coverage: 4 of 18 lectures.** This knowledge base currently covers **Lecture 1
+> **Coverage: 5 of 18 lectures.** This knowledge base currently covers **Lecture 1
 > (Introduction), Lecture 2 (Image Classification with Linear Classifiers), Lecture 3
-> (Regularization and Optimization) and Lecture 4 (Neural Networks and Backpropagation) only**. It
-> has nothing on lectures 5–18 — convolutional networks and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
+> (Regularization and Optimization), Lecture 4 (Neural Networks and Backpropagation) and Lecture 5
+> (Image Classification with CNNs) only**. It has nothing on lectures 6–18 — CNN architectures and
+> everything after. For a question about a later topic, say that this KB does not cover it yet rather than
 > answering as if from the course; the
 > [course roadmap](wiki/course-logistics.md#course-roadmap) shows which lecture a topic belongs
 > to, and [SEE_ALSO.md](SEE_ALSO.md) lists sibling knowledge bases that cover some of that
@@ -30,7 +31,8 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   way ("lecture 3, slide N" on topic pages); it is missing printed numbers 10, 11, 12 and 29, so
   slide 123 is PDF page 119. Lecture 4 has one deck, cited the same way ("lecture 4, slide N" on
   topic pages); it is missing printed numbers 2, 47, 112, 113 and 114, so slide 152 is PDF page
-  147.
+  147. Lecture 5 has one deck, cited the same way ("lecture 5, slide N" on topic pages), and its
+  141 printed numbers match its PDF pages exactly.
 - **Transcripts are edited.** `raw/transcripts/` holds copy-edited transcripts — punctuated,
   filler removed, mis-heard names and terms restored, every change listed in the file's header —
   with every `[M:SS]` marker in its original place. Read these, not the raw captions, which are
@@ -48,14 +50,20 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   zero-loss W is unique) are sourced to the slides alone. Lecture 4's recording skips its
   administrative slides (3–4) and the "Today: Deep Learning" examples (slides 12–21: DALL-E,
   GPT-4, Segment Anything, Sora), which are described from the slides alone; it covers everything
-  else, the matrix-multiply example (slides 143–150) only in outline.
+  else, the matrix-multiply example (slides 143–150) only in outline. Lecture 5's recording skips
+  its administrative slides (2–3) and its appendix of "Slides from Previous Years" (slides
+  109–141: older convolution and pooling summaries, 1x1 convolutions, the ConvNetJS demo and a
+  history from the Mark I Perceptron to the Neocognitron), which are sourced to the slides alone.
 - **Printed slips are flagged, not corrected.** Where a deck's worked example prints a wrong
   number or sign, the slide file keeps it as printed with an `[Ed: …]` line and the wiki page says
   so. Quote the correction, not the slip. Lecture 4's matrix-multiply example (slides 143–150)
-  prints an output y that is not the product of its x and w.
+  prints an output y that is not the product of its x and w. Lecture 5's deck has four: slide 6's
+  ship score omits the bias (as lecture 2's does), slide 101 swaps its two cube labels (the input
+  is 64 x 224 x 224, the output 64 x 112 x 112), slide 124 says "Conv layer" under the pooling-summary
+  heading, and slide 129 prints the softmax loss with minus signs in the exponents.
 - **Lecture 3's optimizer-comparison animations are not in the PDF.** Its slides comparing
-  optimizers' paths on a loss surface show only the surface and a legend, as does lecture 4's
-  recap of them (slide 10). What the paths did is
+  optimizers' paths on a loss surface show only the surface and a legend, as do lecture 4's
+  and lecture 5's recaps of them (lecture 4, slide 10; lecture 5, slide 8). What the paths did is
   known only from the lecturer's spoken description; do not describe them from the slides.
 - **Logistics come from slides only.** Lecture 1's logistics slides were not presented in the
   recording. Grading, late days, assignments and policies are in
@@ -64,9 +72,9 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
 
 ## Images
 
-**Lectures 1–4 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
-part 2 deck), lecture 2 has 41, lecture 3 has 24 and lecture 4 has 35. No other lecture has any
-yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
+**Lectures 1–5 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
+part 2 deck), lecture 2 has 41, lecture 3 has 24, lecture 4 has 35 and lecture 5 has 53. No other
+lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
 in the wiki passage that cites that slide.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern,
@@ -118,6 +126,18 @@ in the wiki passage that cites that slide.
   the elementwise ReLU example and the matrix-multiply gradients; and, from the slides only, the
   DALL-E, GPT-4, Segment Anything and Sora examples. 35 embedded slide images.
 
+- [Lecture 5 — Image Classification with CNNs](wiki/05-image-classification-cnns.md) — Justin
+  Johnson on the recap of lectures 2–4 (and Adam's ICLR 2025 Test of Time Award); hand-designed
+  image features (colour histogram, HoG, bag of words) vs. end-to-end learning; why flattening an
+  image destroys its spatial structure; ConvNets from LeCun et al. 1998 and AlexNet to the
+  transformers that displaced them; the fully connected layer as template matching; the
+  convolution layer (filters, activation maps, biases, batches, shapes) and the Q&A on it; why
+  stacked convolutions need a non-linearity; what filters learn; output size, padding, receptive
+  fields and stride; the worked example (a 10 x 32 x 32 output, 760 parameters, 768K multiply-adds);
+  1D and 3D convolution; pooling and max pooling, with its Q&A; translation equivariance; and,
+  from the slides only, the appendix (1x1 convolutions, the neuron view, the ConvNetJS demo, the
+  history from the Mark I Perceptron to the Neocognitron). 53 embedded slide images.
+
 ### Topics
 
 - [ImageNet and the ImageNet challenge](wiki/imagenet.md) — why data was the missing ingredient;
@@ -129,15 +149,17 @@ in the wiki passage that cites that slide.
   classification, multimodal video understanding, visualization, retrieval, pose, captioning,
   visual relationships, generation — and which lecture covers each.
 - [Image classification](wiki/image-classification.md) — the task, the semantic gap, why it is
-  hard, the data-driven approach (collect, train, predict), CIFAR-10, and how well pixel-based
-  k-NN does (about 28–29% against 10% chance).
+  hard, the data-driven approach (collect, train, predict), CIFAR-10, how well pixel-based
+  k-NN does (about 28–29% against 10% chance), and hand-designed features vs. end-to-end
+  learning.
 - [k-nearest neighbours](wiki/k-nearest-neighbors.md) — the algorithm and its NumPy code; L1 and
   L2 distance and when to prefer each; decision regions and ties; $O(1)$ training and $O(N)$
   prediction; why k-NN on pixels is never used.
 - [Hyperparameters and validation](wiki/hyperparameters-and-validation.md) — what a hyperparameter
   is; why not to tune on the training or test set; validation sets; cross-validation and when deep
   learning skips it; "run on the test set once at the very end"; lecture 3's regularization
-  strength and learning rate; lecture 4's network size and activation function.
+  strength and learning rate; lecture 4's network size and activation function; lecture 5's
+  convolution and pooling hyperparameters.
 - [Linear classifiers](wiki/linear-classifiers.md) — $f(x, W) = Wx + b$ and its dimensions for
   CIFAR-10; the bias; algebraic, visual (templates) and geometric (hyperplanes) viewpoints; the
   cases it cannot separate; linear layers inside AlexNet and ResNet.
@@ -158,6 +180,11 @@ in the wiki passage that cites that slide.
   examples; the sigmoid gate; add, mul, copy and max gate patterns; flat and modular (PyTorch)
   implementations; gradients and Jacobians for vectors; never forming the Jacobian (ReLU); the
   matrix-multiply gradients.
+- [Convolutional networks](wiki/convolutional-networks.md) — why ConvNets (spatial structure,
+  end-to-end learning); the convolution layer and its shapes; parameters vs. hyperparameters;
+  non-linearity between convolutions; output size, padding and stride, with common settings;
+  counting parameters and multiply-adds; receptive fields; 1D, 3D and 1x1 convolution; pooling;
+  translation equivariance; what filters learn; history from Hubel and Wiesel to transformers.
 - [Gradient descent and SGD](wiki/gradient-descent.md) — the loss landscape; the gradient,
   numerical vs. analytic, and the gradient check; gradient descent, stopping, minibatch SGD and
   epochs; poor conditioning (condition number), local minima, saddle points, noisy gradients;
@@ -178,13 +205,15 @@ in the wiki passage that cites that slide.
   marks. Lecture 1: [01-introduction.md](raw/transcripts/01-introduction.md); lecture 2:
   [02-image-classification.md](raw/transcripts/02-image-classification.md); lecture 3:
   [03-regularization-optimization.md](raw/transcripts/03-regularization-optimization.md); lecture 4:
-  [04-neural-networks-backpropagation.md](raw/transcripts/04-neural-networks-backpropagation.md).
+  [04-neural-networks-backpropagation.md](raw/transcripts/04-neural-networks-backpropagation.md);
+  lecture 5: [05-image-classification-cnns.md](raw/transcripts/05-image-classification-cnns.md).
 - [`raw/slides/`](raw/slides/) — slide-by-slide transcriptions with section tables:
   [part 1](raw/slides/01-introduction-part-1.md) (69 slides) and
   [part 2](raw/slides/01-introduction-part-2.md) (50 pages, printed numbers 1–53) for lecture 1;
   [lecture 2](raw/slides/02-image-classification.md) (102 pages, printed numbers 1–104);
   [lecture 3](raw/slides/03-regularization-optimization.md) (119 pages, printed numbers 1–123);
-  [lecture 4](raw/slides/04-neural-networks-backpropagation.md) (147 pages, printed numbers 1–152).
+  [lecture 4](raw/slides/04-neural-networks-backpropagation.md) (147 pages, printed numbers 1–152);
+  [lecture 5](raw/slides/05-image-classification-cnns.md) (141 pages, printed numbers 1–141).
 - [`sources.md`](sources.md) — every document the course website links, with its canonical URL.
   Slide PDFs are **not** committed here; link to them at those URLs.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every rendered image.

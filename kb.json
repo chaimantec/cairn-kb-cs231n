@@ -9,38 +9,39 @@
     "courseUrl": "https://cs231n.stanford.edu/2025/"
   },
   "coverage": {
-    "lecturesCovered": 4,
+    "lecturesCovered": 5,
     "lecturesTotal": 18,
-    "transcripts": 4,
-    "wikiLecturePages": 4,
-    "wikiTopicPages": 14
+    "transcripts": 5,
+    "wikiLecturePages": 5,
+    "wikiTopicPages": 15
   },
   "materials": {
     "primary": "slides",
     "slideDecks": {
-      "available": 5,
-      "transcribed": 5
+      "available": 6,
+      "transcribed": 6
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 5,
-      "decksTotal": 5,
+      "decksAudited": 6,
+      "decksTotal": 6,
       "unaudited": [],
-      "note": "Counts are for the decks of the covered lectures (lecture 1 has two, lectures 2, 3 and 4 one each). Lecture 1: eight figure-, chart- and table-heavy slides per deck checked at 600 dpi by an independent reader; part 2 clean, part 1 errors on slides 62 and 64, corrected. Lecture 2: fourteen slides checked; errors on slides 8, 33 and 64 and loose detail on 30, 45 and 63, corrected; eight clean. Lecture 3: nineteen slides checked; errors on slides 80, 84 and 99 and small omissions on 13, 86 and 122, corrected; the absence of optimizer paths on slides 61, 70, 75 and 109 confirmed. Lecture 4: twenty-three slides checked by two readers, who rendered at 150–200 dpi rather than the 600 asked for (crops at 400–600 dpi on slides 11, 53 and 116); errors on slides 11, 25 and 26 and small omissions on 41, 96, 116 and 134, corrected; slide 143's matrices confirmed again on the 1400px render of slide 150; no figure on slide 50 and no optimizer paths on slide 10 confirmed."
+      "note": "Counts are for the decks of the covered lectures (lecture 1 has two, lectures 2, 3, 4 and 5 one each). Lecture 1: eight figure-, chart- and table-heavy slides per deck checked at 600 dpi by an independent reader; part 2 clean, part 1 errors on slides 62 and 64, corrected. Lecture 2: fourteen slides checked; errors on slides 8, 33 and 64 and loose detail on 30, 45 and 63, corrected; eight clean. Lecture 3: nineteen slides checked; errors on slides 80, 84 and 99 and small omissions on 13, 86 and 122, corrected; the absence of optimizer paths on slides 61, 70, 75 and 109 confirmed. Lecture 4: twenty-three slides checked by two readers, who rendered at 150–200 dpi rather than the 600 asked for (crops at 400–600 dpi on slides 11, 53 and 116); errors on slides 11, 25 and 26 and small omissions on 41, 96, 116 and 134, corrected; slide 143's matrices confirmed again on the 1400px render of slide 150; no figure on slide 50 and no optimizer paths on slide 10 confirmed. Lecture 5: twenty-four slides checked by two readers, again at about 200 dpi effective (600 dpi renders downscaled by the viewer), with 600 dpi crops of slides 127, 129 and 133; errors on slides 4, 22, 24 and 81 and small fixes on 35, 38, 80, 108 and 136, corrected; slide 6's matrices, slide 62's K_w x K_h order, slide 101's swapped labels, slide 124's wording, slide 127's numbers and slide 129's minus signs confirmed; slides 81 and 101 checked again on their 1400px renders, which corrected one cell position on 81."
     },
     "images": {
-      "lecturesWithImages": 4,
-      "files": 164,
+      "lecturesWithImages": 5,
+      "files": 217,
       "byLecture": {
         "1": 64,
         "2": 41,
         "3": 24,
-        "4": 35
+        "4": 35,
+        "5": 53
       },
-      "format": "1400px whole-slide renders (146 JPEG, 18 PNG)",
+      "format": "1400px whole-slide renders (180 JPEG, 37 PNG)",
       "discovery": "inline in wiki/ and raw/slides/; each slide file's header lists its rendered slides; no index file",
-      "note": "Lectures 1-4 only. Lecture 1: 47 of part 1's 69 pages and 17 of part 2's 50. Lecture 2: 41 of 102 pages. Lecture 3: 24 of 119 pages. Lecture 4: 35 of 147 pages. Not rendered: recaps of earlier lectures' figures, animation frames whose content is not in the PDF, title, agenda, administrative and divider slides, text-only and code slides, build steps whose final step is rendered, tables and formulas the slide file reproduces exactly, and photographs of course staff and award winners."
+      "note": "Lectures 1-5 only. Lecture 1: 47 of part 1's 69 pages and 17 of part 2's 50. Lecture 2: 41 of 102 pages. Lecture 3: 24 of 119 pages. Lecture 4: 35 of 147 pages. Lecture 5: 53 of 141 pages. Not rendered: recaps of earlier lectures' figures, animation frames whose content is not in the PDF, title, agenda, administrative and divider slides, text-only and code slides, build steps whose final step is rendered, tables and formulas the slide file reproduces exactly, and photographs of course staff and award winners."
     }
   },
   "provenance": {
@@ -49,15 +50,16 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1-4 of 18 only; nothing on lectures 5-18.",
-      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, lecture 2's skip 32 and 49, lecture 3's skip 10, 11, 12 and 29, and lecture 4's skip 2, 47, 112, 113 and 114, so printed numbers run ahead of PDF page numbers.",
+      "Covers lectures 1-5 of 18 only; nothing on lectures 6-18.",
+      "Lecture 1 has two slide decks, each numbered from 1; cite as 'part 1, slide N' / 'part 2, slide N'. Part 2's printed numbers skip 4, 5 and 45, lecture 2's skip 32 and 49, lecture 3's skip 10, 11, 12 and 29, and lecture 4's skip 2, 47, 112, 113 and 114, so printed numbers run ahead of PDF page numbers. Lecture 5's 141 printed numbers match its PDF pages.",
       "Lecture 1's logistics slides (part 2, slides 33-48 and 50) were not presented in the recording; wiki/course-logistics.md is sourced to the slides as posted on April 1, 2025.",
       "Lecture 2's recording skips its administrative slides (2-4) and ends mid-sentence at 1:06:37, before the multiclass SVM loss (a reading assignment, slides 85-100) and softmax vs. SVM (slides 101-104); those are sourced to the slides alone, and their quiz questions have no printed answers.",
       "Lecture 3's recording skips its administrative slides (2-4) and ends at 1:08:25 in the look ahead to neural networks; slides 100-101 and the appendix of 'Slides from Previous Years' (slides 102-123: Nesterov momentum, AdaGrad, L-BFGS, softmax vs. SVM) are sourced to the slides alone.",
       "Lecture 4's recording skips its administrative slides (3-4) and the 'Today: Deep Learning' examples (slides 12-21: DALL-E 2 and 3, GPT-4, Segment Anything, Sora); those are sourced to the slides alone. It covers the matrix-multiply example (slides 143-150) only in outline.",
-      "Lecture 3's optimizer-comparison slides (60, 61's gradient-noise panel, 70, 75, 109) were animations: the PDF shows only the loss surface and legend, so the optimizers' paths are known only from the lecturer's spoken description. Lecture 4's recap slide 10 repeats one of these frames.",
-      "Lecture 2's deck prints two arithmetic slips in worked examples (slide 60's ship score omits the bias; slide 101's 0.452 is a base-10 log); both are kept as printed and noted. Lecture 3 repeats the slide 101 example as its slide 119, with the same base-10 value, and its slide 34 prints 0.1555 as '15.5%'. Lecture 4's slide 53 prints a plus where a minus belongs in its expanded hinge term, and its matrix-multiply example (slides 143-150) prints an output y that is not the product of its x and w (x times w is [[-1, -1, 2, 6], [5, 2, 11, 7]]); both kept as printed and noted.",
-      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers, seven passages marked unclear in lecture 1, five in lecture 2, three in lecture 3 and one in lecture 4."
+      "Lecture 5's recording skips its administrative slides (2-3) and its appendix of 'Slides from Previous Years' (slides 109-141: older convolution and pooling summaries, 1x1 convolutions, the neuron view, the ConvNetJS demo, the deep-learning recipe and a history from the Mark I Perceptron to the Neocognitron); those are sourced to the slides alone. The appendix uses K for the number of filters and F for the filter size, where the lecture uses K for the kernel size.",
+      "Lecture 3's optimizer-comparison slides (60, 61's gradient-noise panel, 70, 75, 109) were animations: the PDF shows only the loss surface and legend, so the optimizers' paths are known only from the lecturer's spoken description. Lecture 4's recap slide 10 and lecture 5's recap slide 8 repeat one of these frames.",
+      "Lecture 2's deck prints two arithmetic slips in worked examples (slide 60's ship score omits the bias; slide 101's 0.452 is a base-10 log); both are kept as printed and noted. Lecture 3 repeats the slide 101 example as its slide 119, with the same base-10 value, and its slide 34 prints 0.1555 as '15.5%'. Lecture 4's slide 53 prints a plus where a minus belongs in its expanded hinge term, and its matrix-multiply example (slides 143-150) prints an output y that is not the product of its x and w (x times w is [[-1, -1, 2, 6], [5, 2, 11, 7]]); both kept as printed and noted. Lecture 5's deck has four: slide 6 repeats lecture 2's bias-less ship score (61.95 for 60.75), slide 101 swaps its cube labels (the input is 64 x 224 x 224, the output 64 x 112 x 112), slide 124 says 'Conv layer needs 2 hyperparameters' under the heading 'Pooling layer: summary', and slide 129 prints the softmax loss with minus signs in both exponents.",
+      "Verbatim auto-captions are not published; the transcripts are copy-edits with every restoration listed in their headers, seven passages marked unclear in lecture 1, five in lecture 2, three in lecture 3, one in lecture 4 and five in lecture 5."
     ]
   },
   "entryPoint": "INDEX.md",
