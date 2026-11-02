@@ -104,13 +104,16 @@ printed slips, which slides were rendered and why) goes in
   outlier reported as filler removal can be a sentence moved across the marker (lecture 8).
   Then list, per paragraph, the words the edit introduced that the original paragraph lacks, and
   read each: substitutions pass every other check (lecture 9: "routed to a of those e experts",
-  slide 27's A of E, became "a few of those experts"; "over fine-tune" became "overfit").
+  slide 27's A of E, became "a few of those experts"; "over fine-tune" became "overfit"). The same
+  sweep catches a few words moved across a marker at a paragraph boundary, which leaves both ratios
+  in band (lecture 10: the first words of two paragraphs had been pulled back into the paragraph
+  before). Then check every quotation the wiki takes from the transcript against it verbatim.
 - Student turns: only the lecturer is audible; mark `*[Student question, inaudible]*` /
   `*[Student answer, inaudible]*` where the captions show a speaker change.
 
 ## Images
 
-**Lectures 1–9 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–10 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -133,11 +136,14 @@ they are the only part of this KB that redistributes course material rather than
   where a label sits): check a disputed or self-contradictory audit claim there before
   re-auditing. A pasted-in copy of the same diagram has no such layer and may be drawn the other
   way up (lecture 8).
-- **Decks hold animation frames.** A slide whose animation drew paths or builds exports to the PDF
-  as its background frame only (lecture 3's optimizer comparisons: a loss surface and a legend,
-  no paths). Confirm the absence at 600 dpi in the figure audit, say so in the slide file's
-  header and on the wiki page, source what the animation showed to the transcript alone, and do
-  not render the frame.
+- **Decks hold animation frames and video stills.** A slide whose animation drew paths or builds
+  exports to the PDF as its background frame only (lecture 3's optimizer comparisons: a loss
+  surface and a legend, no paths), and an embedded video as one still (lecture 10). Confirm the
+  absence at 600 dpi in the figure audit, say so in the slide file's header and on the wiki page,
+  source what the animation or video showed to the transcript alone, and do not render the frame.
+- **The text layer can hold what the page hides.** A later build's bar or label may sit in an
+  earlier slide's text layer, invisible (lecture 10's slide 39). Text-layer checks confirm wording
+  and values; whether something is visible needs a render.
 - Place images with `embed_slide_images.py` (with `--deck-label` for multi-deck lectures), once per
   wiki page that cites the slides, then hand-write captions for the figures where the caption
   should say what to look at. The script anchors each image after the block holding the
@@ -147,6 +153,8 @@ they are the only part of this KB that redistributes course material rather than
   too, on this lecture's slides of the same numbers; list where every image landed after the run. A block ending "(slide N):" before a display formula, a table or a
   code block gets the image between the sentence and what it introduces; move it below. On topic pages, cite "lecture N, slide M" and
   embed with `--deck-label "Lecture N"` so captions name the lecture.
+- **Never type an image path.** `--format auto` makes some renders `.png`; a hand-placed image
+  takes its path from the slide file (lecture 10: fourteen guessed `.jpg` links were wrong).
 - Each slide file's header lists which of its slides have images and why the others do not.
   `grep -o 'raw/images/[^)]*' wiki/NN-*.md` enumerates a lecture's wiki images. There is no
   image index file.
@@ -164,6 +172,7 @@ they are the only part of this KB that redistributes course material rather than
 | 7 Recurrent Neural Networks | 43 of 124 pages | `lecture_7.pdf` (124 pages, printed 1–133) |
 | 8 Attention and Transformers | 23 of 122 pages | `lecture_8.pdf` (122 pages, printed 1–122) |
 | 9 Detection, Segmentation, Visualization, and Understanding | 53 of 178 pages | `lecture_9.pdf` (178 pages, printed 1–178) |
+| 10 Video Understanding | 47 of 103 pages | `lecture_10.pdf` (103 pages, printed 1–103) |
 
 ## Rebuilding
 

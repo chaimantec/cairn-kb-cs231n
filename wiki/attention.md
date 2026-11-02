@@ -212,6 +212,10 @@ The verdict is the title of Vaswani et al. (NeurIPS 2017), "Attention is All You
 
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md): everything on this page.
 - [Lecture 9](09-detection-segmentation-visualization.md) uses cross-attention in DETR, where learned object queries attend to image features ([object detection](object-detection.md#detr-detection-with-a-transformer)), and reads a ViT's attention as a map of what it looked at ([visualizing what networks learn](visualizing-networks.md#attention-maps)).
+- [Lecture 10 — Video Understanding](10-video-understanding.md#spatio-temporal-self-attention-the-nonlocal-block)
+  applies self-attention to video: the nonlocal block attends between every pair of space-time
+  positions of a 3D CNN's features, a $(THW) \times (THW)$ attention map, and adds the result back
+  through a residual connection (lecture 10, slides 65–71).
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md) builds the RNNs and the
   sequence tasks attention starts from.
 - [Lecture 1](01-introduction.md) previews attention in its tour of the course

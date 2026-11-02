@@ -145,6 +145,7 @@ recurrent models try to avoid (see [recurrent neural networks](recurrent-neural-
 
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md): everything on this page.
 - [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md): the ViT with a class token, the four later changes walked through, DETR, and a ViT's attention maps as a visualization.
+- [Lecture 10 — Video Understanding](10-video-understanding.md#vision-transformers-for-video): video transformers (factorized space and time attention, token pooling in MViT, video masked autoencoders) and their Kinetics-400 results, named but not explained in the lecture.
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#modern-rnns) compares
   modern recurrent models with transformers.
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md) mentions

@@ -68,7 +68,10 @@ regions (Farabet et al., 2012; printed "Fabaret") (part 1, slide 51). These task
 **Video classification** asks what is happening in a video: "is there someone running, jumping or
 dancing" (≈52:21). Li's history shows a two-stream network that combines a single frame with
 multi-frame optical flow, and a 3D convolutional network for activity recognition (part 1,
-slide 52). Video is the subject of lecture 10, Video Understanding.
+slide 52). Video is the subject of [lecture 10](10-video-understanding.md), which builds both of
+those and more: single-frame, late-fusion, early-fusion and 3D CNNs, two-stream networks, recurrent
+and self-attention models, and the video versions of detection (temporal action localization and
+spatio-temporal detection); see [video understanding](video-understanding.md).
 
 ![Part 1, slide 52 — 2012 to Present: Deep Learning is Everywhere (video classification, activity recognition)](../raw/images/01-introduction-part-1/slide-52.jpg)
 
@@ -76,7 +79,9 @@ slide 52). Video is the subject of lecture 10, Video Understanding.
 
 **Multimodal video understanding** combines vision with sound and other modalities. In the
 example, a person playing a vibraphone, "we have to create a blend of visual features and audio
-features to be able to understand what's happening" (≈52:21–53:08).
+features to be able to understand what's happening" (≈52:21–53:08). Lecture 10 ends with this
+topic: separating each speaker's voice or each instrument's sound with the help of the video, and
+models that take image and audio-spectrogram patches together (lecture 10, slides 92–97).
 
 **Visualization and understanding** turns the question around: interpret "what's being learned by
 the models", e.g. an attention map of what a model attends to when it classifies an image

@@ -49,13 +49,13 @@ verification: they can be regenerated from the public video with the `cairn-kb` 
 
 **No licence exists, and none is granted here.**
 
-The lectures and slide decks are the work of Fei-Fei Li, Ehsan Adeli, Zane Durante and the
-CS231N course staff (Stanford University, Spring 2025). They are published through the course
+The lectures and slide decks are the work of Fei-Fei Li, Ehsan Adeli, Zane Durante, the
+CS231N course staff and guest lecturers (lecture 10: Ruohan Gao) (Stanford University, Spring 2025). They are published through the course
 website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube.
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2, 3, 6, 7, 8 or 9 decks (lectures 2, 3, 6, 7, 8 and 9 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3, 6, 7, 8, 9 or 10 decks (lectures 2, 3, 6, 7, 8, 9 and 10 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -431,3 +431,42 @@ equations and matrices the slide file reproduces exactly, figures already render
 lecture (lecture 8's ViT and transformer tweaks, lecture 1's four-task figure, lecture 2's cat and
 linear-classifier slides), build steps whose last step is rendered, and rendered figures repeated
 with new text. The slide file's header lists every slide and the reason.
+
+### Lecture 10 — Video Understanding
+
+Deck: [lecture_10.pdf](https://cs231n.stanford.edu/slides/2025/lecture_10.pdf), a guest lecture by
+Ruohan Gao. Rendered: 47 slides, in `raw/images/10-video-understanding/`. The deck prints no
+licence for itself. Its credit lines are few ("This image is CC0 public domain", "Running video is
+in the public domain", "Figure credit: …", "Slide credit: …", "Image Credit: Korbar et al.", "Video
+source: BBC"); most third-party figures carry a paper citation only, copied below. Several slides
+are stills of videos, which the PDF holds as one frame each.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 5, 7 | Frames of a video of a dog and a baby in a living room (slide 5 with detection and segmentation overlays). Slide 7: "This image is CC0 public domain"; slide 5 prints no credit line. |
+| 9, 14, 15, 16, 18, 20, 21, 58, 70, 71, 75, 85 | Frames of a video of a person running, "Running video is in the public domain" (slides 8–9). Slide 9 also has a kitten photograph (marked "This image is CC0 public domain" on slide 4). Slides 16, 20 and 21 cite Karpathy et al., "Large-scale Video Classification with Convolutional Neural Networks", CVPR 2014, and slide 21 Ji et al., TPAMI 2010; 58 cites Ballas et al., ICLR 2016; 70–71 cite Wang et al., "Non-local neural networks", CVPR 2018; 75 cites Carreira and Zisserman, CVPR 2017; 85 cites Chao et al., CVPR 2018. |
+| 37 | A mosaic of learned first-layer 3D filters; the slide gives no source. |
+| 38, 42 | Sports-1M video frames with predicted labels, and a bar chart, citing Karpathy et al., CVPR 2014 (and, on 42, Tran et al., "Learning Spatiotemporal Features with 3D Convolutional Networks", ICCV 2015). |
+| 46, 47, 48 | Photographs of a gymnast with optical flow, the two-stream architecture figure and a bar chart, citing Simonyan and Zisserman, "Two-stream convolutional networks for action recognition in videos", NeurIPS 2014. |
+| 55, 63 | The deck's CNN-plus-RNN diagrams, citing Baccouche et al., 2011, and Donahue et al., CVPR 2015 (and, on 63, Ballas et al., ICLR 2016). |
+| 61 | The recurrent convolutional network diagram, citing Ballas et al., "Delving Deeper into Convolutional Networks for Learning Video Representations", ICLR 2016. |
+| 74, 76 | The inflated Inception block and a bar chart, citing Carreira and Zisserman, "Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset", CVPR 2017. |
+| 77 | Video frames of penguins and three architecture figures, citing Bertasius et al., ICML 2021; Arnab et al., ICCV 2021; Neimark et al., ICCV 2021; Fan et al., ICCV 2021; Li et al., CVPR 2022; Wang et al., CVPR 2023; Tong et al., NeurIPS 2022; Feichtenhofer et al., NeurIPS 2022. |
+| 79, 81, 83 | The two-stream figure ("Figure credit: Simonyan and Zisserman", NeurIPS 2014) and optimized appearance and motion images, citing Feichtenhofer et al., CVPR 2018 and IJCV 2019, with "Slide credit: Christoph Feichtenhofers" (as printed, slide 80); frames of weightlifting and eye-makeup videos with no credit line. |
+| 86 | Film frames from the AVA dataset, citing Gu et al., "AVA: A Video Dataset of Spatio-temporally Localized Atomic Visual Actions", CVPR 2018. |
+| 92 | A video frame of two speakers and a separation diagram, citing thirteen papers from Gao et al., ECCV 2018, to Chen et al., CVPR 2023 (listed on the slide). |
+| 96 | A video frame of two musicians, citing Gao and Grauman, "Co-Separating Sounds of Visual Objects", ICCV 2019. |
+| 97 | Architecture figures from Nagrani et al., NeurIPS 2021; Zhang et al., CVPR 2022; Georgescu et al., ICCV 2023. |
+| 98 | A film strip of a swimmer with clip classifiers, "Image Credit: Korbar et al." |
+| 99 | Figures from Kondratyuk et al. (MoViNets), CVPR 2021; Korbar et al. (SCSampler), ICCV 2019; Feichtenhofer (X3D), CVPR 2020; and AdaMML, ICCV 2021 ("Pandal et al." as printed). |
+| 100 | Video frames of cooking and an audio-preview diagram, citing Gao et al., "Listen to Look: Action Recognition by Previewing Audio", CVPR 2020. |
+| 101 | Smart glasses, fisheye meeting frames and conversational graphs, citing Jia et al., CVPR 2024. |
+| 102 | Figures from Lin et al. (Video-LLaVA), EMNLP 2024; Maaz et al. (Video-ChatGPT), ACL 2024; Zhang et al. (VideoLLaMA 3), arXiv 2025. |
+| 22, 23, 28, 34, 36, 50, 53, 64, 78 | No third-party content identifiable: the deck's own diagrams and tables, and slide 78's chart, which prints no citation. |
+
+Not rendered from this deck: the title, the guest lecturer's photograph, text slides, tables the
+slide file reproduces exactly, figures already rendered for an earlier lecture (lecture 2's cat,
+lecture 1's four-task figure, lecture 7's multi-layer RNN), video stills whose content is the video
+or its sound (among them the BBC stills cited to McGurk and McDonald, 1976, and the VisualVoice
+stills), build steps whose last step is rendered, and rendered figures repeated with new text. The
+slide file's header lists every slide and the reason.

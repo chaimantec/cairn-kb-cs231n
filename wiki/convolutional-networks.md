@@ -240,6 +240,15 @@ $16 \times 16 \times 3$ patch and applying a linear transform to $D$ values, is 
 
 Lecture 9 shows the same view for ResNet-18, ResNet-101 and DenseNet-121, whose first-layer filters are $64 \times 3 \times 7 \times 7$, and the methods for looking deeper: saliency maps, CAM, Grad-CAM and guided backpropagation (lecture 9, slides 128–129; see [visualizing what networks learn](visualizing-networks.md)).
 
+## 3D convolution for video
+
+Lecture 10 adds one dimension. A 3D convolution takes a $C \times T \times H \times W$ input, a feature
+vector at every point of a space-time grid, and slides a small cube over time, height and width,
+through all $C$ channels (lecture 10, slide 23; ≈20:11–21:44). A $3 \times 3 \times 3$ filter is then
+*temporally* shift-invariant, as a 2D filter is spatially: the same motion is detected at any
+moment of the clip, where a 2D filter spanning every frame would need a separate copy for each
+time (lecture 10, slides 32–36). See [video understanding](video-understanding.md#how-a-network-can-combine-frames).
+
 ## Lectures
 
 - [Lecture 5 — Image Classification with CNNs](05-image-classification-cnns.md): everything on
@@ -257,3 +266,5 @@ Lecture 9 shows the same view for ResNet-18, ResNet-101 and DenseNet-121, whose 
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md#three-ways-of-processing-sequences):
   convolution compared with recurrence and self-attention, and the ViT patch embedding as a
   strided convolution.
+- [Lecture 10 — Video Understanding](10-video-understanding.md#3d-cnn-slow-fusion): 3D convolution
+  and pooling, temporal shift-invariance, and first-layer 3D filters viewed as video clips.

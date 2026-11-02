@@ -26,6 +26,7 @@ every build follows, and each lesson in general form, are in
 | 7 Recurrent Neural Networks | [Run 7](#run-7--lecture-7-recurrent-neural-networks-2026-11-02) |
 | 8 Attention and Transformers | [Run 8](#run-8--lecture-8-attention-and-transformers-2026-11-02) |
 | 9 Detection, Segmentation, Visualization, and Understanding | [Run 9](#run-9--lecture-9-detection-segmentation-visualization-and-understanding-2026-11-02) |
+| 10 Video Understanding | [Run 10](#run-10--lecture-10-video-understanding-2026-11-02) |
 
 ## Runs
 
@@ -1281,3 +1282,118 @@ Detection, Segmentation, Visualization, and Understanding", April 29, 2025. Imag
 - [x] verify_kb.py clean, and its review section read (exit 0 after code-spanning two run 7–8 formula mentions in BUILD_LOG that GitHub showed as raw text, and the `\ast` mentions; 4,132 formulas render in both; numeric claims in INDEX/AGENTS match the measured table, lecture 9 53 on disk / 53 in wiki)
 - [x] Commit and push — a289f83, 05b8e4e on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, three topic pages, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 10 — Lecture 10 (Video Understanding), 2026-11-02
+
+Built lecture 10 end to end: transcript, the deck (four transcription agents), two figure audits,
+the transcript edit, the wiki page, one topic page (video understanding), 47 slide images, and
+updates to INDEX, AGENTS (image row and three general lessons: video stills are treated like
+animation frames; the text layer can hold what a page hides; never type an image path; plus a
+sentence on cross-marker moves and quotation checks in the transcript bullet), LICENSE, kb.json,
+SEE_ALSO, computer vision tasks, convolutional networks (a 3D convolution section), CNN
+architectures, recurrent neural networks, attention, transformers, transfer learning, visualizing
+networks, object detection, course logistics (row 10; "lectures 1–10") and the lecture 9 page (next
+lecture). Images opted in again; PDFs stay link-only.
+
+### Lecture 10 record
+
+**Deck.** One: `lecture_10.pdf`, 103 pages, May 1, 2025, title slide "Lecture 10: Video
+Understanding". A guest lecture by Ruohan Gao (slide 2: "I taught CS231N at Stanford from
+2021-2023"; the introducer says 2022 to 2023 at 0:05). Printed numbers 1–103, 1:1 with the PDF;
+pages 5, 6, 88–91, 93–95 and 100 print no number (labels from neighbours; page 100's footer does show
+"100" on the render, though the script reads no number there; page 99 prints it bottom right). No
+licence for the deck as a whole. Credit lines: "This image by Nikita is licensed under CC-BY 2.0" (3),
+"This image is CC0 public domain" (4, 7), "Running video is in the public domain" (8, 9), "Figure
+credit: Simonyan and Zisserman" (79), "Slide credit: Christoph Feichtenhofers" (80, as printed),
+"Image Credit: Korbar et al." (98), "Video source: BBC" with "(McGurk & McDonald 1976)" (89–91).
+Everything else is paper citations, listed in LICENSE.md. Photographs of the guest and four
+institutions on slide 2 carry no credit.
+
+**Transcription.** Four Sonnet agents in parallel (pages 1–26, 27–52, 53–78, 79–103), 116–120k
+tokens each, 7–9 tool calls, all finished, every chunk appended. `--verify` clean (103 headings).
+The parent checked every citation, credit line, slide 2's text, the tables on 29–31 and 40–41 and
+the chart values on 39, 42, 48, 76 and 78 against the text layer (all agreed), wrote the header,
+rewrote slide 10's [Ed:] (the agent called "~1.5" and "~10 GB per minute" low at 1.66 and 11.2 GB;
+in binary GB they are 1.54 and 10.4, so no slip), rewrote 30's and 41's [Ed:] lines, added [Ed:]
+lines on 35 and 75, set slide 45's flow equations in LaTeX, and converted the math in seven italic
+[Ed:] lines to plain slide notation (GitHub does not render math in italics) and slide 100's
+subscripts to `_ {t}` (29 formulas GitHub showed raw). The agents classified every slide, which is
+what the render list was chosen from.
+
+**Figure audit** (Sonnet, two agents, 39 slides, crops of 600 dpi renders throughout). A: 13, 14,
+23, 25–28, 33, 36–39, 42–47. B: 48, 57, 58, 60–62, 70, 71, 73–78, 80–83, 85, 99–101. Corrections:
+28 (the GlobalAvg dot joins the 1st and 5th dots below, not all five), 37 (the filter grid is
+12 x 11 with a black block for the last 4 tiles; more colours), 38 (six labels per frame, not
+five; short red bars behind most lower predictions), 43 (dots just below mid-height, four-fifths
+across; the frame is dark grey), 47 (the temporal stream's conv2 prints no "norm."; the fusion
+arrows leave the panel edges), 85 (17 frames, not 15; frames 15–17 after the red box), 99 (six
+MoViNets frames; "Mowing the Lawn", the transcriber had "Moving"), small additions on 36, 70, 76
+(the Inception note is bottom right), 77 (the MViT shapes with hats and tildes) and 81 (red and blue
+plates). Confirmed: every rectangle on 13–14, every red dot on 25–27, the cube count on 23, the
+filter colouring on 33, slide 39's four visible bars (its text layer also holds the C3D bar of
+slide 42, hidden), every value and colour on 48, 76 and 78, the grids and outlines on 57–58, the
+unlabelled x_t box on 60, the inception wiring on 73–74, every label on 75, SCSampler's three
+classifiers and five crosses, slide 100's highlights, and no edges in slide 101's graphs. Parent
+checks on 1400px renders: 85 (17 frames) and 76 (every value, both series).
+
+**Printed slips, transcribed as printed.** Slide 30: the 3D CNN's GlobalAvgPool size "24 x 1 x 1"
+(four-dimensional column; the early-fusion row's three dimensions are consistent with its own
+sizes). Slides 35–37: "Slide over x and y" on the 3D kernel. Slide 41: "MFLOPs" for GFLOP values
+(sum 39.50); every conv row recomputes as multiply-adds (1.04, 11.10, 5.55, 11.10, 2.77, 5.55, 0.69,
+0.69), the FC rows do not (0.51, 0.45, 0.05 printed; about 0.019 and 0.017 for FC6 and FC7). Slide
+75: "copy Kt times in space". Naming difference noted: 71.1 and 74.2 are "Inflated CNN" and
+"Two-stream inflated CNN" on 76, "I3D" and "Inflated I3D" on 78. Typos noted in place: "compute
+vision" (2), "Dual Making" (77), "Feichtenhofers" (80), "Gabby et al." (92), "Pandal et al." (99),
+"From and" (101). Recomputed and consistent: 10–11 (binary GB, 588 KB), 24–31 (every size and
+receptive field), 41's 2.9x, 75's inflation.
+
+**Transcript edit** (Sonnet). 89 paragraphs; marker sequence identical; number diff fully listed;
+ratios 0.69–1.0 (19:24 and 1:01:12 at 0.69, read against the original: stutters only). The agent
+reported no other outliers. The introduced-word sweep found five unlisted mis-edits, all restored by
+the parent: "exists there temporally" pulled from 40:17 back into 39:29 and "guess" from 1:00:25
+into 59:39 (cross-marker moves with both ratios in band, 0.89–0.95); "on top of" inserted at 47:15
+(now [unclear: recurrent part is a convolution part]); "Say we take 10 clips" for "We made 10 clips"
+at 7:48 (now [unclear: made]); "go across time" for "come across time" at 15:33. Also restored: 1:38
+"for each category", 37:12 "cannot afford". A check of the wiki's quotations against the transcript
+found one more: 51:56 "can be computed completely in parallel" for "can be done". Header: coverage
+times for 1:05–1:08 corrected (each section starts late in the paragraph before), pronouns made
+neutral. 5 student-question markers (3 inferred), 2 student-answer markers (both inferred), the
+`>>` at 0:51 written as a speaker change and at 1:02:44 marked as one; 39 [unclear] in the body, the
+postdoc advisors at 0:05 among them (not guessed). Restored names all on the slides (Ruohan Gao,
+C3D, Sports-1M, UCF-101, Kinetics-400, I3D, SCSampler, X3D, VGG, AlexNet, ImageNet, Faster R-CNN)
+or spoken only (Zane). **Coverage:** guest from 0:51; follows the deck to slide 102 and ends at
+≈1:08:45 without slide 103. Not spoken: the McGurk slides (89–91), the "Apply Eye Makeup"
+visualization (82–83). Spoken only: frame sampling for single-frame models (10:09), Sports-1M's
+deleted URLs (34:53), C3D trained at Facebook (36:26), the motion stream overfitting less (44:54).
+
+**Images.** 47 rendered (31 JPEG, 16 PNG; 6.3 MB): 5, 7, 9, 14, 15, 16, 18, 20, 21, 22, 23, 28, 34,
+36, 37, 38, 42, 46, 47, 48, 50, 53, 55, 58, 61, 63, 64, 70, 71, 74, 75, 76, 77, 78, 79, 81, 83, 85,
+86, 92, 96, 97, 98, 99, 100, 101, 102. Not rendered: 1 (title); 2 (photograph of the guest); 10, 11,
+72, 103 (text); figures rendered for an earlier lecture (3, lecture 2's 7; 4, lecture 1 part 2's 14;
+57, lecture 7's 104); video stills whose content is the video or its sound (6, 43, 88, 89–91,
+93–95); tables transcribed exactly (29–31, 40, 41); build steps whose last step is rendered (8 → 9;
+12–13 → 14; 17 → 18; 19 → 20; 24–27 → 28; 32–33 → 34; 35 → 36; 39 → 42; 44–45 → 46; 49 → 50; 51–52
+→ 53; 54 → 55; 60 → 61; 62 → 63; 65–69 → 70; 73 → 74; 80 → 81; 82 → 83); rendered figures repeated
+with new text (56 → 53; 59 → 61; 84 → 9; 87 → 7). A script checked that the two lists cover 1–103.
+The raster test flagged 61 pages (every video still and photograph); the agents' classifications
+decided. All 47 are in the lecture page, placed by hand with 17 hand-written captions; fourteen
+links were first typed `.jpg` for `.png` files and fixed (hence the new AGENTS rule), and the embed
+script's dry run then added nothing. The topic page carries 2 (36, 47).
+
+**Wiki.** Lecture page: the guest and the introducer's account of them; coverage; from images to
+video; clips; single-frame, late fusion (FC and pooling), early fusion, 3D CNN with the 3D
+convolution, the toy comparison as one table with the "24 x 1 x 1" note, temporal shift-invariance
+and the filters; Sports-1M and its results; C3D and its cost; motion, optical flow (equations),
+two-stream networks; long-term structure (CNN+RNN, recurrent convolutional networks with the RNN
+equations); the nonlocal block with slide 64's self-attention equations; I3D with the Kinetics
+table; video transformers; visualization; localization; audio (the McGurk slides described as
+stills only, with no account of the effect); efficiency; egocentric video and LLMs; the slips at
+the end, so that their slide citations do not pull images to the top. Every quotation checked
+verbatim against the transcript or slide file by script. Topic page video-understanding (clips;
+where frames are combined; motion; longer spans; reusing image models; data sets; beyond
+classification).
+
+### Run 10 checklist (moved verbatim from TODO.md)
+
+RUN10_CHECKLIST_PLACEHOLDER
+

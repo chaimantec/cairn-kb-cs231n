@@ -468,7 +468,7 @@ Slides 177–178 set the maximally activating patches of twelve neurons, one neu
 
 ## Next time
 
-"Next session we'll have the lecture around video understanding" (slide 149; ≈1:13:01).
+"Next session we'll have the lecture around video understanding" (slide 149; ≈1:13:01). See [Lecture 10 — Video Understanding](10-video-understanding.md).
 
 ## Related pages
 
@@ -485,3 +485,4 @@ Slides 177–178 set the maximally activating patches of twelve neurons, one neu
 - [Transfer learning](transfer-learning.md) — pretrained backbones and fine-tuning detectors.
 - [Course logistics](course-logistics.md) — slide 2's reminders.
 - Previous lecture: [Lecture 8 — Attention and Transformers](08-attention-transformers.md).
+- Next lecture: [Lecture 10 — Video Understanding](10-video-understanding.md).

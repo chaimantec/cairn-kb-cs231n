@@ -117,6 +117,10 @@ as well, for getting good visual representations of images" (lecture 7, slides 8
 - [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md): an
   ImageNet-pretrained ConvNet inside R-CNN, backbone networks in Fast R-CNN, and "Finetune on your
   own dataset with pre-trained models" for detectors (lecture 9, slides 82, 88 and 124).
+- [Lecture 10 — Video Understanding](10-video-understanding.md#inflating-2d-networks-to-3d-i3d): the
+  released C3D model as a video feature extractor (lecture 10, slide 40), and I3D, which initializes
+  a 3D network from 2D ImageNet weights by copying each kernel along time; on Kinetics-400,
+  ImageNet pretraining improves every model compared (lecture 10, slides 75–76).
 
 ## Related pages
 

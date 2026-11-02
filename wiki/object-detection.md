@@ -46,3 +46,4 @@ Adding a mask head to each detected region gives **Mask R-CNN**, the instance-se
 
 - [Lecture 1 — Introduction](01-introduction.md): the task defined ([computer vision tasks](computer-vision-tasks.md#tasks-with-spatial-extent)), and early detection results in the history (Ren, He, Girshick and Sun, 2015).
 - [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md#object-detection): everything on this page.
+- [Lecture 10 — Video Understanding](10-video-understanding.md#beyond-clip-classification-localizing-actions): temporal action localization, "similar to Faster R-CNN: first generate temporal proposals then classify", and spatio-temporal detection of people and their actions (lecture 10, slides 85–86).

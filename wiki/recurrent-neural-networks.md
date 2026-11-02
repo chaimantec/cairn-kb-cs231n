@@ -213,5 +213,9 @@ The course turns to attention and transformers in lecture 8 (lecture 7, slide 13
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md#sequence-to-sequence-with-rnns):
   the sequence-to-sequence model and its bottleneck, and RNNs compared with convolution and
   self-attention.
+- [Lecture 10 — Video Understanding](10-video-understanding.md#long-term-temporal-structure): CNN
+  features fed to an LSTM to model long-term structure in video (many to one, many to many), and
+  recurrent convolutional networks, which replace the RNN's matrix multiplies with 2D convolutions;
+  "RNNs are slow for long sequences (can't be parallelized)" (lecture 10, slide 63).
 - [Lecture 1](01-introduction.md) previews recurrent networks in its tour of the course, with an
   unrolled RNN built from LSTM cells (lecture 1, part 2, slide 17).

@@ -41,3 +41,4 @@ Transformers "inherently come with the activation maps": the attention weights a
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#transfer-learning): AlexNet's first-layer filters.
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md): attention heatmaps.
 - [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md#visualization-and-understanding): everything on this page.
+- [Lecture 10 — Video Understanding](10-video-understanding.md#visualizing-video-models): gradient ascent on a two-stream video model's appearance and flow inputs, with a smoothness penalty that separates slow from fast motion ("Bar Shaking" and "Push overhead" for weightlifting; lecture 10, slides 79–81); and 3D CNN filters viewed as video clips (lecture 10, slide 37).

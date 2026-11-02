@@ -189,6 +189,9 @@ architectures from scratch: a model pretrained on ImageNet is the usual starting
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md#the-transformer): the
   Transformer block wraps self-attention and its MLP in residual connections "for all the same
   reasons" as ResNet (≈1:02:18).
+- [Lecture 10 — Video Understanding](10-video-understanding.md#c3d-the-vgg-of-3d-cnns): C3D,
+  "the VGG of 3D CNNs", at 39.5 GFLOP against AlexNet's 0.7 and VGG-16's 13.6 (lecture 10, slide
+  41), and I3D, which inflates the Inception block to 3D (lecture 10, slide 74).
 
 ## Related pages
 
