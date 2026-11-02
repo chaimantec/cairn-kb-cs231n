@@ -13,8 +13,10 @@ trained — computing the gradient of the loss with respect to every weight — 
 Covered in: [Lecture 4](04-neural-networks-backpropagation.md#from-linear-classifiers-to-neural-networks),
 previewed at the end of [Lecture 3](03-regularization-optimization.md#looking-ahead-neural-networks).
 [Lecture 2](02-image-classification.md#building-block-of-neural-networks) introduces the linear
-layer as the building block. Convolutional networks start in lecture 5, which this knowledge base
-does not yet cover.
+layer as the building block. [Lecture 5](05-image-classification-cnns.md) builds
+[convolutional networks](convolutional-networks.md) on top of these: it keeps the fully connected
+layers and activation functions and adds convolution and pooling layers, because a fully connected
+network on raw pixels "destroys the spatial structure of the images" (lecture 5, ≈22:15).
 
 ## From a linear classifier to a network
 

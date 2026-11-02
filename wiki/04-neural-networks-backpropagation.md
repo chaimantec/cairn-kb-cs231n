@@ -805,7 +805,8 @@ graph whose nodes implement a `forward()` / `backward()` API. The forward pass c
 operation's result and saves what the gradient computation will need; the backward pass applies
 the chain rule to compute the gradient of the loss with respect to the inputs.
 
-Next time: convolutional neural networks (slide 152).
+Next time: convolutional neural networks (slide 152), the subject of
+[lecture 5](05-image-classification-cnns.md).
 
 ![Slide 152 — Next Time: Convolutional Neural Networks!](../raw/images/04-neural-networks-backpropagation/slide-152.jpg)
 

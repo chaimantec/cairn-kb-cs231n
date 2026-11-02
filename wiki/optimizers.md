@@ -108,7 +108,8 @@ toward the centre of the valley (lecture 3, ≈52:17–53:03).
 ## Adam
 
 **Adam** (Kingma and Ba, ICLR 2015) is "by far the most popular optimizer" in deep learning
-(lecture 3, ≈53:03). It combines the two ideas. Its **first moment** is a momentum-style running
+(lecture 3, ≈53:03). In lecture 5 Justin Johnson notes that ICLR 2025 had just given the Adam
+paper its Test of Time Award, ten years after its publication (lecture 5, ≈3:53–4:38). It combines the two ideas. Its **first moment** is a momentum-style running
 average of the gradient, its **second moment** is RMSProp's running average of the squared
 gradient, and it steps by the first divided by the square root of the second (lecture 3,
 slide 72). The full form adds **bias correction** (lecture 3, slide 73):

@@ -10,7 +10,9 @@ gathers what the course says about the dataset, the challenge and that result.
 [transcript](../raw/transcripts/01-introduction.md) (≈31:14–36:40), and the part 1 deck
 ([text](../raw/slides/01-introduction-part-1.md),
 [PDF](https://cs231n.stanford.edu/slides/2025/lecture_1_part_1.pdf)). Later lectures (image
-classification, CNN architectures) will add to it as they are built.
+classification, CNN architectures) will add to it as they are built;
+[lecture 5](05-image-classification-cnns.md) places AlexNet between LeCun et al.'s 1998 network
+and the transformers that displaced ConvNets.
 
 ## Why a dataset: data as a first-class citizen
 

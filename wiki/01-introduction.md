@@ -313,7 +313,8 @@ itself; see [backpropagation](backpropagation.md).
 to a Neocognitron-like architecture of about seven layers to recognise handwritten digits and
 letters (≈29:40). The slide says it was deployed commercially by NEC to process handwritten
 cheques and is "very similar to our modern convolutional networks"; Li says it went to US postal
-offices and banks (≈30:27; part 1, slide 40).
+offices and banks (≈30:27; part 1, slide 40). Lecture 5 explains how such networks work; see
+[convolutional networks](convolutional-networks.md).
 
 ![Part 1, slide 40 — Convolutional Networks: LeCun et al, 1998](../raw/images/01-introduction-part-1/slide-40.jpg)
 

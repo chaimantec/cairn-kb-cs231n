@@ -89,6 +89,11 @@ classifier, $W_3 x$. With a 100-neuron hidden layer the network can learn 100 te
 the linear classifier's 10, and share them between classes (lecture 4, ≈15:40–16:27). See
 [neural networks](neural-networks.md).
 
+Lecture 5 reads every linear layer as **template matching**: each output is a dot product between
+a row of $W$ and the whole input, high when the two point the same way. A convolution layer keeps
+the template matching but makes each template a small patch that slides over the image
+(lecture 5, ≈31:28–33:00). See [convolutional networks](convolutional-networks.md).
+
 ![Lecture 2, slide 57 — Linear layers](../raw/images/02-image-classification/slide-57.jpg)
 
 *Lecture 2, slide 57 — Linear layers. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*

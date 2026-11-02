@@ -80,3 +80,14 @@ and experiment (lecture 4, ≈22:46–23:33 and ≈33:37–34:26). The network's
 tuned to control overfitting. Instead, "go with a bit of a bigger network than we need" and tune
 the regularization strength $\lambda$ (lecture 4, ≈29:48–30:34; see
 [regularization](regularization.md#the-regularization-strength-and-the-networks-size)).
+
+## Hyperparameters from lecture 5
+
+A [convolution layer](convolutional-networks.md) adds the number of filters, the filter size,
+the padding and the stride; a pooling layer adds its kernel size, stride and pooling function.
+These are architectural hyperparameters, fixed before training because they set the shapes of the
+tensors, while the values inside the filters are parameters learned by gradient descent. The
+filter size, for example, is one "you would typically set via cross validation in some way"
+(lecture 5, ≈37:37–39:10). In practice most are set by convention rather than tuned: "same"
+padding $P = (K - 1)/2$ (lecture 5, ≈52:13), channel counts in powers of 2 (lecture 5, slide 94),
+and for pooling "by far the most common" $2 \times 2$ with stride 2 (lecture 5, ≈1:02:15).

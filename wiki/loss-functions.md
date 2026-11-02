@@ -55,6 +55,11 @@ slide 76). This is **maximum likelihood estimation** (lecture 2, slide 77).
 
 *Lecture 2, slide 77 — Softmax Classifier (Multinomial Logistic Regression). [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
 
+Lecture 5 recaps the softmax loss in this form (lecture 5, slide 7). An unpresented appendix slide
+of that deck restates it with minus signs in both exponents (lecture 5, slide 129), which would
+reward a correct-class score going to $-\infty$; it is a printed slip, and the form above is the
+correct one.
+
 **Why "cross-entropy".** Compare the predicted distribution $Q$ (0.13, 0.87, 0.00) with the correct
 one $P$ (1, 0, 0). The Kullback–Leibler divergence $D_{KL}(P \Vert Q) = \sum_y P(y) \log \frac{P(y)}{Q(y)}$
 measures the mismatch, and the cross-entropy is $H(P, Q) = H(P) + D_{KL}(P \Vert Q)$. With a

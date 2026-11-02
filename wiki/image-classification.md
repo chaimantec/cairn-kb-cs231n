@@ -9,7 +9,8 @@ own pages: [k-nearest neighbours](k-nearest-neighbors.md) and
 
 Covered in: [Lecture 1](01-introduction.md) (as one task among many — see
 [computer vision tasks](computer-vision-tasks.md)) and
-[Lecture 2](02-image-classification.md#the-image-classification-task) (in depth).
+[Lecture 2](02-image-classification.md#the-image-classification-task) (in depth), and
+[Lecture 5](05-image-classification-cnns.md) (hand-designed features, then convolutional networks).
 
 ## The task and the semantic gap
 
@@ -84,6 +85,21 @@ networks.
 ![Lecture 2, slide 48 — k-Nearest Neighbor with pixel distance never used.](../raw/images/02-image-classification/slide-48.jpg)
 
 *Lecture 2, slide 48 — occluded, shifted by one pixel, and tinted copies all sit at the same pixel distance from the original. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
+
+## Hand-designed features and end-to-end learning
+
+Lecture 5 contrasts two ways to build a classifier on top of pixels. Until about 2010 or 2011 the
+common one was a **feature representation**: a human-designed function turns the pixels into
+something believed to capture what matters, and a linear classifier is trained on that. Colour
+histograms count the pixels falling into each colour bucket and ignore where they are; histograms
+of oriented gradients record the local edge direction and ignore colour; bags of visual words
+count how often each of a codebook of clustered patches appears; and in practice several were
+concatenated into one feature vector (lecture 5, ≈14:37–18:28; lecture 5, slides 21–25). A
+neural network instead learns every stage from pixels to scores by gradient descent: "gradient
+descent is probably a better programmer than you and lots of data probably knows more about your
+problem than you do", and this end-to-end approach "has basically won over the past decade and a
+half" (lecture 5, ≈19:58–20:43). The image-specific network the course builds for this is the
+[convolutional network](convolutional-networks.md).
 
 ## Evaluating honestly
 
