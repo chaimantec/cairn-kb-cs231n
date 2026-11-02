@@ -427,7 +427,7 @@ Worked values that recompute: the "~1.5" and "~10 GB per minute" of uncompressed
 
 ## Next time
 
-The deck's last slide announces "Next time: Large Scale Distributed Training" (slide 103); the recording ends before it.
+The deck's last slide announces "Next time: Large Scale Distributed Training" (slide 103); the recording ends before it. That is [lecture 11](11-large-scale-distributed-training.md).
 
 ## Related pages
 

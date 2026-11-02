@@ -1,7 +1,7 @@
 # See also
 
 Sibling knowledge bases that cover material CS231N reaches in later lectures. This KB covers only
-lectures 1–10 so far, so these are the places to look for a topic it does not have yet, or for
+lectures 1–11 so far, so these are the places to look for a topic it does not have yet, or for
 another course's treatment of one it does. Pass the `KB:` URL as `kb` to `kb_read` / `kb_list`, starting at that KB's
 `INDEX.md`. Cite them as their own courses, never as CS231N.
 
@@ -21,6 +21,15 @@ another course's treatment of one it does. Pass the `KB:` URL as `kb` to `kb_rea
   the mechanism CS231N's "Attention and Transformers" lecture applies to vision, and it covers the
   language half of vision–language models. Start at
   [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/INDEX.md).
+
+- **CS336 — Language Modeling from Scratch** (Stanford, Spring 2026; Percy Liang and Tatsunori
+  Hashimoto). All 18 lectures.
+  KB: `https://github.com/chaimantec/cairn-kb-cs336` — pass this as `kb`.
+  The systems side of CS231N's lecture 11, in more depth: its lectures 5 (GPUs and TPUs), 6
+  (kernels and Triton) and 7–8 (two lectures on parallelism) cover GPU memory hierarchies, data,
+  tensor, pipeline, expert and context parallelism, and what activation memory costs, for language
+  models. Start at
+  [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs336/main/INDEX.md).
 
 - **CS224R — Deep Reinforcement Learning** (Stanford, Spring 2025; Chelsea Finn). All 19
   lectures.

@@ -216,6 +216,11 @@ The verdict is the title of Vaswani et al. (NeurIPS 2017), "Attention is All You
   applies self-attention to video: the nonlocal block attends between every pair of space-time
   positions of a 3D CNN's features, a $(THW) \times (THW)$ attention map, and adds the result back
   through a residual connection (lecture 10, slides 65–71).
+- [Lecture 11 — Large-Scale Distributed Training](11-large-scale-distributed-training.md#context-parallelism-cp)
+  splits a long sequence across GPUs. The attention operator is the hardest part to split, and the
+  lecture gives two answers: ring attention distributes blocks of the attention matrix, and Ulysses
+  parallelizes over heads, so it can use at most as many GPUs as there are heads (lecture 11,
+  slides 122–124).
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md) builds the RNNs and the
   sequence tasks attention starts from.
 - [Lecture 1](01-introduction.md) previews attention in its tour of the course

@@ -7,13 +7,14 @@ self-supervised learning, generative models, 3D vision, vision and language, rob
 and human-centred AI. The Spring 2025 offering is taught by Fei-Fei Li and Ehsan Adeli, with Zane
 Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/2025/>.
 
-> **Coverage: 10 of 18 lectures.** This knowledge base currently covers **Lecture 1
+> **Coverage: 11 of 18 lectures.** This knowledge base currently covers **Lecture 1
 > (Introduction), Lecture 2 (Image Classification with Linear Classifiers), Lecture 3
 > (Regularization and Optimization), Lecture 4 (Neural Networks and Backpropagation), Lecture 5
 > (Image Classification with CNNs), Lecture 6 (Training CNNs and CNN Architectures), Lecture 7
 > (Recurrent Neural Networks), Lecture 8 (Attention and Transformers), Lecture 9 (Detection,
-> Segmentation, Visualization, and Understanding) and Lecture 10 (Video Understanding) only**. It
-> has nothing on lectures 11–18 — large-scale distributed training and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
+> Segmentation, Visualization, and Understanding), Lecture 10 (Video Understanding) and Lecture 11
+> (Large-Scale Distributed Training) only**. It has nothing on lectures 12–18 — self-supervised
+> learning and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
 > answering as if from the course; the
 > [course roadmap](wiki/course-logistics.md#course-roadmap) shows which lecture a topic belongs
 > to, and [SEE_ALSO.md](SEE_ALSO.md) lists sibling knowledge bases that cover some of that
@@ -40,7 +41,8 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   127), so slide 133 is PDF page 124. Lecture 8 has one deck ("lecture 8, slide N" on topic pages),
   and its 122 printed numbers match its PDF pages exactly; so do lecture 9's 178 ("lecture 9, slide
   N" on topic pages) and lecture 10's 103 ("lecture 10, slide N" on topic pages; ten of its pages,
-  mostly video stills, print no number, and their labels follow from their neighbours).
+  mostly video stills, print no number, and their labels follow from their neighbours), and lecture
+  11's 148 ("lecture 11, slide N" on topic pages).
 - **Transcripts are edited.** `raw/transcripts/` holds copy-edited transcripts — punctuated,
   filler removed, mis-heard names and terms restored, every change listed in the file's header —
   with every `[M:SS]` marker in its original place. Read these, not the raw captions, which are
@@ -89,6 +91,15 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   words; the values are on the slides. Spoken additions include frame sampling for single-frame
   models, why Sports-1M is unstable (a list of YouTube URLs, many since deleted), C3D trained at
   Facebook, and the lecturer's hypothesis that the motion stream overfits less.
+  Lecture 11's lecturer is not named in the recording or on the deck. Its recording skips the
+  administrative slide (2: the midterm review session on Friday 5/9 and the in-class midterm on
+  Tuesday 5/13) and does not reach the last ("Next time"). It walks through the GPU hardware,
+  data parallelism, FSDP, HSDP, activation checkpointing and MFU in detail, then says the remaining
+  slides "can check it offline" and gives context, pipeline and tensor parallelism a brief tour, so
+  their details come from the slides. Its spoken additions include binning as the reason an H100
+  enables 132 of its 144 SMs, a model left in 32-bit running about 20 times slower, how long big
+  training runs last, rack and cluster sizes and cooling, asynchronous SGD, PyTorch's
+  DistributedDataParallel, and MFU above 50% on A100s.
 - **Printed slips are flagged, not corrected.** Where a deck's worked example prints a wrong
   number or sign, the slide file keeps it as printed with an `[Ed: …]` line and the wiki page says
   so. Quote the correction, not the slip. Lecture 4's matrix-multiply example (slides 143–150)
@@ -121,7 +132,13 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   slides 35–37 label the 3D filter "Slide over x and y" although it also slides over time; slide
   41's column headed "MFLOPs" holds GFLOPs, and its three fully connected rows do not recompute
   from the layer sizes; and slide 75 says to copy the kernel $K_t$ times "in space", where the copies
-  go along time.
+  go along time. Lecture 11's deck has eight: slide 25's "1.875 PB" and slide 69's "63GB" are in
+  binary units, and slide 69's Llama3-405B sequence length of 4096 differs from the 8192 of slides
+  125 and 146; slides 46–64 are titled "FSPD"; slide 68 lists "Adam β1, β1"; slide 98's
+  checkpointing counter prints a current memory of 2 with one box drawn, and slides 100–101 keep the
+  counter while drawing all eight boxes; slide 112's 41% MFU does not follow from its 400 TFLOPs per
+  GPU (40.4%); slide 138 says to shard the first layer "over row" and the second "over column", the
+  opposite of its own drawing; and slides 139–143 label Z "[DxD]" where it is $N \times D$.
 - **Lecture 3's optimizer-comparison animations are not in the PDF.** Its slides comparing
   optimizers' paths on a loss surface show only the surface and a legend, as do lecture 4's
   and lecture 5's recaps of them (lecture 4, slide 10; lecture 5, slide 8). What the paths did is
@@ -133,9 +150,10 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
 
 ## Images
 
-**Lectures 1–10 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
+**Lectures 1–11 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
 part 2 deck), lecture 2 has 41, lecture 3 has 24, lecture 4 has 35, lecture 5 has 53, lecture 6
-has 33, lecture 7 has 43, lecture 8 has 23, lecture 9 has 53 and lecture 10 has 47. No other
+has 33, lecture 7 has 43, lecture 8 has 23, lecture 9 has 53, lecture 10 has 47 and lecture 11
+has 30. No other
 lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
 in the wiki passage that cites that slide.
 
@@ -253,6 +271,17 @@ in the wiki passage that cites that slide.
   spatio-temporal detection; audio-visual source separation and video understanding; efficient
   video understanding; egocentric video; video with LLMs. Four printed slips noted. 47 embedded
   slide images.
+- [Lecture 11 — Large-Scale Distributed Training](wiki/11-large-scale-distributed-training.md) —
+  Llama3-405B as the running example; inside an NVIDIA H100 (HBM, L2 cache, streaming
+  multiprocessors, FP32 cores, Tensor Cores and mixed precision); GPU throughput from the K40 to the
+  B200; server, rack, pod and Meta's 24,576-GPU cluster; TPUs, AMD MI325X and Trainium2; four axes
+  of parallelism; data parallelism and its all-reduce; FSDP's broadcast-compute-delete schedule;
+  HSDP; activation memory and activation checkpointing (compute and memory of each strategy); a
+  scaling recipe; hardware and model FLOPs utilization (HFU, MFU) with the MFU of GPT-3, Gopher,
+  Megatron-Turing NLG, PaLM and Llama3-405B; context parallelism (ring attention, Ulysses);
+  pipeline parallelism, the bubble and microbatches; tensor parallelism and the two-layer trick;
+  ND parallelism and Llama3-405B's configurations. Eight printed slips noted. 30 embedded slide
+  images.
 
 ### Topics
 
@@ -306,7 +335,8 @@ in the wiki passage that cites that slide.
   examples; the sigmoid gate; add, mul, copy and max gate patterns; flat and modular (PyTorch)
   implementations; gradients and Jacobians for vectors; never forming the Jacobian (ReLU); the
   matrix-multiply gradients; backpropagation through time in recurrent networks (lecture 7); a link
-  to gradients with respect to the pixels (saliency, Grad-CAM, lecture 9).
+  to gradients with respect to the pixels (saliency, Grad-CAM, lecture 9); storing or recomputing
+  activations for the backward pass, activation checkpointing (lecture 11).
 - [Convolutional networks](wiki/convolutional-networks.md) — why ConvNets (spatial structure,
   end-to-end learning); the convolution layer and its shapes; parameters vs. hyperparameters;
   non-linearity between convolutions; output size, padding and stride, with common settings;
@@ -341,9 +371,11 @@ in the wiki passage that cites that slide.
 - [Gradient descent and SGD](wiki/gradient-descent.md) — the loss landscape; the gradient,
   numerical vs. analytic, and the gradient check; gradient descent, stopping, minibatch SGD and
   epochs; poor conditioning (condition number), local minima, saddle points, noisy gradients;
-  first- vs. second-order methods, the Newton update and why deep learning avoids it.
+  first- vs. second-order methods, the Newton update and why deep learning avoids it; a link to
+  minibatch SGD split across GPUs (lecture 11).
 - [Optimizers](wiki/optimizers.md) — SGD with momentum (both formulations), Nesterov momentum,
-  AdaGrad, RMSProp, Adam and its bias correction and default settings, AdamW; which to use.
+  AdaGrad, RMSProp, Adam and its bias correction and default settings, AdamW; which to use; a
+  link to Adam's state as per-weight memory in distributed training (lecture 11).
 - [Learning rates and schedules](wiki/learning-rate-schedules.md) — what too high and too low look
   like; step, cosine, linear and inverse-square-root decay with their formulas; linear warm-up;
   scaling the learning rate with the batch size.
@@ -360,7 +392,8 @@ in the wiki passage that cites that slide.
 - [Character-level language models](wiki/language-models.md) — training as per-step softmax
   classification on "hello"; sampling, greedy decoding and beam search (and slide 65's misprinted
   softmax); embedding layers; min-char-rnn; generated Shakespeare and C code; interpretable cells;
-  transformer language models with masked self-attention (lecture 8).
+  transformer language models with masked self-attention (lecture 8); Llama3-405B as lecture 11's
+  example of training a large language model at scale.
 - [Image captioning and visual question answering](wiki/image-captioning.md) — a pretrained CNN's
   features fed into a captioning RNN; generation from start to end token; good captions and
   failures (hallucination, dataset bias); VQA's two formulations; visual dialog; visual language
@@ -372,12 +405,14 @@ in the wiki passage that cites that slide.
   positional encoding; masked and multi-headed self-attention; four matrix multiplies, $O(N^2)$
   cost and Flash Attention; attention compared with recurrence and convolution; DETR's
   cross-attention and ViT attention maps (lecture 9); the nonlocal block's space-time
-  self-attention (lecture 10).
+  self-attention (lecture 10); splitting attention across GPUs with ring attention and Ulysses
+  (lecture 11).
 - [Transformers](wiki/transformers.md) — the Transformer block (self-attention, residual
   connections, layer normalization, per-vector MLP); stacks and their sizes (original, GPT-2,
   GPT-3); transformer language models; the Vision Transformer, with pooled outputs or a class
   token (lecture 9); pre-norm, RMSNorm, SwiGLU and mixture of experts, with lecture 9's spoken
-  walk-through; why transformers took over; video transformers named (lecture 10).
+  walk-through; why transformers took over; video transformers named (lecture 10); context and
+  tensor parallelism for training transformers on many GPUs (lecture 11).
 - [Image segmentation](wiki/image-segmentation.md) — semantic segmentation as per-pixel
   classification; sliding windows; fully convolutional networks with downsampling and upsampling;
   the per-pixel loss; unpooling, max unpooling and the transposed convolution; U-Net and its skip
@@ -396,10 +431,16 @@ in the wiki passage that cites that slide.
   shift-invariance; C3D; optical flow and two-stream networks; longer time spans with RNNs,
   recurrent convolutional networks and the nonlocal block; I3D and video transformers; Sports-1M,
   UCF-101, Kinetics-400 and AVA; action localization, visualization, audio, efficiency (lecture 10).
+- [Distributed training](wiki/distributed-training.md) — the GPU's Tensor Cores and the memory and
+  bandwidth hierarchy from one GPU to a cluster; the four axes (batch, sequence, layers, model
+  dimension) in one table: DP, FSDP, HSDP, CP, PP and TP, what each splits and communicates; why
+  data parallelism runs out of memory; activation checkpointing's compute and memory; MFU against
+  HFU; the scaling recipe and 4D parallelism (lecture 11).
 - [Course logistics](wiki/course-logistics.md) — the lecture-by-lecture roadmap and the course's
   four parts; lectures, sections, Ed, office hours; Assignment 1; grading weights (assignments
   45%, midterm 20%, project 35%); late days; the collaboration policy (including "do not submit
-  AI-generated responses"); prerequisites; textbooks; learning objectives.
+  AI-generated responses"); prerequisites; textbooks; learning objectives; the midterm review and
+  in-class midterm dates (lecture 11, slide 2).
 
 ## Raw materials
 
@@ -413,7 +454,8 @@ in the wiki passage that cites that slide.
   [07-recurrent-neural-networks.md](raw/transcripts/07-recurrent-neural-networks.md); lecture 8:
   [08-attention-transformers.md](raw/transcripts/08-attention-transformers.md); lecture 9:
   [09-detection-segmentation-visualization.md](raw/transcripts/09-detection-segmentation-visualization.md);
-  lecture 10: [10-video-understanding.md](raw/transcripts/10-video-understanding.md).
+  lecture 10: [10-video-understanding.md](raw/transcripts/10-video-understanding.md); lecture 11:
+  [11-large-scale-distributed-training.md](raw/transcripts/11-large-scale-distributed-training.md).
 - [`raw/slides/`](raw/slides/) — slide-by-slide transcriptions with section tables:
   [part 1](raw/slides/01-introduction-part-1.md) (69 slides) and
   [part 2](raw/slides/01-introduction-part-2.md) (50 pages, printed numbers 1–53) for lecture 1;
@@ -425,7 +467,8 @@ in the wiki passage that cites that slide.
   [lecture 7](raw/slides/07-recurrent-neural-networks.md) (124 pages, printed numbers 1–133);
   [lecture 8](raw/slides/08-attention-transformers.md) (122 pages, printed numbers 1–122);
   [lecture 9](raw/slides/09-detection-segmentation-visualization.md) (178 pages, printed numbers 1–178);
-  [lecture 10](raw/slides/10-video-understanding.md) (103 pages, printed numbers 1–103).
+  [lecture 10](raw/slides/10-video-understanding.md) (103 pages, printed numbers 1–103);
+  [lecture 11](raw/slides/11-large-scale-distributed-training.md) (148 pages, printed numbers 1–148).
 - [`sources.md`](sources.md) — every document the course website links, with its canonical URL.
   Slide PDFs are **not** committed here; link to them at those URLs.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every rendered image.

@@ -234,6 +234,10 @@ together, which is why gradients in a vanilla RNN vanish or explode (lecture 7, 
 [vanishing and exploding gradients](recurrent-neural-networks.md#vanishing-and-exploding-gradients)
 and the [LSTM](lstm.md).
 
+## Memory: storing activations, or recomputing them
+
+The backward pass for a layer needs that layer's input activations as well as the upstream gradient, so a normal forward pass keeps every layer's activations until the backward pass consumes them: $O(N)$ memory for a network of $N$ layers (lecture 11, slides 71 and 81). For very large models those activations fill GPU memory. Lecture 11's **activation checkpointing** keeps only some of them and recomputes the rest during the backward pass. Recomputing everything takes $O(N^2)$ compute and $O(1)$ memory, and a checkpoint every $\sqrt{N}$ layers takes $O(N\sqrt{N})$ compute and $O(\sqrt{N})$ memory (lecture 11, slides 97 and 101). See [distributed training](distributed-training.md) and [lecture 11](11-large-scale-distributed-training.md#activation-checkpointing).
+
 ## Related pages
 
 - [Neural networks](neural-networks.md) — the functions backpropagation is applied to.
@@ -241,4 +245,5 @@ and the [LSTM](lstm.md).
   numerical gradient check.
 - [Optimizers](optimizers.md) — momentum, RMSProp and Adam, which all consume these gradients.
 - [Loss functions](loss-functions.md) — the node at the end of every graph.
+- [Distributed training](distributed-training.md) — activation checkpointing, which recomputes the activations the backward pass needs (lecture 11).
 - [Visualizing what networks learn](visualizing-networks.md) — gradients with respect to the input pixels instead of the weights: saliency maps, Grad-CAM and guided backpropagation (lecture 9).

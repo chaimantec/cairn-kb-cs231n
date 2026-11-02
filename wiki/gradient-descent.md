@@ -160,3 +160,4 @@ poorly with minibatches (lecture 3, slides 116–117, from the deck's unpresente
 - [Learning-rate schedules](learning-rate-schedules.md) — choosing and changing the step size.
 - [Loss functions](loss-functions.md) and [regularization](regularization.md) — what is being
   minimised.
+- [Distributed training](distributed-training.md) — minibatch SGD split across many GPUs: because gradients are linear, each GPU averages over its own examples and the GPUs average their gradients (lecture 11, slide 34).

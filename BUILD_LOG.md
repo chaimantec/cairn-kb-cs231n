@@ -27,6 +27,7 @@ every build follows, and each lesson in general form, are in
 | 8 Attention and Transformers | [Run 8](#run-8--lecture-8-attention-and-transformers-2026-11-02) |
 | 9 Detection, Segmentation, Visualization, and Understanding | [Run 9](#run-9--lecture-9-detection-segmentation-visualization-and-understanding-2026-11-02) |
 | 10 Video Understanding | [Run 10](#run-10--lecture-10-video-understanding-2026-11-02) |
+| 11 Large-Scale Distributed Training | [Run 11](#run-11--lecture-11-large-scale-distributed-training-2026-11-03) |
 
 ## Runs
 
@@ -1432,4 +1433,112 @@ link-only. Slug `10-video-understanding`.
 - [x] verify_kb.py clean, and its review section read (exit 0 after converting italic [Ed:] math and slide 100's subscripts, 29 formulas GitHub showed raw, and one INDEX formula after a quote mark; 4,388 formulas render in both; lecture 10 47 on disk / 47 in wiki; numeric claims in INDEX/AGENTS match)
 - [x] Commit and push — 80b3186, ee26a0e on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, topic page, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 11 — Lecture 11 (Large-Scale Distributed Training), 2026-11-03
+
+Built lecture 11 end to end: transcript, the deck (four transcription agents), two figure audits,
+the transcript edit, the wiki page, one topic page (distributed training), 30 slide images, and
+updates to INDEX, AGENTS (image row; two general lessons: read a slide's words against its own
+drawing; a notation pass converts labels, not printed prose), LICENSE, kb.json, SEE_ALSO ("lectures
+1–11"; CS336 added for GPUs and parallelism), course logistics (row 11, "lectures 1–11", the midterm
+dates of slide 2), optimizers, gradient descent, backpropagation (a section on storing or
+recomputing activations), transformers, attention, language models and the lecture 10 page (next
+lecture). Images opted in again; PDFs stay link-only.
+
+### Lecture 11 record
+
+**Deck.** One: `lecture_11.pdf`, 148 pages, May 6, 2025, title slide "Lecture 11: Large-Scale
+Distributed Training". Printed numbers 1–148, 1:1 with the PDF, every page numbered. Already listed
+in sources.md by the run 1 crawl. The lecturer is not named in the recording or on the deck. No
+licence for the deck, and no per-image credit line anywhere in its text layer; product photographs
+and renders (H100 board, server racks, TPU racks, MI325X, Trainium2) carry no source. Paper
+citations: Llama Team, "The Llama 3 Herd of Models" (4, 22–24, 112–113, 125, 146); OpenAI, "GPT4
+Technical Report" (4); Rajbhandrari [sic] et al., ZeRO (46–64, 68–70); Chowdhery et al., PaLM
+(103–110, 112–113); Liu et al., Ring Attention (123); Jacobs et al., DeepSpeed Ulysses (124); Huang
+et al., GPipe (128–133).
+
+**Transcription.** Four Sonnet agents in parallel (pages 1–37, 38–74, 75–111, 112–148), 86–91k
+tokens each, 7–14 tool calls, all finished, every chunk appended. PyMuPDF does not import under
+`python3 -I` here (user site-packages), so the agents ran it without `-I` or used pdftoppm.
+`--verify` clean (148 headings). The parent checked printed numbers and citations against the text
+layer (the code listings on 105 and 109 and the tables on 112, 113 and 146 are images with no text
+layer, so the audit read them), fixed slide 17's axis label ("TFL OP/sec" → "TFLOP/sec"), made the
+notation consistent (arrows over $F_i$ on 71–101; partial-derivative labels; math moved off quote
+marks; `}_ {` subscripts), and added [Ed:] lines on 69 (sequence length 4096 against 8192 on 125 and
+146), 112 (41% against 400/989.4 = 40.4%), 138 (row/column naming) and 139 (Z printed [DxD]). The
+agents classified every slide, which is what the render list was chosen from.
+
+**Figure audit** (Sonnet, two agents, 43 slides). A: 9, 10, 12, 13, 16, 17, 23, 24, 26, 27, 41, 46,
+56, 61–63, 65, 75, 80, 88, 96, 98, 100, 101; 600 dpi crops on the hardware slides, 400 dpi on 61–63,
+200–250 dpi views on the rest (large boxes, arrows and counters; counters also from the text
+layer). B: 105, 106, 109, 112, 113, 116, 117, 120, 123, 124, 130, 131, 133, 136, 139, 140, 143, 146,
+147; 600 dpi crops throughout; all clean. Corrections: 17 (no vertical line at Mar-23, gridlines at
+every tick; P100 two dots at about Nov-15 and Apr-16; every point's date; exactly four Tensor Core
+points), 24 (pods hold rack icons, not dots), 27 (AMD board dark grey/black, white package, logo on
+the board; "powered by annapurnalabs"; three lavender dies each side), 56 (faded gradient label is
+pale pink; the arrow leaves its top), 61 (GPU 1 holds W_2: the transcriber had it grey), 62 (arrow
+start), and small additions on 10 (five memory-controller strips a side), 12 (the purple outline's
+position), 139 (the text layer holds Y1–Y4 and U1–U4, not visible), 146 and 147. Confirmed: 8 GPCs,
+6 HBM3 and 18 NVLink boxes on 10; 16 INT32, 32 FP32, 16 FP64, 8 LD/ST and 1 SFU per quadrant on 13;
+192 rack icons on 23; every arrow on 41, 46 and 61–65; every checkpointing counter (98's "Current
+Memory: 2" with one box solid; all eight boxes solid on 100–101); both code listings character by
+character; every cell of 112, 113 and 146; every schedule cell of 130 and 133; every split and
+label on 136–143. Parent checks on 1400px renders: 61 (agreed; and showed the list text prints a
+plain "dL/dW_i", which the parent's notation pass had turned into ∂ on 55–58 — restored) and 106
+(every point).
+
+**Printed slips, transcribed as printed.** 25: "1.875 PB" is 24,576 x 80 GB in binary units (1.97 PB
+decimal); its other totals recompute (415,236,096 FP32 cores; 12,976,128 Tensor Cores; 24.3 EFLOP/s).
+46–64: title "FSPD"; citation "Rajbhandrari". 68: "Adam β1, β1" (44 has β1, β2). 69: 63GB is binary
+(67,645,734,912 bytes); sequence length 4096 against 8192 on 125 and 146. 98: counter "Current
+Memory: 2" with one box; 100–101 keep 14 / 2 / 2 with all eight boxes drawn. 112: 400 TFLOPs/GPU
+printed 41% MFU (40.4%), a table reproduced from the Llama 3 paper. 138: "shard first over row and
+second over column", the opposite of the drawing (W column blocks [1x4], U row blocks [4x1]) and of
+the lecturer at 1:10:03. 139–143: Z "[DxD]" (Z = YU is N x D, drawn tall). Typos noted in place:
+"it's own" (37–43), "L-length" then "S-length" (116–125), "LLama3-405B" (146). Recomputed and
+consistent: 14–16 (256 KB registers; 256 and 4096 FLOP/cycle), 44, 68, 125 (8192 per GPU), 130
+(1/N), 133 (32 of 56 cells = 16/28), 146 (TP x CP x PP x DP = GPUs; 16,777,216 tokens), 113's 3.1x
+(989.4/312).
+
+**Transcript edit** (Sonnet). 95 paragraphs; marker sequence identical; number diff fully listed
+(stutters and false starts at 12:28, 13:13, 13:59, 24:45, 25:32; the rest punctuation); ratios
+0.75–1.05, no outliers. The introduced-word sweep read every paragraph's new words: one broken word
+fixed by the parent (the captions split "recmp | computation" across 1:00:04/1:00:49 and the editor
+left 1:00:49 starting "utation"; now "recomp-" / "computation"), and one unlisted substitution added
+to the header (35:29 "lower scale" → "large-scale"). Spoken-only restorations accepted: Huang
+Auditorium (captions "Hang auditorium", followed by "Jensen Huang"), Anthropic, DistributedDataParallel
+("a PyTorch class called distributed data parallel"), all-reduce for "I'll reduce" (42:23; the
+captions say "all reduce" at 38:34). 13 student-question markers (3 inferred), one with the caught
+student words kept inside it; 5 [unclear] (17:06 "3,72", 27:50 "mini", 30:07 "Xig", 52:24 "Llama 35B",
+1:10:03). Spoken slips kept: "B100" (13:59), "GPU 3, GPU 2" (41:38), "second group of two GPUs"
+(50:08), "five degrees of parallelism" then four axes (27:04). **Coverage:** slides 2 and 148 not
+presented; the lecturer leaves 114–144 to be "checked offline" (1:03:08) after a brief tour.
+
+**Images.** 30 rendered (13 JPEG, 17 PNG; 4.1 MB): 5, 9, 12, 16, 19, 21, 22, 23, 24, 26, 27, 43, 47,
+56, 61, 64, 67, 71, 76, 88, 101, 106, 119, 123, 124, 132, 133, 138, 143, 146. Not rendered: 1, 3, 148
+(title, divider); 2, 4, 30–33, 102–104, 108, 111, 114, 115, 125–127, 134, 144, 145 (text); 34–36
+(equations); 105, 109, 110 (code transcribed exactly); 112, 113 (tables transcribed exactly); build
+steps whose last step is rendered (7–8 → 9; 10–11 → 12; 13–15 → 16; 17–18 → 19; 20 → 21; 37–42 →
+43; 46 → 47; 48–55 → 56; 57–60 → 61; 62–63 → 64; 65–66 → 67; 116–118 → 119; 120–122 → 123; 128–131 →
+132; 135–137 → 138; 139–142 → 143); the other activation-checkpointing steps (72–75, 77–87, 89–100;
+76, 88 and 101 stand for the normal run, full recomputation and checkpoints); rendered figures
+repeated with new text (6, 28, 29 → 5; 25 → 24; 44–45 → 43; 68–70; 107 → 106; 147). A script
+checked that the lists cover 1–148 with no overlap. Unlike lecture 10, the deck has no video stills
+or animation frames. In the FSDP walk-through (46–64) the intermediate steps carry distinct arrows,
+so four states are rendered (47, 56, 61, 64) rather than only the last. The lecture page carries all
+30, 29 placed by the parent with hand-written captions and slide 5 by the script; three of the
+parent's typed paths were `.png` for `.jpg` files (12, 16, 124) and were corrected from disk before
+the script ran (the AGENTS rule, broken again). The topic page carries 1 (146).
+
+**Wiki.** Lecture page: running example; inside the H100 (memory, L2, SMs and binning, FP32 cores,
+Tensor Cores, mixed precision); throughput over time; server to cluster, one big computer, the spoken
+answers; TPUs and other chips; the four axes; data parallelism (the two equations, six steps,
+overlap, asynchronous SGD, DistributedDataParallel, the memory limit); FSDP (forward, backward,
+three things at once); HSDP and its communication; activation memory; activation checkpointing with
+the compute/memory table; the scaling recipe, slide and spoken; HFU; MFU with the PaLM table and
+Llama3-405B; context parallelism (ring attention, Ulysses, Llama's two stages); pipeline parallelism
+(1/N, the bubble, microbatches, 16/28); tensor parallelism (one layer, two layers); ND parallelism
+with Llama's configurations; summary; slips at the end. 108 quotations checked verbatim by script.
+Topic page distributed-training (hierarchy; one table of the six strategies; why DP runs out;
+checkpointing; MFU; combining them).
 

@@ -143,5 +143,9 @@ GPT-2's 1.5B and GPT-3's 175B (lecture 8, slides 93–95). See
   everything on this page.
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md#transformers-for-language-modelling):
   masked self-attention and transformer language models.
+- [Lecture 11 — Large-Scale Distributed Training](11-large-scale-distributed-training.md#running-example-llama3-405b):
+  how large language models are trained across tens of thousands of GPUs. Its running example is
+  Meta's Llama3-405B, chosen because its paper shares the training details that GPT-4's report
+  declined to give (lecture 11, slide 4).
 - [Image captioning](image-captioning.md) uses the same generate-and-feed-back loop, conditioned on
   an image.

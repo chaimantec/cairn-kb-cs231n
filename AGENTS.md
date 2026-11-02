@@ -52,7 +52,9 @@ printed slips, which slides were rendered and why) goes in
 - **Count drawn architectures box by box.** Transcribers normalise a diagram toward what its name
   leads them to expect (lecture 6: an extra conv box in each VGG stack, so the drawing seemed to add
   up to 16 and 19 layers). Have the audit count every box on a crop; when the drawn count disagrees
-  with the name, transcribe the drawing and add an `*[Ed: …]*` line.
+  with the name, transcribe the drawing and add an `*[Ed: …]*` line. Read a slide's words against
+  its own drawing the same way: lecture 11's "shard first over row and second over column" names the
+  opposite of the column and row blocks it draws.
 - **Recompute worked arithmetic on the slides.** Decks print slips in their own worked examples
   (a score missing its bias term, a log in a different base from the rest of the deck). Keep the
   printed value, add an `*[Ed: …]*` line under the slide in the slide file, and say it on the
@@ -70,7 +72,9 @@ printed slips, which slides were rendered and why) goes in
   shows it as raw text; only the `--github` pass catches it). Write tensor shapes in prose as math
   (`$32 \times 32 \times 3$`, not "32×32×3", which the checker flags), and in italic captions,
   where math does not render on GitHub, as the slides print them ("5x5x3"). Escape a `*` between
-  digits ("5\*5\*3"), or GitHub italicises the middle digit.
+  digits ("5\*5\*3"), or GitHub italicises the middle digit. A notation pass over a slide file
+  converts labels, not printed prose: lecture 11's list text prints a plain "dL/dW_i" where its
+  figure labels print ∂, and a blanket conversion made both ∂ until a render showed it.
 - **Transcripts keep the spoken form.** No LaTeX in `raw/transcripts/`; notation is reconstructed
   in `wiki/`.
 
@@ -113,7 +117,7 @@ printed slips, which slides were rendered and why) goes in
 
 ## Images
 
-**Lectures 1–10 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–11 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -173,6 +177,7 @@ they are the only part of this KB that redistributes course material rather than
 | 8 Attention and Transformers | 23 of 122 pages | `lecture_8.pdf` (122 pages, printed 1–122) |
 | 9 Detection, Segmentation, Visualization, and Understanding | 53 of 178 pages | `lecture_9.pdf` (178 pages, printed 1–178) |
 | 10 Video Understanding | 47 of 103 pages | `lecture_10.pdf` (103 pages, printed 1–103) |
+| 11 Large-Scale Distributed Training | 30 of 148 pages | `lecture_11.pdf` (148 pages, printed 1–148) |
 
 ## Rebuilding
 

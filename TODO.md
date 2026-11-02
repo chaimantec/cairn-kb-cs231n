@@ -36,18 +36,18 @@ link-only. Slug `11-large-scale-distributed-training`.
 
 ### Images (Step 1c)
 - [x] raw/images/11-large-scale-distributed-training/ — rendered 30 (13 JPEG, 17 PNG; 4.1 MB); embedded in the slide file (30); header lists every unrendered slide and why (118, checked by script to cover 1–148 with no overlap)
-- [ ] Embed in the wiki page and topic pages, hand-written captions (lecture page: 30, 29 placed by hand with hand-written captions and one, slide 5, by the script, caption then rewritten; three typed `.png` paths were `.jpg` and were corrected from disk before the script ran; topic page pending)
+- [x] Embed in the wiki page and topic pages, hand-written captions (lecture page: 30, 29 placed by hand with hand-written captions and one, slide 5, by the script, caption then rewritten; three typed `.png` paths were `.jpg` and were corrected from disk before the script ran; topic page: 1, slide 146)
 - [x] Look at two rendered images against the slide-file claims (61: every label, arrow and the overlap text, and the plain dL/dW_i in the list; 106: every point)
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] INDEX.md image rules (lectures 1–11; lecture 11 has 30); AGENTS.md table row (30 of 148) and two lessons (slide words against its own drawing; notation pass converts labels, not printed prose); BUILD_LOG.md render record; LICENSE.md attribution (lecture 11 table; Layer 2 decks list)
 
 ### Wiki
 - [x] wiki/11-large-scale-distributed-training.md (lecturer unnamed; coverage; every section with slide and timestamp citations; slips at the end; 108 quotations checked verbatim by script; check_math clean)
-- [ ] Topic pages and cross-links
-- [ ] INDEX.md table of contents (coverage 11 of 18); SEE_ALSO
+- [x] Topic pages and cross-links: new wiki/distributed-training.md; backpropagation (section on storing or recomputing activations), optimizers, gradient-descent, transformers, attention, language-models, course-logistics (row 11, "lectures 1–11", slide 2's midterm dates), lecture 10 page (next lecture)
+- [x] INDEX.md table of contents (coverage 11 of 18; lecture 11 numbering, coverage and spoken additions, eight slips; lecture 11 and distributed-training entries; seven one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–11" and CS336 added
 
 ### Publish
-- [ ] kb.json
-- [ ] BUILD_LOG.md — lecture 11 record and index row
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage (11 of 18; 31 topic pages), decks 12/12, figure audit 12/12 (lecture 11 note), images 446 (byLecture 11: 30; 319 JPEG, 127 PNG), caveats for lecture 11's coverage, numbering, slips and 5 unclear marks
+- [x] BUILD_LOG.md — lecture 11 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 once the new pages were staged; 5,004 formulas render in both; lecture 11 30 on disk / 30 in wiki; numeric claims in INDEX/AGENTS match; no ranking claims)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

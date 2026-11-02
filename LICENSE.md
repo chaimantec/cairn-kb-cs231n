@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2, 3, 6, 7, 8, 9 or 10 decks (lectures 2, 3, 6, 7, 8, 9 and 10 checked on 2026-11-02). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3, 6, 7, 8, 9, 10 or 11 decks (lectures 2, 3, 6, 7, 8, 9 and 10 checked on 2026-11-02, lecture 11 on 2026-11-03). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -470,3 +470,30 @@ lecture 1's four-task figure, lecture 7's multi-layer RNN), video stills whose c
 or its sound (among them the BBC stills cited to McGurk and McDonald, 1976, and the VisualVoice
 stills), build steps whose last step is rendered, and rendered figures repeated with new text. The
 slide file's header lists every slide and the reason.
+
+### Lecture 11 — Large-Scale Distributed Training
+
+Deck: [lecture_11.pdf](https://cs231n.stanford.edu/slides/2025/lecture_11.pdf). Rendered: 30 slides,
+in `raw/images/11-large-scale-distributed-training/`. The deck prints no licence for itself and no
+per-image credit line at all ("licensed under", "public domain", "copyright" and "reproduced with
+permission" appear nowhere in its text). Its third-party content is product photographs and renders
+with no source given, and figures and tables that cite a paper, copied below.
+
+| Slide | Third-party content (as identifiable from the slide) |
+| --- | --- |
+| 5, 9, 12, 16, 21, 22, 23, 24 | A render of an NVIDIA H100 board (5, 9, and repeated inside the server, rack, pod and cluster drawings of 21–24), a render of a row of server racks (5), and diagrams of the H100 die and of one streaming multiprocessor (12, 16). No source is printed. Slides 22–24 cite Llama Team, "The Llama 3 Herd of Models", https://arxiv.org/abs/2407.21783, for the cluster's figures. |
+| 26 | A photograph of four TPU racks in a data hall (the lecturer calls it a v2 TPU pod); no source is printed. |
+| 27 | Product photographs of an AMD MI325X board and an AWS Trainium2 package (with the "annapurnalabs" logo); no source is printed. |
+| 47, 56, 61, 64 | The deck's FSDP diagrams, citing Rajbhandari et al. (printed "Rajbhandrari et al"), "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models", arXiv 2019. |
+| 106 | The deck's own benchmark code and chart, under a footnote citing Chowdhery et al., "PaLM: Scaling Language Modeling with Pathways", arXiv 2022. |
+| 123 | The deck's attention diagram, citing Liu et al., "Ring Attention with Blockwise Transformers for Near-Infinite Context", arXiv 2023. |
+| 124 | The deck's attention diagram, citing Jacobs et al., "DeepSpeed Ulysses: System Optimizations for Enabling Training of Extreme Long Sequence Transformer Models", arXiv 2023. |
+| 132, 133 | The deck's pipeline schedules, citing Huang et al., "Gpipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism", arXiv 2018. |
+| 146 | The deck's 4D-parallelism diagram and a table of Llama3-405B's configurations, citing Llama Team, "The Llama3 Herd of Models", arXiv 2024. |
+| 19, 43, 67, 71, 76, 88, 101, 119, 138, 143 | No third-party content identifiable: the deck's own charts and diagrams. |
+
+Not rendered from this deck: title and divider slides, text slides, equations, the code listings and
+tables the slide file reproduces exactly (among them slide 112's MFU table from the PaLM and Llama 3
+papers), build steps whose last step is rendered, the other steps of the activation-checkpointing
+walk-through, and rendered figures repeated with new text. The slide file's header lists every slide
+and the reason.

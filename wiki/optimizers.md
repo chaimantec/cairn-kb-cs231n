@@ -168,3 +168,4 @@ then cosine decay (lecture 3, ≈1:05:24–1:06:09; see
 - [Gradient descent and SGD](gradient-descent.md) — the baseline these optimisers modify.
 - [Learning-rate schedules](learning-rate-schedules.md) — every optimiser here has a learning rate.
 - [Regularization](regularization.md) — L2 vs. weight decay.
+- [Distributed training](distributed-training.md) — Adam's two moment estimates are two of the four numbers kept per weight, which is why a model of about 10B parameters fills an 80 GB GPU (lecture 11, slide 44).
