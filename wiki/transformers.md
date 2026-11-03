@@ -147,6 +147,7 @@ recurrent models try to avoid (see [recurrent neural networks](recurrent-neural-
 - [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md): the ViT with a class token, the four later changes walked through, DETR, and a ViT's attention maps as a visualization.
 - [Lecture 10 — Video Understanding](10-video-understanding.md#vision-transformers-for-video): video transformers (factorized space and time attention, token pooling in MViT, video masked autoencoders) and their Kinetics-400 results, named but not explained in the lecture.
 - [Lecture 11 — Large-Scale Distributed Training](11-large-scale-distributed-training.md): how a transformer is trained on thousands of GPUs. Context parallelism splits the sequence, and tensor parallelism splits the weight matrices, with a trick that fits the two-layer MLP. The running example is Llama3-405B, with 126 layers and $D = 16{,}384$ (lecture 11, slides 69, 116–125 and 135–143; see [distributed training](distributed-training.md)).
+- [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md): pre-training a ViT without labels. The masked autoencoder feeds only the visible 25% of patches to a large ViT encoder, and MoCo v3 and DINO train ViTs contrastively or by self-distillation.
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md#modern-rnns) compares
   modern recurrent models with transformers.
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md) mentions

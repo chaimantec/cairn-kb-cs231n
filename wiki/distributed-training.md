@@ -59,6 +59,7 @@ The largest runs use all four axes, arranging the GPUs in a 4D grid in which eac
 ## Where the course covers distributed training
 
 - [Lecture 11 — Large-Scale Distributed Training](11-large-scale-distributed-training.md): everything on this page.
+- [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md#simclr): SimCLR's large batches, which "requires distributed training on TPUs", and MoCo's queue of negatives, which avoids them (lecture 12, slides 86–87).
 - [Lecture 8 — Attention and Transformers](08-attention-transformers.md): the transformer block and multi-head attention that context and tensor parallelism split, and the memory cost of attention.
 - [Lecture 4 — Neural Networks and Backpropagation](04-neural-networks-backpropagation.md): the backward pass whose stored activations checkpointing trades away.
 - [Lecture 3 — Regularization and Optimization](03-regularization-optimization.md): minibatch SGD and Adam, whose state is part of the per-weight memory.

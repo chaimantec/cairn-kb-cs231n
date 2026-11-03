@@ -623,7 +623,7 @@ synchronising workers (≈53:56–55:30; part 2, slide 18).
 ### Generative and interactive visual intelligence (lectures 13–17)
 
 This part goes "beyond 2D recognition" (≈55:30–59:27). Adeli opens it with self-supervised
-learning, although the ranges on part 2, slide 51 put lecture 12, Self-Supervised Learning, in the perception
+learning, although the ranges on part 2, slide 51 put lecture 12, [Self-Supervised Learning](12-self-supervised-learning.md), in the perception
 part.
 
 **Self-supervised learning** is learning in which "models learn to understand and represent data

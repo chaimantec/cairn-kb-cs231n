@@ -72,3 +72,4 @@ Results quoted in the lecture: on Sports-1M top-5 accuracy, single frame 77.7, e
 
 - [Lecture 10 — Video Understanding](10-video-understanding.md): everything on this page.
 - [Lecture 9 — Detection, Segmentation, Visualization, and Understanding](09-detection-segmentation-visualization.md): the image-level detection and visualization methods lecture 10 extends to video.
+- [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md#colourising-video-and-tracking): colourising a video from one reference frame as a pretext task, from which tracking of masks and keypoints emerges.

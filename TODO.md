@@ -7,7 +7,7 @@ to [`BUILD_LOG.md`](BUILD_LOG.md): nothing ticked stays here.
 
 ## Open
 
-- [ ] Lectures 12–18 — not started. Runs so far have covered lectures 1–11, at the user's request; add a
+- [ ] Lectures 13–18 — not started. Runs so far have covered lectures 1–12, at the user's request; add a
   run section (transcripts, decks from `https://cs231n.stanford.edu/slides/2025/lecture_N.pdf`,
   wiki, images if still wanted) when the user asks for more lectures. Video ids are in the
   catalog entry (`GET /api/catalog/5b4c7083-7bdd-4ca6-9e11-f8ed87717c71`).
@@ -37,18 +37,18 @@ link-only. Slug `12-self-supervised-learning`.
 
 #### Images (Step 1c)
 - [x] raw/images/12-self-supervised-learning/ — rendered 60 (58 JPEG, 2 PNG; 7.8 MB); embedded in the slide file (60); header lists every unrendered slide and why (55, checked by script to cover all 115 with no overlap)
-- [ ] Embed in the wiki page and topic pages, hand-written captions
+- [x] Embed in the wiki page and topic pages, hand-written captions (lecture page: all 60 placed by the script, every caption then hand-written; four that first anchored in the overview (94 on "slides 94–111", 115–117 on "slides 114–117") were removed, the overview reworded and the script re-run; four citations moved off formula-introducing paragraphs (76, 88, 98, 104) before the run. Topic page: 10 by the script with --deck-label "Lecture 12" (9, 12, 53, 58, 66, 85, 86, 88, 103, 104), captions copied from the lecture page; two hand-typed image paths removed first and the table's slide ranges turned into section links so it does not collect 40 images)
 - [x] Look at two rendered images against the slide-file claims (39: every curve after the audit's corrections; 53: every count)
-- [ ] INDEX.md image rules; AGENTS.md table row; BUILD_LOG.md render record; LICENSE.md attribution
+- [x] INDEX.md image rules (lectures 1–12; lecture 12 has 60); AGENTS.md table row (60 of 115) and three lessons (a long range anchors its first slide, and the opening source line counts as overview; topic-page tables of slide ranges collect images, so link sections; a correctly heard caption word changed to the expected one is a substitution); BUILD_LOG.md render record; LICENSE.md attribution (lecture 12 table; Layer 2 decks list)
 
 #### Wiki
-- [ ] wiki/12-self-supervised-learning.md
-- [ ] Topic pages and cross-links
-- [ ] INDEX.md table of contents; SEE_ALSO
+- [x] wiki/12-self-supervised-learning.md (lecturer unnamed; coverage; every section with slide and timestamp citations; slides-only section for CPC onward; slips at the end; 153 quotations checked verbatim by script; check_math clean)
+- [x] Topic pages and cross-links: new wiki/self-supervised-learning.md (two tables: pretext tasks; contrastive methods by where negatives come from); course-logistics (row 12, "lectures 1–12", slide 2's midterm times and proposal feedback), lecture 11 page (next lecture), transfer-learning, loss-functions (InfoNCE as N-way cross-entropy), data-augmentation, transformers, visualizing-networks, video-understanding, computer-vision-tasks, attention, distributed-training, lecture 1 page
+- [x] INDEX.md table of contents (coverage 12 of 18; lecture 12 numbering, coverage and spoken additions, two slips; lecture 12 and self-supervised-learning entries; nine one-liners updated; raw-materials lines); SEE_ALSO "lectures 1–12"
 
 #### Publish
-- [ ] kb.json — coverage, decks, figure audit, images, caveats
-- [ ] BUILD_LOG.md — lecture 12 record and index row
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage (12 of 18; 32 topic pages), decks 13/13, figure audit 13/13 (lecture 12 note), images 506 (byLecture 12: 60; 377 JPEG, 129 PNG), caveats for lecture 12's coverage, numbering, slips and 9 unclear marks
+- [x] BUILD_LOG.md — lecture 12 record and index row
+- [x] verify_kb.py clean, and its review section read (exit 0 with the new pages staged; 5,352 formulas render in the chat and on github.com; lecture 12 60 on disk / 60 in wiki; numeric claims in INDEX/AGENTS read and match; stale "1–11" / "12–18" wording grepped: only the open lectures line, narrowed to 13–18)
 - [ ] Commit and push
 - [ ] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work

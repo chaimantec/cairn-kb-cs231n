@@ -137,7 +137,7 @@ neural style transfer (part 1, slide 57), and text-to-image generation such as e
 
 Adeli's overview adds the tasks of the later lectures (≈55:30–59:27), each described with its
 slide on the [lecture page](01-introduction.md#generative-and-interactive-visual-intelligence-lectures-1317):
-learning representations without labels (self-supervised learning), generating images from text
+learning representations without labels ([self-supervised learning](self-supervised-learning.md)), generating images from text
 or noise (generative and diffusion models), linking images and text for retrieval, captioning and
 visual question answering (vision–language models), reconstructing 3D shape from images (3D
 vision), and perceiving, planning and acting in the physical world (embodied intelligence).

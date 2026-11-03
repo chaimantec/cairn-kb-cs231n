@@ -121,6 +121,11 @@ as well, for getting good visual representations of images" (lecture 7, slides 8
   released C3D model as a video feature extractor (lecture 10, slide 40), and I3D, which initializes
   a 3D network from 2D ImageNet weights by copying each kernel along time; on Kinetics-400,
   ImageNet pretraining improves every model compared (lecture 10, slides 75–76).
+- [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md): pre-training the
+  encoder without labels, on a pretext task whose labels come from the data, then transferring it
+  to a downstream task that has few labels. Its two ways to use the encoder are linear probing
+  (frozen encoder, one linear layer) and fine-tuning (the encoder trained further) (lecture 12,
+  slide 58). See [self-supervised learning](self-supervised-learning.md).
 
 ## Related pages
 
@@ -128,3 +133,4 @@ as well, for getting good visual representations of images" (lecture 7, slides 8
 - [Data preprocessing and augmentation](data-augmentation.md) — the other remedy for a small
   dataset.
 - [ImageNet](imagenet.md) — the dataset most pretrained models come from.
+- [Self-supervised learning](self-supervised-learning.md) — pretraining without labels.

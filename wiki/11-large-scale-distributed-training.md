@@ -355,7 +355,7 @@ There are also a few spoken slips. The lecturer says "B100" for the B200 (≈13:
 
 ## Next time
 
-Self-supervised learning (slide 148, not reached in the recording).
+Self-supervised learning (slide 148, not reached in the recording): see [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md).
 
 ## Related pages
 
@@ -368,3 +368,4 @@ Self-supervised learning (slide 148, not reached in the recording).
 - [Language models](language-models.md) — GPT-4 and Llama 3, the lecture's examples.
 - [Course logistics](course-logistics.md) — the course roadmap, and the midterm dates on slide 2.
 - Previous lecture: [Lecture 10 — Video Understanding](10-video-understanding.md).
+- Next lecture: [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md).

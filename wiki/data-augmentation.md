@@ -109,6 +109,10 @@ Returns diminish, but it can give a 1–2% boost on almost any computer vision p
 
 - [Lecture 6 — Training CNNs and CNN Architectures](06-training-cnns-architectures.md#data-augmentation):
   everything on this page.
+- [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md#simclr): augmentation as
+  the source of positive pairs in contrastive learning. SimCLR draws two random augmentations of
+  each image ("random cropping, random color distortion, and random blur"), and MoCo v2 adopts its
+  stronger augmentation (lecture 12, slides 76–77, 90).
 
 ## Related pages
 

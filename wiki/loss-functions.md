@@ -142,3 +142,5 @@ Lecture 9 uses the softmax loss at every pixel for semantic segmentation, summed
 ![Lecture 2, slide 84 — Coming up:](../raw/images/02-image-classification/slide-84.jpg)
 
 *Lecture 2, slide 84 — Coming up:. [Deck](https://cs231n.stanford.edu/slides/2025/lecture_2.pdf)*
+
+Lecture 12 meets the softmax loss again in contrastive learning. The InfoNCE loss scores one positive sample against $N-1$ negatives, and the deck calls it the "Cross entropy loss for a N-way softmax classifier!" (lecture 12, slide 74; ≈1:02:21). See [self-supervised learning](self-supervised-learning.md#contrastive-learning).

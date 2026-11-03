@@ -14,7 +14,7 @@ are not its PDF page numbers; the [lecture page](01-introduction.md) explains th
 ## Course roadmap
 
 The course has four parts (part 2, slide 51). The lecture titles below are those of the Spring
-2025 recordings; lectures 1–11 are in this knowledge base so far.
+2025 recordings; lectures 1–12 are in this knowledge base so far.
 
 | Lecture | Title | Part of the course |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ The course has four parts (part 2, slide 51). The lecture titles below are those
 | 9 | Object Detection, Image Segmentation, Visualizing — [wiki page](09-detection-segmentation-visualization.md) | Perceiving and Understanding |
 | 10 | Video Understanding — [wiki page](10-video-understanding.md) | Perceiving and Understanding |
 | 11 | Large Scale Distributed Training — [wiki page](11-large-scale-distributed-training.md) | Perceiving and Understanding |
-| 12 | Self-Supervised Learning | Perceiving and Understanding |
+| 12 | Self-Supervised Learning — [wiki page](12-self-supervised-learning.md) | Perceiving and Understanding |
 | 13 | Generative Models 1 | Reconstructing and Interacting with the Visual World (lectures 13–17) |
 | 14 | Generative Models 2 | Reconstructing and Interacting |
 | 15 | 3D Vision | Reconstructing and Interacting |
@@ -63,7 +63,7 @@ recordings are on Canvas (part 2, slide 38).
 | 05/02 | RNNs & Transformers |
 | 05/09 | Midterm Review Session |
 
-Lecture 11's administrative slide (May 6) repeats two dates: "Friday 5/9: Midterm Review Session" and "Tuesday 5/13: In-Class Midterm" (lecture 11, slide 2). The recording does not present that slide.
+Lecture 11's administrative slide (May 6) repeats two dates: "Friday 5/9: Midterm Review Session" and "Tuesday 5/13: In-Class Midterm" (lecture 11, slide 2). The recording does not present that slide. Lecture 12's administrative slide (May 8) gives the times: "Midterm next Tuesday (5/13 during lecture time) – Don't be late", with logistics in an Ed post, and "Midterm review section tomorrow, Friday, 5/9 at 12:30 pm." It adds that "Project proposal feedback is available on Gradescope" (lecture 12, slide 2). That recording does not present its slide either.
 
 **Where to go for what** (part 2, slides 39 and 41):
 

@@ -28,6 +28,7 @@ every build follows, and each lesson in general form, are in
 | 9 Detection, Segmentation, Visualization, and Understanding | [Run 9](#run-9--lecture-9-detection-segmentation-visualization-and-understanding-2026-11-02) |
 | 10 Video Understanding | [Run 10](#run-10--lecture-10-video-understanding-2026-11-02) |
 | 11 Large-Scale Distributed Training | [Run 11](#run-11--lecture-11-large-scale-distributed-training-2026-11-03) |
+| 12 Self-Supervised Learning | [Run 12](#run-12--lecture-12-self-supervised-learning-2026-11-03) |
 
 ## Runs
 
@@ -1581,3 +1582,119 @@ link-only. Slug `11-large-scale-distributed-training`.
 - [x] verify_kb.py clean, and its review section read (exit 0 once the new pages were staged; 5,004 formulas render in both; lecture 11 30 on disk / 30 in wiki; numeric claims in INDEX/AGENTS match; no ranking claims)
 - [x] Commit and push — e66ae52, c6cbf5e on https://github.com/chaimantec/cairn-kb-cs231n (INDEX, kb.json, lecture page, topic page, slide file, transcript and two images fetch 200 from raw.githubusercontent.com); kbUrl already set on the catalog entry since run 1
 - [x] Move this run's finished sections to BUILD_LOG.md; TODO.md keeps only open work
+
+## Run 12 — Lecture 12 (Self-Supervised Learning), 2026-11-03
+
+Built lecture 12 end to end: transcript, the deck (three transcription agents), two figure audits,
+the transcript edit, the wiki page, one topic page (self-supervised learning), 60 slide images, and
+updates to INDEX, AGENTS (image row; three general lessons: a long range still anchors its first
+slide and the opening source line counts as overview; a topic-page table of slide ranges collects
+images, so link sections; a correctly heard caption word changed to the expected one is a
+substitution), LICENSE, kb.json, SEE_ALSO ("lectures 1–12"), course logistics (row 12, "lectures
+1–12", the midterm times of slide 2), transfer learning, loss functions, data augmentation,
+transformers, visualizing networks, video understanding, computer vision tasks, attention,
+distributed training, the lecture 1 page and the lecture 11 page (next lecture). Images opted in
+again; PDFs stay link-only.
+
+### Lecture 12 record
+
+**Deck.** One: `lecture_12.pdf`, 115 pages, May 8, 2025, title slide "Lecture 12: Self-Supervised
+Learning". Printed numbers 1–117 with 112 and 113 absent (hidden slides): pages 1–111 are slides
+1–111, pages 112–115 are slides 114–117, an appendix after slide 111 "Next time". Every page prints
+its number as the split-footer span; the raw spans around the gap were checked before the agents
+started. Already listed in sources.md by the run 1 crawl. The lecturer is not named in the
+recording or on the deck. No licence for the deck. Credit lines: "Figures reproduced with
+permission" (6–8, Krizhevsky et al.), "This image is CC0 public domain" (4), and "Source: …" or
+"Image source: …" lines on most figure slides (Gidaris et al. 2018; Doersch et al. 2015; Noroozi
+& Favaro 2016; Pathak et al. 2016; Richard Zhang / Phillip Isola; Zhang et al. 2017; Vondrick et
+al. 2018; Google AI blog post; He et al. 2021; Chen et al. 2020; He et al. 2020; van den Oord et
+al. 2018; Caron et al. 2021; Florence et al. 2018). Slide 106 is titled "DINO v2" but credits the
+2021 DINO paper. No page carries a video link or media annotation; slides 48–51 hold one still
+per panel.
+
+**Transcription.** Three Sonnet agents in parallel (pages 1–38, 39–76, 77–115), 84–95k tokens
+each, 7–11 tool calls, all finished, every chunk appended, each with a classification file (one
+line per slide), which is what the render list was chosen from. None rendered crops or used the
+text layer. `--verify` clean (115 headings). The parent checked every credit line against the text
+layer (all present; 79–80 inherit 78's as builds), moved 105 pure-math labels off quote marks and
+fixed the rest of check_math's GitHub warnings (`}_ {` subscripts, `\cr` for `\\`, math out of
+italics, an inline `cases` GitHub does not parse, blank lines around `$$` blocks), and removed three
+transcriber glosses: slide 5's "occlusion-style heat maps" and "look like saliency maps", slide
+40's "thylacine-like" and "colours artificially added to an old photograph", and slide 106's "the
+figure caption is the DINOv2 paper's". [Ed:] lines on 31 (by the agent) and 81 (by the parent,
+from the audit's counts).
+
+**Figure audit** (Sonnet, two agents, 43 slides, 600 dpi crops throughout). A: 22, 23, 27, 31, 33,
+39, 59, 60, 78, 83, 84, 85, 86, 89, 91, 92, 93, 100, 102, 105, 114. Corrections: 22 (the curves
+cross between 1000 and 5000, not near 1000), 39 (Gauss starts at about 16, not 22.5, its marker
+hidden under Zhang et al.'s; Zhang et al. starts at about 16; Doersch et al. peaks at conv4), 59
+(only two cells shaded; each masking example is an input/reconstruction pair), 89 (two separate
+boxes for the positive pair and the detach; box extents), 91 ("800" bold), 100 (a clump, not stray
+points), 86 (not strictly monotone in batch size at 600 epochs). Every table cell (23, 27, 33, 59,
+60, 84, 91–93, 100, 102, 114) and both code listings (89, 105) and the algorithm box (78) agreed;
+slide 31's bracket slip confirmed. B: 5, 8, 12, 16, 24, 26, 29, 37, 44, 45, 52, 53, 58, 81, 82,
+87, 95, 101, 104, 106, 115, 116. Corrections: 8 (three "Max pooling" labels; the red box encloses
+both columns of the second 2048 pair), 16 (the GPT-4 abstract is legible and now transcribed; the
+robot panel shows hands holding a toy caterpillar, not "a table of objects"), 24 (the Conv5 maps),
+26 (4608/4096/100 sit on the arrows into fc7/fc8/softmax; "Shared weights" printed 8 times), 37
+(the caption is below the box; X-hat outside it; 5 split rectangles), 45 (label positions), 53
+(exactly 8 of 25 patches visible, 8 tiles, 8 encoder outputs, 15 decoder-input boxes with 5 cyan),
+101 (a 7 x 7 grid; c_t left of the red cell), 106 (two photos misdescribed), 115 (two photos
+misdescribed; the "isolated red points" are arrow ends), 116 (not a uniform 4 x 5 grid; four
+shoes, four caps). Confirmed: 81–82's 6 x 6 grid and blue cells, 10 bars, 5 rectangles per stack;
+29's six lines; 95's eight and four units. Parent checks on 1400px renders: 39 (every curve) and 53
+(every count), both agreed.
+
+**Printed slips, transcribed as printed.** 31: L_adv's brackets do not balance. 81: two stacks of 5
+inputs give 10 vectors (2N = 10) while the affinity matrix, also labelled 2N, is drawn 6 x 6.
+Typos: 13 "leaerned" and a stray parenthesis; 54 "Masking Methos". 106's credit names DINO. 53's
+diagram masks 17 of 25 patches where 54–55 say 75%. Reproduced tables disagree across papers
+(23 against 27 and 33). Recomputed and consistent: 59's random-75 row against its charts; 60
+against 102 (MoCo v3); 91 against 92 (MoCo v2); the InfoNCE loss and bound (71, 75, 107); 78's
+average over 2N terms; slide 2's dates.
+
+**Transcript edit** (Sonnet). 96 paragraphs; marker sequence identical; number diff only 18:03
+"C410" → CIFAR10 and 25:01 "6064" → 64 (a false start), both listed; ratios 0.71–1.05, one outlier
+(28:08 at 0.71, stutters "it's it's it's it's", read against the original and accepted). The
+introduced-word sweep read every paragraph's new words; one substitution reverted by the parent:
+45:15 "perturbations", correctly heard in the captions, had become "permutations" (the context is
+the jigsaw's permutations, but the spoken word stays). Two header notes corrected: t-SNE is printed
+on slide 13 (the editor said not), and Grad-CAM is lecture 9's. Spoken-only restorations accepted:
+Grad-CAM ("grat cam"), Kinect ("connect", RGB-D sensors), Yosemite and Half Dome ("yuseimmed",
+"halfdme", slide 41's photograph), CS131, Bay Area. 8 student-turn markers (2 inferred, one with
+the caught words "Nine factorial" kept after it); 9 [unclear] (11:02 "lens", 16:29 "19", 17:16
+"why", 26:36 "impose", 30:28 "ours", 45:15 "transport", 1:02:21 "transformers", 1:05:27 "ute",
+1:11:44 "patches"). Spoken slip kept: "Pascal VOC 2017" (19:34; slides print 2007). **Coverage:**
+slide 2 not presented; the recording stops after MoCo v2 (93) at 1:13:17 ("So I will stop here"),
+naming CPC, MoCo v3 and DINO; slides 94–111 and 114–117 are not presented.
+
+**Images.** 60 rendered (58 JPEG, 2 PNG; 7.8 MB): 5, 6, 8, 9, 10, 11, 12, 15, 16, 19, 21, 22, 24,
+25, 26, 28, 29, 32, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 47, 48, 49, 50, 51, 52, 53, 58, 59, 60,
+66, 69, 72, 76, 77, 82, 83, 85, 86, 88, 94, 96, 97, 98, 100, 101, 103, 104, 106, 115, 116, 117. Not
+rendered: 1, 17, 18, 67, 111 (title, agenda, next time); 2, 13, 54–57, 61, 62, 90, 102 (text; 102
+a pasted paper page with its abstract and table transcribed); 3 and 4 (figures already rendered
+for lectures 11 and 9); repeats 7 (of 6), 63 (of 12), 68 (of 66), 99 (of 94), 108 (of 85), 109 (of
+87), 110 (of 95), 114 (of 83, with its table transcribed); builds 14 → 15, 20 → 21, 30 → 32, 42 →
+43, 45–46 → 47, 64–65 → 66, 81 → 82, 87 → 88, 95 → 96; tables 23, 27, 33, 84, 91–93; equations
+31, 70, 71, 73–75, 107; code 78–80, 89, 105. A script checked that the lists cover all 115 with no
+overlap. 96–98 are rendered as three states because each boxes a different step. The lecture page
+carries all 60, placed by the script and captioned by hand; its first run put 94 in the coverage
+paragraph (anchored on "slides 94–111", a range longer than 12) and 115–117 in the opening source
+line ("slides 114–117 are PDF pages 112–115"), so those sentences lost their numbers and the four
+images were re-placed. The topic page carries 10 (9, 12, 53, 58, 66, 85, 86, 88, 103, 104): two
+image paths the parent had typed by hand were removed first (the AGENTS rule, broken again), and
+the pretext-task table's slide ranges were replaced by links to the lecture page's sections,
+because the script would have embedded about 40 images from them.
+
+**Wiki.** Lecture page: the problem (features need labels); pretext and downstream tasks;
+evaluation; the broader picture; rotation, relative patch, jigsaw (with the student's 9! and the
+why-64 answer), inpainting (the losses as printed), colourisation, split-brain, video colourisation
+and tracking (the three formulas), the student questions, MAE (masking, encoder, decoder, loss,
+linear probing against fine-tuning, ablations, comparison), the pretext-task summary; contrastive
+learning (the idea, InfoNCE as N-way cross-entropy and the MI bound), SimCLR (algorithm, minibatch,
+results, projection head, batch size), MoCo (queue, momentum, the pseudocode), MoCo v2; a
+slides-only section (instance against sequence, CPC's three steps and results, MoCo v3, DINO and
+DINOv2, the summary, Dense Object Net); slips. 153 quotations checked verbatim by script; slide 25's
+two questions stated as unanswered. Topic page self-supervised-learning (pretext-task table;
+MAE; contrastive learning with a table of methods by where their negatives come from; DINO without
+negatives).

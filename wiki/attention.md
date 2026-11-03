@@ -221,6 +221,10 @@ The verdict is the title of Vaswani et al. (NeurIPS 2017), "Attention is All You
   lecture gives two answers: ring attention distributes blocks of the attention matrix, and Ulysses
   parallelizes over heads, so it can use at most as many GPUs as there are heads (lecture 11,
   slides 122–124).
+- [Lecture 12 — Self-Supervised Learning](12-self-supervised-learning.md#colourising-video-and-tracking)
+  colourises video with attention: each target pixel's colour is a softmax-weighted sum of
+  reference-frame colours, weighted by embedding similarity, and the lecturer calls attention
+  "basically just similarity between the two" (lecture 12, ≈39:02).
 - [Lecture 7 — Recurrent Neural Networks](07-recurrent-neural-networks.md) builds the RNNs and the
   sequence tasks attention starts from.
 - [Lecture 1](01-introduction.md) previews attention in its tour of the course

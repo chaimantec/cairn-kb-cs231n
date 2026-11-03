@@ -339,7 +339,7 @@ $$L_{recon}(x) = \lVert M \ast (x - F_\theta((1-M) \ast x)) \rVert_2^2$$
 
 $$L_{adv} = \max_D \mathbb{E}[\log(D(x))] + \log(1 - D(F((1-M) \ast x)))]$$
 
-Annotations with blue arrows: "Element wise multiplication" pointing at the $\ast$ in $L_{recon}$; $M = \begin{cases} 0 \text{ not masked} \cr 1 \text{ masked} \end{cases}$ pointing at $M$; "Encoder" pointing at $F_\theta$. Text below: "Adversarial loss between "real" images and inpainted images". Credit: "Source: Pathak et al., 2016".
+Annotations with blue arrows: "Element wise multiplication" pointing at the $\ast$ in $L_{recon}$; a case definition of $M$, printed as "0 not masked" and "1 masked" in braces, pointing at $M$; "Encoder" pointing at $F_\theta$. Text below: "Adversarial loss between "real" images and inpainted images". Credit: "Source: Pathak et al., 2016".
 
 *[Ed: the printed* $L_{adv}$ *has unbalanced brackets: the expectation's "[" closes after* $\log(D(x))$*, and a second "]" follows the last term with no bracket to close, so the expectation's scope is ambiguous. Transcribed as printed.]*
 
@@ -819,7 +819,9 @@ Same as slide 79, plus: new blue text at lower left, "Iterate through and use ea
 ## Slide 81 — SimCLR: mini-batch training
 
 Title "SimCLR: mini-batch training". Top right, the formula
+
 $$s_ {i,j} = \frac{z_ {i}^{T} z_ {j}}{\lVert z_ {i} \rVert \thinspace \lVert z_ {j} \rVert}$$
+
 with the label "“Affinity matrix”" under it.
 
 Diagram, left to right: two stacks of 5 slanted rectangles each (top stack grey, bottom stack green), with the caption "list of positive pairs" under the top stack. Each stack has an arrow into a rounded pale-green box labelled "encoder" (two encoder boxes, one above the other). Curved arrows from both encoders point into one row of 10 thin vertical bars alternating grey, green, grey, green, ... (grey first, green last), labelled above $\mathbf{z} \in \mathbb{R}^{2N \times D}$, with the caption beneath "Each 2k and 2k + 1 element is a positive pair". An arrow from this row leads to an empty square grid, 6 x 6 cells, with "2N" printed to the right (vertical side) and "2N" below (horizontal side).
@@ -915,6 +917,7 @@ Credit: "Source: He et al., 2020".
 ![Slide 88 — Momentum Contrastive Learning (MoCo)](../images/12-self-supervised-learning/slide-88.jpg)
 
 Same as slide 87, plus a fourth bullet: "The key encoder is slowly progressing through the momentum update rules:" ("slowly progressing" in blue) followed by the displayed formula
+
 $$\theta_ {k} \leftarrow m\theta_ {k} + (1-m)\theta_ {q}$$
 
 Credit: "Source: He et al., 2020".
@@ -1102,7 +1105,9 @@ Right text:
 - "1. Encode all samples in a sequence into vectors $z_ {t} = g_ {enc}(x_ {t})$"
 - "2. Summarize context (e.g., half of a sequence) into a context code $c_ {t}$ using an auto-regressive model ($g_ {ar}$)" (the sentence about GRU-RNN is no longer printed)
 - "3. Compute InfoNCE loss between the context $c_ {t}$ and future code $z_ {t+k}$ using the following time-dependent score function:" ("time-dependent score function:" in blue), then the displayed formula
+
 $$s_ {k}(z_ {t+k}, c_ {t}) = z_ {t+k}^{T} W_ {k} c_ {t}$$
+
 then "where $W_ {k}$ is a trainable matrix."
 
 Credit: "Source: van den Oord et al., 2018,". "Figure source" link at lower left.
@@ -1196,6 +1201,7 @@ Title "DINO". Two diagrams.
 Left (paper diagram): at the bottom a circle "x" with arrows to two circles $\mathbf{x}_ {1}$ (left) and $\mathbf{x}_ {2}$ (right). Above $\mathbf{x}_ {1}$: a grey box "student $g_ {\theta_ {s}}$", then a box "softmax", then circle $p_ {1}$. Above $\mathbf{x}_ {2}$: a grey box "teacher $g_ {\theta_ {t}}$", then a box "centering", then a box "softmax", with a stop-gradient mark (two slashes on the arrow, label "sg"), then circle $p_ {2}$. An arrow labelled "ema" goes from the student box to the teacher box. Between the two top circles: "loss:" / "- $p_ {2} \log p_ {1}$".
 
 Right (a colour schematic): left, a stack of two images labelled "minibatch". Top band (pink, "Teacher"): image pair, arrow, a network icon, arrow labelled "Centering + Sharpening", leading to a bar chart of 3 bars (light grey short, blue-grey shorter, yellow tall). Bottom band (cream, "Student"): image pair, arrow, network icon, with an arrow labelled "backprop" pointing back left and an arrow to the right, leading to a bar chart of 3 bars in maroon (with lighter ghost bars behind the first two). A vertical arrow labelled "EMA" points from Student up to Teacher; a down arrow between the two bar charts. Under it the formula
+
 $$\theta_ {\text{teacher}} \leftarrow \tau \cdot \theta_ {\text{teacher}} + (1-\tau) \cdot \theta_ {\text{student}}$$
 
 Credit: "Caron et al. 2021 Emerging Properties in Self-Supervised Vision Transformers".
@@ -1248,13 +1254,16 @@ Credit: "Caron et al. 2021 Emerging Properties in Self-Supervised Vision Transfo
 Text and formulas:
 
 "A general formulation for contrastive learning:"
+
 $$\text{score}(f(x), f(x^{+})) \gg \text{score}(f(x), f(x^{-}))$$
 
 "InfoNCE loss: N-way classification among positive and negative samples"
+
 $$L = -\mathbb{E}_ {X} \left[ \log \frac{\exp(s(f(x), f(x^{+})))}{\exp(s(f(x), f(x^{+}))) + \sum_ {j=1}^{N-1} \exp(s(f(x), f(x_ {j}^{-})))} \right]$$
 
 "Commonly known as the InfoNCE loss (van den Oord et al., 2018)" (the citation hyperlinked, small)
 "A lower bound on the mutual information between f(x) and f(x⁺)"
+
 $$MI[f(x), f(x^{+})] - \log(N) \geq -L$$
 
 ## Slide 108 — Summary: Contrastive Representation Learning

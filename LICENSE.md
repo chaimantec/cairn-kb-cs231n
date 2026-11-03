@@ -55,7 +55,7 @@ website, <https://cs231n.stanford.edu/2025/>, with the lecture videos on YouTube
 
 As checked on 2026-11-01, no licence, copyright or reuse statement appears on the course
 website's index, schedule or project pages, and none covering the decks as a whole is printed in
-the Lecture 1, 2, 3, 6, 7, 8, 9, 10 or 11 decks (lectures 2, 3, 6, 7, 8, 9 and 10 checked on 2026-11-02, lecture 11 on 2026-11-03). Publicly downloadable is not the same as licensed. Absent an express grant
+the Lecture 1, 2, 3, 6, 7, 8, 9, 10, 11 or 12 decks (lectures 2, 3, 6, 7, 8, 9 and 10 checked on 2026-11-02, lectures 11 and 12 on 2026-11-03). Publicly downloadable is not the same as licensed. Absent an express grant
 the default applies: copyright arises automatically, and no reuse rights pass to anyone.
 
 The images in `raw/images/` and the material described in `raw/slides/` are reproduced here for
@@ -497,3 +497,39 @@ tables the slide file reproduces exactly (among them slide 112's MFU table from 
 papers), build steps whose last step is rendered, the other steps of the activation-checkpointing
 walk-through, and rendered figures repeated with new text. The slide file's header lists every slide
 and the reason.
+
+### Lecture 12 — Self-Supervised Learning
+
+Deck: [lecture_12.pdf](https://cs231n.stanford.edu/slides/2025/lecture_12.pdf). Rendered: 60 slides,
+in `raw/images/12-self-supervised-learning/`. The deck prints no licence for itself. Its credit
+lines are copied below as printed: most slides credit the paper or post a figure comes from
+("Source: …", "Image source: …"), and slides 6–8 say of AlexNet's figures "Figures reproduced with
+permission." Permission granted to the course does not pass to this repository. Slide 4's "This
+image is CC0 public domain" applies to a slide that is not rendered here.
+
+| Slide | Third-party content (credit as printed on the slide) |
+| --- | --- |
+| 6, 8 | Nearest-neighbour retrievals and the AlexNet diagram: "Krizhevsky et al, "ImageNet Classification with Deep Convolutional Neural Networks", NIPS 2012. Figures reproduced with permission." |
+| 16 | Four panels captioned "Doersch et al., 2015", "GPT-4 (OpenAI 2023)" (the first page of the GPT-4 technical report), "Wavenet (van den Oord et al., 2016)" and "Dense Object Net (Florence and Manuelli et al., 2018)". |
+| 19, 21, 22, 24 | Photographs, the rotation diagram, a chart and attention maps: "(Image source: Gidaris et al. 2018)". |
+| 25 | The relative-patch example: "(Image source: Doersch et al., 2015)". |
+| 26 | The jigsaw pipeline and network: "(Image source: Noroozi & Favaro, 2016)". |
+| 28, 29, 32 | Inpainting examples and the context-encoder diagram: "Source: Pathak et al., 2016" (slide 28 also captions "Context Encoders: Feature Learning by Inpainting (Pathak et al., 2016)"). |
+| 34, 35, 36, 37, 38, 40, 41 | Colourisation and split-brain figures and colourised photographs: "Source: Richard Zhang / Phillip Isola". |
+| 39 | The layer-by-layer accuracy chart: "Source: Zhang et al., 2017". |
+| 43, 44, 47 | Video frames and the colour-copying diagram: "Source: Vondrick et al., 2018". |
+| 48, 49, 50, 51 | Video frames with predicted colours, propagated masks and keypoints: "Source: Google AI blog post". |
+| 52, 53, 58, 59, 60 | MAE reconstructions, the MAE architecture, ablation charts, a table and image grids: "He et al., 2021 Masked Autoencoders Are Scalable Vision Learners" (slide 58's diagrams are drawn in the deck's style under the same credit). |
+| 76, 77, 83, 85, 86 | The SimCLR diagram, the augmentation grid and three charts: "Source: Chen et al., 2020". |
+| 88 | The MoCo diagram: "Source: He et al., 2020". |
+| 94, 96, 97, 98, 100, 101 | The CPC diagrams, a t-SNE plot and a table: "Source: van den Oord et al., 2018" (slides 96–98 also carry a "Figure source" link). |
+| 103, 104, 106 | DINO's attention maps and diagrams, and the DINOv2 PCA figure: "Caron et al. 2021 Emerging Properties in Self-Supervised Vision Transformers" (slide 106 is titled "DINO v2" but carries this credit). |
+| 115, 116, 117 | Dense Object Net photographs and descriptor maps: "Dense Object Net, Florence et al., 2018". |
+| 5, 9, 10, 11, 12, 15, 66, 69, 72, 82 | No credit line printed. Slide 5 recalls the previous visualization lecture's heat and saliency maps; 9–11, 15 and 82 are the deck's own diagrams; 12, 66, 69 and 72 use photographs of cats, a puppy and other objects with no source given. |
+
+Not rendered from this deck: the title, agenda and next-time slides, text slides (among them slide
+102's pasted first page of the MoCo v3 paper, whose abstract and table are transcribed), two
+figures already rendered for earlier lectures (3, 4), repeats of figures rendered here, build steps
+whose later step is rendered, the tables the slide file reproduces exactly (23, 27, 33, 84, 91–93),
+equations, and the algorithm box and code listings (78–80, 89, 105). The slide file's header lists
+every slide and the reason.

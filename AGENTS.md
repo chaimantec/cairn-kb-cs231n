@@ -108,7 +108,9 @@ printed slips, which slides were rendered and why) goes in
   outlier reported as filler removal can be a sentence moved across the marker (lecture 8).
   Then list, per paragraph, the words the edit introduced that the original paragraph lacks, and
   read each: substitutions pass every other check (lecture 9: "routed to a of those e experts",
-  slide 27's A of E, became "a few of those experts"; "over fine-tune" became "overfit"). The same
+  slide 27's A of E, became "a few of those experts"; "over fine-tune" became "overfit"), including a
+  correctly heard word changed to the one the context expects (lecture 12: "perturbations" became
+  "permutations"). The same
   sweep catches a few words moved across a marker at a paragraph boundary, which leaves both ratios
   in band (lecture 10: the first words of two paragraphs had been pulled back into the paragraph
   before). Then check every quotation the wiki takes from the transcript against it verbatim.
@@ -117,7 +119,7 @@ printed slips, which slides were rendered and why) goes in
 
 ## Images
 
-**Lectures 1–11 have images; no other lecture does yet.** They are committed rather than hotlinked, and
+**Lectures 1–12 have images; no other lecture does yet.** They are committed rather than hotlinked, and
 they are the only part of this KB that redistributes course material rather than describing it.
 
 - Render every slide that carries a figure, by printed number, with `extract_slide_images.py`
@@ -153,10 +155,14 @@ they are the only part of this KB that redistributes course material rather than
   should say what to look at. The script anchors each image after the block holding the
   **first** citation of that slide, and a range spanning up to 12 slides counts for every slide in
   it ("slides 96–99" counts for 99), so keep such ranges out of overview paragraphs or the image
-  lands in the introduction. A citation of another lecture's slides ("lecture 8's slides 100–109") anchors
+  lands in the introduction. A longer range still anchors its first slide (lecture 12's "slides
+  94–111" put slide 94 in the coverage paragraph), and the page's opening source line counts as
+  overview ("slides 114–117 are PDF pages 112–115"). A citation of another lecture's slides ("lecture 8's slides 100–109") anchors
   too, on this lecture's slides of the same numbers; list where every image landed after the run. A block ending "(slide N):" before a display formula, a table or a
   code block gets the image between the sentence and what it introduces; move it below. On topic pages, cite "lecture N, slide M" and
-  embed with `--deck-label "Lecture N"` so captions name the lecture.
+  embed with `--deck-label "Lecture N"` so captions name the lecture. The script embeds every
+  cited slide that has an image, so a topic-page table of slide ranges collects dozens: link the
+  lecture page's sections from such a table, and cite directly the slides whose figure belongs.
 - **Never type an image path.** `--format auto` makes some renders `.png`; a hand-placed image
   takes its path from the slide file (lecture 10: fourteen guessed `.jpg` links were wrong).
 - Each slide file's header lists which of its slides have images and why the others do not.
@@ -178,6 +184,7 @@ they are the only part of this KB that redistributes course material rather than
 | 9 Detection, Segmentation, Visualization, and Understanding | 53 of 178 pages | `lecture_9.pdf` (178 pages, printed 1–178) |
 | 10 Video Understanding | 47 of 103 pages | `lecture_10.pdf` (103 pages, printed 1–103) |
 | 11 Large-Scale Distributed Training | 30 of 148 pages | `lecture_11.pdf` (148 pages, printed 1–148) |
+| 12 Self-Supervised Learning | 60 of 115 pages | `lecture_12.pdf` (115 pages, printed 1–117) |
 
 ## Rebuilding
 

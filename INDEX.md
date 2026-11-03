@@ -7,14 +7,14 @@ self-supervised learning, generative models, 3D vision, vision and language, rob
 and human-centred AI. The Spring 2025 offering is taught by Fei-Fei Li and Ehsan Adeli, with Zane
 Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/2025/>.
 
-> **Coverage: 11 of 18 lectures.** This knowledge base currently covers **Lecture 1
+> **Coverage: 12 of 18 lectures.** This knowledge base currently covers **Lecture 1
 > (Introduction), Lecture 2 (Image Classification with Linear Classifiers), Lecture 3
 > (Regularization and Optimization), Lecture 4 (Neural Networks and Backpropagation), Lecture 5
 > (Image Classification with CNNs), Lecture 6 (Training CNNs and CNN Architectures), Lecture 7
 > (Recurrent Neural Networks), Lecture 8 (Attention and Transformers), Lecture 9 (Detection,
-> Segmentation, Visualization, and Understanding), Lecture 10 (Video Understanding) and Lecture 11
-> (Large-Scale Distributed Training) only**. It has nothing on lectures 12–18 — self-supervised
-> learning and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
+> Segmentation, Visualization, and Understanding), Lecture 10 (Video Understanding), Lecture 11
+> (Large-Scale Distributed Training) and Lecture 12 (Self-Supervised Learning) only**. It has
+> nothing on lectures 13–18 — generative models and everything after. For a question about a later topic, say that this KB does not cover it yet rather than
 > answering as if from the course; the
 > [course roadmap](wiki/course-logistics.md#course-roadmap) shows which lecture a topic belongs
 > to, and [SEE_ALSO.md](SEE_ALSO.md) lists sibling knowledge bases that cover some of that
@@ -42,7 +42,8 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   and its 122 printed numbers match its PDF pages exactly; so do lecture 9's 178 ("lecture 9, slide
   N" on topic pages) and lecture 10's 103 ("lecture 10, slide N" on topic pages; ten of its pages,
   mostly video stills, print no number, and their labels follow from their neighbours), and lecture
-  11's 148 ("lecture 11, slide N" on topic pages).
+  11's 148 ("lecture 11, slide N" on topic pages). Lecture 12 has one deck ("lecture 12, slide N" on
+  topic pages); it is missing printed numbers 112 and 113, so slide 117 is PDF page 115.
 - **Transcripts are edited.** `raw/transcripts/` holds copy-edited transcripts — punctuated,
   filler removed, mis-heard names and terms restored, every change listed in the file's header —
   with every `[M:SS]` marker in its original place. Read these, not the raw captions, which are
@@ -100,6 +101,17 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   enables 132 of its 144 SMs, a model left in 32-bit running about 20 times slower, how long big
   training runs last, rack and cluster sizes and cooling, asynchronous SGD, PyTorch's
   DistributedDataParallel, and MFU above 50% on A100s.
+  Lecture 12's lecturer is not named in the recording or on the deck. Its recording opens with a
+  recap, skips the administrative slide (2: the midterm on Tuesday 5/13 during lecture time, a
+  review section on Friday 5/9 at 12:30 pm, proposal feedback on Gradescope), and stops after MoCo
+  v2 (slide 93) with "So I will stop here", leaving contrastive predictive coding, MoCo v3 and DINO
+  to the slides. Slides 94–111 (CPC, MoCo v3, DINO, DINOv2, the summary of contrastive learning,
+  next time) and the four appendix slides after "Next time" (CPC on images, Dense Object Net) are
+  sourced to the slides alone. Its spoken additions include self-driving cars in the Bay Area as
+  self-supervised data collection, 9 factorial ("300,000 something") as the number of jigsaw
+  permutations and why 64 were kept, Kinect as an RGB-D sensor, the Half Dome's reflection in a
+  colourised photo, MAE's mask token as "an average patch", and a warning that assignment 3's
+  SimCLR question uses a slightly different formulation from the lecture's.
 - **Printed slips are flagged, not corrected.** Where a deck's worked example prints a wrong
   number or sign, the slide file keeps it as printed with an `[Ed: …]` line and the wiki page says
   so. Quote the correction, not the slip. Lecture 4's matrix-multiply example (slides 143–150)
@@ -139,6 +151,10 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
   counter while drawing all eight boxes; slide 112's 41% MFU does not follow from its 400 TFLOPs per
   GPU (40.4%); slide 138 says to shard the first layer "over row" and the second "over column", the
   opposite of its own drawing; and slides 139–143 label Z "[DxD]" where it is $N \times D$.
+  Lecture 12's deck has two: slide 31's adversarial loss has unbalanced brackets, and slide 81
+  draws a row of 10 vectors ($2N = 10$) beside an affinity matrix of 6 x 6 cells, though both are
+  labelled 2N. Its tables, reproduced from different papers, also disagree on the same rows
+  (slides 23, 27 and 33).
 - **Lecture 3's optimizer-comparison animations are not in the PDF.** Its slides comparing
   optimizers' paths on a loss surface show only the surface and a legend, as do lecture 4's
   and lecture 5's recaps of them (lecture 4, slide 10; lecture 5, slide 8). What the paths did is
@@ -150,11 +166,10 @@ Durante and guest lecturers; the course website is <https://cs231n.stanford.edu/
 
 ## Images
 
-**Lectures 1–11 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
+**Lectures 1–12 have slide images**: lecture 1 has 64 (47 from the part 1 deck, 17 from the
 part 2 deck), lecture 2 has 41, lecture 3 has 24, lecture 4 has 35, lecture 5 has 53, lecture 6
-has 33, lecture 7 has 43, lecture 8 has 23, lecture 9 has 53, lecture 10 has 47 and lecture 11
-has 30. No other
-lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
+has 33, lecture 7 has 43, lecture 8 has 23, lecture 9 has 53, lecture 10 has 47, lecture 11 has
+30 and lecture 12 has 60. No other lecture has any yet. Each image sits under its `## Slide N` heading in `raw/slides/`, and
 in the wiki passage that cites that slide.
 
 - **Use an image path you have actually read in a file. Never construct one from the pattern,
@@ -282,6 +297,17 @@ in the wiki passage that cites that slide.
   pipeline parallelism, the bubble and microbatches; tensor parallelism and the two-layer trick;
   ND parallelism and Llama3-405B's configurations. Eight printed slips noted. 30 embedded slide
   images.
+- [Lecture 12 — Self-Supervised Learning](wiki/12-self-supervised-learning.md) — why labels are
+  the bottleneck; pretext and downstream tasks; how to evaluate a self-supervised method; pretext
+  tasks from image transformations: rotation prediction (RotNet), relative patch location, jigsaw
+  puzzles (64 permutations), inpainting with reconstruction and adversarial losses, colourisation
+  and split-brain autoencoders, video colourisation and the tracking that emerges from it; masked
+  autoencoders (75% masking, asymmetric encoder and decoder, ablations, comparison), linear
+  probing against fine-tuning; contrastive learning and the InfoNCE loss as N-way cross-entropy
+  and a mutual-information bound; SimCLR (augmentations, the algorithm, the affinity matrix,
+  projection head, batch size); MoCo's queue and momentum encoder; MoCo v2; and, from the slides
+  only, CPC, MoCo v3, DINO, DINOv2 and Dense Object Net. Two printed slips noted. 60 embedded
+  slide images.
 
 ### Topics
 
@@ -318,7 +344,7 @@ in the wiki passage that cites that slide.
   worked numbers, logits, maximum likelihood, KL divergence and cross-entropy, its value at
   initialisation ($\log C$); the multiclass SVM (hinge) loss and its worked example; softmax vs.
   SVM; softmax at every time step of a language model (lecture 7); softmax at every pixel and the
-  multitask loss of detection (lecture 9).
+  multitask loss of detection (lecture 9); InfoNCE as an N-way softmax cross-entropy (lecture 12).
 - [Regularization](wiki/regularization.md) — the regularized loss and the strength $\lambda$;
   prefer simpler models; L2, L1 and elastic net, with the worked example of which weights each
   prefers; why regularize; L2 inside Adam vs. weight decay in AdamW; tuning $\lambda$ rather than a
@@ -361,13 +387,14 @@ in the wiki passage that cites that slide.
   convolution layers; how to tell it is right; why normalization does not replace it (lecture 7).
 - [Data preprocessing and augmentation](wiki/data-augmentation.md) — per-channel mean and std
   normalization; augmentation as regularization; flips, random crops and scales, colour jitter,
-  cutout; choosing augmentations; test-time augmentation.
+  cutout; choosing augmentations; test-time augmentation; augmentations as the positives of
+  contrastive learning (lecture 12).
 - [Transfer learning](wiki/transfer-learning.md) — why a pretrained network's features transfer
   (nearest neighbours in feature space); freeze and retrain the last layer, or finetune
   everything; the similar/different, little/lots-of-data table; dataset bias; LoRA; model zoos;
   a pretrained CNN as the image encoder for captioning (lecture 7); pretrained backbones in
   detectors (lecture 9); C3D as a video feature extractor and I3D's ImageNet initialization
-  (lecture 10).
+  (lecture 10); pretraining without labels, linear probing and fine-tuning (lecture 12).
 - [Gradient descent and SGD](wiki/gradient-descent.md) — the loss landscape; the gradient,
   numerical vs. analytic, and the gradient check; gradient descent, stopping, minibatch SGD and
   epochs; poor conditioning (condition number), local minima, saddle points, noisy gradients;
@@ -406,13 +433,14 @@ in the wiki passage that cites that slide.
   cost and Flash Attention; attention compared with recurrence and convolution; DETR's
   cross-attention and ViT attention maps (lecture 9); the nonlocal block's space-time
   self-attention (lecture 10); splitting attention across GPUs with ring attention and Ulysses
-  (lecture 11).
+  (lecture 11); attention as similarity for copying colours in video (lecture 12).
 - [Transformers](wiki/transformers.md) — the Transformer block (self-attention, residual
   connections, layer normalization, per-vector MLP); stacks and their sizes (original, GPT-2,
   GPT-3); transformer language models; the Vision Transformer, with pooled outputs or a class
   token (lecture 9); pre-norm, RMSNorm, SwiGLU and mixture of experts, with lecture 9's spoken
   walk-through; why transformers took over; video transformers named (lecture 10); context and
-  tensor parallelism for training transformers on many GPUs (lecture 11).
+  tensor parallelism for training transformers on many GPUs (lecture 11); ViTs pretrained without
+  labels: MAE, MoCo v3 and DINO (lecture 12).
 - [Image segmentation](wiki/image-segmentation.md) — semantic segmentation as per-pixel
   classification; sliding windows; fully convolutional networks with downsampling and upsampling;
   the per-pixel loss; unpooling, max unpooling and the transposed convolution; U-Net and its skip
@@ -425,22 +453,29 @@ in the wiki passage that cites that slide.
 - [Visualizing what networks learn](wiki/visualizing-networks.md) — linear-classifier templates;
   first-layer filters; saliency maps from gradients with respect to pixels; CAM and its equations;
   Grad-CAM; guided backpropagation; attention maps in Vision Transformers (lecture 9); video
-  models' appearance and motion inputs, and 3D filters as clips (lecture 10).
+  models' appearance and motion inputs, and 3D filters as clips (lecture 10); attention maps of a
+  rotation-trained network and DINO's label-free attention (lecture 12).
 - [Video understanding](wiki/video-understanding.md) — video as a 4D tensor and training on clips;
   where a network combines frames (single frame, late fusion, early fusion, 3D CNN) and temporal
   shift-invariance; C3D; optical flow and two-stream networks; longer time spans with RNNs,
   recurrent convolutional networks and the nonlocal block; I3D and video transformers; Sports-1M,
-  UCF-101, Kinetics-400 and AVA; action localization, visualization, audio, efficiency (lecture 10).
+  UCF-101, Kinetics-400 and AVA; action localization, visualization, audio, efficiency (lecture 10);
+  tracking learned by colourising video (lecture 12).
 - [Distributed training](wiki/distributed-training.md) — the GPU's Tensor Cores and the memory and
   bandwidth hierarchy from one GPU to a cluster; the four axes (batch, sequence, layers, model
   dimension) in one table: DP, FSDP, HSDP, CP, PP and TP, what each splits and communicates; why
   data parallelism runs out of memory; activation checkpointing's compute and memory; MFU against
-  HFU; the scaling recipe and 4D parallelism (lecture 11).
+  HFU; the scaling recipe and 4D parallelism (lecture 11); SimCLR's large batches against MoCo's
+  queue (lecture 12).
+- [Self-supervised learning](wiki/self-supervised-learning.md) — training without labels: pretext
+  and downstream tasks, linear probing and fine-tuning; the pretext tasks in one table (what each
+  predicts); masked autoencoders; contrastive learning and InfoNCE; SimCLR, MoCo, MoCo v2 and CPC
+  compared by where their negatives come from; DINO without negatives (lecture 12).
 - [Course logistics](wiki/course-logistics.md) — the lecture-by-lecture roadmap and the course's
   four parts; lectures, sections, Ed, office hours; Assignment 1; grading weights (assignments
   45%, midterm 20%, project 35%); late days; the collaboration policy (including "do not submit
   AI-generated responses"); prerequisites; textbooks; learning objectives; the midterm review and
-  in-class midterm dates (lecture 11, slide 2).
+  in-class midterm dates and times (lecture 11, slide 2; lecture 12, slide 2).
 
 ## Raw materials
 
@@ -455,7 +490,8 @@ in the wiki passage that cites that slide.
   [08-attention-transformers.md](raw/transcripts/08-attention-transformers.md); lecture 9:
   [09-detection-segmentation-visualization.md](raw/transcripts/09-detection-segmentation-visualization.md);
   lecture 10: [10-video-understanding.md](raw/transcripts/10-video-understanding.md); lecture 11:
-  [11-large-scale-distributed-training.md](raw/transcripts/11-large-scale-distributed-training.md).
+  [11-large-scale-distributed-training.md](raw/transcripts/11-large-scale-distributed-training.md);
+  lecture 12: [12-self-supervised-learning.md](raw/transcripts/12-self-supervised-learning.md).
 - [`raw/slides/`](raw/slides/) — slide-by-slide transcriptions with section tables:
   [part 1](raw/slides/01-introduction-part-1.md) (69 slides) and
   [part 2](raw/slides/01-introduction-part-2.md) (50 pages, printed numbers 1–53) for lecture 1;
@@ -468,7 +504,8 @@ in the wiki passage that cites that slide.
   [lecture 8](raw/slides/08-attention-transformers.md) (122 pages, printed numbers 1–122);
   [lecture 9](raw/slides/09-detection-segmentation-visualization.md) (178 pages, printed numbers 1–178);
   [lecture 10](raw/slides/10-video-understanding.md) (103 pages, printed numbers 1–103);
-  [lecture 11](raw/slides/11-large-scale-distributed-training.md) (148 pages, printed numbers 1–148).
+  [lecture 11](raw/slides/11-large-scale-distributed-training.md) (148 pages, printed numbers 1–148);
+  [lecture 12](raw/slides/12-self-supervised-learning.md) (115 pages, printed numbers 1–117).
 - [`sources.md`](sources.md) — every document the course website links, with its canonical URL.
   Slide PDFs are **not** committed here; link to them at those URLs.
 - [`LICENSE.md`](LICENSE.md) — what may be reused, and the attribution of every rendered image.
